@@ -1,18 +1,4 @@
-import React, { Component } from "react";
+// import Tooltip from './Tooltip/Tooltip';
+import Tooltip from './Tooltip/Tooltip';
+export default Tooltip;
 
-class MySuperCoolComponent extends Component {
-  handleClick = () => {
-    console.log("Click!");
-  };
-
-  render() {
-    const { color, children } = this.props;
-    return (
-      <button onClick={this.handleClick} style={{ color }}>
-        {children}
-      </button>
-    );
-  }
-}
-
-export default MySuperCoolComponent;

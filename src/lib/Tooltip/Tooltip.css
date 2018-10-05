@@ -1,0 +1,153 @@
+.tpContainer {
+    position: absolute;
+    display: flex;   
+}
+
+.tpArrowTop {
+    justify-content: center;
+    width: 100%;
+}
+
+.tpArrowBottom {
+    justify-content: center;
+    width: 100%;
+}
+
+.tpArrowLeft {
+    justify-content: flex-start;
+}
+
+.tpArrowRight {
+    justify-content: flex-end;
+}
+
+.tpTooltipCenter {
+    align-items: center;
+}
+
+.tpTooltipBottom {
+    align-items: flex-end;
+}
+
+/* CSS animations */
+.tpFade-enter {
+    opacity: 0.01;
+  }
+.tpFade-enter-active {
+    opacity: 1;
+    transition: all 300ms ease-out;
+  }
+.tpFade-exit {
+    opacity: 1;
+  }
+.tpFade-exit-active {
+    opacity: 0.01;
+    transition: all 200ms ease-out;
+  }
+
+
+/* */
+.tpFadeIn-enter {
+    opacity: 0.01;
+    transform: scale(0.8);
+  }
+.tpFadeIn-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 300ms ease-out;
+  }
+.tpFadeIn-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+.tpFadeIn-exit-active {
+    opacity: 0.01;
+    transform: scale(0.8);
+    transition: all 200ms ease-out;
+  }
+
+
+/* */
+.tpFadeUp-enter,
+.tpFadeUpDown-enter {
+    opacity: 0.01;
+    transform: translateY(10%);
+  }
+.tpFadeDown-enter {
+    opacity: 0.01;
+    transform: translateY(-10%);
+  }
+.tpFadeUp-enter-active,
+.tpFadeUpDown-enter-active,
+.tpFadeDown-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 300ms ease-out;
+  }
+.tpFadeUp-exit,
+.tpFadeUpDown-exit,
+.tpFadeDown-exit {
+    opacity: 1;
+    transform: translateY(0%);
+    transform: scale(1);
+  }
+.tpFadeUp-exit-active {
+    opacity: 0.01;
+    transform: translateY(-10%);
+    transition: all 200ms ease-out;
+  }
+.tpFadeUpDown-exit-active,
+.tpFadeDown-exit-active {
+    opacity: 0.01;
+    transform: translateY(10%);
+    transition: all 200ms ease-out;
+  }
+
+
+/* CSS animations */
+
+@keyframes tpBounce {
+    0%   {transform: scale(0.7)}
+    25%  {transform: scale(0.9)}
+    50%  {transform: scale(1.1)}
+    100% {transform: scale(1)}
+}
+
+.tpBounce-enter {
+    opacity: 0.01;
+    animation-name: tpBounce;
+    animation-duration: 300ms;
+  }
+.tpBounce-enter-active {
+    opacity: 1;
+  }
+.tpBounce-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+.tpBounce-exit-active {
+    opacity: 0.01;
+    transform: scale(0.8);
+    transition: all 200ms ease-out;
+  }
+
+/* */
+
+.tpTooltip-enter {
+    opacity: 0.01;
+    transform: scale(0.8) translateY(0%);
+  }
+.tpTooltip-enter-active {
+    opacity: 1;
+    transform: scale(1) translateY(0%);
+    transition: all 300ms ease-out;
+  }
+.tpTooltip-exit {
+    opacity: 1;
+    transform: scale(1) translateY(0%);
+  }
+.tpTooltip-exit-active {
+    opacity: 0.01;
+    transform: scale(0.8) translateY(0%);
+    transition: all 200ms ease-out;
+  }

@@ -1,4 +1,35 @@
 body {
-  background: #eee;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: #F5F6F7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.FlexContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.PurpleGradient {
+  background: linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%);
+}
+
+.Header {
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+}
+
+.Header h1 {
+  color: white;
+  font-size: 45px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.Header h2 {
+  color: #ececec;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
