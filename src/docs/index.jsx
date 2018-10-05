@@ -20,8 +20,10 @@ import "./styles.css";
 
 class Demo extends Component {
   state = {
+    showRight: false,
     showTooltip: false,
-    alternateTooltip: false
+    alternateTooltip: false,
+    count: 1
   }
 
   showTooltip = () => {
@@ -34,7 +36,7 @@ class Demo extends Component {
 
   alternateTooltip = () => {
     this.setState({ alternateTooltip: !this.state.alternateTooltip })
-    setTimeout(() => { this.alternateTooltip(); }, 4000);
+    setTimeout(() => { this.alternateTooltip(); }, 3000);
   }
 
   componentDidMount() {
@@ -42,34 +44,71 @@ class Demo extends Component {
   }
 
   render() {
+    let showLeft = Math.random() >= 0.5 ? true : false;
+    let CSSLink = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />`
+
     return (
       <div className='FlexContainer'>
+        <div className="ribbon">
+          <a href="#">Fork me on GitHub</a>
+        </div>
         <div className='FlexContainer PurpleGradient Header'>
           <h1>React-custom-
             <span style={{ position: 'relative' }}>
               tooltip
               <Tooltip
-                // showTooltip={this.state.alternateTooltip}
-                showTooltip={true}
-                HoverBackground='#3b0586'
-                HoverColor='white'
+                showTooltip={this.state.alternateTooltip && showLeft}
+                // showTooltip={true}
                 Color='black'
                 TextboxWidth='100px'
-                Animation='tpFadeUpDown'
+                Animation='tpFadeDown'
+                ArrowPosition='leftCenter'
+                TooltipPosition='center'
+                fontSize='13px'
+                textAlign='center'
+                static
+                moveDown='5px'
+                moveRight='20px'
+              >
+                <span>Simple &amp; Easy!</span>
+              </Tooltip>
+              <Tooltip
+                showTooltip={this.state.alternateTooltip && !showLeft}
+                Color='black'
+                TextboxWidth='100px'
+                Animation='tpBounce'
                 ArrowPosition='topCenter'
                 TooltipPosition='center'
                 fontSize='13px'
                 textAlign='center'
-                fontFamily='Montserrat, sans-serif'
-                Pulse
                 static
               >
                 <span>Simple &amp; Easy!</span>
               </Tooltip>
             </span>
           </h1>
-          <h2>A lightweight library to create elegant tooltip and alert notifications. </h2>
+          <h2>A flexible &amp; lightweight tooltip &amp; notification library. </h2>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: '120px',
+          }}>
+            <a className="github-button" href="https://github.com/ntkme/github-buttons" dataSize="large" dataShowCount="true" ariaLabel="Star ntkme/github-buttons on GitHub">Star</a>
+            <a className="github-button" href="https://github.com/ntkme/github-buttons/fork" dataSize="large" dataShowCount="true" ariaLabel="Fork ntkme/github-buttons on GitHub">Fork</a>
+          </div>
         </div>
+        <section>
+          <h1>Installation</h1>
+          <h2>Npm</h2>
+          <pre>
+            <code>$ npm install react-custom-tooltip --save</code>
+          </pre>
+          <h2>CSS file</h2>
+          <pre>
+            <code>{CSSLink}</code>
+          </pre>
+        </section>
         <div
           onMouseOver={this.showTooltip}
           onMouseLeave={this.hideTooltip}
@@ -80,7 +119,7 @@ class Demo extends Component {
             background: 'linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%)',
             position: 'relative',
             fontSize: '13px',
-            fontWeight: '700',
+            fontWeight: '400',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -213,7 +252,7 @@ class Demo extends Component {
           </div>
         </div>
 
-      </div>
+      </div >
     );
   }
 }

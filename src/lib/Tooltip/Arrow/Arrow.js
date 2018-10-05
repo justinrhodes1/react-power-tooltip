@@ -7,9 +7,7 @@ const Arrow = props => {
     let backgroundColor = props.isHovered ?
         props.HoverBackground || '#93fff7' :
         props.BackgroundColor || 'white';
-    let border = props.isHovered ?
-        `1px solid ${props.HoverBackground || '#93fff7'}` :
-        '1px solid #b3b3b3';
+    let boxShadow = '0 0 0 1px rgba(0,0,0,.18)';
 
     if (
         props.ArrowPosition === 'topLeft'
@@ -32,7 +30,7 @@ const Arrow = props => {
     return (
         <div
             className={'tpArrow'}
-            style={{ top, left, backgroundColor, border }}
+            style={{ top, left, backgroundColor, boxShadow }}
         />
     );
 };
