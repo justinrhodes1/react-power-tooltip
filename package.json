@@ -2,7 +2,7 @@
   "name": "react-custom-tooltip",
   "version": "0.1.0",
   "description": "A powerful tooltip component for react.",
-  "main": "lib/index.js",
+  "main": "lib/index",
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
     "lib": "babel src/lib -d lib --copy-files",
@@ -42,6 +42,7 @@
     "url": "git@github.com:justinrhodes2/react-custom-tooltip.git"
   },
   "dependencies": {
+    "react-scrollchor": "^6.0.0",
     "react-transition-group": "^2.5.0"
   }
 }

@@ -163,6 +163,91 @@ class TextBox extends Component {
         let top = '8px';
         let perc = calcPerc(50, 0, 100);
 
+        // if (arrow.topLeft) {
+        //     top = '8px';
+        //     left = calcHPos(perc, 4);
+        // } else if (arrow.topCenter) {
+        //     top = '8px';
+        //     left = calcHPos(perc, 2, 5);
+        // } else if (arrow.topRight) {
+        //     top = '8px';
+        //     left = calc(perc, 4, null, 3);
+        // } else if (arrow.bottomLeft) {
+        //     top = calcVPos(0, totHeight, 1, 11);
+        //     // top = `calc(0% - ${totHeight}px + 11px)`;
+        //     left = calcHPos(perc, 4);
+        // } else if (arrow.bottomCenter) {
+        //     top = calcVPos(0, totHeight, 1, 11)
+        //     // top = `calc(0% - ${totHeight}px + 11px)`;
+        //     left = calcHPos(perc, 2, 5);
+        // } else if (arrow.bottomRight) {
+        //     top = calcVPos(0, totHeight, 1, 11)
+        //     // top = `calc(0% - ${totHeight}px + 11px)`;
+        //     left = calcHPos(perc, 4, null, 3);
+        // } else if (arrow.leftTop) {
+        //     left = '8px';
+        //     top = calcVPos(0, firstSpanH, 2, 8);
+        //     // top = `calc(0% - ${firstSpanH}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         top = calcVPos(50, firstSpanH, 2);
+        //         // top = `calc(50% - ${firstSpanH}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = calcVPos(100, firstSpanH, 2, -8);
+        //         // top = `calc(100% - ${firstSpanH}px/2 - 8px)`;
+        //     }
+
+        // } else if (arrow.leftCenter) {
+        //     left = '8px';
+        //     // top = calcVPos(0, totHeight, 2, 8);
+        //     top = `calc(0% - ${totHeight}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         // top = calcVPos(50, totHeight, 2);
+        //         top = `calc(50% - ${totHeight}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = `calc(100% - ${totHeight}px/2 - 8px)`;
+        //         // top = calcVPos(100, totHeight, 2, -8);
+        //     }
+
+        // } else if (arrow.leftBottom) {
+        //     left = '8px';
+        //     top = `calc(0% - ${totHeight}px + ${lastSpanH}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         top = `calc(50% - ${totHeight}px + ${lastSpanH}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = `calc(100% - ${totHeight}px + ${lastSpanH}px/2 - 8px)`;
+        //     }
+
+        // } else if (arrow.rightTop) {
+        //     left = '-8px';
+        //     top = `calc(0% - ${firstSpanH}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         top = `calc(50% - ${firstSpanH}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = `calc(100% - ${firstSpanH}px/2 - 8px)`;
+        //     }
+
+        // } else if (arrow.rightCenter) {
+        //     left = '-8px';
+        //     top = `calc(0% - ${totHeight}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         top = `calc(50% - ${totHeight}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = `calc(100% - ${totHeight}px/2)`;
+        //     }
+
+        // } else if (arrow.rightBottom) {
+        //     left = '-8px';
+        //     top = `calc(0% - ${totHeight}px + ${lastSpanH}px/2 + 8px)`;
+        //     if (tooltip.center) {
+        //         top = `calc(50% - ${totHeight}px + ${lastSpanH}px/2)`;
+        //     } else if (tooltip.bottom) {
+        //         top = `calc(100% - ${totHeight}px + ${lastSpanH}px/2 - 8px)`;
+        //     }
+        // }
+
+        // let { center, bottom } = tooltip;
+
+
         switch (arrowPos) {
             case 'topLeft':
                 left = calcHPos(perc, 4);
@@ -241,6 +326,8 @@ class TextBox extends Component {
                 top = '';
                 break;
         }
+
+
 
         let theme = flat ? 'tpTooltipNoShadow' : 'tpTooltipShadow';
 

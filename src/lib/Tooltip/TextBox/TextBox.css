@@ -1,18 +1,13 @@
 .tpTooltip {
     position: absolute;
-    /* margin-left: -100%; */
 }
 
 .tpTooltip span {
     display: block;
+    cursor: text;
 }
 
-.tpHoverContainer,
-.tpStaticContainer {
-    overflow: hidden;
-}
-
-.tpHoverContainer span {  
+.tpHover span {  
     cursor: pointer;
 }
 
@@ -22,10 +17,21 @@
     animation: none;  
 }
 
+.tpTooltipNoShadow {
+    position: absolute;
+    animation: none; 
+}
+
 .tpPulse {
     animation-delay: 500ms;
     animation: tpPulse 600ms 4;
 }
+
+/* .tpNotification {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+} */
 
 @keyframes tpPulse {
     0% {
