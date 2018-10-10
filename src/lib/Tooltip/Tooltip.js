@@ -33,24 +33,34 @@ class Tooltip extends Component {
             fontWeight = 'bold',
             fontSize = 'inherit',
             color = 'inherit',
-            arrow: arrowPos,
-            tooltip: tooltipPos,
-            moveDown
+            arrow: arPos,
+            tooltip: tpPos,
+            moveDown,
+            showTooltip
         } = this.props;
 
+        const tooltip = {
+            left: tpPos === 'left',
+            right: tpPos === 'right',
+            center: tpPos === 'center',
+            bottom: tpPos === 'bottom',
+            position: tpPos
+        }
+
         const arrow = {
-            topCenter: arrowPos === 'topCenter',
-            topLeft: arrowPos === 'topLeft',
-            topRight: arrowPos === 'topRight',
-            bottomCenter: arrowPos === 'bottomCenter',
-            bottomLeft: arrowPos === 'bottomLeft',
-            bottomRight: arrowPos === 'bottomRight',
-            leftCenter: arrowPos === 'leftCenter',
-            leftTop: arrowPos === 'leftTop',
-            leftBottom: arrowPos === 'leftBottom',
-            rightCenter: arrowPos === 'rightCenter',
-            rightTop: arrowPos === 'rightTop',
-            rightBottom: arrowPos === 'rightBottom',
+            topCenter: arPos === 'topCenter',
+            topLeft: arPos === 'topLeft',
+            topRight: arPos === 'topRight',
+            bottomCenter: arPos === 'bottomCenter',
+            bottomLeft: arPos === 'bottomLeft',
+            bottomRight: arPos === 'bottomRight',
+            leftCenter: arPos === 'leftCenter',
+            leftTop: arPos === 'leftTop',
+            leftBottom: arPos === 'leftBottom',
+            rightCenter: arPos === 'rightCenter',
+            rightTop: arPos === 'rightTop',
+            rightBottom: arPos === 'rightBottom',
+            position: arPos,
             get top() {
                 return this.topCenter || this.topLeft || this.topRight;
             },
@@ -65,11 +75,8 @@ class Tooltip extends Component {
             }
         };
 
-        const tooltip = {
-            left: tooltipPos === 'left',
-            right: tooltipPos === 'right',
-            center: tooltipPos === 'center',
-            bottom: tooltipPos === 'bottom'
+        const calcVpos = (units) => {
+            return moveDown ? `calc(${units} + ${moveDown})` : `${units}`;
         }
 
         this.props = {
@@ -78,7 +85,6 @@ class Tooltip extends Component {
             hoverColor,
             backgroundColor,
             arrow,
-            arrowPos,
             textBoxWidth,
             padding,
             textAlign,
@@ -96,52 +102,45 @@ class Tooltip extends Component {
         let height = '';
 
         if (arrow.top) {
-            top = moveDown ?
-                `calc(100% + ${moveDown})` : '100%';
+            top = calcVpos('100%');
             classes.push('tpArrowTop')
-            if (tooltip.left) {
-                classes.push('tpArrowLeft')
-            } else if (tooltip.right) {
-                classes.push('tpArrowRight')
-            }
         } else if (arrow.bottom) {
             classes.push('tpArrowBottom')
-            top = moveDown ?
-                `calc(-21px + ${moveDown})` : '-21px';
-            if (tooltip.left) {
-                classes.push('tpArrowLeft')
-            } else if (tooltip.right) {
-                classes.push('tpArrowRight')
-            }
+            top = calcVpos('-21px');
         } else if (arrow.left) {
             left = '100%';
             width = '';
             height = '100%';
-            top = moveDown ?
-                `calc(0px + ${moveDown})` : '0px';
-            if (tooltip.center) {
-                classes.push('tpTooltipCenter');
-            } else if (tooltip.bottom) {
-                classes.push('tpTooltipBottom');
-            }
+            top = calcVpos('0px');
             classes.push('tpArrowLeft');
         } else if (arrow.right) {
             classes.push('tpArrowRight')
             left = `-${textBoxWidth}`;
             width = textBoxWidth;
             height = '100%';
-            top = moveDown ?
-                `calc(0px + ${moveDown})` : '0px';
-            if (tooltip.center) {
-                classes.push('tpTooltipCenter')
-            } else if (tooltip.bottom) {
-                classes.push('tpTooltipBottom')
-            }
+            top = calcVpos('0px');
+        }
+
+        switch (tooltip.position) {
+            case 'left':
+                if (arrow.top || arrow.bottom) classes.push('tpArrowLeft');
+                break;
+            case 'right':
+                if (arrow.top || arrow.bottom) classes.push('tpArrowRight');
+                break;
+            case 'center':
+                if (arrow.left || arrow.right) classes.push('tpAlignCenter');
+                break;
+            case 'bottom':
+                if (arrow.left || arrow.right) classes.push('tpAlignBottom');
+                break;
+            default:
+                break;
         }
 
         return (
             <CSSTransition
-                in={this.props.showTooltip}
+                in={showTooltip}
                 timeout={300}
                 classNames={animation}
                 unmountOnExit

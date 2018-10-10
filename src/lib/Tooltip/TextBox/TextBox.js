@@ -33,7 +33,6 @@ class TextBox extends Component {
 
         const {
             arrow,
-            arrowPos,
             tooltip,
             static: tpStatic,
             textAlign,
@@ -46,7 +45,7 @@ class TextBox extends Component {
             borderRadius,
             hoverBackground,
             hoverColor,
-            Pulse,
+            pulse,
             flat,
             children
         } = this.props;
@@ -69,8 +68,8 @@ class TextBox extends Component {
             return `calc(${perc}% - (${multiFactor || 1}*${width})/${divider} + ${moveRight} + ${adjMove || 0}px)`
         }
 
-        let calcVPos = (perc, elementHeight, divider, adjMove, totHeight) => {
-            return `calc(${perc}% - ${totHeight || 0}px - ${elementHeight}px/${divider} + ${adjMove || 0}px)`
+        let calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
+            return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
 
         let calcPerc = (center, left, right) => {
@@ -130,7 +129,7 @@ class TextBox extends Component {
         let top = '8px';
         let perc = calcPerc(50, 0, 100);
 
-        switch (arrowPos) {
+        switch (arrow.position) {
             case 'topLeft':
                 left = calcHPos(perc, 4);
                 break;
@@ -209,10 +208,10 @@ class TextBox extends Component {
                 break;
         }
 
-        let theme = flat ? 'tpTooltipNoShadow' : 'tpTooltipShadow';
+        let theme = flat ? 'tpNoShadow' : 'tpShadow';
 
         let classes = [theme];
-        if (Pulse) classes.push('tpPulse');
+        if (pulse) classes.push('tpPulse');
 
         let boxStyle = {
             left,

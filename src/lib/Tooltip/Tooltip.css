@@ -21,11 +21,11 @@
     justify-content: flex-end;
 }
 
-.tpTooltipCenter {
+.tpAlignCenter {
     align-items: center;
 }
 
-.tpTooltipBottom {
+.tpAlignBottom {
     align-items: flex-end;
 }
 

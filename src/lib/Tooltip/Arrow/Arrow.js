@@ -6,15 +6,15 @@ const Arrow = ({
     moveRight,
     isHovered,
     hoverBackground,
-    backgroundColor: bkgCol,
+    backgroundColor,
     flat,
     arrow,
-    TextBoxWidth }) => {
+    textBoxWidth }) => {
 
     let left = '';
     let top = moveDown || '0px';
-    let backgroundColor = isHovered ?
-        hoverBackground : bkgCol;
+    backgroundColor = isHovered ?
+        hoverBackground : backgroundColor;
 
     let boxShadow = flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
 
@@ -22,7 +22,7 @@ const Arrow = ({
         left = moveRight ?
             `calc(50% + ${moveRight})` : `50%`;
     } else if (arrow.right) {
-        left = TextBoxWidth;
+        left = textBoxWidth;
     }
 
     return (
