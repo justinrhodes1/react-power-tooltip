@@ -19,66 +19,122 @@ class Tooltip extends Component {
     }
 
     render() {
+
+        const {
+            textBoxWidth = '150px',
+            animation = 'tpFade',
+            borderRadius = '5px',
+            backgroundColor = 'white',
+            hoverBackground = '#ececec',
+            hoverColor = 'black',
+            padding = '15px 20px',
+            textAlign = 'left',
+            fontFamily = 'inherit',
+            fontWeight = 'bold',
+            fontSize = 'inherit',
+            color = 'inherit',
+            arrow: arrowPos,
+            tooltip: tooltipPos,
+            moveDown
+        } = this.props;
+
+        const arrow = {
+            topCenter: arrowPos === 'topCenter',
+            topLeft: arrowPos === 'topLeft',
+            topRight: arrowPos === 'topRight',
+            bottomCenter: arrowPos === 'bottomCenter',
+            bottomLeft: arrowPos === 'bottomLeft',
+            bottomRight: arrowPos === 'bottomRight',
+            leftCenter: arrowPos === 'leftCenter',
+            leftTop: arrowPos === 'leftTop',
+            leftBottom: arrowPos === 'leftBottom',
+            rightCenter: arrowPos === 'rightCenter',
+            rightTop: arrowPos === 'rightTop',
+            rightBottom: arrowPos === 'rightBottom',
+            get top() {
+                return this.topCenter || this.topLeft || this.topRight;
+            },
+            get bottom() {
+                return this.bottomCenter || this.bottomLeft || this.bottomRight;
+            },
+            get left() {
+                return this.leftCenter || this.leftTop || this.leftBottom;
+            },
+            get right() {
+                return this.rightCenter || this.rightTop || this.rightBottom;
+            }
+        };
+
+        const tooltip = {
+            left: tooltipPos === 'left',
+            right: tooltipPos === 'right',
+            center: tooltipPos === 'center',
+            bottom: tooltipPos === 'bottom'
+        }
+
+        this.props = {
+            ...this.props,
+            hoverBackground,
+            hoverColor,
+            backgroundColor,
+            arrow,
+            arrowPos,
+            textBoxWidth,
+            padding,
+            textAlign,
+            fontFamily,
+            fontWeight,
+            borderRadius,
+            tooltip,
+            color
+        }
+
         let classes = ['tpContainer']
         let left = '0px';
         let top = '';
         let width = '100%';
         let height = '';
-        if (
-            this.props.ArrowPosition === 'topLeft'
-            || this.props.ArrowPosition === 'topCenter'
-            || this.props.ArrowPosition === 'topRight'
-        ) {
-            top = this.props.moveDown ?
-                `calc(100% + ${this.props.moveDown})` : '100%';
+
+        if (arrow.top) {
+            top = moveDown ?
+                `calc(100% + ${moveDown})` : '100%';
             classes.push('tpArrowTop')
-            if (this.props.TooltipPosition === 'left') {
+            if (tooltip.left) {
                 classes.push('tpArrowLeft')
-            } else if (this.props.TooltipPosition === 'right') {
+            } else if (tooltip.right) {
                 classes.push('tpArrowRight')
             }
-        } else if (
-            this.props.ArrowPosition === 'bottomLeft'
-            || this.props.ArrowPosition === 'bottomCenter'
-            || this.props.ArrowPosition === 'bottomRight'
-        ) {
+        } else if (arrow.bottom) {
             classes.push('tpArrowBottom')
-            top = this.props.moveDown ?
-                `calc(-21px + ${this.props.moveDown})` : '-21px';
-            if (this.props.TooltipPosition === 'left') {
+            top = moveDown ?
+                `calc(-21px + ${moveDown})` : '-21px';
+            if (tooltip.left) {
                 classes.push('tpArrowLeft')
-            } else if (this.props.TooltipPosition === 'right') {
+            } else if (tooltip.right) {
                 classes.push('tpArrowRight')
             }
-        } else if (
-            this.props.ArrowPosition === 'leftTop'
-            || this.props.ArrowPosition === 'leftCenter'
-            || this.props.ArrowPosition === 'leftBottom') {
+        } else if (arrow.left) {
             left = '100%';
             width = '';
             height = '100%';
-            top = this.props.moveDown ?
-                `calc(0px + ${this.props.moveDown})` : '0px';
-            if (this.props.TooltipPosition === 'center') {
+            top = moveDown ?
+                `calc(0px + ${moveDown})` : '0px';
+            if (tooltip.center) {
                 classes.push('tpTooltipCenter');
-            } else if (this.props.TooltipPosition === 'bottom') {
+            } else if (tooltip.bottom) {
                 classes.push('tpTooltipBottom');
             }
             classes.push('tpArrowLeft');
-        } else if (
-            this.props.ArrowPosition === 'rightTop'
-            || this.props.ArrowPosition === 'rightCenter'
-            || this.props.ArrowPosition === 'rightBottom'
-        ) {
+        } else if (arrow.right) {
             classes.push('tpArrowRight')
-            left = -this.props.TextBoxWidth || '-150px';
-            width = this.props.TextBoxWidth || '150px';
+            left = `-${textBoxWidth}`;
+            width = textBoxWidth;
             height = '100%';
-            top = this.props.moveDown ?
-                `calc(0px + ${this.props.moveDown})` : '0px';
-            if (this.props.TooltipPosition === 'center') {
+            top = moveDown ?
+                `calc(0px + ${moveDown})` : '0px';
+            if (tooltip.center) {
                 classes.push('tpTooltipCenter')
-            } else if (this.props.TooltipPosition === 'bottom') {
+            } else if (tooltip.bottom) {
                 classes.push('tpTooltipBottom')
             }
         }
@@ -87,7 +143,7 @@ class Tooltip extends Component {
             <CSSTransition
                 in={this.props.showTooltip}
                 timeout={300}
-                classNames={this.props.Animation}
+                classNames={animation}
                 unmountOnExit
             >
                 <div className={classes.join(' ')}
@@ -96,11 +152,16 @@ class Tooltip extends Component {
                         left,
                         width,
                         height,
-                        fontSize: this.props.fontSize,
-                        textAlign: this.props.textAlign,
-                        fontFamily: this.props.fontFamily
+                        color,
+                        fontSize,
+                        textAlign,
+                        fontFamily,
+                        fontWeight
                     }}>
-                    <Arrow {...this.props} isHovered={this.state.hoverArrow} />
+                    <Arrow
+                        {...this.props}
+                        isHovered={this.state.hoverArrow}
+                    />
                     <TextBox
                         {...this.props}
                         hoverArrow={() => this.hoverArrow()}

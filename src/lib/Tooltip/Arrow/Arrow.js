@@ -1,31 +1,28 @@
 import React from 'react';
 import './Arrow.css';
 
-const Arrow = props => {
+const Arrow = ({
+    moveDown,
+    moveRight,
+    isHovered,
+    hoverBackground,
+    backgroundColor: bkgCol,
+    flat,
+    arrow,
+    TextBoxWidth }) => {
+
     let left = '';
-    let top = props.moveDown || '0px';
-    let backgroundColor = props.isHovered ?
-        props.HoverBackground || '#ececec' :
-        props.BackgroundColor || 'white';
+    let top = moveDown || '0px';
+    let backgroundColor = isHovered ?
+        hoverBackground : bkgCol;
 
-    let boxShadow = props.flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
+    let boxShadow = flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
 
-    if (
-        props.ArrowPosition === 'topLeft'
-        || props.ArrowPosition === 'topCenter'
-        || props.ArrowPosition === 'topRight'
-        || props.ArrowPosition === 'bottomLeft'
-        || props.ArrowPosition === 'bottomCenter'
-        || props.ArrowPosition === 'bottomRight'
-    ) {
-        left = props.moveRight ?
-            `calc(50% + ${props.moveRight})` : `50%`;
-    } else if (
-        props.ArrowPosition === 'rightTop'
-        || props.ArrowPosition === 'rightCenter'
-        || props.ArrowPosition === 'rightBottom'
-    ) {
-        left = props.TextBoxWidth || '150px';
+    if (arrow.top || arrow.bottom) {
+        left = moveRight ?
+            `calc(50% + ${moveRight})` : `50%`;
+    } else if (arrow.right) {
+        left = TextBoxWidth;
     }
 
     return (

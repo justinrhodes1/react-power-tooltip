@@ -32,21 +32,20 @@ class TextBox extends Component {
     render() {
 
         const {
-            ArrowPosition: arrowPos,
-            TooltipPosition: tooltipPos,
+            arrow,
+            arrowPos,
+            tooltip,
             static: tpStatic,
-            borderRadius: tpRadius,
-            fontFamily,
-            fontWeight,
             textAlign,
-            TextBoxWidth,
+            textBoxWidth: width,
             moveRight,
             lineSeparated,
-            BackgroundColor,
-            Color,
-            Padding,
-            HoverBackground,
-            HoverColor,
+            backgroundColor,
+            color,
+            padding,
+            borderRadius,
+            hoverBackground,
+            hoverColor,
             Pulse,
             flat,
             children
@@ -59,40 +58,12 @@ class TextBox extends Component {
             lastSpanH
         } = this.state
 
-        const arrow = {
-            topCenter: arrowPos === 'topCenter',
-            topLeft: arrowPos === 'topLeft',
-            topRight: arrowPos === 'topRight',
-            bottomCenter: arrowPos === 'bottomCenter',
-            bottomLeft: arrowPos === 'bottomLeft',
-            bottomRight: arrowPos === 'bottomRight',
-            leftCenter: arrowPos === 'leftCenter',
-            leftTop: arrowPos === 'leftTop',
-            leftBottom: arrowPos === 'leftBottom',
-            rightCenter: arrowPos === 'rightCenter',
-            rightTop: arrowPos === 'rightTop',
-            rightBottom: arrowPos === 'rightBottom'
-        };
-
-        const tooltip = {
-            left: tooltipPos === 'left',
-            right: tooltipPos === 'right',
-            center: tooltipPos === 'center',
-            bottom: tooltipPos === 'bottom'
-        }
-
         let spanStyle = {
-            color: Color || 'inherit',
-            backgroundColor: BackgroundColor || 'white',
-            fontFamily: fontFamily || 'inherit',
-            fontWeight: fontWeight || 'bold',
-            padding: Padding || '15px 20px',
-            textAlign: textAlign || 'left'
+            color,
+            backgroundColor,
+            padding,
+            textAlign
         }
-
-        const backgroundColor = BackgroundColor || 'white';
-        const width = TextBoxWidth || '150px';
-        const borderRadius = tpRadius || '5px';
 
         let calcHPos = (perc, divider, adjMove, multiFactor) => {
             return `calc(${perc}% - (${multiFactor || 1}*${width})/${divider} + ${moveRight} + ${adjMove || 0}px)`
@@ -115,8 +86,8 @@ class TextBox extends Component {
             if (!tpStatic && hoverIndex === index) {
                 style = {
                     ...style,
-                    color: HoverColor || 'black',
-                    backgroundColor: HoverBackground || '#ececec'
+                    color: hoverColor,
+                    backgroundColor: hoverBackground
                 }
             }
             if (lineSeparated && lastChildIndex !== index) {
@@ -127,18 +98,14 @@ class TextBox extends Component {
             }
             if (!tpStatic
                 && hoverIndex === 0
-                && (arrow.topCenter
-                    || arrow.topLeft
-                    || arrow.topRight
+                && (arrow.top
                     || arrow.leftTop
                     || arrow.rightTop
                 )) {
                 this.props.hoverArrow();
             } else if (!tpStatic
                 && hoverIndex === lastChildIndex
-                && (arrow.bottomCenter
-                    || arrow.bottomLeft
-                    || arrow.bottomRight
+                && (arrow.bottom
                     || arrow.leftBottom
                     || arrow.rightBottom
                 )) {

@@ -47,11 +47,11 @@ class Demo extends Component {
               <Tooltip
                 showTooltip={this.state.alternateTooltip && showLeft}
                 // showTooltip={true}
-                Color='black'
-                TextboxWidth='100px'
-                Animation='tpFadeDown'
-                ArrowPosition='leftBottom'
-                TooltipPosition='center'
+                color='black'
+                textboxWidth='100px'
+                animation='tpFadeDown'
+                arrow='leftBottom'
+                tooltip='center'
                 fontSize='13px'
                 textAlign='center'
                 static
@@ -62,11 +62,11 @@ class Demo extends Component {
               </Tooltip>
               <Tooltip
                 showTooltip={this.state.alternateTooltip && !showLeft}
-                Color='black'
-                TextboxWidth='100px'
-                Animation='tpBounce'
-                ArrowPosition='topCenter'
-                TooltipPosition='center'
+                color='black'
+                textboxWidth='100px'
+                animation='tpBounce'
+                arrow='topCenter'
+                tooltip='center'
                 fontSize='13px'
                 textAlign='center'
                 static
@@ -147,12 +147,12 @@ class Demo extends Component {
                   <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
                   <Tooltip
                     showTooltip={this.state.showTooltip}
-                    HoverBackground='#3b0586'
-                    HoverColor='white'
-                    Color='black'
-                    Animation='tpFadeDown'
-                    ArrowPosition='leftBottom'
-                    TooltipPosition='top'
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
+                    color='black'
+                    animation='tpFadeDown'
+                    arrow='leftBottom'
+                    tooltip='top'
                     moveRight='0px'
                   >
                     <span>Our Technology</span>
@@ -160,12 +160,12 @@ class Demo extends Component {
                   </Tooltip>
                   <Tooltip
                     showTooltip={this.state.showTooltip}
-                    HoverBackground='#3b0586'
-                    HoverColor='white'
-                    Color='black'
-                    Animation='tpFadeIn'
-                    ArrowPosition='leftBottom'
-                    TooltipPosition='center'
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
+                    color='black'
+                    animation='tpFadeIn'
+                    arrow='leftBottom'
+                    tooltip='center'
                     moveRight='0px'
                     lineSeparated
                   // Pulse
@@ -176,13 +176,13 @@ class Demo extends Component {
                   </Tooltip>
                   <Tooltip
                     showTooltip={this.state.showTooltip}
-                    Animation='tpFade'
-                    ArrowPosition='rightBottom'
-                    TooltipPosition='bottom'
+                    animation='tpFade'
+                    arrow='rightBottom'
+                    tooltip='bottom'
                     moveRight='0px'
                     // Pulse
-                    Color='white'
-                    BackgroundColor='#181818'
+                    color='white'
+                    backgroundColor='#181818'
                     static
                     flat
                   // moveDown='30px'
@@ -192,12 +192,12 @@ class Demo extends Component {
                   </Tooltip>
                   <Tooltip
                     showTooltip={this.state.showTooltip}
-                    HoverBackground='#3b0586'
-                    HoverColor='white'
-                    Color='black'
-                    Animation='tpFadeUp'
-                    ArrowPosition='rightBottom'
-                    TooltipPosition='center'
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
+                    color='black'
+                    animation='tpFadeUp'
+                    arrow='rightBottom'
+                    tooltip='center'
                     moveRight='0px'
                   // Pulse
                   // moveDown='30px'
@@ -207,12 +207,12 @@ class Demo extends Component {
                   </Tooltip>
                   <Tooltip
                     showTooltip={this.state.showTooltip}
-                    HoverBackground='#3b0586'
-                    HoverColor='white'
-                    Color='black'
-                    Animation='tpBounce'
-                    ArrowPosition='rightBottom'
-                    TooltipPosition='top'
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
+                    color='black'
+                    animation='tpBounce'
+                    arrow='rightBottom'
+                    tooltip='top'
                     lineSeparated
                   >
                     <span>One very long description text</span>
@@ -247,14 +247,14 @@ class Demo extends Component {
                     <span style={{ position: 'relative' }}>Shopping Cart
                       <Tooltip
                         showTooltip={this.state.alternateTooltip}
-                        HoverBackground='#3b0586'
-                        HoverColor='white'
-                        Color='black'
-                        TextboxWidth='100px'
-                        Animation='tpFadeUpDown'
-                        ArrowPosition='topLeft'
-                        TooltipPosition='center'
-                        Pulse
+                        hoverBackground='#3b0586'
+                        hoverColor='white'
+                        color='black'
+                        textboxWidth='100px'
+                        animation='tpFadeUpDown'
+                        arrow='topLeft'
+                        tooltip='center'
+                        pulse
                         static
                       >
                         <span>New Item added!</span>
@@ -276,9 +276,9 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
-                        TooltipPosition='center'
+                        animation='tpFade'
+                        arrow='leftTop'
+                        tooltip='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -290,11 +290,11 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
-                        TooltipPosition='center'
-                        HoverBackground='#3b0586'
-                        HoverColor='white'
+                        animation='tpFade'
+                        arrow='leftTop'
+                        tooltip='center'
+                        hoverBackground='#3b0586'
+                        hoverColor='white'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -306,11 +306,11 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
-                        TooltipPosition='center'
-                        Color='white'
-                        BackgroundColor='#181818'
+                        animation='tpFade'
+                        arrow='leftTop'
+                        tooltip='center'
+                        color='white'
+                        backgroundColor='#181818'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -324,10 +324,10 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
+                        animation='tpFade'
                         textAlign='right'
-                        TooltipPosition='center'
+                        arrow='leftTop'
+                        tooltip='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -339,10 +339,10 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
-                        TooltipPosition='center'
+                        animation='tpFade'
                         borderRadius='0px'
+                        arrow='leftTop'
+                        tooltip='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -354,13 +354,13 @@ class Demo extends Component {
                     <div className='invisibleDiv'>
                       <Tooltip
                         showTooltip={true}
-                        Animation='tpFade'
-                        ArrowPosition='leftTop'
-                        TooltipPosition='center'
-                        Color='white'
-                        BackgroundColor='#444444'
-                        HoverBackground='#3b0586'
-                        HoverColor='white'
+                        animation='tpFade'
+                        arrow='leftTop'
+                        tooltip='center'
+                        color='white'
+                        backgroundColor='#444444'
+                        hoverBackground='#3b0586'
+                        hoverColor='white'
                         flat
                       >
                         <span>Our Technology</span>
