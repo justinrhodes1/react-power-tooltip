@@ -51,7 +51,7 @@ class Demo extends Component {
                 textboxWidth='100px'
                 animation='tpFadeDown'
                 arrow='leftBottom'
-                tooltip='center'
+                align='center'
                 fontSize='13px'
                 textAlign='center'
                 static
@@ -66,7 +66,7 @@ class Demo extends Component {
                 textboxWidth='100px'
                 animation='tpBounce'
                 arrow='topCenter'
-                tooltip='center'
+                align='center'
                 fontSize='13px'
                 textAlign='center'
                 static
@@ -152,7 +152,7 @@ class Demo extends Component {
                     color='black'
                     animation='tpFadeDown'
                     arrow='leftBottom'
-                    tooltip='top'
+                    align='top'
                     moveRight='0px'
                   >
                     <span>Our Technology</span>
@@ -165,7 +165,7 @@ class Demo extends Component {
                     color='black'
                     animation='tpFadeIn'
                     arrow='leftBottom'
-                    tooltip='center'
+                    align='center'
                     moveRight='0px'
                     lineSeparated
                   // Pulse
@@ -178,7 +178,7 @@ class Demo extends Component {
                     showTooltip={this.state.showTooltip}
                     animation='tpFade'
                     arrow='rightBottom'
-                    tooltip='bottom'
+                    align='bottom'
                     moveRight='0px'
                     // Pulse
                     color='white'
@@ -197,7 +197,7 @@ class Demo extends Component {
                     color='black'
                     animation='tpFadeUp'
                     arrow='rightBottom'
-                    tooltip='center'
+                    align='center'
                     moveRight='0px'
                   // Pulse
                   // moveDown='30px'
@@ -212,7 +212,7 @@ class Demo extends Component {
                     color='black'
                     animation='tpBounce'
                     arrow='rightBottom'
-                    tooltip='top'
+                    align='top'
                     lineSeparated
                   >
                     <span>Our Technology</span>
@@ -254,7 +254,7 @@ class Demo extends Component {
                         textboxWidth='100px'
                         animation='tpFadeUpDown'
                         arrow='topLeft'
-                        tooltip='center'
+                        align='center'
                         pulse
                         static
                       >
@@ -279,7 +279,7 @@ class Demo extends Component {
                         showTooltip={true}
                         animation='tpFade'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -293,7 +293,7 @@ class Demo extends Component {
                         showTooltip={true}
                         animation='tpFade'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                         hoverBackground='#3b0586'
                         hoverColor='white'
                       >
@@ -309,7 +309,7 @@ class Demo extends Component {
                         showTooltip={true}
                         animation='tpFade'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                         color='white'
                         backgroundColor='#181818'
                       >
@@ -328,7 +328,7 @@ class Demo extends Component {
                         animation='tpFade'
                         textAlign='right'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -343,7 +343,7 @@ class Demo extends Component {
                         animation='tpFade'
                         borderRadius='0px'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                       >
                         <span>Our Technology</span>
                         <span>Our Story</span>
@@ -357,7 +357,7 @@ class Demo extends Component {
                         showTooltip={true}
                         animation='tpFade'
                         arrow='leftTop'
-                        tooltip='center'
+                        align='center'
                         color='white'
                         backgroundColor='#444444'
                         hoverBackground='#3b0586'

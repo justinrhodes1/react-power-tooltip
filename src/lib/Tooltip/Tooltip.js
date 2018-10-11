@@ -20,23 +20,29 @@ class Tooltip extends Component {
 
     render() {
 
+        this.props = {
+            ...this.props,
+            hoverBackground: this.props.hoverBackground || '#ececec',
+            hoverColor: this.props.hoverColor || 'black',
+            backgroundColor: this.props.backgroundColor || 'white',
+            textBoxWidth: this.props.textBoxWidth || '150px',
+            padding: this.props.padding || '15px 20px',
+            borderRadius: this.props.borderRadius || '5px',
+            moveDown: this.props.moveDown || '0px'
+        }
+
         const {
-            textBoxWidth = '150px',
             animation = 'tpFade',
-            borderRadius = '5px',
-            backgroundColor = 'white',
-            hoverBackground = '#ececec',
-            hoverColor = 'black',
-            padding = '15px 20px',
             textAlign = 'left',
             fontFamily = 'inherit',
             fontWeight = 'bold',
             fontSize = 'inherit',
             color = 'inherit',
-            arrow: arPos,
-            tooltip: tpPos,
-            moveDown = '0px',
-            showTooltip
+            arrow: position,
+            align,
+            moveDown,
+            showTooltip,
+            textBoxWidth
         } = this.props;
 
         function is(pos1, pos2, pos3) {
@@ -51,82 +57,71 @@ class Tooltip extends Component {
             return this.is(`${pos}Center`, `${pos}Left`, `${pos}Right`);
         }
 
-        const tooltip = {
+        this.props.align = {
             is,
-            position: tpPos
+            position: align
         }
 
-        const arrow = {
+        this.props.arrow = {
             is,
             side,
-            position: arPos
+            position
         };
 
         const calcVpos = (units) => {
             return moveDown ? `calc(${units} + ${moveDown})` : `${units}`;
         }
 
-        this.props = {
-            ...this.props,
-            hoverBackground,
-            hoverColor,
-            backgroundColor,
-            arrow,
-            textBoxWidth,
-            padding,
-            textAlign,
-            fontFamily,
-            fontWeight,
-            borderRadius,
-            tooltip,
-            color
+        const arrange = (units, cssClass, left, height, width) => {
+            tooltipStyle = { left, height, width, top: calcVpos(units) };
+            classes.push(cssClass)
         }
 
         let classes = ['tpContainer'];
-        let top = '';
-        let left = '0px';
-        let height = '';
-        let width = '100%';
+
+        let tooltipStyle = {};
+        let { arrow, align: algn } = this.props;
 
         if (arrow.side('top')) {
-            top = calcVpos('100%');
-            classes.push('tpArrowTop')
+            arrange('100%', 'tpArrowTop', '0px', '', '100%');
         } else if (arrow.side('bottom')) {
-            classes.push('tpArrowBottom')
-            top = calcVpos('-21px');
+            arrange('-21px', 'tpArrowBottom', '0px', '', '100%');
         } else if (arrow.side('left')) {
-            left = '100%';
-            width = '';
-            height = '100%';
-            top = calcVpos('0px');
-            classes.push('tpArrowLeft');
+            arrange('0px', 'tpArrowLeft', '100%', '100%', '');
         } else {
-            left = `-${textBoxWidth}`;
-            width = textBoxWidth;
-            height = '100%';
-            top = calcVpos('0px');
-            classes.push('tpArrowRight')
+            arrange('0px', 'tpArrowRight',
+                `-${textBoxWidth}`, '100%', textBoxWidth);
         }
 
-        switch (tooltip.position) {
+        let onAxis = {
+            y: arrow.side('top') || arrow.side('bottom'),
+            x: arrow.side('left') || arrow.side('right')
+        }
+
+        switch (algn.position) {
             case 'left':
-                if (arrow.side('top') || arrow.side('bottom'))
-                    classes.push('tpArrowLeft');
+                if (onAxis.y) classes.push('tpArrowLeft');
                 break;
             case 'right':
-                if (arrow.side('top') || arrow.side('bottom'))
-                    classes.push('tpArrowRight');
+                if (onAxis.y) classes.push('tpArrowRight');
                 break;
             case 'center':
-                if (arrow.side('left') || arrow.side('right'))
-                    classes.push('tpAlignCenter');
+                if (onAxis.x) classes.push('tpAlignCenter');
                 break;
             case 'bottom':
-                if (arrow.side('left') || arrow.side('right'))
-                    classes.push('tpAlignBottom');
+                if (onAxis.x) classes.push('tpAlignBottom');
                 break;
             default:
                 break;
+        }
+
+        tooltipStyle = {
+            ...tooltipStyle,
+            color,
+            fontSize,
+            textAlign,
+            fontFamily,
+            fontWeight
         }
 
         return (
@@ -137,17 +132,7 @@ class Tooltip extends Component {
                 unmountOnExit
             >
                 <div className={classes.join(' ')}
-                    style={{
-                        top,
-                        left,
-                        width,
-                        height,
-                        color,
-                        fontSize,
-                        textAlign,
-                        fontFamily,
-                        fontWeight
-                    }}>
+                    style={tooltipStyle}>
                     <Arrow
                         {...this.props}
                         isHovered={this.state.hoverArrow}

@@ -33,7 +33,7 @@ class TextBox extends Component {
 
         const {
             arrow,
-            tooltip,
+            align,
             static: tpStatic,
             textBoxWidth: width,
             moveRight,
@@ -65,13 +65,13 @@ class TextBox extends Component {
         }
 
         const calcPerc = (center, left, right) => {
-            return tooltip.is('center') ? center : tooltip.is('left') ? left : right;
+            return align.is('center') ? center : align.is('left') ? left : right;
         }
 
         const calcTopPos = (elHeight, totHeight) => {
-            if (tooltip.is('center')) {
+            if (align.is('center')) {
                 return calcVPos(50, elHeight, 2, null, totHeight);
-            } else if (tooltip.is('bottom')) {
+            } else if (align.is('bottom')) {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
             return calcVPos(0, elHeight, 2, 12, totHeight);
@@ -101,14 +101,11 @@ class TextBox extends Component {
             }
             if (!tpStatic
                 && hoverIndex === 0
-                // && (arrow.top || arrow.leftTop || arrow.rightTop)) {
                 && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop'))) {
                 this.props.hoverArrow();
             } else if (!tpStatic
                 && hoverIndex === lastChildIndex
-                // && (arrow.bottom || arrow.leftBottom || arrow.rightBottom)) {
                 && (arrow.side('bottom') || arrow.is('leftBottom') || arrow.is('rightBottom'))) {
-                // console.log('leftBottom:', arrow.is('leftBottom'))
                 this.props.hoverArrow();
             } else {
                 this.props.unHoverArrow();
@@ -159,7 +156,7 @@ class TextBox extends Component {
                 top = calcTopPos(totH, null);
                 break;
             case 'leftBottom':
-                top = calcTopPos(-lastH, totH);
+                top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             case 'rightTop':
                 left = '-8px';
@@ -171,7 +168,7 @@ class TextBox extends Component {
                 break;
             case 'rightBottom':
                 left = '-8px';
-                top = calcTopPos(-lastH, totH);
+                top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             default:
                 left = '';
