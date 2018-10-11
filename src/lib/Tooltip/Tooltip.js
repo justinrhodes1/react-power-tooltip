@@ -35,7 +35,7 @@ class Tooltip extends Component {
             color = 'inherit',
             arrow: arPos,
             tooltip: tpPos,
-            moveDown,
+            moveDown = '0px',
             showTooltip
         } = this.props;
 
@@ -48,6 +48,7 @@ class Tooltip extends Component {
         }
 
         const arrow = {
+            is: (position) => arPos === position,
             topCenter: arPos === 'topCenter',
             topLeft: arPos === 'topLeft',
             topRight: arPos === 'topRight',
@@ -95,11 +96,11 @@ class Tooltip extends Component {
             color
         }
 
-        let classes = ['tpContainer']
-        let left = '0px';
+        let classes = ['tpContainer'];
         let top = '';
-        let width = '100%';
+        let left = '0px';
         let height = '';
+        let width = '100%';
 
         if (arrow.top) {
             top = calcVpos('100%');
@@ -113,12 +114,12 @@ class Tooltip extends Component {
             height = '100%';
             top = calcVpos('0px');
             classes.push('tpArrowLeft');
-        } else if (arrow.right) {
-            classes.push('tpArrowRight')
+        } else {
             left = `-${textBoxWidth}`;
             width = textBoxWidth;
             height = '100%';
             top = calcVpos('0px');
+            classes.push('tpArrowRight')
         }
 
         switch (tooltip.position) {

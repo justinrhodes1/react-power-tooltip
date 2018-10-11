@@ -4,9 +4,9 @@ import './TextBox.css';
 class TextBox extends Component {
     state = {
         hoverIndex: null,
-        firstSpanH: null,
-        lastSpanH: null,
-        totHeight: null
+        firstH: null,
+        lastH: null,
+        totH: null
     }
 
     //Set & unset hover state
@@ -18,15 +18,15 @@ class TextBox extends Component {
     }
 
     componentDidMount() {
-        const firstSpanH = this.spanHeights.span1.clientHeight;
-        const heightArray = Object.keys(this.spanHeights).map(key => {
+        const firstH = this.spanHeights.span1.clientHeight;
+        const heights = Object.keys(this.spanHeights).map(key => {
             return this.spanHeights[key].clientHeight
         })
-        const lastSpanH = heightArray[heightArray.length - 1];
-        const totHeight = heightArray.reduce(
+        const lastH = heights[heights.length - 1];
+        const totH = heights.reduce(
             (accumulator, currentValue) => accumulator + currentValue
             , 0);
-        this.setState({ totHeight, firstSpanH, lastSpanH });
+        this.setState({ totH, firstH, lastH });
     }
 
     render() {
@@ -35,45 +35,46 @@ class TextBox extends Component {
             arrow,
             tooltip,
             static: tpStatic,
-            textAlign,
             textBoxWidth: width,
             moveRight,
             lineSeparated,
             backgroundColor,
-            color,
             padding,
             borderRadius,
             hoverBackground,
             hoverColor,
             pulse,
+            zIndex,
             flat,
             children
         } = this.props;
 
         const {
             hoverIndex,
-            totHeight,
-            firstSpanH,
-            lastSpanH
+            totH,
+            firstH,
+            lastH
         } = this.state
 
-        let spanStyle = {
-            color,
-            backgroundColor,
-            padding,
-            textAlign
-        }
-
-        let calcHPos = (perc, divider, adjMove, multiFactor) => {
+        const calcHPos = (perc, divider, adjMove, multiFactor) => {
             return `calc(${perc}% - (${multiFactor || 1}*${width})/${divider} + ${moveRight} + ${adjMove || 0}px)`
         }
 
-        let calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
+        const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
             return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
 
-        let calcPerc = (center, left, right) => {
+        const calcPerc = (center, left, right) => {
             return tooltip.center ? center : tooltip.left ? left : right;
+        }
+
+        const calcTopPos = (elHeight, totHeight) => {
+            if (tooltip.center) {
+                return calcVPos(50, elHeight, 2, null, totHeight);
+            } else if (tooltip.bottom) {
+                return calcVPos(100, elHeight, 2, -12, totHeight);
+            }
+            return calcVPos(0, elHeight, 2, 12, totHeight);
         }
 
         const numberChildren = React.Children.count(children);
@@ -81,7 +82,10 @@ class TextBox extends Component {
         this.spanHeights = {}
 
         let adjChildren = React.Children.map(children, (child, index) => {
-            let style = { ...spanStyle };
+            let style = {
+                backgroundColor,
+                padding
+            };
             if (!tpStatic && hoverIndex === index) {
                 style = {
                     ...style,
@@ -97,17 +101,11 @@ class TextBox extends Component {
             }
             if (!tpStatic
                 && hoverIndex === 0
-                && (arrow.top
-                    || arrow.leftTop
-                    || arrow.rightTop
-                )) {
+                && (arrow.top || arrow.leftTop || arrow.rightTop)) {
                 this.props.hoverArrow();
             } else if (!tpStatic
                 && hoverIndex === lastChildIndex
-                && (arrow.bottom
-                    || arrow.leftBottom
-                    || arrow.rightBottom
-                )) {
+                && (arrow.bottom || arrow.leftBottom || arrow.rightBottom)) {
                 this.props.hoverArrow();
             } else {
                 this.props.unHoverArrow();
@@ -140,67 +138,37 @@ class TextBox extends Component {
                 left = calc(perc, 4, null, 3);
                 break;
             case 'bottomLeft':
-                top = calcVPos(0, totHeight, 1, 11);
+                top = calcVPos(0, totH, 1, 11);
                 left = calcHPos(perc, 4);
                 break;
             case 'bottomCenter':
-                top = calcVPos(0, totHeight, 1, 11)
+                top = calcVPos(0, totH, 1, 11)
                 left = calcHPos(perc, 2, 5);
                 break;
             case 'bottomRight':
-                top = calcVPos(0, totHeight, 1, 11)
+                top = calcVPos(0, totH, 1, 11)
                 left = calcHPos(perc, 4, null, 3);
                 break;
             case 'leftTop':
-                top = calcVPos(0, firstSpanH, 2, 8);
-                if (tooltip.center) {
-                    top = calcVPos(50, firstSpanH, 2);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, firstSpanH, 2, -8);
-                }
+                top = calcTopPos(firstH, null);
                 break;
             case 'leftCenter':
-                top = calcVPos(0, totHeight, 2, 8);
-                if (tooltip.center) {
-                    top = calcVPos(50, totHeight, 2);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, totHeight, 2, -8);
-                }
+                top = calcTopPos(totH, null);
                 break;
             case 'leftBottom':
-                top = calcVPos(0, -lastSpanH, 2, 12, totHeight);
-                if (tooltip.center) {
-                    top = calcVPos(50, -lastSpanH, 2, null, totHeight);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, -lastSpanH, 2, -8, totHeight);
-                }
+                top = calcTopPos(-lastH, totH);
                 break;
             case 'rightTop':
                 left = '-8px';
-                top = calcVPos(0, firstSpanH, 2, 8);
-                if (tooltip.center) {
-                    top = calcVPos(50, firstSpanH, 2);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, firstSpanH, 2, -8);
-                }
+                top = calcTopPos(firstH, null);
                 break;
             case 'rightCenter':
                 left = '-8px';
-                top = calcVPos(0, totHeight, 2, 8);
-                if (tooltip.center) {
-                    top = calcVPos(50, totHeight, 2);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, totHeight, 2);
-                }
+                top = calcTopPos(totH, null);
                 break;
             case 'rightBottom':
                 left = '-8px';
-                top = calcVPos(0, -lastSpanH, 2, 8, totHeight);
-                if (tooltip.center) {
-                    top = calcVPos(50, -lastSpanH, 2, null, totHeight);
-                } else if (tooltip.bottom) {
-                    top = calcVPos(100, -lastSpanH, 2, -8, totHeight);
-                }
+                top = calcTopPos(-lastH, totH);
                 break;
             default:
                 left = '';
@@ -217,8 +185,7 @@ class TextBox extends Component {
             left,
             top,
             width,
-            borderRadius,
-            backgroundColor
+            borderRadius
         }
 
         return (
@@ -227,20 +194,20 @@ class TextBox extends Component {
                     className={classes.join(' ')}
                     style={{
                         ...boxStyle,
-                        zIndex: this.props.zIndex || '100',
-                        height: `calc(${totHeight}px + ${lineSeparated ? numberChildren - 2 : -1}px)`
+                        zIndex: zIndex || '100',
+                        height: `calc(${totH}px - 1px)`
                     }} />
                 <div
                     className={'tpTooltip'}
                     style={{
                         ...boxStyle,
-                        zIndex: this.props.zIndex + 2 || '102',
+                        zIndex: zIndex + 2 || '102',
                     }}>
                     <div
                         className={!tpStatic ? 'tpHover' : null}
                         style={{
                             borderRadius,
-                            overflow: 'hidden',
+                            overflow: 'hidden'
                         }}>
                         {adjChildren}
                     </div>

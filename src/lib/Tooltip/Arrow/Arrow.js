@@ -12,7 +12,6 @@ const Arrow = ({
     textBoxWidth }) => {
 
     let left = '';
-    let top = moveDown || '0px';
     backgroundColor = isHovered ?
         hoverBackground : backgroundColor;
 
@@ -28,7 +27,7 @@ const Arrow = ({
     return (
         <div
             className={'tpArrow'}
-            style={{ top, left, backgroundColor, boxShadow }}
+            style={{ top: moveDown, left, backgroundColor, boxShadow }}
         />
     );
 };

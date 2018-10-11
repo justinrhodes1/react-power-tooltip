@@ -146,7 +146,7 @@ class Demo extends Component {
                 >
                   <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
                   <Tooltip
-                    showTooltip={this.state.showTooltip}
+                    showTooltip={true}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -206,7 +206,7 @@ class Demo extends Component {
                     <span>Our Story</span>
                   </Tooltip>
                   <Tooltip
-                    showTooltip={this.state.showTooltip}
+                    showTooltip={true}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -215,7 +215,8 @@ class Demo extends Component {
                     tooltip='top'
                     lineSeparated
                   >
-                    <span>One very long description text</span>
+                    <span>Our Technology</span>
+                    {/* <span>One very long description text</span> */}
                     <span>Our Story</span>
                   </Tooltip>
                 </div>

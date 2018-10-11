@@ -5,6 +5,7 @@
 .tpTooltip span {
     display: block;
     cursor: text;
+    box-sizing: border-box;
 }
 
 .tpHover span {  
