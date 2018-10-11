@@ -39,41 +39,27 @@ class Tooltip extends Component {
             showTooltip
         } = this.props;
 
+        function is(pos1, pos2, pos3) {
+            return this.position === pos1
+                || this.position === pos2
+                || this.position === pos3;
+        }
+
+        function side(pos) {
+            if (pos === 'left' || pos === 'right')
+                return this.is(`${pos}Center`, `${pos}Top`, `${pos}Bottom`);
+            return this.is(`${pos}Center`, `${pos}Left`, `${pos}Right`);
+        }
+
         const tooltip = {
-            left: tpPos === 'left',
-            right: tpPos === 'right',
-            center: tpPos === 'center',
-            bottom: tpPos === 'bottom',
+            is,
             position: tpPos
         }
 
         const arrow = {
-            is: (position) => arPos === position,
-            topCenter: arPos === 'topCenter',
-            topLeft: arPos === 'topLeft',
-            topRight: arPos === 'topRight',
-            bottomCenter: arPos === 'bottomCenter',
-            bottomLeft: arPos === 'bottomLeft',
-            bottomRight: arPos === 'bottomRight',
-            leftCenter: arPos === 'leftCenter',
-            leftTop: arPos === 'leftTop',
-            leftBottom: arPos === 'leftBottom',
-            rightCenter: arPos === 'rightCenter',
-            rightTop: arPos === 'rightTop',
-            rightBottom: arPos === 'rightBottom',
-            position: arPos,
-            get top() {
-                return this.topCenter || this.topLeft || this.topRight;
-            },
-            get bottom() {
-                return this.bottomCenter || this.bottomLeft || this.bottomRight;
-            },
-            get left() {
-                return this.leftCenter || this.leftTop || this.leftBottom;
-            },
-            get right() {
-                return this.rightCenter || this.rightTop || this.rightBottom;
-            }
+            is,
+            side,
+            position: arPos
         };
 
         const calcVpos = (units) => {
@@ -102,13 +88,13 @@ class Tooltip extends Component {
         let height = '';
         let width = '100%';
 
-        if (arrow.top) {
+        if (arrow.side('top')) {
             top = calcVpos('100%');
             classes.push('tpArrowTop')
-        } else if (arrow.bottom) {
+        } else if (arrow.side('bottom')) {
             classes.push('tpArrowBottom')
             top = calcVpos('-21px');
-        } else if (arrow.left) {
+        } else if (arrow.side('left')) {
             left = '100%';
             width = '';
             height = '100%';
@@ -124,16 +110,20 @@ class Tooltip extends Component {
 
         switch (tooltip.position) {
             case 'left':
-                if (arrow.top || arrow.bottom) classes.push('tpArrowLeft');
+                if (arrow.side('top') || arrow.side('bottom'))
+                    classes.push('tpArrowLeft');
                 break;
             case 'right':
-                if (arrow.top || arrow.bottom) classes.push('tpArrowRight');
+                if (arrow.side('top') || arrow.side('bottom'))
+                    classes.push('tpArrowRight');
                 break;
             case 'center':
-                if (arrow.left || arrow.right) classes.push('tpAlignCenter');
+                if (arrow.side('left') || arrow.side('right'))
+                    classes.push('tpAlignCenter');
                 break;
             case 'bottom':
-                if (arrow.left || arrow.right) classes.push('tpAlignBottom');
+                if (arrow.side('left') || arrow.side('right'))
+                    classes.push('tpAlignBottom');
                 break;
             default:
                 break;

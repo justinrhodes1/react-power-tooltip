@@ -8,8 +8,7 @@ const Arrow = ({
     hoverBackground,
     backgroundColor,
     flat,
-    arrow,
-    textBoxWidth }) => {
+    arrow }) => {
 
     let left = '';
     backgroundColor = isHovered ?
@@ -17,11 +16,9 @@ const Arrow = ({
 
     let boxShadow = flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
 
-    if (arrow.top || arrow.bottom) {
+    if (arrow.side('top') || arrow.side('bottom')) {
         left = moveRight ?
             `calc(50% + ${moveRight})` : `50%`;
-    } else if (arrow.right) {
-        left = textBoxWidth;
     }
 
     return (

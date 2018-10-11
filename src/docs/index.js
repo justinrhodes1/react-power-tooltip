@@ -9,7 +9,7 @@ import "./styles.css";
 class Demo extends Component {
   state = {
     showRight: false,
-    showTooltip: false,
+    showTooltip: true,
     alternateTooltip: false,
     count: 1
   }
@@ -19,7 +19,7 @@ class Demo extends Component {
   }
 
   hideTooltip = () => {
-    this.setState({ showTooltip: false })
+    this.setState({ showTooltip: true })
   }
 
   alternateTooltip = () => {
