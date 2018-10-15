@@ -198,7 +198,7 @@ class TextBox extends Component {
                         height: `calc(${totH}px - 1px)`
                     }} />
                 <div
-                    className={'tpTooltip'}
+                    className={'tpTextBox'}
                     style={{
                         ...boxStyle,
                         zIndex: zIndex + 2 || '102',

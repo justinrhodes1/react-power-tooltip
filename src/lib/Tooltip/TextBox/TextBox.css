@@ -1,8 +1,8 @@
-.tpTooltip {
+.tpTextBox {
     position: absolute;
 }
 
-.tpTooltip span {
+.tpTextBox span {
     display: block;
     cursor: text;
     box-sizing: border-box;

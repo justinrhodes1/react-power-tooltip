@@ -41,7 +41,7 @@ class Tooltip extends Component {
             arrow: position,
             align,
             moveDown,
-            showTooltip,
+            show,
             textBoxWidth
         } = this.props;
 
@@ -126,7 +126,7 @@ class Tooltip extends Component {
 
         return (
             <CSSTransition
-                in={showTooltip}
+                in={show}
                 timeout={300}
                 classNames={animation}
                 unmountOnExit

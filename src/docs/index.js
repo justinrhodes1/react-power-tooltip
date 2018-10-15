@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from "react-dom";
 import Scrollchor from 'react-scrollchor';
+// import '../assets/favicon.ico';
 
 import Tooltip from "../../lib";
 import logo from '../assets/logo.svg'
@@ -45,8 +46,8 @@ class Demo extends Component {
             <span style={{ position: 'relative' }}>
               tooltip
               <Tooltip
-                showTooltip={this.state.alternateTooltip && showLeft}
-                // showTooltip={true}
+                show={this.state.alternateTooltip && showLeft}
+                // show={true}
                 color='black'
                 textboxWidth='100px'
                 animation='tpFadeDown'
@@ -61,7 +62,7 @@ class Demo extends Component {
                 <span>Simple &amp; Easy!</span>
               </Tooltip>
               <Tooltip
-                showTooltip={this.state.alternateTooltip && !showLeft}
+                show={this.state.alternateTooltip && !showLeft}
                 color='black'
                 textboxWidth='100px'
                 animation='tpBounce'
@@ -146,7 +147,7 @@ class Demo extends Component {
                 >
                   <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
                   <Tooltip
-                    showTooltip={true}
+                    show={true}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -159,7 +160,7 @@ class Demo extends Component {
                     <span>Our Story</span>
                   </Tooltip>
                   <Tooltip
-                    showTooltip={this.state.showTooltip}
+                    show={this.state.showTooltip}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -175,7 +176,7 @@ class Demo extends Component {
                     <span>Our Story</span>
                   </Tooltip>
                   <Tooltip
-                    showTooltip={this.state.showTooltip}
+                    show={this.state.showTooltip}
                     animation='tpFade'
                     arrow='rightBottom'
                     align='bottom'
@@ -191,7 +192,7 @@ class Demo extends Component {
                     <span>Our Story</span>
                   </Tooltip>
                   <Tooltip
-                    showTooltip={this.state.showTooltip}
+                    show={this.state.showTooltip}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -206,7 +207,7 @@ class Demo extends Component {
                     <span>Our Story</span>
                   </Tooltip>
                   <Tooltip
-                    showTooltip={true}
+                    show={true}
                     hoverBackground='#3b0586'
                     hoverColor='white'
                     color='black'
@@ -247,7 +248,7 @@ class Demo extends Component {
                   }}>
                     <span style={{ position: 'relative' }}>Shopping Cart
                       <Tooltip
-                        showTooltip={this.state.alternateTooltip}
+                        show={this.state.alternateTooltip}
                         hoverBackground='#3b0586'
                         hoverColor='white'
                         color='black'
@@ -276,7 +277,7 @@ class Demo extends Component {
                     <p>Default Colors</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         arrow='leftTop'
                         align='center'
@@ -290,7 +291,7 @@ class Demo extends Component {
                     <p>Custom Hover</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         arrow='leftTop'
                         align='center'
@@ -306,7 +307,7 @@ class Demo extends Component {
                     <p>Custom Background</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         arrow='leftTop'
                         align='center'
@@ -324,7 +325,7 @@ class Demo extends Component {
                     <p>Text align</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         textAlign='right'
                         arrow='leftTop'
@@ -339,7 +340,7 @@ class Demo extends Component {
                     <p>Custom corners</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         borderRadius='0px'
                         arrow='leftTop'
@@ -354,7 +355,7 @@ class Demo extends Component {
                     <p>Flat (no shadows)</p>
                     <div className='invisibleDiv'>
                       <Tooltip
-                        showTooltip={true}
+                        show={true}
                         animation='tpFade'
                         arrow='leftTop'
                         align='center'
