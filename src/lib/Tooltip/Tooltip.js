@@ -139,8 +139,8 @@ class Tooltip extends Component {
                     />
                     <TextBox
                         {...this.props}
-                        hoverArrow={() => this.hoverArrow()}
-                        unHoverArrow={() => this.unHoverArrow()}
+                        hoverArrow={this.hoverArrow}
+                        unHoverArrow={this.unHoverArrow}
                     />
                 </div>
             </CSSTransition>

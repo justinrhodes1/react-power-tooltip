@@ -18,10 +18,10 @@ class TextBox extends Component {
     }
 
     componentDidMount() {
-        const firstH = this.spanHeights.span1.clientHeight;
         const heights = Object.keys(this.spanHeights).map(key => {
             return this.spanHeights[key].clientHeight
         })
+        const firstH = heights[0];
         const lastH = heights[heights.length - 1];
         const totH = heights.reduce(
             (accumulator, currentValue) => accumulator + currentValue
