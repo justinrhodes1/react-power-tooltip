@@ -10,12 +10,8 @@ class Tooltip extends Component {
         hoverArrow: false
     }
 
-    hoverArrow = () => {
-        if (!this.state.hoverArrow) this.setState({ hoverArrow: true })
-    }
-
-    unHoverArrow = () => {
-        if (this.state.hoverArrow) this.setState({ hoverArrow: false })
+    hoverArrow = (boolean) => {
+        this.setState({ hoverArrow: boolean })
     }
 
     render() {
