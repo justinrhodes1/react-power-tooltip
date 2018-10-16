@@ -10,18 +10,17 @@ class TextBox extends Component {
     }
 
     //Set & unset hover state
-    onSpanHover = (index, lastChildIndex) => {
+    onSpanHover = (index, lastIndex) => {
         this.setState({ hoverIndex: index });
-        const { tpStatic, arrow, hoverArrow } = this.props;
+        const { static: tpStatic, arrow, hoverArrow, unHoverArrow } = this.props;
         if (!tpStatic
             && ((index === 0
                 && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop')))
-                || (index === lastChildIndex
+                || (index === lastIndex
                     && (arrow.side('bottom') || arrow.is('leftBottom') || arrow.is('rightBottom'))))) {
-            hoverArrow(true);
-        } else {
-            hoverArrow(false);
+            return hoverArrow(true);
         }
+        return hoverArrow(false);
     }
 
     componentDidMount() {
@@ -85,7 +84,7 @@ class TextBox extends Component {
         }
 
         const numberChildren = React.Children.count(children);
-        const lastChildIndex = numberChildren - 1;
+        const lastIndex = numberChildren - 1;
         this.spanHeights = {}
 
         let adjChildren = React.Children.map(children, (child, index) => {
@@ -100,7 +99,7 @@ class TextBox extends Component {
                     backgroundColor: hoverBackground
                 }
             }
-            if (lineSeparated && lastChildIndex !== index) {
+            if (lineSeparated && lastIndex !== index) {
                 style = {
                     ...style,
                     borderBottom: '1px solid #ececec'
@@ -114,7 +113,7 @@ class TextBox extends Component {
                 ...child.props,
                 ref,
                 style,
-                onMouseOver: () => this.onSpanHover(index, lastChildIndex)
+                onMouseOver: () => this.onSpanHover(index, lastIndex)
             };
             return React.cloneElement(child, childProps);
         });

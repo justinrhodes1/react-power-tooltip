@@ -1,5 +1,2 @@
-import Tooltip from './Tooltip/Tooltip';
+import Tooltip from './Tooltip';
 export default Tooltip;
-
-import Toast from './Tooltip/TextBox/TextBox';
-export { Toast };

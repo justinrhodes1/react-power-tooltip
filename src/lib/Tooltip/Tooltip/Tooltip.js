@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import TextBox from './TextBox/TextBox';
-import Arrow from './Arrow/Arrow';
 
-import './Tooltip.css'
+import TextBox from '../TextBox/TextBox';
+import Arrow from '../Arrow/Arrow';
 
 class Tooltip extends Component {
     state = {
@@ -28,7 +26,6 @@ class Tooltip extends Component {
         }
 
         const {
-            animation = 'tpFade',
             textAlign = 'left',
             fontFamily = 'inherit',
             fontWeight = 'bold',
@@ -37,7 +34,6 @@ class Tooltip extends Component {
             arrow: position,
             align,
             moveDown,
-            show,
             textBoxWidth
         } = this.props;
 
@@ -121,25 +117,17 @@ class Tooltip extends Component {
         }
 
         return (
-            <CSSTransition
-                in={show}
-                timeout={300}
-                classNames={animation}
-                unmountOnExit
-            >
-                <div className={classes.join(' ')}
-                    style={tooltipStyle}>
-                    <Arrow
-                        {...this.props}
-                        isHovered={this.state.hoverArrow}
-                    />
-                    <TextBox
-                        {...this.props}
-                        hoverArrow={this.hoverArrow}
-                        unHoverArrow={this.unHoverArrow}
-                    />
-                </div>
-            </CSSTransition>
+            <div className={classes.join(' ')}
+                style={tooltipStyle}>
+                <Arrow
+                    {...this.props}
+                    isHovered={this.state.hoverArrow}
+                />
+                <TextBox
+                    {...this.props}
+                    hoverArrow={this.hoverArrow}
+                />
+            </div>
         );
     }
 }
