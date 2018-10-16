@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Tooltip from "../../../lib";
+import Tooltip from '../../../lib';
 import '../styles.css';
 
 import Example2 from './Example2/Example2';

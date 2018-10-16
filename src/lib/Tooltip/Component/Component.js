@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import TextBox from '../TextBox/TextBox';
-import Arrow from '../Arrow/Arrow';
+import TextBox from './TextBox/TextBox';
+import Arrow from './Arrow/Arrow';
 
 class Tooltip extends Component {
     state = {

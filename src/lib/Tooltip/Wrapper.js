@@ -1,8 +1,8 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import Tooltip from './Tooltip/Tooltip';
-import './index.css';
+import Tooltip from './Layout/Layout';
+import './Wrapper.css';
 
 const TransitionWrapper = ({ show, animation = 'tpFade', ...rest }) => {
     return (
