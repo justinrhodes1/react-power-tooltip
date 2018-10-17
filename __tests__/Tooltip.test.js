@@ -4,7 +4,10 @@ import Tooltip from '../lib/Tooltip/Tooltip/Tooltip';
 import Arrow from '../lib/Tooltip/Arrow/Arrow';
 import TextBox from '../lib/Tooltip/TextBox/TextBox';
 
-let wrapped;
+// import styled from 'styled-components';
+// import 'jest-styled-components';
+
+let wrapper;
 const defaultSingleTooltip = (
     <Tooltip show={true}>
         <span>Option 1</span>
@@ -19,40 +22,72 @@ const defaultMultipleTooltip = (
     </Tooltip>
 );
 
+const settings = {
+    backgroundColor: 'white',
+    color: 'black',
+    padding: '15px 20px'
+}
+
 describe('SHALLOW component testing', () => {
     describe('DEFAULT SINGLE', () => {
         beforeEach(() => {
-            wrapped = shallow(defaultSingleTooltip);
+            wrapper = shallow(defaultSingleTooltip);
+            // console.log('shallow', wrapper);
         });
         it('renders arrow', () => {
-            console.log(wrapped);
-            expect(wrapped.find(Arrow).length).toEqual(1);
+            expect(wrapper.find(Arrow).length).toEqual(1);
         });
         it('renders textBox', () => {
-            expect(wrapped.find(TextBox).length).toEqual(1);
+            expect(wrapper.find(TextBox).length).toEqual(1);
         });
     });
 
     describe('DEFAULT MULTIPLE', () => {
         beforeEach(() => {
-            wrapped = shallow(defaultMultipleTooltip);
+            wrapper = shallow(defaultMultipleTooltip);
         });
         it('renders arrow', () => {
-            expect(wrapped.find(Arrow).length).toEqual(1);
+            expect(wrapper.find(Arrow).length).toEqual(1);
         });
         it('renders textBox', () => {
-            expect(wrapped.find(TextBox).length).toEqual(1);
+            expect(wrapper.find(TextBox).length).toEqual(1);
         });
     });
 });
 
 
 describe('DEEP component testing', () => {
-    beforeEach(() => {
-        wrapped = mount(defaultSingleTooltip);
+    afterEach(() => {
+        wrapper.unmount();
     });
-    it('new test', () => {
-    })
+    describe('DEFAULT SINGLE', () => {
+        beforeEach(() => {
+            wrapper = mount(defaultSingleTooltip);
+        });
+        it('renders span', () => {
+            expect(wrapper.find('span').length).toEqual(1);
+        })
+        it('renders correct span style', () => {
+            const { backgroundColor, padding } = settings;
+            expect(wrapper.find('span').prop('style'))
+                .toHaveProperty('padding', padding)
+            expect(wrapper.find('span').prop('style'))
+                .toHaveProperty('backgroundColor', backgroundColor);
+        })
+        it('renders correct arrow style', () => {
+            expect(wrapper.find('tpArrow')).toHaveStyle('top', '0px');
+        })
+    });
+
+    describe('DEFAULT MULTIPLE', () => {
+        beforeEach(() => {
+            wrapper = mount(defaultMultipleTooltip);
+        });
+        it('renders all spans', () => {
+            expect(wrapper.find('span').length).toEqual(3);
+        })
+    });
+
 });
 
 
