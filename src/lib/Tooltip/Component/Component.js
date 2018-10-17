@@ -3,13 +3,28 @@ import React, { Component } from 'react';
 import TextBox from './TextBox/TextBox';
 import Arrow from './Arrow/Arrow';
 
+import './Component.css';
+import './Animation.css';
+
 class Tooltip extends Component {
     state = {
-        hoverArrow: false
+        hoverArrow: false,
+        mount: this.props.show
     }
 
     hoverArrow = (boolean) => {
         this.setState({ hoverArrow: boolean })
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.show && !this.props.show) {
+            setTimeout(
+                () => this.setState({ mount: false }),
+                this.props.delayTime
+            );
+        } else if (!prevProps.show && this.props.show) {
+            this.setState({ mount: true });
+        }
     }
 
     render() {
@@ -107,16 +122,19 @@ class Tooltip extends Component {
                 break;
         }
 
+        let animate = 'example'
+
         tooltipStyle = {
             ...tooltipStyle,
             color,
             fontSize,
             textAlign,
             fontFamily,
-            fontWeight
+            fontWeight,
+            animation: this.props.show ? `${animate} 0.6s` : `${animate}-out 0.6s`,
         }
 
-        return (
+        let tpComp = this.state.mount ?
             <div className={classes.join(' ')}
                 style={tooltipStyle}>
                 <Arrow
@@ -127,8 +145,9 @@ class Tooltip extends Component {
                     {...this.props}
                     hoverArrow={this.hoverArrow}
                 />
-            </div>
-        );
+            </div> : null;
+
+        return tpComp;
     }
 }
 

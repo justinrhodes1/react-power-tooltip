@@ -1,4 +1,5 @@
-import Tooltip from './Tooltip/Wrapper';
+// import Tooltip from './Tooltip/Wrapper';
+import Tooltip from './Tooltip/Component/Component';
 export default Tooltip;
 
 exports.printMsg = function () {
