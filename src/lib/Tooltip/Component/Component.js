@@ -2,29 +2,19 @@ import React, { Component } from 'react';
 
 import TextBox from './TextBox/TextBox';
 import Arrow from './Arrow/Arrow';
+// import delayUnmounting from './HOC/old/delayUnmount';
+import delayUnmount from './HOC/delayUnmount';
 
 import './Component.css';
 import './Animation.css';
 
 class Tooltip extends Component {
     state = {
-        hoverArrow: false,
-        mount: this.props.show
+        hoverArrow: false
     }
 
     hoverArrow = (boolean) => {
         this.setState({ hoverArrow: boolean })
-    }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.show && !this.props.show) {
-            setTimeout(
-                () => this.setState({ mount: false }),
-                this.props.delayTime
-            );
-        } else if (!prevProps.show && this.props.show) {
-            this.setState({ mount: true });
-        }
     }
 
     render() {
@@ -49,7 +39,8 @@ class Tooltip extends Component {
             arrow: position,
             align,
             moveDown,
-            textBoxWidth
+            textBoxWidth,
+            show
         } = this.props;
 
         function is(pos1, pos2, pos3) {
@@ -131,10 +122,10 @@ class Tooltip extends Component {
             textAlign,
             fontFamily,
             fontWeight,
-            animation: this.props.show ? `${animate} 0.6s` : `${animate}-out 0.6s`,
+            animation: show ? `${animate} 0.6s` : `${animate}-out 0.6s`,
         }
 
-        let tpComp = this.state.mount ?
+        return (
             <div className={classes.join(' ')}
                 style={tooltipStyle}>
                 <Arrow
@@ -145,10 +136,9 @@ class Tooltip extends Component {
                     {...this.props}
                     hoverArrow={this.hoverArrow}
                 />
-            </div> : null;
-
-        return tpComp;
+            </div>
+        );
     }
 }
 
-export default Tooltip;
+export default delayUnmount(Tooltip);
