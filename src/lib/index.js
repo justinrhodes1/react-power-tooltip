@@ -1,8 +1,10 @@
 // import Tooltip from './Tooltip/Wrapper';
-import Tooltip from './Tooltip/Component/Component';
+import Tooltip from './Tooltip';
 export default Tooltip;
 
-exports.printMsg = function () {
-    console.log(`Thanks for choosing react-custom-tooltip!
+const printMsg = () => {
+  console.log(`Thanks for choosing react-custom-tooltip!
   We are open for collaboration...get involved!!` .magenta);
 }
+
+export { printMsg };

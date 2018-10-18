@@ -1,8 +1,7 @@
 import React from 'react';
-import Tooltip from "../../../lib";
-import '../styles.css';
+import Tooltip from '../../../../lib';
 
-const section3 = () => {
+const Behaviour = () => {
     return (
         <>
             <h2 id='behaviour'>Behaviour</h2>
@@ -112,4 +111,4 @@ const section3 = () => {
     );
 };
 
-export default section3;
+export default Behaviour;

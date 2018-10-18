@@ -5,8 +5,8 @@ import Arrow from './Arrow/Arrow';
 // import delayUnmounting from './HOC/old/delayUnmount';
 import delayUnmount from './HOC/delayUnmount';
 
-import './Component.css';
-import './Animation.css';
+import './style.css';
+import './animation.css';
 
 class Tooltip extends Component {
     state = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TextBox.css';
+import './textBox.css';
 
 class TextBox extends Component {
     state = {

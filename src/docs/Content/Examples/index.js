@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+
 import Tooltip from '../../../lib';
-import '../styles.css';
+import Alert from './Alert';
 
-import Example2 from './Example2/Example2';
-// import logo from '../../assets/logo.svg';
-
-class section2 extends Component {
+class Examples extends Component {
     state = {
         show: false,
     }
@@ -106,11 +104,11 @@ class section2 extends Component {
                             <span>Our Story</span>
                         </Tooltip> */}
                     </div>
-                    <Example2 />
+                    <Alert />
                 </div>
             </>
         );
     }
 }
 
-export default section2;
+export default Examples;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Arrow.css';
+import './arrow.css';
 
 const Arrow = ({
     moveDown,

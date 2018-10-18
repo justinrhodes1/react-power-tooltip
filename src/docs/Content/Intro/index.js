@@ -1,9 +1,8 @@
 
 
 import React from 'react';
-import '../styles.css';
 
-const section1 = () => {
+const Intro = () => {
     const CSSLink = `<link rel="stylesheet" href="https://github-repo/some-github-repo" />`
     return (
         <>
@@ -20,4 +19,4 @@ const section1 = () => {
     );
 };
 
-export default section1;
+export default Intro;

@@ -29,7 +29,6 @@ body {
 .Header h1 {
   color: white;
   font-size: 45px;
-  /* font-weight: 400; */
 }
 
 .Header h2 {
@@ -94,7 +93,6 @@ h2 {
   width: 35%;
   align-items: flex-start;
   padding: 50px 0;
-  /* position: relative; */
 }
 
 .main {
@@ -154,7 +152,6 @@ a:visited {
 .table {
   width: 100%;
   font-size: 13px;
-  /* border: 1px solid lightgrey; */
   margin-top: 25px;
   margin-bottom: 150px;
 }
@@ -162,12 +159,10 @@ a:visited {
 .row {
   display: flex;
   flex-direction: row;
-  /* background: white; */
 }
 
 .row.header {
   font-weight: bold;
-  /* color: #5c0da4; */
 }
 
 .row.dark {
@@ -191,7 +186,6 @@ a:visited {
 .invisibleDiv {
   height: 100px;
   width: 5px;
-  /* margin-right: 250px; */
   background: purple;
   position: relative;
 }

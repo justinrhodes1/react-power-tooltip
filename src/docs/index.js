@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { render } from "react-dom";
+import { render } from 'react-dom';
 import Scrollchor from 'react-scrollchor';
 // import '../assets/favicon.ico';
 
-import Header from "./header/header";
-import Intro from './section1/section1';
-import Examples from './section2/section2';
-import Behaviour from './section3/section3';
-import Api from './section4/section4';
-import "./styles.css";
+import Header from './Header';
+import Intro from './Content/Intro';
+import Examples from './Content/Examples';
+import Behaviour from './Content/Examples/Behaviour';
+import Api from './Content/Api';
+import './styles.css';
 
 class Demo extends Component {
   // state = {
@@ -35,8 +35,6 @@ class Demo extends Component {
   render() {
     // const { alternate } = this.state;
     // const showLeft = Math.random() >= 0.5 ? true : false;
-
-    // const CSSLink = `<link rel="stylesheet" href="https://github-repo/some-github-repo" />`
 
     return (
       <div className='FlexContainer'>
@@ -73,7 +71,5 @@ class Demo extends Component {
     );
   }
 }
-
-// export default index;
 
 render(<Demo />, document.getElementById("app"));

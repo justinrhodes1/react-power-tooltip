@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Tooltip from '../../../../lib';
-import '../../styles.css';
-import logo from '../../../assets/logo.svg';
+import logo from '../../../../assets/logo.svg';
 
-class Example2 extends Component {
+class Alert extends Component {
     state = {
         alternate: true
     }
@@ -64,4 +63,4 @@ class Example2 extends Component {
     }
 }
 
-export default Example2;
+export default Alert;

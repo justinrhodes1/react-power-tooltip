@@ -1,6 +1,6 @@
 import React from 'react';
 
-const section4 = () => {
+const Api = () => {
     return (
         <>
             <h1>API Overview</h1>
@@ -30,4 +30,4 @@ const section4 = () => {
     );
 };
 
-export default section4;
+export default Api;

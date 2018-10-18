@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Tooltip from "../../../lib";
 import "../styles.css";
 
-class header extends Component {
+class Header extends Component {
 
     render() {
         // const { alternate } = this.state;
@@ -45,4 +45,4 @@ class header extends Component {
     }
 }
 
-export default header;
+export default Header;
