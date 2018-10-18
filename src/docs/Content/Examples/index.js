@@ -43,7 +43,7 @@ class Examples extends Component {
                     >
                         <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
                         <Tooltip
-                            show={show}
+                            show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
@@ -54,7 +54,7 @@ class Examples extends Component {
                             <span>Our Story</span>
                         </Tooltip>
                         <Tooltip
-                            show={show}
+                            show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
@@ -66,7 +66,7 @@ class Examples extends Component {
                             <span>Our Story</span>
                         </Tooltip>
                         <Tooltip
-                            show={show}
+                            show={true}
                             animation='bounce'
                             arrow='rightBottom'
                             align='bottom'
@@ -79,7 +79,7 @@ class Examples extends Component {
                             <span>Our Story</span>
                         </Tooltip>
                         <Tooltip
-                            show={show}
+                            show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
@@ -92,7 +92,7 @@ class Examples extends Component {
                             <span>Our Story</span>
                         </Tooltip>
                         <Tooltip
-                            show={show}
+                            show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'

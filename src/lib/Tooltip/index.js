@@ -71,8 +71,8 @@ class Tooltip extends Component {
             return moveDown ? `calc(${units} + ${moveDown})` : `${units}`;
         }
 
-        const arrange = (units, cssClass, left, height, width) => {
-            tooltipStyle = { left, height, width, top: calcVpos(units) };
+        const arrange = (units, cssClass, left, right, height, width) => {
+            tooltipStyle = { left, right, height, width, top: calcVpos(units) };
             classes.push(cssClass)
         }
 
@@ -82,14 +82,14 @@ class Tooltip extends Component {
         let { arrow, align: algn } = this.props;
 
         if (arrow.side('top')) {
-            arrange('100%', 'tpArrowTop', '0px', '', '100%');
+            arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
         } else if (arrow.side('bottom')) {
-            arrange('-21px', 'tpArrowBottom', '0px', '', '100%');
+            arrange('-21px', 'tpArrowBottom', '0px', '', '', '100%');
         } else if (arrow.side('left')) {
-            arrange('0px', 'tpArrowLeft', '100%', '100%', '');
+            arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
         } else {
             arrange('0px', 'tpArrowRight',
-                `-${textBoxWidth}`, '100%', textBoxWidth);
+                '', '100%', '100%', '');
         }
 
         let onAxis = {

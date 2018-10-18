@@ -119,6 +119,7 @@ class TextBox extends Component {
         });
 
         let left = '8px';
+        let right = '';
         let top = '8px';
         let perc = calcPerc(50, 0, 100);
 
@@ -154,15 +155,18 @@ class TextBox extends Component {
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             case 'rightTop':
-                left = '-8px';
+                left = '';
+                right = '8px';
                 top = calcTopPos(firstH, null);
                 break;
             case 'rightCenter':
-                left = '-8px';
+                left = '';
+                right = '8px';
                 top = calcTopPos(totH, null);
                 break;
             case 'rightBottom':
-                left = '-8px';
+                left = '';
+                right = '8px';
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             default:
@@ -178,6 +182,7 @@ class TextBox extends Component {
 
         let boxStyle = {
             left,
+            right,
             top,
             width,
             borderRadius
