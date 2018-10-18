@@ -36,6 +36,7 @@ class Tooltip extends Component {
             fontWeight = 'bold',
             fontSize = 'inherit',
             color = 'inherit',
+            animation = '',
             arrow: position,
             align,
             moveDown,
@@ -113,8 +114,6 @@ class Tooltip extends Component {
                 break;
         }
 
-        let animate = 'example'
-
         tooltipStyle = {
             ...tooltipStyle,
             color,
@@ -122,7 +121,7 @@ class Tooltip extends Component {
             textAlign,
             fontFamily,
             fontWeight,
-            animation: show ? `${animate} 0.6s` : `${animate}-out 0.6s`,
+            animation: show ? `rct-${animation} 0.4s` : `rct-${animation}-out 0.4s`,
         }
 
         return (

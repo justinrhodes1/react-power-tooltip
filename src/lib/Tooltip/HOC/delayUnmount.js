@@ -11,7 +11,7 @@ export default (ChildComponent) => {
             if (prevProps.show && !this.props.show && mount) {
                 setTimeout(
                     () => { if (!this.props.show) this.setState({ mount: false }) },
-                    this.props.delayTime || 600
+                    this.props.delayTime || 400
                 );
             } else if (!prevProps.show && this.props.show && !mount) {
                 this.setState({ mount: true });

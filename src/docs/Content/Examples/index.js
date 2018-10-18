@@ -46,28 +46,28 @@ class Examples extends Component {
                             show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
-                            animation='tpFadeDown'
+                            animation='bounce'
                             arrow='leftBottom'
                             align='top'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
                         </Tooltip>
-                        {/* <Tooltip
-                            show={true}
+                        <Tooltip
+                            show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
-                            animation='tpFadeIn'
+                            animation='bounce'
                             arrow='leftBottom'
                             align='center'
                             lineSeparated
                         >
                             <span>trial</span>
                             <span>Our Story</span>
-                        </Tooltip> */}
-                        {/* <Tooltip
-                            show={true}
-                            animation='tpFade'
+                        </Tooltip>
+                        <Tooltip
+                            show={show}
+                            animation='bounce'
                             arrow='rightBottom'
                             align='bottom'
                             color='white'
@@ -82,7 +82,7 @@ class Examples extends Component {
                             show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
-                            animation='tpFadeUp'
+                            animation='bounce'
                             arrow='rightBottom'
                             align='center'
                         >
@@ -95,14 +95,14 @@ class Examples extends Component {
                             show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
-                            animation='tpBounce'
+                            animation='bounce'
                             arrow='rightBottom'
                             align='top'
                             lineSeparated
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip> */}
+                        </Tooltip>
                     </div>
                     <Alert />
                 </div>
