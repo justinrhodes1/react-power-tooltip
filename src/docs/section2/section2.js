@@ -55,7 +55,7 @@ class section2 extends Component {
                             <span>Our Technology</span>
                             <span>Our Story</span>
                         </Tooltip>
-                        <Tooltip
+                        {/* <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
@@ -66,8 +66,8 @@ class section2 extends Component {
                         >
                             <span>trial</span>
                             <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
+                        </Tooltip> */}
+                        {/* <Tooltip
                             show={true}
                             animation='tpFade'
                             arrow='rightBottom'
@@ -104,7 +104,7 @@ class section2 extends Component {
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip>
+                        </Tooltip> */}
                     </div>
                     <Example2 />
                 </div>

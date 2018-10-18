@@ -3,18 +3,18 @@ import React, { Component } from 'react';
 export default (ChildComponent) => {
     class ComposedComponent extends Component {
         state = {
-            mount: this.props.show,
-            count: 1
+            mount: this.props.show
         };
 
         componentDidUpdate(prevProps) {
-            if (prevProps.show && !this.props.show && this.state.count === 1) {
+            let { mount } = this.state;
+            if (prevProps.show && !this.props.show && mount) {
                 setTimeout(
-                    () => this.setState({ mount: false, count: this.state.count + 1 }),
+                    () => { if (!this.props.show) this.setState({ mount: false }) },
                     this.props.delayTime || 600
                 );
-            } else if (!prevProps.show && this.props.show && this.state.count === 1) {
-                this.setState({ mount: true, count: this.state.count + 1 });
+            } else if (!prevProps.show && this.props.show && !mount) {
+                this.setState({ mount: true });
             }
         }
 

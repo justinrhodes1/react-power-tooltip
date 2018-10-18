@@ -12,7 +12,7 @@ class TextBox extends Component {
     //Set & unset hover state
     onSpanHover = (index, lastIndex) => {
         this.setState({ hoverIndex: index });
-        const { static: tpStatic, arrow, hoverArrow, unHoverArrow } = this.props;
+        const { static: tpStatic, arrow, hoverArrow } = this.props;
         if (!tpStatic
             && ((index === 0
                 && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop')))
