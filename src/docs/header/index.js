@@ -24,6 +24,7 @@ class Header extends Component {
                             align='center'
                             fontSize='13px'
                             moveDown='-4px'
+                            pulse
                             static
                         >
                             <span>Simple &amp; Easy!</span>

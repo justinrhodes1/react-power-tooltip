@@ -25,6 +25,7 @@ class Tooltip extends Component {
             hoverColor: this.props.hoverColor || 'black',
             backgroundColor: this.props.backgroundColor || 'white',
             textBoxWidth: this.props.textBoxWidth || '150px',
+            // textBoxWidth: this.props.textBoxWidth || 'auto',
             padding: this.props.padding || '15px 20px',
             borderRadius: this.props.borderRadius || '5px',
             moveDown: this.props.moveDown || '0px'

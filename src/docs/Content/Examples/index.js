@@ -103,6 +103,28 @@ class Examples extends Component {
                             <span>Our Technology</span>
                             <span>Our Story</span>
                         </Tooltip>
+                        <Tooltip
+                            show={true}
+                            hoverBackground='#3b0586'
+                            hoverColor='white'
+                            animation='bounce'
+                            arrow='bottomLeft'
+                            align='center'
+                        >
+                            <span>Our Technology</span>
+                            <span>Our Story</span>
+                        </Tooltip>
+                        <Tooltip
+                            show={true}
+                            hoverBackground='#3b0586'
+                            hoverColor='white'
+                            animation='bounce'
+                            arrow='topLeft'
+                            align='right'
+                        >
+                            <span>Our Technology</span>
+                            <span>Our Story</span>
+                        </Tooltip>
                     </div>
                     <Alert />
                 </div>

@@ -7,13 +7,13 @@ class Alert extends Component {
         alternate: true
     }
 
-    // componentDidMount() {
-    //     setInterval(() => {
-    //         this.setState({
-    //             alternate: !this.state.alternate,
-    //         });
-    //     }, 5000);
-    // }
+    componentDidMount() {
+        setInterval(() => {
+            this.setState({
+                alternate: !this.state.alternate,
+            });
+        }, 5000);
+    }
     render() {
         return (
             <div
@@ -47,7 +47,7 @@ class Alert extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             textboxWidth='100px'
-                            animation='tpFadeUpDown'
+                            animation='fade'
                             arrow='topLeft'
                             align='center'
                             pulse

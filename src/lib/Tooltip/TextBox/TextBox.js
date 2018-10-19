@@ -178,7 +178,8 @@ class TextBox extends Component {
         let theme = flat ? 'tpNoShadow' : 'tpShadow';
 
         let classes = [theme];
-        if (pulse) classes.push('tpPulse');
+        let alertStyle = pulse ? 'rct-pulse' : '';
+        // if (pulse) classes.push('rct-pulse');
 
         let boxStyle = {
             left,
@@ -198,7 +199,7 @@ class TextBox extends Component {
                         height: `calc(${totH}px - 1px)`
                     }} />
                 <div
-                    className={'tpTextBox'}
+                    className={`tpTextBox ${alertStyle}`}
                     style={{
                         ...boxStyle,
                         zIndex: zIndex + 2 || '102',
