@@ -8,6 +8,7 @@ const Arrow = ({
     hoverBackground,
     backgroundColor,
     flat,
+    zIndex,
     arrow }) => {
 
     let left = '';
@@ -24,7 +25,13 @@ const Arrow = ({
     return (
         <div
             className={'tpArrow'}
-            style={{ top: moveDown, left, backgroundColor, boxShadow }}
+            style={{
+                top: moveDown,
+                left,
+                backgroundColor,
+                boxShadow,
+                zIndex: zIndex + 1 || '101',
+            }}
         />
     );
 };

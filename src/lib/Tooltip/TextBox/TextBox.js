@@ -175,11 +175,7 @@ class TextBox extends Component {
                 break;
         }
 
-        let tpShadow = flat ? 'tpNoShadow' : 'tpShadow';
-
-        let alertStyle = pulse ? 'rct-pulse' : '';
-
-        let boxStyle = {
+        const boxStyle = {
             left,
             right,
             top,
@@ -187,20 +183,31 @@ class TextBox extends Component {
             borderRadius
         }
 
+        const showShadow = flat ? 'tpNoShadow' : 'tpShadow';
+        const alertStyle = pulse ? 'rct-pulse' : null;
+        const boxShadow = pulse ? '0 0 0 rgba(248, 109, 109, 0.4);' : null;
+
         return (
-            <div style={{ ...boxStyle, position: 'absolute', width: 'auto' }}>
+            <div
+                className={`${alertStyle}`}
+                style={{
+                    ...boxStyle,
+                    boxShadow,
+                    position: 'absolute'
+                }}
+            >
                 <div
-                    className={`${tpShadow}`}
+                    className={`tpShadowDiv ${showShadow}`}
                     style={{
-                        // ...boxStyle,
                         zIndex: zIndex || '100',
-                        height: `calc(${totH}px - 1px)`
+                        borderRadius
                     }} />
                 <div
-                    className={`tpTextBox ${alertStyle}`}
+                    className={`tpTextBox`}
                     style={{
-                        // ...boxStyle,
                         zIndex: zIndex + 2 || '102',
+                        backgroundColor,
+                        borderRadius
                     }}>
                     <div
                         className={!tpStatic ? 'tpHover' : null}

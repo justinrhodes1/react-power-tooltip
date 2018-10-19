@@ -41,7 +41,6 @@ class Tooltip extends Component {
             arrow: position,
             align,
             moveDown,
-            textBoxWidth,
             show
         } = this.props;
 
