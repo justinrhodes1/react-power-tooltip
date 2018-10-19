@@ -188,18 +188,18 @@ class TextBox extends Component {
         }
 
         return (
-            <>
+            <div style={{ ...boxStyle, position: 'absolute', width: 'auto' }}>
                 <div
                     className={`${tpShadow}`}
                     style={{
-                        ...boxStyle,
+                        // ...boxStyle,
                         zIndex: zIndex || '100',
                         height: `calc(${totH}px - 1px)`
                     }} />
                 <div
                     className={`tpTextBox ${alertStyle}`}
                     style={{
-                        ...boxStyle,
+                        // ...boxStyle,
                         zIndex: zIndex + 2 || '102',
                     }}>
                     <div
@@ -211,7 +211,7 @@ class TextBox extends Component {
                         {adjChildren}
                     </div>
                 </div>
-            </>
+            </div>
         );
     }
 }
