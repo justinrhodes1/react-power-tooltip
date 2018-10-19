@@ -18,13 +18,11 @@ class Header extends Component {
                         <Tooltip
                             show={true}
                             color='black'
-                            textboxWidth='100px'
-                            animation='tpBounce'
+                            textBoxWidth='auto'
                             arrow='topCenter'
                             align='center'
                             fontSize='13px'
                             moveDown='-4px'
-                            pulse
                             static
                         >
                             <span>Simple &amp; Easy!</span>

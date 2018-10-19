@@ -57,7 +57,7 @@ const Behaviour = () => {
                 </div>
                 <div className='row'>
                     <div>
-                        <p>Text align</p>
+                        <p>Custom text align</p>
                         <div className='invisibleDiv'>
                             <Tooltip
                                 show={true}
@@ -72,7 +72,7 @@ const Behaviour = () => {
                         </div>
                     </div>
                     <div>
-                        <p>Custom corners</p>
+                        <p>Custom Corners</p>
                         <div className='invisibleDiv'>
                             <Tooltip
                                 show={true}

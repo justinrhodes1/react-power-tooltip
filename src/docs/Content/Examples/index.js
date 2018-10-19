@@ -108,7 +108,7 @@ class Examples extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
-                            arrow='bottomLeft'
+                            arrow='bottomRight'
                             align='center'
                         >
                             <span>Our Technology</span>
