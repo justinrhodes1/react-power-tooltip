@@ -49,7 +49,7 @@ class TextBox extends Component {
             borderRadius,
             hoverBackground,
             hoverColor,
-            pulse,
+            alert,
             zIndex,
             flat,
             children
@@ -184,16 +184,18 @@ class TextBox extends Component {
         }
 
         const showShadow = flat ? 'tpNoShadow' : 'tpShadow';
-        const alertStyle = pulse ? 'rct-pulse' : null;
-        const boxShadow = pulse ? '0 0 0 rgba(248, 109, 109, 0.4);' : null;
+        const alertStyle = alert ? 'rct-alert' : null;
+        const rgb = alert || 'rgb(248, 109, 109)';
+        const boxShadow = alert ?
+            `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
 
         return (
             <div
                 className={`${alertStyle}`}
                 style={{
                     ...boxStyle,
-                    boxShadow,
-                    position: 'absolute'
+                    position: 'absolute',
+                    boxShadow
                 }}
             >
                 <div

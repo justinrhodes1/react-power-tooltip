@@ -47,10 +47,10 @@ class Alert extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             textboxWidth='100px'
-                            animation='fade'
+                            animation='bounce'
                             arrow='topLeft'
                             align='center'
-                            pulse
+                            alert='rgb(51,22,236)'
                             static
                         >
                             <span>New Item added!</span>
