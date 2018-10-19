@@ -175,11 +175,9 @@ class TextBox extends Component {
                 break;
         }
 
-        let theme = flat ? 'tpNoShadow' : 'tpShadow';
+        let tpShadow = flat ? 'tpNoShadow' : 'tpShadow';
 
-        let classes = [theme];
         let alertStyle = pulse ? 'rct-pulse' : '';
-        // if (pulse) classes.push('rct-pulse');
 
         let boxStyle = {
             left,
@@ -192,7 +190,7 @@ class TextBox extends Component {
         return (
             <>
                 <div
-                    className={classes.join(' ')}
+                    className={`${tpShadow}`}
                     style={{
                         ...boxStyle,
                         zIndex: zIndex || '100',
