@@ -91,6 +91,12 @@ const Api = () => {
                         <td>Radius of corners</td>
                     </tr>
                     <tr>
+                        <td>zIndex</td>
+                        <td>string</td>
+                        <td>default: '100' (100-103)</td>
+                        <td>Z-index of tooltip. The tooltip will occupy indices n + 3</td>
+                    </tr>
+                    <tr>
                         <td>moveDown</td>
                         <td>string: px</td>
                         <td>default: '0px'</td>

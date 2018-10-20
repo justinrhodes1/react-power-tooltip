@@ -66,6 +66,7 @@ pre {
   padding: 20px;
   text-align: left;
   width: 100%;
+  overflow-x: auto;
 }
 
 section h1 {
@@ -131,6 +132,7 @@ a:visited {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 65px;
+  display: none;
 }
 
 .button {
@@ -181,7 +183,7 @@ td {
 }
 
 th {
-  background: #383838;
+  background: #444444;
   color: white;
   padding: 14px;
 }
@@ -207,4 +209,9 @@ tr:nth-child(even) {
   width: 165px;
 }
 
-
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .sticky {
+    display: block;
+  }
+} 

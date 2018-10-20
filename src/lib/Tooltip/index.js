@@ -30,6 +30,8 @@ class Tooltip extends Component {
             moveDown: this.props.moveDown || '0px'
         }
 
+        // if (!this.props.alert) console.error('Add an alert to your tooltip!');
+
         const {
             textAlign = 'left',
             fontFamily = 'inherit',

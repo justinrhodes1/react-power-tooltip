@@ -131,7 +131,7 @@ class TextBox extends Component {
                 if (align.is('left')) left = 'calc(0% - 40px)';
                 break;
             case 'topCenter':
-                left = ''
+                left = '';
                 // if (align.is('center')) left = 'calc(25% - 0px)';
                 if (align.is('right')) left = 'calc(75% - 10px)';
                 if (align.is('left')) left = 'calc(-25% + 10px)';
@@ -143,18 +143,22 @@ class TextBox extends Component {
                 break;
             case 'bottomLeft':
                 top = calcVPos(0, totH, 1, 11);
-                left = calcHPos(perc, 4);
+                left = '-25px';
                 break;
             case 'bottomCenter':
-                top = calcVPos(0, totH, 1, 11)
-                if (align.is('center')) left = 'calc(25% - 0px)';
-                if (align.is('right')) left = 'calc(75% - 10px)';
-                if (align.is('left')) left = 'calc(-25% + 10px)';
+                top = calcVPos(0, totH, 1, 11);
+                left = '';
+                // if (align.is('center')) left = 'calc(25% - 0px)';
+                // if (align.is('right')) left = 'calc(75% - 10px)';
+                if (align.is('right')) left = 'calc(50% + 12px)';
+                // if (align.is('right')) left = '12px';
+                // if (align.is('right')) left = '-25px';
+                // if (align.is('left')) left = '-25px';
                 break;
             case 'bottomRight':
                 top = calcVPos(0, totH, 1, 11)
                 // left = calcHPos(perc, 4, null, 3);
-                // left = '';
+                left = '';
                 right = '-25px'
                 // right = '-25px';
                 break;
