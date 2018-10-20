@@ -43,7 +43,7 @@ class Examples extends Component {
                     >
                         <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
                         <Tooltip
-                            show={true}
+                            show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
@@ -54,7 +54,7 @@ class Examples extends Component {
                             <span>Our Story</span>
                         </Tooltip>
                         <Tooltip
-                            show={true}
+                            show={show}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
@@ -85,6 +85,7 @@ class Examples extends Component {
                             animation='bounce'
                             arrow='rightBottom'
                             align='center'
+                            alert='rgb(51,22,26)'
                         >
                             <span>One very long description which spans
                                 several lines and thus takes up more space.
@@ -108,8 +109,8 @@ class Examples extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
-                            arrow='bottomRight'
-                            align='center'
+                            arrow='bottomCenter'
+                            align='left'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
@@ -119,8 +120,8 @@ class Examples extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
-                            arrow='topLeft'
-                            align='right'
+                            arrow='topCenter'
+                            align='center'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>

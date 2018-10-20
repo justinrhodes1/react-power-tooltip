@@ -125,13 +125,21 @@ class TextBox extends Component {
 
         switch (arrow.position) {
             case 'topLeft':
-                left = calcHPos(perc, 4);
+                // left = calcHPos(perc, 4);
+                if (align.is('center')) left = 'calc(50% - 40px)';
+                if (align.is('right')) left = 'calc(100% - 40px)';
+                if (align.is('left')) left = 'calc(0% - 40px)';
                 break;
             case 'topCenter':
-                left = calcHPos(perc, 2, 5);
+                left = ''
+                // if (align.is('center')) left = 'calc(25% - 0px)';
+                if (align.is('right')) left = 'calc(75% - 10px)';
+                if (align.is('left')) left = 'calc(-25% + 10px)';
                 break;
             case 'topRight':
-                left = calc(perc, 4, null, 3);
+                // if (align.is('center')) left = 'calc(25% - 0px)';
+                // if (align.is('right')) left = 'calc(75% - 10px)';
+                // if (align.is('left')) left = 'calc(-25% + 10px)';
                 break;
             case 'bottomLeft':
                 top = calcVPos(0, totH, 1, 11);
@@ -139,11 +147,16 @@ class TextBox extends Component {
                 break;
             case 'bottomCenter':
                 top = calcVPos(0, totH, 1, 11)
-                left = calcHPos(perc, 2, 5);
+                if (align.is('center')) left = 'calc(25% - 0px)';
+                if (align.is('right')) left = 'calc(75% - 10px)';
+                if (align.is('left')) left = 'calc(-25% + 10px)';
                 break;
             case 'bottomRight':
                 top = calcVPos(0, totH, 1, 11)
-                left = calcHPos(perc, 4, null, 3);
+                // left = calcHPos(perc, 4, null, 3);
+                // left = '';
+                right = '-25px'
+                // right = '-25px';
                 break;
             case 'leftTop':
                 top = calcTopPos(firstH, null);

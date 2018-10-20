@@ -149,38 +149,45 @@ a:visited {
   cursor: pointer;
 }
 
-.table {
+/* .table {
   width: 100%;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 25px;
   margin-bottom: 150px;
-}
+} */
 
 .row {
   display: flex;
   flex-direction: row;
 }
 
-.row.header {
-  font-weight: bold;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 25px 0;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.row.dark {
-  background-color: #dddddd;
-}
-
-.header .cell {
-  background-color: lightgrey;
-  border: 1px solid #b9b3be;
-}
-
-.cell {
-  width: calc(100%/3);
-  border: 1px solid lightgrey;
-  height: 50px;
-  display: flex;
-  align-items: center;
+td, th {
+  border: 1px solid #a1a1a1;
+  text-align: left;
   padding: 10px;
+}
+
+td {
+  font-size: 15px;
+}
+
+th {
+  background: #383838;
+  color: white;
+  padding: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
 
 .invisibleDiv {
