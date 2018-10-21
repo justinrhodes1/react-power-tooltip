@@ -42,7 +42,7 @@ class Examples extends Component {
                         }}
                     >
                         <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
-                        <Tooltip
+                        {/* <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
@@ -103,8 +103,8 @@ class Examples extends Component {
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip>
-                        {/* <Tooltip
+                        </Tooltip> */}
+                        <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
@@ -136,8 +136,8 @@ class Examples extends Component {
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip> */}
-                        <Tooltip
+                        </Tooltip>
+                        {/* <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
@@ -147,7 +147,7 @@ class Examples extends Component {
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip>
+                        </Tooltip> */}
                     </div>
                     <Alert />
                 </div>

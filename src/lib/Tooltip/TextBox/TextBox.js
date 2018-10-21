@@ -62,15 +62,11 @@ class TextBox extends Component {
             lastH
         } = this.state
 
-        const calcHPos = (perc, divider, adjMove, multiFactor) => {
-            return `calc(${perc}% - (${multiFactor || 1}*${width})/${divider} + ${moveRight} + ${adjMove || 0}px)`
-        }
-
         const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
             return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
 
-        const calcPerc = (center, left, right) => {
+        const calcHPos = (left, center, right) => {
             return align.is('center') ? center : align.is('left') ? left : right;
         }
 
@@ -121,39 +117,44 @@ class TextBox extends Component {
         let left = '8px';
         let right = '';
         let top = '8px';
-        let perc = calcPerc(50, 0, 100); //center, left, right
+        let hLeftPos = calcHPos('100% - 50px', '50% - 40px', '0% - 30px'); //left, center, right
+        let hRightPos = calcHPos('0% - 30px', '50% - 40px', '100% - 50px'); //left, center, right
 
         switch (arrow.position) {
             case 'topLeft':
                 left = '';
-                if (align.is('right')) right = 'calc(0% - 30px)';
-                if (align.is('center')) right = 'calc(50% - 40px)';
-                if (align.is('left')) right = 'calc(100% - 50px)';
+                right = `calc(${hLeftPos})`;
+                // if (align.is('left')) right = 'calc(100% - 50px)';
+                // if (align.is('center')) right = 'calc(50% - 40px)';
+                // if (align.is('right')) right = 'calc(0% - 30px)';
                 break;
             case 'topCenter':
                 left = '';
                 break;
             case 'topRight':
-                if (align.is('left')) left = 'calc(0% - 30px)';
-                if (align.is('center')) left = 'calc(50% - 40px)';
-                if (align.is('right')) left = 'calc(100% - 50px)';
+                left = `calc(${hRightPos})`;
+                // if (align.is('left')) left = 'calc(0% - 30px)';
+                // if (align.is('center')) left = 'calc(50% - 40px)';
+                // if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'bottomLeft':
                 top = calcVPos(0, totH, 1, 11);
                 left = '';
-                if (align.is('right')) right = 'calc(0% - 30px)';
-                if (align.is('center')) right = 'calc(50% - 40px)';
-                if (align.is('left')) right = 'calc(100% - 50px)';
+                right = `calc(${hLeftPos})`;
+                // if (align.is('right')) right = 'calc(0% - 30px)';
+                // if (align.is('center')) right = 'calc(50% - 40px)';
+                // if (align.is('left')) right = 'calc(100% - 50px)';
                 break;
             case 'bottomCenter':
                 top = calcVPos(0, totH, 1, 11);
                 left = '';
                 break;
             case 'bottomRight':
-                top = calcVPos(0, totH, 1, 11)
-                if (align.is('left')) left = 'calc(0% - 30px)';
-                if (align.is('center')) left = 'calc(50% - 40px)';
-                if (align.is('right')) left = 'calc(100% - 50px)';
+                top = calcVPos(0, totH, 1, 11);
+                left = `calc(${hRightPos})`;
+                // if (align.is('left')) left = 'calc(0% - 30px)';
+                // if (align.is('center')) left = 'calc(50% - 40px)';
+                // if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'leftTop':
                 top = calcTopPos(firstH, null);
