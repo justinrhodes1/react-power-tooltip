@@ -145,7 +145,6 @@ class Examples extends Component {
                             hoverColor='white'
                             animation='bounce'
                             textBoxWidth='auto'
-                            fontSize='10px'
                             arrow='topCenter'
                             align='center'
                         >

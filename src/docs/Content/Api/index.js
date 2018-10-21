@@ -14,7 +14,7 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>show</td>
-                        <td>boolean</td>
+                        <td>boolean: false | true</td>
                         <td>default: false</td>
                         <td>Mount tooltip if true</td>
                     </tr>
@@ -44,9 +44,9 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>animation</td>
-                        <td>string</td>
+                        <td>string: fade | fadeDown | fadeUpDown | bounce</td>
                         <td>default: 'fade'</td>
-                        <td>Mount/Unmount anmation</td>
+                        <td>Mount/Unmount anmation. <br />Custom animations: See advanced usage examples.</td>
                     </tr>
                     <tr>
                         <td>hoverBackground</td>
@@ -68,7 +68,7 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>alert</td>
-                        <td>string: rgb colors | false</td>
+                        <td>string: rgb colors</td>
                         <td>default: false</td>
                         <td>Pulse animation</td>
                     </tr>
@@ -80,7 +80,7 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>padding</td>
-                        <td>string: px | false</td>
+                        <td>string: px</td>
                         <td>default: '15px 20px'</td>
                         <td>Padding of text</td>
                     </tr>
@@ -92,9 +92,9 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>zIndex</td>
-                        <td>string</td>
-                        <td>default: '100' (100-103)</td>
-                        <td>Z-index of tooltip. The tooltip will occupy indices n + 3</td>
+                        <td>string: number</td>
+                        <td>default: '100'</td>
+                        <td>Z-index of tooltip.</td>
                     </tr>
                     <tr>
                         <td>moveDown</td>

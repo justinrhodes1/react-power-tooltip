@@ -29,6 +29,8 @@ body {
 .Header h1 {
   color: white;
   font-size: 45px;
+  word-break: normal;
+  max-width: 80%;
 }
 
 .Header h2 {
@@ -38,6 +40,7 @@ body {
   border-bottom: none;
   padding: 0;
   width: auto;
+  max-width: 80%;
 }
 
 .ribbon {
