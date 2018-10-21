@@ -14,14 +14,14 @@ class Header extends Component {
                     <a href="#">Fork me on GitHub</a>
                 </div>
                 <h1>React-custom-
-                <span style={{ position: 'relative' }}>tooltip
+                <span style={{ position: 'relative', display: 'inlineBlock' }}>tooltip
                         <Tooltip
                             show={true}
                             color='black'
-                            textBoxWidth='auto'
                             arrow='topCenter'
                             align='center'
                             fontSize='13px'
+                            textBoxWidth='auto'
                             moveDown='-4px'
                             static
                         >

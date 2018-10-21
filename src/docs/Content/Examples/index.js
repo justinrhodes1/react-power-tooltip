@@ -29,7 +29,7 @@ class Examples extends Component {
                         style={{
                             marginTop: '50px',
                             marginBottom: '50px',
-                            width: '100px',
+                            width: '400px',
                             height: '400px',
                             background: 'linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%)',
                             position: 'relative',
@@ -42,7 +42,7 @@ class Examples extends Component {
                         }}
                     >
                         <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
-                        {/* <Tooltip
+                        <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
@@ -59,6 +59,7 @@ class Examples extends Component {
                             hoverColor='white'
                             animation='bounce'
                             arrow='leftBottom'
+                            textBoxWidth='auto'
                             align='center'
                             lineSeparated
                         >
@@ -83,6 +84,7 @@ class Examples extends Component {
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
+                            textBoxWidth='150px'
                             arrow='rightBottom'
                             align='center'
                             alert='rgb(51,22,26)'
@@ -103,7 +105,7 @@ class Examples extends Component {
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip> */}
+                        </Tooltip>
                         <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
@@ -137,17 +139,19 @@ class Examples extends Component {
                             <span>Our Technology</span>
                             <span>Our Story</span>
                         </Tooltip>
-                        {/* <Tooltip
+                        <Tooltip
                             show={true}
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             animation='bounce'
+                            textBoxWidth='auto'
+                            fontSize='10px'
                             arrow='topCenter'
                             align='center'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
-                        </Tooltip> */}
+                        </Tooltip>
                     </div>
                     <Alert />
                 </div>

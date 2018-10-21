@@ -60,14 +60,14 @@ class TextBox extends Component {
             totH,
             firstH,
             lastH
-        } = this.state
-
-        const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
-            return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
-        }
+        } = this.state;
 
         const calcHPos = (left, center, right) => {
             return align.is('center') ? center : align.is('left') ? left : right;
+        }
+
+        const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
+            return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
 
         const calcTopPos = (elHeight, totHeight) => {
@@ -88,18 +88,13 @@ class TextBox extends Component {
                 backgroundColor,
                 padding
             };
+            if (width === 'auto') style.whiteSpace = 'nowrap';
             if (!tpStatic && hoverIndex === index) {
-                style = {
-                    ...style,
-                    color: hoverColor,
-                    backgroundColor: hoverBackground
-                }
+                style.color = hoverColor;
+                style.backgroundColor = hoverBackground;
             }
             if (lineSeparated && lastIndex !== index) {
-                style = {
-                    ...style,
-                    borderBottom: '1px solid #ececec'
-                }
+                style.borderBottom = '1px solid #ececec'
             }
 
             let ref = null;
@@ -114,75 +109,62 @@ class TextBox extends Component {
             return React.cloneElement(child, childProps);
         });
 
-        let left = '8px';
+        let left = '';
         let right = '';
         let top = '8px';
-        let hLeftPos = calcHPos('100% - 50px', '50% - 40px', '0% - 30px'); //left, center, right
-        let hRightPos = calcHPos('0% - 30px', '50% - 40px', '100% - 50px'); //left, center, right
+        //Align: left, center, right
+        let hLeftPos =
+            calcHPos('100% - 50px', '50% - 40px', '0% - 30px');
+        let hRightPos =
+            calcHPos('0% - 30px', '50% - 40px', '100% - 50px');
 
         switch (arrow.position) {
             case 'topLeft':
-                left = '';
                 right = `calc(${hLeftPos})`;
-                // if (align.is('left')) right = 'calc(100% - 50px)';
-                // if (align.is('center')) right = 'calc(50% - 40px)';
-                // if (align.is('right')) right = 'calc(0% - 30px)';
                 break;
-            case 'topCenter':
-                left = '';
-                break;
+            // case 'topCenter':
+            //     break;
             case 'topRight':
                 left = `calc(${hRightPos})`;
-                // if (align.is('left')) left = 'calc(0% - 30px)';
-                // if (align.is('center')) left = 'calc(50% - 40px)';
-                // if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'bottomLeft':
                 top = calcVPos(0, totH, 1, 11);
-                left = '';
                 right = `calc(${hLeftPos})`;
-                // if (align.is('right')) right = 'calc(0% - 30px)';
-                // if (align.is('center')) right = 'calc(50% - 40px)';
-                // if (align.is('left')) right = 'calc(100% - 50px)';
                 break;
             case 'bottomCenter':
                 top = calcVPos(0, totH, 1, 11);
-                left = '';
                 break;
             case 'bottomRight':
                 top = calcVPos(0, totH, 1, 11);
                 left = `calc(${hRightPos})`;
-                // if (align.is('left')) left = 'calc(0% - 30px)';
-                // if (align.is('center')) left = 'calc(50% - 40px)';
-                // if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'leftTop':
                 top = calcTopPos(firstH, null);
+                left = '8px';
                 break;
             case 'leftCenter':
                 top = calcTopPos(totH, null);
+                left = '8px';
                 break;
             case 'leftBottom':
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+                left = '8px';
                 break;
             case 'rightTop':
-                left = '';
                 right = '8px';
                 top = calcTopPos(firstH, null);
                 break;
             case 'rightCenter':
-                left = '';
                 right = '8px';
                 top = calcTopPos(totH, null);
                 break;
             case 'rightBottom':
-                left = '';
                 right = '8px';
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             default:
                 left = '';
-                top = '';
+                top = '8px';
                 break;
         }
 
