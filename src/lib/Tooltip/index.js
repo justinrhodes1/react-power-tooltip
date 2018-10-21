@@ -128,14 +128,21 @@ class Tooltip extends Component {
         return (
             <div className={classes.join(' ')}
                 style={tooltipStyle}>
-                <Arrow
-                    {...this.props}
-                    isHovered={this.state.hoverArrow}
-                />
-                <TextBox
-                    {...this.props}
-                    hoverArrow={this.hoverArrow}
-                />
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Arrow
+                        {...this.props}
+                        isHovered={this.state.hoverArrow}
+                    />
+                    <TextBox
+                        {...this.props}
+                        hoverArrow={this.hoverArrow}
+                    />
+                </div>
             </div>
         );
     }

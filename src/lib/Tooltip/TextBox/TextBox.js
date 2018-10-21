@@ -121,46 +121,39 @@ class TextBox extends Component {
         let left = '8px';
         let right = '';
         let top = '8px';
-        let perc = calcPerc(50, 0, 100);
+        let perc = calcPerc(50, 0, 100); //center, left, right
 
         switch (arrow.position) {
             case 'topLeft':
-                // left = calcHPos(perc, 4);
-                if (align.is('center')) left = 'calc(50% - 40px)';
-                if (align.is('right')) left = 'calc(100% - 40px)';
-                if (align.is('left')) left = 'calc(0% - 40px)';
+                left = '';
+                if (align.is('right')) right = 'calc(0% - 30px)';
+                if (align.is('center')) right = 'calc(50% - 40px)';
+                if (align.is('left')) right = 'calc(100% - 50px)';
                 break;
             case 'topCenter':
                 left = '';
-                // if (align.is('center')) left = 'calc(25% - 0px)';
-                if (align.is('right')) left = 'calc(75% - 10px)';
-                if (align.is('left')) left = 'calc(-25% + 10px)';
                 break;
             case 'topRight':
-                // if (align.is('center')) left = 'calc(25% - 0px)';
-                // if (align.is('right')) left = 'calc(75% - 10px)';
-                // if (align.is('left')) left = 'calc(-25% + 10px)';
+                if (align.is('left')) left = 'calc(0% - 30px)';
+                if (align.is('center')) left = 'calc(50% - 40px)';
+                if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'bottomLeft':
                 top = calcVPos(0, totH, 1, 11);
-                left = '-25px';
+                left = '';
+                if (align.is('right')) right = 'calc(0% - 30px)';
+                if (align.is('center')) right = 'calc(50% - 40px)';
+                if (align.is('left')) right = 'calc(100% - 50px)';
                 break;
             case 'bottomCenter':
                 top = calcVPos(0, totH, 1, 11);
                 left = '';
-                // if (align.is('center')) left = 'calc(25% - 0px)';
-                // if (align.is('right')) left = 'calc(75% - 10px)';
-                if (align.is('right')) left = 'calc(50% + 12px)';
-                // if (align.is('right')) left = '12px';
-                // if (align.is('right')) left = '-25px';
-                // if (align.is('left')) left = '-25px';
                 break;
             case 'bottomRight':
                 top = calcVPos(0, totH, 1, 11)
-                // left = calcHPos(perc, 4, null, 3);
-                left = '';
-                right = '-25px'
-                // right = '-25px';
+                if (align.is('left')) left = 'calc(0% - 30px)';
+                if (align.is('center')) left = 'calc(50% - 40px)';
+                if (align.is('right')) left = 'calc(100% - 50px)';
                 break;
             case 'leftTop':
                 top = calcTopPos(firstH, null);
@@ -208,7 +201,7 @@ class TextBox extends Component {
 
         return (
             <div
-                className={`${alertStyle}`}
+                className={`wrapper ${alertStyle}`}
                 style={{
                     ...boxStyle,
                     position: 'absolute',
