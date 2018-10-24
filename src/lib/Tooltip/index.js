@@ -27,8 +27,15 @@ class Tooltip extends Component {
             textBoxWidth: this.props.textBoxWidth || '150px',
             padding: this.props.padding || '15px 20px',
             borderRadius: this.props.borderRadius || '5px',
-            moveDown: this.props.moveDown || '0px'
+            moveDown: this.props.moveDown || '0px',
+            moveRight: this.props.moveRight || '0px',
+            // delayTime: this.props.delayTime || 400
         }
+
+        // this.props.delayTime = this.props.alert ? this.props.delayTime : 0;
+        // console.log(''this.props.delayTime);
+        this.props.moveDown = Number(this.props.moveDown.slice(0, -2));
+        this.props.moveRight = Number(this.props.moveRight.slice(0, -2));
 
         // if (!this.props.alert) console.error('Add an alert to your tooltip!');
 
@@ -42,6 +49,7 @@ class Tooltip extends Component {
             arrow: position,
             align,
             moveDown,
+            moveRight,
             show
         } = this.props;
 
@@ -68,16 +76,12 @@ class Tooltip extends Component {
             position
         };
 
-        const calcVpos = (units) => {
-            return moveDown ? `calc(${units} + ${moveDown})` : `${units}`;
-        }
+        let classes = ['tpContainer'];
 
         const arrange = (units, cssClass, left, right, height, width) => {
-            tooltipStyle = { left, right, height, width, top: calcVpos(units) };
+            tooltipStyle = { left, right, height, width, top: units };
             classes.push(cssClass)
         }
-
-        let classes = ['tpContainer'];
 
         let tooltipStyle = {};
         let { arrow, align: algn } = this.props;
@@ -98,6 +102,9 @@ class Tooltip extends Component {
             x: arrow.side('left') || arrow.side('right')
         }
 
+        let pushRight;
+        let pushDown;
+
         switch (algn.position) {
             case 'left':
                 if (onAxis.y) classes.push('tpArrowLeft');
@@ -106,7 +113,13 @@ class Tooltip extends Component {
                 if (onAxis.y) classes.push('tpArrowRight');
                 break;
             case 'center':
-                if (onAxis.x) classes.push('tpAlignCenter');
+                if (onAxis.x) {
+                    classes.push('tpAlignCenter');
+                    pushDown = moveDown * 2;
+                };
+                if (onAxis.y) {
+                    pushRight = moveRight * 2;
+                }
                 break;
             case 'bottom':
                 if (onAxis.x) classes.push('tpAlignBottom');
@@ -115,6 +128,26 @@ class Tooltip extends Component {
                 break;
         }
 
+        let margin;
+
+        if (moveDown < 0 && moveRight < 0) {
+            pushDown = 0;
+            pushRight = 0;
+            margin = `${moveDown}px 0px 0px ${moveRight}px`;
+        } else if (moveDown < 0) {
+            pushDown = 0;
+            margin = `${moveDown}px 0px 0px 0px`;
+        } else if (moveRight < 0) {
+            pushRight = 0;
+            margin = `0px 0px 0px ${moveRight}px`;
+        }
+
+
+        // if (pushDown < 0) {
+        //     pushDown = 0;
+        //     marginStyle = `${moveDown} 0px 0px 0px`
+        // }
+
         tooltipStyle = {
             ...tooltipStyle,
             color,
@@ -122,7 +155,8 @@ class Tooltip extends Component {
             textAlign,
             fontFamily,
             fontWeight,
-            animation: show ? `rct-${animation} 0.4s` : `rct-${animation}-out 0.4s`,
+            padding: `${pushDown}px 0px 0px ${pushRight}px`,
+            margin
         }
 
         return (
@@ -131,7 +165,8 @@ class Tooltip extends Component {
                 <div
                     style={{
                         display: 'flex',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        animation: show ? `rct-${animation} 0.4s` : `rct-${animation}-out 0.4s`
                     }}
                 >
                     <Arrow

@@ -8,8 +8,8 @@ const Api = () => {
                 <tbody>
                     <tr>
                         <th>Props</th>
-                        <th>Type</th>
-                        <th>Options</th>
+                        <th>Type / Options</th>
+                        <th>Default</th>
                         <th>Description</th>
                     </tr>
                     <tr>
@@ -47,6 +47,12 @@ const Api = () => {
                         <td>string: fade | fadeDown | fadeUpDown | bounce</td>
                         <td>default: 'fade'</td>
                         <td>Mount/Unmount anmation. <br />Custom animations: See advanced usage examples.</td>
+                    </tr>
+                    <tr>
+                        <td>delayUnmount</td>
+                        <td>number</td>
+                        <td>default: 400</td>
+                        <td>Delay component unmounting to allow for animations</td>
                     </tr>
                     <tr>
                         <td>hoverBackground</td>

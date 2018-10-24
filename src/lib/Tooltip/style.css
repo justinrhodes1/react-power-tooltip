@@ -3,15 +3,16 @@
     display: flex;   
 }
 
-.tpArrowTop {
-    justify-content: center;
-    width: 100%;
-}
-
+.tpArrowTop,
 .tpArrowBottom {
     justify-content: center;
     width: 100%;
 }
+
+/* .tpArrowBottom {
+    justify-content: center;
+    width: 100%;
+} */
 
 .tpArrowLeft {
     justify-content: flex-start;

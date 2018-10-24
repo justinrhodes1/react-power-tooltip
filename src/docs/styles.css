@@ -87,6 +87,12 @@ h2 {
   width: 100%;
 }
 
+h3 {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
 .content {
   display: flex;
   flex-direction: row;
@@ -154,6 +160,17 @@ a:visited {
   cursor: pointer;
 }
 
+.hPosText {
+  width: 70%;
+}
+
+.hPosText>div {
+  width: calc(100%/3);
+  display: inline-block;
+  text-align: center;
+  font-style: italic;
+}
+
 /* .table {
   width: 100%;
   font-size: 14px;
@@ -196,8 +213,9 @@ tr:nth-child(even) {
 }
 
 .invisibleDiv {
-  height: 100px;
+  height: 70px;
   width: 5px;
+  font-size: 14px;
   background: purple;
   position: relative;
 }
@@ -206,11 +224,74 @@ tr:nth-child(even) {
   justify-content: space-around;
   margin-top: 30px;
   margin-bottom: 70px;
+  font-size: 15px;
 }
 
 .themes .row>div {
   width: 165px;
 }
+
+
+.square {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border: 2px solid #4b4b4b;
+  overflow: hidden;
+  background: rgba(137, 27, 211, 0.4);
+}
+.top,
+.left,
+.right,
+.bottom {
+  position: absolute;
+  height: calc(100% / 1.414);
+  width: calc(100% / 1.414);
+  top: 50%;
+  left: 50%;
+  border: 1px solid #4b4b4b;
+  transform-origin: 0% 0%;
+  cursor: pointer;
+}
+.right {
+  transform: rotate(-45deg);
+}
+
+.topText,
+.bottomText,
+.rightText,
+.leftText {
+  position: relative;
+  top: 47.5%;
+  left: 45%;
+}
+
+.leftText {
+  left: -20%;
+}
+
+.topText {
+  top: 20%;
+  left: 45%;
+}
+
+.bottomText {
+  top: 75%;
+  left: 32%
+}
+.bottom {
+  transform: rotate(45deg);
+}
+.top {
+  transform: rotate(-135deg);
+}
+.left {
+  transform: rotate(135deg);
+}
+.square > div:hover {
+  background: rgba(128, 128, 128, 0.4);
+}
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {

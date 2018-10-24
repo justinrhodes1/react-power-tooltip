@@ -42,7 +42,7 @@ class TextBox extends Component {
             align,
             static: tpStatic,
             textBoxWidth: width,
-            moveRight,
+            moveDown,
             lineSeparated,
             backgroundColor,
             padding,
@@ -188,7 +188,8 @@ class TextBox extends Component {
                 style={{
                     ...boxStyle,
                     position: 'absolute',
-                    boxShadow
+                    boxShadow,
+                    margin: `${moveDown} 0px 0px 0px`
                 }}
             >
                 <div

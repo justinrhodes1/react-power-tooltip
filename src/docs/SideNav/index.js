@@ -9,8 +9,8 @@ const sideNav = () => {
                 <li><a href='#advanced'>Advanced Usage</a></li>
                 <li><a href='#examples'>Examples</a></li>
                 <ul className='subUl'>
+                    <li className='subList'><a href='#types'>Types</a></li>
                     <li className='subList'><a href='#animations'>Animations</a></li>
-                    <li className='subList'><a href='#behaviour'>Behaviour</a></li>
                     <li className='subList'><a href='#colors'>Colors / Shapes</a></li>
                     <li className='subList'><a href='#positions'>Positions</a></li>
                 </ul>

@@ -1,159 +1,49 @@
 import React, { Component } from 'react';
-
-import Tooltip from '../../../lib';
-import Alert from './Alert';
+import Animation from './Animation';
+import Alert from './Types/Alert';
+import Static from './Types/Static';
+import Default from './Types/Default';
+import Colors from './Colors';
+import AlignPositions from './Positions/Align';
+import ArrowPositions from './Positions/Arrow';
 
 class Examples extends Component {
-    state = {
-        show: false,
-    }
 
-    showTooltip = () => {
-        this.setState({ show: true })
-    }
-
-    hideTooltip = () => {
-        this.setState({ show: false })
-    }
 
     render() {
-        const { show } = this.state;
         return (
             <>
                 <h1>Examples</h1>
-                <h2 id='animations'>Animations</h2>
-                <div className='FlexContainer'>
-                    <div
-                        onMouseOver={this.showTooltip}
-                        onMouseLeave={this.hideTooltip}
-                        style={{
-                            marginTop: '50px',
-                            marginBottom: '50px',
-                            width: '400px',
-                            height: '400px',
-                            background: 'linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%)',
-                            position: 'relative',
-                            fontSize: '13px',
-                            fontWeight: '400',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            animation='bounce'
-                            arrow='leftBottom'
-                            align='top'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            animation='bounce'
-                            arrow='leftBottom'
-                            textBoxWidth='auto'
-                            align='center'
-                            lineSeparated
-                        >
-                            <span>trial</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            animation='bounce'
-                            arrow='rightBottom'
-                            align='bottom'
-                            color='white'
-                            backgroundColor='#181818'
-                            static
-                            flat
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            animation='bounce'
-                            textBoxWidth='150px'
-                            arrow='rightBottom'
-                            align='center'
-                            alert='rgb(51,22,26)'
-                        >
-                            <span>One very long description which spans
-                                several lines and thus takes up more space.
-                            </span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            animation='bounce'
-                            arrow='rightBottom'
-                            align='top'
-                            lineSeparated
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            // animation='bounce'
-                            arrow='bottomLeft'
-                            align='left'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            // animation='bounce'
-                            arrow='bottomLeft'
-                            align='center'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            // animation='bounce'
-                            arrow='bottomLeft'
-                            align='right'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                        <Tooltip
-                            show={true}
-                            hoverBackground='#3b0586'
-                            hoverColor='white'
-                            animation='bounce'
-                            textBoxWidth='auto'
-                            arrow='topCenter'
-                            align='center'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                    </div>
+                <h2 id='types'>Tooltip Types</h2>
+                <div style={{ width: '95%', margin: 'auto' }}>
+                    <h3>1) <strong>Hover</strong> tooltips (hover enabled) (default)</h3>
+                    <Default />
+                    <h3>2) <strong>Static</strong> tooltips (hover disabled) (via static prop)</h3>
+                    <Static />
+                    <h3>3) <strong>Alert</strong> tooltips (via alert prop)</h3>
                     <Alert />
                 </div>
+                <h2 id='animations'>Animations</h2>
+                <div className='FlexContainer'>
+                    <Animation />
+                </div>
+                <h2 id='colors'>Colors / Shapes</h2>
+                <div className='flexContainer themes'>
+                    <Colors />
+                </div>
+                <h2 id='positions'>Positions</h2>
+                <h3>1) Arrow positions (via arrow prop)</h3>
+                <div className='FlexContainer'>
+                    <ArrowPositions />
+                </div>
+                <h3>2) Tooltip align positions (via align prop)</h3>
+                <div className='FlexContainer'>
+                    <AlignPositions />
+                </div>
+                <h3>3) Position adjustments (via moveDown / moveRight prop)</h3>
+                <div className='FlexContainer'>
+                </div>
+
             </>
         );
     }
