@@ -13,22 +13,39 @@ const BasicUsage = () => {
             <h3>2) Add a hover state default and handler to your stateful component.</h3>
             <pre>
                 <code className="language-jsx">
-                    {`{/* Hover state*/}
-state = {
-    show: false
-}
+                    {`class Example extends Component {
+    {/* Hover state */}
+    state = {
+        show: false
+    }
+    {/* Hover hander */}
+    showTooltip = boolean => {
+        this.setState({ show: boolean })
+    }
 
-{/* Hover hander*/}
-showTooltip = boolean => {
-    this.setState({ show: boolean })
+    render() {
+        return (
+            <div>
+            {/* Add your target element to trigger showing the tooltip */}
+                <div 
+                    style={{ 
+                        position: 'relative'
+                        mouseOver: this.showTooltip(true) 
+                        mouseLeave: this.showTooltip(false)
+                    }}>
+                {/* Tooltip comes here! */}
+                </div>
+            </div>
+        );
+    }
 }
-`}
+export default Example;`}
                 </code>
             </pre>
             <h3>3) Set the position of the target element to relative. Then add the tooltip to that element</h3>
             <pre>
                 <code className="language-jsx">
-                    {`{/* Important: set target element position to relative */}
+                    {`{/* Important: set the position of the target element to relative */}
 <div 
     style={{ 
         position: 'relative'
@@ -42,14 +59,13 @@ showTooltip = boolean => {
         arrow='rightBottom'
         align='top'
     >
-    {/* Add one or more span element(s) for tooltip options */}
+    {/* Add span element(s) for tooltip content. Each span represents an options */}
         <span>Option 1</span>
         <span>Option 2</span>
     </Tooltip>
 </div>`}
                 </code>
             </pre>
-            <h3>3) Add </h3>
         </>
     );
 };

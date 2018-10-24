@@ -72,6 +72,10 @@ pre {
   overflow-x: auto !important;
 }
 
+.token.operator {
+  background: none !important;
+}
+
 code {
   text-shadow: none !important;
   font-weight: bold;
