@@ -3,7 +3,7 @@
 import React from 'react';
 
 const Intro = () => {
-    const CSSLink = `<link rel="stylesheet" href="https://github-repo/some-github-repo" />`
+
     return (
         <>
             <h1>Installation</h1>
@@ -13,7 +13,9 @@ const Intro = () => {
             </pre>
             <h2>CSS file</h2>
             <pre>
-                <code>{CSSLink}</code>
+                <code className="language-markup">
+                    {`<link rel="stylesheet" href="https://github-repo/some-github-repo" />`}
+                </code>
             </pre>
         </>
     );

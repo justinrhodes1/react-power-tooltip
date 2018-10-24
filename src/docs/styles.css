@@ -65,11 +65,17 @@ body {
 }
 
 pre {
-  background-color: #dddddd;
+  background-color: #dddddd !important;
   padding: 20px;
   text-align: left;
   width: 100%;
-  overflow-x: auto;
+  overflow-x: auto !important;
+}
+
+code {
+  text-shadow: none !important;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 section h1 {

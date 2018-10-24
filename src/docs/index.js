@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import Prism from 'prismjs';
 
 import Header from './Header';
 import SideNav from './SideNav';
@@ -8,9 +9,15 @@ import BasicUse from './Content/BasicUsage/BasicUsage';
 import Examples from './Content/Examples';
 import Api from './Content/Api';
 
+// import './prism.css';
 import './styles.css';
 
 class Demo extends Component {
+
+  componentDidMount() {
+    Prism.highlightAll();
+  }
+
   render() {
     return (
       <div className='FlexContainer'>
