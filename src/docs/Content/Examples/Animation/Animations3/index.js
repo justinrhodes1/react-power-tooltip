@@ -16,35 +16,22 @@ class Animations3 extends Component {
                 onMouseOver={() => this.showTooltip(true)}
                 onMouseLeave={() => this.showTooltip(false)}
                 style={{
-                    width: '150px',
-                    height: '150px',
+                    width: '130px',
+                    height: '120px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                     color: 'white',
                     position: 'relative',
-                    margin: '100px 0',
                     cursor: 'pointer'
                 }}
                 className='PurpleGradient'>
-                <span style={{ marginBottom: '15px', fontWeight: 'bold' }}>Hover Me</span>
-                <span>Bounce</span>
-                <span>Animation</span>
+                <span style={{ marginBottom: '15px' }}>Hover Me</span>
+                <span><strong>Fade</strong></span>
                 <Tooltip
                     show={this.state.show}
-                    animation='bounce'
-                    arrow='leftBottom'
-                    align='center'
-                    color='black'
-                    fontSize='14px'
-                >
-                    <span>Our Technology</span>
-                    <span>Our Story</span>
-                </Tooltip>
-                <Tooltip
-                    show={this.state.show}
-                    animation='bounce'
+                    animation='fade'
                     arrow='topRight'
                     align='center'
                     color='black'

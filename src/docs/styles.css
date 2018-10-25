@@ -25,8 +25,12 @@ pre,
   background: #ececec !important;
 }
 
+.greyBkgr>div {
+  width: 95%;
+}
+
+
 pre {
-  /* background-color: #ececec !important; */
   padding: 20px;
   text-align: left;
   width: 100%;
@@ -196,7 +200,12 @@ a:visited {
 .row {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
+
+/* .row>div {
+  min-width: 180px;
+} */
 
 table {
   font-family: arial, sans-serif;
@@ -227,8 +236,8 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.invisibleDiv,
-.invisibleDiv2 {
+.vPlaceHolder,
+.hPlaceHolder {
   height: 50px;
   width: 5px;
   font-size: 14px;
@@ -236,22 +245,15 @@ tr:nth-child(even) {
   position: relative;
 }
 
-.invisibleDiv2 {
+.hPlaceHolder {
   height: 5px;
   width: 50px;
+  margin-top: 10px;
 }
 
-.themes .row {
-  justify-content: space-around;
-  padding-top: 30px;
-  padding-bottom: 70px;
-  font-size: 15px;
+.colors .row>div {
+  min-width: 150px;
 }
-
-.themes .row>div {
-  width: 165px;
-}
-
 
 .square {
   position: relative;
@@ -261,6 +263,7 @@ tr:nth-child(even) {
   overflow: hidden;
   background: rgba(137, 27, 211, 0.4);
 }
+
 .top,
 .left,
 .right,
