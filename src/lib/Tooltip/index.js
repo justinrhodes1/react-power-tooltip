@@ -166,7 +166,7 @@ class Tooltip extends Component {
                     style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        animation: show ? `rct-${animation} 0.4s` : `rct-${animation}-out 0.4s`
+                        animation: show ? `rct-${animation} 0.2s` : `rct-${animation}-out 0.15s`
                     }}
                 >
                     <Arrow

@@ -4,89 +4,80 @@ import Tooltip from '../../../../lib';
 const Arrow = () => {
     return (
         <>
+            <h3 style={{ width: '100%' }}><strong>Vertical</strong> Positions</h3>
             <div
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
                     width: '100%',
-                    // background: '#dddddd',
                     marginBottom: '50px'
                 }}
-                className='PurpleGradient'
+                className='greyBkgr'
             >
-                <div style={{
-                    width: '200px',
-                    margin: '25px 25px',
-                    color: '#efeaea'
-                }}><span style={{ fontWeight: 'bold' }}>Vertical</span> (Left / Right)</div>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    width: '50%',
+                    justifyContent: 'space-around',
+                    width: '85%',
                     padding: '90px 0',
                     fontSize: '14px'
                 }}>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv'>
                         <Tooltip
                             show={true}
                             arrow='leftTop'
                             align='center'
                             textBoxWidth='auto'
                         >
-                            <span>Option 1</span>
-                            <span>Option 2</span>
+                            <span>Longer Option 1</span>
+                            <span>Longer Option 2</span>
                         </Tooltip>
                     </div>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv'>
                         <Tooltip
                             show={true}
                             arrow='leftCenter'
                             align='center'
                             textBoxWidth='auto'
                         >
-                            <span>Option 1</span>
-                            <span>Option 2</span>
+                            <span>Longer Option 1</span>
+                            <span>Longer Option 2</span>
                         </Tooltip>
 
                     </div>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv'>
                         <Tooltip
                             show={true}
                             arrow='leftBottom'
                             align='center'
                             textBoxWidth='auto'
                         >
-                            <span>Option 1</span>
-                            <span>Option 2</span>
+                            <span>Longer Option 1</span>
+                            <span>Longer Option 2</span>
                         </Tooltip>
                     </div>
                 </div>
             </div>
+            <h3 style={{ width: '100%' }}><strong>Horizontal</strong> Positions</h3>
             <div
                 style={{
                     display: 'flex',
                     flexDirection: 'row',
                     width: '100%',
-                    // background: '#dddddd',
-                    marginBottom: '50px'
+                    marginBottom: '50px',
+                    justifyContent: 'center'
                 }}
-                className='PurpleGradient'
+                className='greyBkgr'
             >
-                <div style={{
-                    width: '200px',
-                    margin: '25px 25px',
-                    color: '#efeaea'
-                }}><span style={{ fontWeight: 'bold' }}>Horizontal</span> (Top / Bottom)</div>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    width: '50%',
-                    padding: '70px 0 130px 0',
+                    justifyContent: 'space-around',
+                    width: '83%',
+                    padding: '70px 0 160px 0',
                     fontSize: '14px'
                 }}>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv2'>
                         <Tooltip
                             show={true}
                             arrow='topLeft'
@@ -97,7 +88,7 @@ const Arrow = () => {
                             <span>Longer Option 2</span>
                         </Tooltip>
                     </div>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv2'>
                         <Tooltip
                             show={true}
                             arrow='topCenter'
@@ -109,7 +100,7 @@ const Arrow = () => {
                         </Tooltip>
 
                     </div>
-                    <div style={{ position: 'relative', height: '10px', width: '10px', background: '#2c0358' }}>
+                    <div className='invisibleDiv2'>
                         <Tooltip
                             show={true}
                             arrow='topRight'

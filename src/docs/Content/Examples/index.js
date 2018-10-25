@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Animation from './Animation';
-import Alert from './Types/Alert';
-import Static from './Types/Static';
-import Default from './Types/Default';
+import AlertExample from './Types/Example';
+import Types from './Types';
 import Colors from './Colors';
 import AlignPositions from './Positions/Align';
 import ArrowPositions from './Positions/Arrow';
@@ -15,14 +14,10 @@ class Examples extends Component {
             <>
                 <h1>Examples</h1>
                 <h2 id='types'>Tooltip Types</h2>
-                <div style={{ width: '95%', margin: 'auto' }}>
-                    <h3>1) <strong>Hover</strong> tooltips (hover enabled) (default)</h3>
-                    <Default />
-                    <h3>2) <strong>Static</strong> tooltips (hover disabled) (via static prop)</h3>
-                    <Static />
-                    <h3>3) <strong>Alert</strong> tooltips (via alert prop)</h3>
-                    <Alert />
+                <div className='greyBkgr' style={{ display: 'flex', justifyContent: 'center', padding: '25px 0 135px 0' }}>
+                    <Types />
                 </div>
+                <AlertExample />
                 <h2 id='animations'>Animations</h2>
                 <div className='FlexContainer'>
                     <Animation />
@@ -41,9 +36,6 @@ class Examples extends Component {
                     <AlignPositions />
                 </div>
                 <h3>3) Position adjustments (via moveDown / moveRight prop)</h3>
-                <div className='FlexContainer'>
-                </div>
-
             </>
         );
     }

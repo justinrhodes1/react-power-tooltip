@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Tooltip from '../../../../lib';
+import Animations1 from './Animations1';
+import Animations2 from './Animations2';
+import Animations3 from './Animations3';
 
 class Animation extends Component {
     state = {
@@ -18,6 +21,13 @@ class Animation extends Component {
         const { show } = this.state;
         return (
             <>
+                <div className='greyBkgr' style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <div className='row' style={{ width: '80%', justifyContent: 'space-around' }}>
+                        <Animations1 />
+                        <Animations2 />
+                        <Animations3 />
+                    </div>
+                </div>
                 <div
                     onMouseEnter={this.showTooltip}
                     onMouseLeave={this.hideTooltip}
@@ -31,13 +41,12 @@ class Animation extends Component {
                         fontSize: '13px',
                         fontWeight: '400',
                         display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer'
+                        flexDirection: 'column',
+                        alignItems: 'center'
                     }}
                 >
-                    <span style={{ color: 'white', fontSize: '18px' }}>Hover me</span>
-                    {/* <Tooltip
+                    <span style={{ color: 'white', fontSize: '18px' }}>Hover elements below</span>
+                    <Tooltip
                         show={show}
                         animation='fadeIn'
                         arrow='leftBottom'
@@ -81,7 +90,7 @@ class Animation extends Component {
                     >
                         <span>Our Technology</span>
                         <span>Our Story</span>
-                    </Tooltip> */}
+                    </Tooltip>
                     <Tooltip
                         show={show}
                         animation='fadeLeftRight'
@@ -100,8 +109,8 @@ class Animation extends Component {
                         <span>Our Technology</span>
                         <span>Our Story</span>
                     </Tooltip>
-                </div>
-            </>
+                </div >
+            </ >
         );
     }
 }

@@ -10,7 +10,7 @@ export default (ChildComponent) => {
             let { mount } = this.state;
             if (prevProps.show && !this.props.show && mount) {
                 const time = this.props.delayTime
-                    ? Number(this.props.delayTime) : 400;
+                    ? Number(this.props.delayTime) : 150;
                 setTimeout(
                     () => { if (!this.props.show) this.setState({ mount: false }) },
                     time

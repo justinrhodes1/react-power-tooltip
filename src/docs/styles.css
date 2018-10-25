@@ -20,6 +20,19 @@ body {
   background: linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%);
 }
 
+pre,
+.greyBkgr {
+  background: #ececec !important;
+}
+
+pre {
+  /* background-color: #ececec !important; */
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  overflow-x: auto !important;
+}
+
 .Header {
   justify-content: center;
   width: 100%;
@@ -62,14 +75,6 @@ body {
   top: 40px;
   transform: rotate(45deg);
   background-color: #383838;
-}
-
-pre {
-  background-color: #dddddd !important;
-  padding: 20px;
-  text-align: left;
-  width: 100%;
-  overflow-x: auto !important;
 }
 
 .token.operator {
@@ -222,18 +227,24 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.invisibleDiv {
-  height: 70px;
+.invisibleDiv,
+.invisibleDiv2 {
+  height: 50px;
   width: 5px;
   font-size: 14px;
   background: purple;
   position: relative;
 }
 
+.invisibleDiv2 {
+  height: 5px;
+  width: 50px;
+}
+
 .themes .row {
   justify-content: space-around;
-  margin-top: 30px;
-  margin-bottom: 70px;
+  padding-top: 30px;
+  padding-bottom: 70px;
   font-size: 15px;
 }
 

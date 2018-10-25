@@ -46,13 +46,6 @@ export default Example;`}
             <pre>
                 <code className="language-jsx">
                     {`{/* Important: set the position of the target element to relative */}
-<div 
-    style={{ 
-        position: 'relative'
-        mouseOver: this.showTooltip(true) 
-        mouseLeave: this.showTooltip(false)
-    }}>
-    {/* TARGET ELEMENT CONTENT */}
     <Tooltip
         show={this.props.show}
         animation='fadeIn'
@@ -62,8 +55,7 @@ export default Example;`}
     {/* Add span element(s) for tooltip content. Each span represents an options */}
         <span>Option 1</span>
         <span>Option 2</span>
-    </Tooltip>
-</div>`}
+    </Tooltip>`}
                 </code>
             </pre>
         </>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Tooltip from '../../../../../lib';
-import logo from '../../../../../assets/logo.svg';
+import Tooltip from '../../../../lib';
+import logo from '../../../../assets/logo.svg';
 
 class Alert extends Component {
     state = {
@@ -17,48 +17,10 @@ class Alert extends Component {
     render() {
         return (
             <>
-                <div className='row' style={{ width: '80%', justifyContent: 'space-between', marginBottom: '50px' }}>
-                    <div className='invisibleDiv'>
-                        <Tooltip
-                            show={true}
-                            textboxWidth='100px'
-                            arrow='leftTop'
-                            align='center'
-                            alert='rgb(255, 0, 0)'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                    </div>
-                    <div className='invisibleDiv'>
-                        <Tooltip
-                            show={true}
-                            textboxWidth='100px'
-                            arrow='leftTop'
-                            align='center'
-                            alert='rgb(0, 255, 0)'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                    </div>
-                    <div className='invisibleDiv'>
-                        <Tooltip
-                            show={true}
-                            textboxWidth='100px'
-                            arrow='leftTop'
-                            align='center'
-                            alert='rgb(0, 0, 255)'
-                        >
-                            <span>Our Technology</span>
-                            <span>Our Story</span>
-                        </Tooltip>
-                    </div>
-                </div>
-                <h3 style={{ marginTop: '80px' }}>Usage Example:</h3>
+                <h3 style={{ margin: '25px 0 0 0' }}>Static alert example</h3>
                 <div
                     style={{
-                        margin: '20px auto',
+                        margin: '5px auto 30px auto',
                         padding: '0 30px',
                         width: '100%',
                         border: '1px solid lightgrey',
