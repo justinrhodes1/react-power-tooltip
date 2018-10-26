@@ -147,6 +147,12 @@ class Tooltip extends Component {
         } else if (moveRight < 0) {
             pushRight = 0;
             margin = `0px 0px 0px ${moveRight}px`;
+        } else if (moveLeft < 0) {
+            pushLeft = 0;
+            margin = `0px ${moveLeft}px 0px 0px`;
+        } else if (moveUp < 0) {
+            pushUp = 0;
+            margin = `${moveUp * -1}px 0px 0px 0px`;
         }
 
         tooltipStyle = {
