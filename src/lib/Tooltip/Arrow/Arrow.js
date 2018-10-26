@@ -4,6 +4,8 @@ import './arrow.css';
 const Arrow = ({
     moveDown,
     moveRight,
+    moveLeft,
+    moveUp,
     isHovered,
     hoverBackground,
     backgroundColor,
@@ -17,17 +19,20 @@ const Arrow = ({
 
     let boxShadow = flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
 
+    let marginLeft;
+    let marginRight;
+
     if (arrow.side('top') || arrow.side('bottom')) {
-        left = moveRight ?
-            `calc(50% + ${moveRight})` : `50%`;
+        marginLeft = `${moveRight}px`;
+        marginRight = `${moveLeft}px`;
     }
 
     return (
         <div
             className={'tpArrow'}
             style={{
-                top: moveDown,
-                left,
+                marginLeft,
+                marginRight,
                 backgroundColor,
                 boxShadow,
                 zIndex: zIndex + 1 || '101',

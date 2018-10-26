@@ -29,10 +29,14 @@ class Tooltip extends Component {
             borderRadius: this.props.borderRadius || '5px',
             moveDown: this.props.moveDown || '0px',
             moveRight: this.props.moveRight || '0px',
+            moveLeft: this.props.moveLeft || '0px',
+            moveUp: this.props.moveUp || '0px',
         }
 
         this.props.moveDown = Number(this.props.moveDown.slice(0, -2));
         this.props.moveRight = Number(this.props.moveRight.slice(0, -2));
+        this.props.moveLeft = Number(this.props.moveLeft.slice(0, -2));
+        this.props.moveUp = Number(this.props.moveUp.slice(0, -2));
 
         // if (!this.props.alert) console.error('Add an alert to your tooltip!');
 
@@ -47,6 +51,8 @@ class Tooltip extends Component {
             align,
             moveDown,
             moveRight,
+            moveLeft,
+            moveUp,
             show
         } = this.props;
 
@@ -99,8 +105,10 @@ class Tooltip extends Component {
             x: arrow.side('left') || arrow.side('right')
         }
 
-        let pushRight;
-        let pushDown;
+        let pushRight = moveRight;
+        let pushDown = moveDown;
+        let pushLeft = moveLeft;
+        let pushUp = moveUp;
 
         switch (algn.position) {
             case 'left':
@@ -112,10 +120,12 @@ class Tooltip extends Component {
             case 'center':
                 if (onAxis.x) {
                     classes.push('tpAlignCenter');
-                    pushDown = moveDown * 2;
+                    pushDown = pushDown * 2;
+                    pushUp = pushUp * 2;
                 };
                 if (onAxis.y) {
-                    pushRight = moveRight * 2;
+                    pushRight = pushRight * 2;
+                    pushLeft = pushLeft * 2;
                 }
                 break;
             case 'bottom':
@@ -125,26 +135,6 @@ class Tooltip extends Component {
                 break;
         }
 
-        let margin;
-
-        if (moveDown < 0 && moveRight < 0) {
-            pushDown = 0;
-            pushRight = 0;
-            margin = `${moveDown}px 0px 0px ${moveRight}px`;
-        } else if (moveDown < 0) {
-            pushDown = 0;
-            margin = `${moveDown}px 0px 0px 0px`;
-        } else if (moveRight < 0) {
-            pushRight = 0;
-            margin = `0px 0px 0px ${moveRight}px`;
-        }
-
-
-        // if (pushDown < 0) {
-        //     pushDown = 0;
-        //     marginStyle = `${moveDown} 0px 0px 0px`
-        // }
-
         tooltipStyle = {
             ...tooltipStyle,
             color,
@@ -152,8 +142,7 @@ class Tooltip extends Component {
             textAlign,
             fontFamily,
             fontWeight,
-            padding: `${pushDown}px 0px 0px ${pushRight}px`,
-            margin
+            padding: `${pushDown}px ${pushLeft}px ${pushUp}px ${pushRight}px`
         }
 
         return (

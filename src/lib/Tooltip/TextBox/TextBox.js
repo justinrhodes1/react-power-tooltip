@@ -43,6 +43,9 @@ class TextBox extends Component {
             static: tpStatic,
             textBoxWidth: width,
             moveDown,
+            moveLeft,
+            moveUp,
+            moveRight,
             lineSeparated,
             backgroundColor,
             padding,
@@ -189,14 +192,16 @@ class TextBox extends Component {
                     ...boxStyle,
                     position: 'absolute',
                     boxShadow,
-                    margin: `${moveDown} 0px 0px 0px`
+                    padding: `${moveDown}px ${moveLeft}px ${moveUp}px ${moveRight}px`
                 }}
             >
                 <div
                     className={`tpShadowDiv ${showShadow}`}
                     style={{
                         zIndex: zIndex || '100',
-                        borderRadius
+                        borderRadius,
+                        height: `calc(100% - ${moveDown + moveUp}px)`,
+                        width: `calc(100% - ${moveLeft + moveRight}px)`
                     }} />
                 <div
                     className={`tpTextBox`}
