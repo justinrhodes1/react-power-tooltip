@@ -255,6 +255,19 @@ tr:nth-child(even) {
   min-width: 150px;
 }
 
+.hoverDiv {
+  width: 120px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .square {
   position: relative;
   height: 250px;

@@ -9,7 +9,7 @@ const Intro = () => {
             <h1>Installation</h1>
             <h2>Npm</h2>
             <pre>
-                <code>$ npm install react-custom-tooltip --save</code>
+                <code style={{ color: '#404040' }}>$ npm install react-custom-tooltip --save</code>
             </pre>
             <h2>CSS file</h2>
             <pre>

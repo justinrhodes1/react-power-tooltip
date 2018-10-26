@@ -29,11 +29,8 @@ class Tooltip extends Component {
             borderRadius: this.props.borderRadius || '5px',
             moveDown: this.props.moveDown || '0px',
             moveRight: this.props.moveRight || '0px',
-            // delayTime: this.props.delayTime || 400
         }
 
-        // this.props.delayTime = this.props.alert ? this.props.delayTime : 0;
-        // console.log(''this.props.delayTime);
         this.props.moveDown = Number(this.props.moveDown.slice(0, -2));
         this.props.moveRight = Number(this.props.moveRight.slice(0, -2));
 

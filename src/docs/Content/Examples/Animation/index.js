@@ -6,11 +6,14 @@ import Animations3 from './Animations3';
 
 const Animation = () => {
     return (
-        <div className='row' style={{ width: '80%', justifyContent: 'space-around' }}>
-            <Animations1 />
-            <Animations2 />
-            <Animations3 />
-        </div>
+        <>
+            <h3 style={{ width: '95%', margin: '15px 0' }}><strong>Hover effects</strong></h3>
+            <div className='row' style={{ width: '80%', justifyContent: 'space-around' }}>
+                <Animations1 />
+                <Animations2 />
+                <Animations3 />
+            </div>
+        </>
     );
 };
 

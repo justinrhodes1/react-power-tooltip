@@ -11,7 +11,7 @@ const sideNav = () => {
                 <ul className='subUl'>
                     <li className='subList'><a href='#types'>Types</a></li>
                     <li className='subList'><a href='#animations'>Animations</a></li>
-                    <li className='subList'><a href='#colors'>Colors / Shapes</a></li>
+                    <li className='subList'><a href='#customizatioin'>Customization</a></li>
                     <li className='subList'><a href='#positions'>Positions</a></li>
                 </ul>
                 <li><a href='#api'>API</a></li>
