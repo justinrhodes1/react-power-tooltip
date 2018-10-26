@@ -88,11 +88,13 @@ class Tooltip extends Component {
 
         let tooltipStyle = {};
         let { arrow, align: algn } = this.props;
+        let bottom;
 
         if (arrow.side('top')) {
             arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
         } else if (arrow.side('bottom')) {
-            arrange('-21px', 'tpArrowBottom', '0px', '', '', '100%');
+            arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+            bottom = '100%';
         } else if (arrow.side('left')) {
             arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
         } else {
@@ -152,12 +154,13 @@ class Tooltip extends Component {
             margin = `0px ${moveLeft}px 0px 0px`;
         } else if (moveUp < 0) {
             pushUp = 0;
-            margin = `${moveUp * -1}px 0px 0px 0px`;
+            margin = `0px 0px ${moveUp}px 0px`;
         }
 
         tooltipStyle = {
             ...tooltipStyle,
             color,
+            bottom,
             fontSize,
             textAlign,
             fontFamily,

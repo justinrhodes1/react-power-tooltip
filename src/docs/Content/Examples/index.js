@@ -8,7 +8,8 @@ import Shapes from './Customization/Shapes';
 import AlignPositions from './Positions/Align';
 import ArrowVPos from './Positions/ArrowVPos';
 import ArrowHPos from './Positions/ArrowHPos';
-import Adjustment from './Positions/Adjustment';
+import AdjustmentInner from './Positions/AdjPosIn';
+import AdjustmentOuter from './Positions/AdjPosOut';
 
 class Examples extends Component {
 
@@ -75,10 +76,19 @@ class Examples extends Component {
                 <h3>3) Position adjustments (via moveDown / moveRight prop)</h3>
                 <div className='FlexContainer greyBkgr'
                     style={{
-                        paddingBottom: '140px'
+                        paddingBottom: '50px',
+                        marginBottom: '50px'
                     }}
                 >
-                    <Adjustment />
+                    <AdjustmentInner />
+                </div>
+                <div className='FlexContainer greyBkgr'
+                    style={{
+                        paddingBottom: '140px',
+                        marginBottom: '50px'
+                    }}
+                >
+                    <AdjustmentOuter />
                 </div>
             </>
         );
