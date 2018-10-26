@@ -22,7 +22,7 @@ class Header extends Component {
                             align='center'
                             fontSize='13px'
                             textBoxWidth='auto'
-                            moveUp='4px'
+                            moveDown='-4px'
                             static
                         >
                             <span>Simple &amp; Easy!</span>

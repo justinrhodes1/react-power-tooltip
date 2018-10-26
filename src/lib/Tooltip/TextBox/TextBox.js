@@ -184,6 +184,7 @@ class TextBox extends Component {
         const rgb = alert || 'rgb(248, 109, 109)';
         const boxShadow = alert ?
             `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
+        const noNeg = number => number > 0 ? number : 0;
 
         return (
             <div
@@ -200,8 +201,8 @@ class TextBox extends Component {
                     style={{
                         zIndex: zIndex || '100',
                         borderRadius,
-                        height: `calc(100% - ${moveDown + moveUp}px)`,
-                        width: `calc(100% - ${moveLeft + moveRight}px)`
+                        height: `calc(100% - ${noNeg(moveDown) + noNeg(moveUp)}px)`,
+                        width: `calc(100% - ${noNeg(moveLeft) + noNeg(moveRight)}px)`
                     }} />
                 <div
                     className={`tpTextBox`}

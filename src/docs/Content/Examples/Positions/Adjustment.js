@@ -16,11 +16,21 @@ const Adjustment = () => {
                     }}>
                     <Tooltip
                         show={true}
+                        arrow='bottomCenter'
+                        align='center'
+                        textBoxWidth='auto'
+                        moveUp='-100px'
+                    // moveLeft='150px'
+                    >
+                        <span>Longer Option 1</span>
+                        <span>Longer Option 2</span>
+                    </Tooltip>
+                    <Tooltip
+                        show={true}
                         arrow='topCenter'
                         align='center'
                         textBoxWidth='auto'
-                        moveDown='100px'
-                        moveLeft='150px'
+                        moveDown='-100px'
                     >
                         <span>Longer Option 1</span>
                         <span>Longer Option 2</span>

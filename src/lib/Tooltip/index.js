@@ -135,6 +135,20 @@ class Tooltip extends Component {
                 break;
         }
 
+        let margin;
+
+        if (moveDown < 0 && moveRight < 0) {
+            pushDown = 0;
+            pushRight = 0;
+            margin = `${moveDown}px 0px 0px ${moveRight}px`;
+        } else if (moveDown < 0) {
+            pushDown = 0;
+            margin = `${moveDown}px 0px 0px 0px`;
+        } else if (moveRight < 0) {
+            pushRight = 0;
+            margin = `0px 0px 0px ${moveRight}px`;
+        }
+
         tooltipStyle = {
             ...tooltipStyle,
             color,
@@ -142,7 +156,8 @@ class Tooltip extends Component {
             textAlign,
             fontFamily,
             fontWeight,
-            padding: `${pushDown}px ${pushLeft}px ${pushUp}px ${pushRight}px`
+            padding: `${pushDown}px ${pushLeft}px ${pushUp}px ${pushRight}px`,
+            margin
         }
 
         return (
