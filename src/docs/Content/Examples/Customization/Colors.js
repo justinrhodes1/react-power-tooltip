@@ -15,7 +15,7 @@ const Colors = () => {
                             align='center'
                             hoverBackground='#3b0586'
                             hoverColor='white'
-                            lineSeparated='1px solid #6052ff'
+                            lineSeparated='2px solid #6052ff'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>

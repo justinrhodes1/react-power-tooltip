@@ -13,6 +13,7 @@ const Colors = () => {
                             show={true}
                             arrow='leftTop'
                             align='center'
+                            lineSeparated
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
@@ -28,6 +29,7 @@ const Colors = () => {
                             align='center'
                             textAlign='right'
                             fontWeight='normal'
+                            lineSeparated
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>
@@ -35,7 +37,7 @@ const Colors = () => {
                     </div>
                 </div>
                 <div>
-                    <p>Corners / lines</p>
+                    <p>Border radius</p>
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}

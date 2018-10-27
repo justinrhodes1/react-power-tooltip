@@ -9,6 +9,11 @@ class TextBox extends Component {
         totH: null
     }
 
+    unsetHover = () => {
+        this.setState({ hoverIndex: null });
+        this.props.hoverArrow(false);
+    }
+
     //Set & unset hover state
     onSpanHover = (index, lastIndex, numChildren) => {
         this.setState({ hoverIndex: index });
@@ -212,6 +217,7 @@ class TextBox extends Component {
                     }} />
                 <div
                     className={`tpTextBox`}
+                    onMouseLeave={this.unsetHover}
                     style={{
                         zIndex: zIndex + 2 || '102',
                         backgroundColor,

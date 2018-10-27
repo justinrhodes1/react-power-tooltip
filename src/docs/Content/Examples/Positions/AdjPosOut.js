@@ -29,7 +29,8 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveLeft='40px'
-                // static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveLeft<br />40px</span>
                 </Tooltip>
@@ -41,7 +42,8 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveDown='40px'
-                // static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveDown<br />40px</span>
                 </Tooltip>
@@ -53,7 +55,8 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveRight='40px'
-                // static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveRight<br />40px</span>
                 </Tooltip>
@@ -65,7 +68,8 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveUp='40px'
-                // static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveUp<br />40px</span>
                 </Tooltip>

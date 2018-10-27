@@ -14,6 +14,7 @@ const Arrow = () => {
                             arrow='topRight'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>
@@ -28,6 +29,7 @@ const Arrow = () => {
                             arrow='topCenter'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>
@@ -43,6 +45,7 @@ const Arrow = () => {
                             arrow='topLeft'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>

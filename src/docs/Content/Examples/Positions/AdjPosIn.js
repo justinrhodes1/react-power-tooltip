@@ -26,7 +26,8 @@ const Adjustment = () => {
                     textAlign='center'
                     moveLeft='-150px'
                     textBoxWidth='120px'
-                    static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveLeft<br />-200px</span>
                 </Tooltip>
@@ -38,7 +39,8 @@ const Adjustment = () => {
                     textAlign='center'
                     moveDown='-100px'
                     textBoxWidth='120px'
-                    static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveDown<br />-130px</span>
                 </Tooltip>
@@ -50,7 +52,8 @@ const Adjustment = () => {
                     textAlign='center'
                     moveRight='-150px'
                     textBoxWidth='120px'
-                    static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveRight<br />-200px</span>
                 </Tooltip>
@@ -62,7 +65,8 @@ const Adjustment = () => {
                     textAlign='center'
                     moveUp='-100px'
                     textBoxWidth='120px'
-                    static
+                    hoverBackground='#3b0586'
+                    hoverColor='white'
                 >
                     <span>moveUp<br />-130px</span>
                 </Tooltip>

@@ -14,6 +14,7 @@ const VerticalArrow = () => {
                             arrow='leftBottom'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>
@@ -28,6 +29,7 @@ const VerticalArrow = () => {
                             arrow='leftCenter'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>
@@ -42,6 +44,7 @@ const VerticalArrow = () => {
                             arrow='leftTop'
                             align='center'
                             textBoxWidth='auto'
+                            lineSeparated
                         >
                             <span>Longer Option 1</span>
                             <span>Longer Option 2</span>
