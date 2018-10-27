@@ -33,6 +33,9 @@ class Tooltip extends Component {
             moveUp: this.props.moveUp || '0px',
         }
 
+        this.props.lineSeparated = typeof (this.props.lineSeparated) == typeof (true)
+            ? '1px solid #ececec' : this.props.lineSeparated;
+
         this.props.moveDown = Number(this.props.moveDown.slice(0, -2));
         this.props.moveRight = Number(this.props.moveRight.slice(0, -2));
         this.props.moveLeft = Number(this.props.moveLeft.slice(0, -2));

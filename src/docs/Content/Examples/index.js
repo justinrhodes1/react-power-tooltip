@@ -64,16 +64,22 @@ class Examples extends Component {
                 </div>
                 <div className='FlexContainer greyBkgr'
                     style={{
-                        paddingBottom: '140px'
+                        paddingBottom: '140px',
+                        marginBottom: '50px'
                     }}
                 >
                     <ArrowHPos />
                 </div>
                 <h3>2) <strong>Align</strong> tooltip positions (via align prop)</h3>
-                <div className='FlexContainer'>
-                    <AlignPositions />
+                <div className='FlexContainer greyBkgr'
+                    style={{
+                        padding: '50px',
+                        marginBottom: '50px'
+                    }}
+                >
+                    <span> <AlignPositions /></span>
                 </div>
-                <h3>3) Position adjustments (via moveDown / moveRight prop)</h3>
+                <h3>3) <strong>Adjusting</strong> positions (via move props)</h3>
                 <div className='FlexContainer greyBkgr'
                     style={{
                         paddingBottom: '50px',
@@ -84,8 +90,7 @@ class Examples extends Component {
                 </div>
                 <div className='FlexContainer greyBkgr'
                     style={{
-                        paddingBottom: '140px',
-                        marginBottom: '50px'
+                        paddingBottom: '140px'
                     }}
                 >
                     <AdjustmentOuter />

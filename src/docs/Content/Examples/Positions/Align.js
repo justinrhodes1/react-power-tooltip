@@ -13,7 +13,7 @@ class Align extends Component {
     render() {
         const { hover } = this.state;
         return (
-            <div style={{ position: 'relative', margin: '50px', fontSize: '14px' }}>
+            <div style={{ position: 'relative', fontSize: '14px' }}>
                 <Tooltip
                     show={hover === 'left'}
                     align='top'

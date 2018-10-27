@@ -275,6 +275,7 @@ tr:nth-child(even) {
   border: 2px solid #4b4b4b;
   overflow: hidden;
   background: rgba(137, 27, 211, 0.4);
+  border-radius: 5px;
 }
 
 .top,

@@ -14,7 +14,8 @@ const Adjustment = () => {
                     height: '300px',
                     position: 'relative',
                     marginTop: '30px',
-                    fontSize: '14px'
+                    fontSize: '14px',
+                    borderRadius: '5px'
                 }}>
                 <h3 style={{ margin: '10px 0 0 20px' }}>Target element</h3>
                 <Tooltip

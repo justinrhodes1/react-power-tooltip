@@ -17,7 +17,8 @@ const AdjustmentOuter = () => {
                     fontSize: '14px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    borderRadius: '5px'
                 }}>
                 <h3>Target element</h3>
                 <Tooltip
@@ -28,7 +29,7 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveLeft='40px'
-                    static
+                // static
                 >
                     <span>moveLeft<br />40px</span>
                 </Tooltip>
@@ -40,7 +41,7 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveDown='40px'
-                    static
+                // static
                 >
                     <span>moveDown<br />40px</span>
                 </Tooltip>
@@ -52,7 +53,7 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveRight='40px'
-                    static
+                // static
                 >
                     <span>moveRight<br />40px</span>
                 </Tooltip>
@@ -64,7 +65,7 @@ const AdjustmentOuter = () => {
                     textAlign='center'
                     textBoxWidth='120px'
                     moveUp='40px'
-                    static
+                // static
                 >
                     <span>moveUp<br />40px</span>
                 </Tooltip>
