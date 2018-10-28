@@ -6,6 +6,7 @@ import Header from './Header';
 import SideNav from './SideNav';
 import Intro from './Content/Intro';
 import BasicUse from './Content/BasicUsage/BasicUsage';
+import AdvUse from './Content/AdvancedUsage';
 import Examples from './Content/Examples';
 import Api from './Content/Api';
 
@@ -29,8 +30,8 @@ class Demo extends Component {
           <div className='main'>
             <section id={'install'}><Intro /></section>
             <section id={'basic'}><BasicUse /></section>
-            <section id={'advanced'}><h1>Advanced Usage</h1></section>
             <section id={'examples'}><Examples /></section>
+            <section id={'advanced'}><AdvUse /></section>
             <section id={'api'}><Api /></section>
           </div>
         </div>

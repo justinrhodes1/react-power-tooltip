@@ -26,14 +26,15 @@ const BasicUsage = () => {
     render() {
         return (
             <div>
-            {/* Add your target element to trigger showing the tooltip */}
+            {/* Add a target element triggering hover event */}
                 <div 
                     style={{ 
+                        {/* Important: Set target position to RELATIVE */}
                         position: 'relative'
                         mouseOver: this.showTooltip(true) 
                         mouseLeave: this.showTooltip(false)
                     }}>
-                {/* Tooltip comes here! */}
+                {/* ADD TOOLTIP HERE */}
                 </div>
             </div>
         );
@@ -45,17 +46,17 @@ export default Example;`}
             <h3>3) Set the position of the target element to relative. Then add the tooltip to that element</h3>
             <pre>
                 <code className="language-jsx">
-                    {`{/* Important: set the position of the target element to relative */}
-    <Tooltip
-        show={this.props.show}
-        animation='fadeIn'
-        arrow='rightBottom'
-        align='top'
-    >
-    {/* Add span element(s) for tooltip content. Each span represents an options */}
-        <span>Option 1</span>
-        <span>Option 2</span>
-    </Tooltip>`}
+                    {
+                        `<Tooltip
+    show={this.props.show}
+    animation='fadeIn'
+    arrow='rightBottom'
+    align='top'
+>
+{/* Add option(s) as span element(s) */}
+    <span>Option 1</span>
+    <span>Option 2</span>
+</Tooltip>`}
                 </code>
             </pre>
         </>

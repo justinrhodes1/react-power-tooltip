@@ -262,9 +262,11 @@ tr:nth-child(even) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   position: relative;
   cursor: pointer;
+  color: #2c2c2c;
+  border: 2px solid #4b4b4b;
+  background: rgba(137, 27, 211, 0.4);
   border-radius: 5px;
 }
 

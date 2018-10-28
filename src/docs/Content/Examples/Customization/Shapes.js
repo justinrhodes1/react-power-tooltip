@@ -37,14 +37,14 @@ const Colors = () => {
                     </div>
                 </div>
                 <div>
-                    <p>Border radius</p>
+                    <p>Corners / lines</p>
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
                             arrow='leftTop'
                             align='center'
                             borderRadius='0px'
-                            lineSeparated
+                            lineSeparated='3px solid #ececec'
                         >
                             <span>Our Technology</span>
                             <span>Our Story</span>

@@ -15,9 +15,9 @@ class Animations2 extends Component {
             <div
                 onMouseOver={() => this.showTooltip(true)}
                 onMouseLeave={() => this.showTooltip(false)}
-                className='PurpleGradient hoverDiv'>
+                className='hoverDiv'>
                 <span style={{ marginBottom: '15px' }}>Hover Me</span>
-                <span><strong>Bounce</strong></span>
+                <span style={{ fontSize: '14px' }}><strong>Bounce</strong></span>
                 <Tooltip
                     show={this.state.show}
                     animation='bounce'
