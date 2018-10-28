@@ -128,21 +128,24 @@ const Api = () => {
                     </tr>
                     <tr>
                         <td>lineSeparated</td>
-                        <td>boolean: false | true</td>
-                        <td>default: false</td>
-                        <td>Enable line separation between options</td>
+                        <td>boolean: false | string: css border property true</td>
+                        <td>default: '1px solid #ececec'</td>
+                        <td>Enable & specify line separation between options</td>
                     </tr>
                     <tr>
                         <td>arrow</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>string: 'top' | 'center' | 'bottom' | 'left' | 'right'</td>
+                        <td>default: na</td>
+                        <td>Positions arrow relative to textbox</td>
                     </tr>
                     <tr>
                         <td>align</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>string: 'top left' | 'top center' | 'top right' |
+                        'bottom left' | 'bottom center' | ' bottom right' |
+                         'left top' | 'left center' | ' left bottom' |
+                         'right top' | 'right center' | ' right bottom'</td>
+                        <td>default: na</td>
+                        <td>Positions tooltip relative to target element</td>
                     </tr>
                 </tbody>
             </table>
