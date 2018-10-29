@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
+import delayUnmount from './HOC/delayUnmount';
 import TextBox from './TextBox/TextBox';
 import Arrow from './Arrow/Arrow';
-// import delayUnmounting from './HOC/old/delayUnmount';
-import delayUnmount from './HOC/delayUnmount';
 
 import './style.css';
 import './animation.css';
@@ -31,6 +29,8 @@ class Tooltip extends Component {
             moveRight: this.props.moveRight || '0px',
             moveLeft: this.props.moveLeft || '0px',
             moveUp: this.props.moveUp || '0px',
+            align: this.props.align || 'right center',
+            arrow: this.props.arrow || 'top'
         }
 
         this.props.lineSeparated = typeof (this.props.lineSeparated) == typeof (true)
@@ -50,7 +50,9 @@ class Tooltip extends Component {
             fontSize = 'inherit',
             color = 'inherit',
             animation = '',
+            // TODO: change to just arrow,
             arrow: position,
+            // TODO: change to position,
             align,
             moveDown,
             moveRight,
@@ -59,17 +61,43 @@ class Tooltip extends Component {
             show
         } = this.props;
 
+        //TODO: remove below functions instead.
+
         function is(pos1, pos2, pos3) {
             return this.position === pos1
                 || this.position === pos2
                 || this.position === pos3;
         }
 
+        // function isAlign(pos) {
+        //     return this.align ? 
+        //          this.align === pos : this.position === ps;
+        // }
+
+        // function isSide(pos) {
+        //     return this.side === pos;
+        // }
+
         function side(pos) {
             if (pos === 'left' || pos === 'right')
                 return this.is(`${pos}Center`, `${pos}Top`, `${pos}Bottom`);
             return this.is(`${pos}Center`, `${pos}Left`, `${pos}Right`);
         }
+
+        // //TODO: Use below instead
+        // // align = 'left top' | 'top left' | 'bottom center' | 'left center' 
+        // this.props.position = {
+        //     side: this.props.position.split(' ')[0],
+        //     align: this.props.position.split(' ')[1],
+        //     isAlign,
+        //     isSide
+        // }
+
+        // this.props.arrow = {
+        //     isAlign,
+        //     position: arrow
+        // };
+
 
         this.props.align = {
             is,
@@ -92,6 +120,58 @@ class Tooltip extends Component {
         let tooltipStyle = {};
         let { arrow, align: algn } = this.props;
         let bottom;
+
+        //TODO: use below code instead
+
+        // switch (side) {
+        //     case 'top':
+        //         arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
+        //         break;
+        //     case 'bottom':
+        //         arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+        //         bottom = '100%';
+        //     case 'left':
+        //         arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
+        //     default:
+        //         arrange('0px', 'tpArrowRight', '', '100%', '100%', '');
+        //         break;
+        // }
+
+        //TODO: exchange let with const declarations
+        // let onAxis = {
+        //     y: side('top') || side('bottom'),
+        //     x: side('left') || side('right')
+        // }
+
+        // let pushRight = moveRight;
+        // let pushDown = moveDown;
+        // let pushLeft = moveLeft;
+        // let pushUp = moveUp;
+
+        // switch (align) {
+        //     case 'left':
+        //         if (onAxis.y) classes.push('tpArrowLeft');
+        //         break;
+        //     case 'right':
+        //         if (onAxis.y) classes.push('tpArrowRight');
+        //         break;
+        //     case 'center':
+        //         if (onAxis.x) {
+        //             classes.push('tpAlignCenter');
+        //             pushDown = pushDown * 2;
+        //             pushUp = pushUp * 2;
+        //         };
+        //         if (onAxis.y) {
+        //             pushRight = pushRight * 2;
+        //             pushLeft = pushLeft * 2;
+        //         }
+        //         break;
+        //     case 'bottom':
+        //         if (onAxis.x) classes.push('tpAlignBottom');
+        //         break;
+        //     default:
+        //         break;
+        // }
 
         if (arrow.side('top')) {
             arrange('100%', 'tpArrowTop', '0px', '', '', '100%');

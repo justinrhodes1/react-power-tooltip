@@ -2,10 +2,10 @@ import React from 'react';
 import './arrow.css';
 
 const Arrow = ({
-    moveDown,
+    // moveDown,
     moveRight,
     moveLeft,
-    moveUp,
+    // moveUp,
     isHovered,
     hoverBackground,
     backgroundColor,
@@ -13,7 +13,7 @@ const Arrow = ({
     zIndex,
     arrow }) => {
 
-    let left = '';
+    // let left = '';
     backgroundColor = isHovered ?
         hoverBackground : backgroundColor;
 
@@ -21,6 +21,11 @@ const Arrow = ({
 
     let marginLeft;
     let marginRight;
+
+    // if (position.isSide('top') || position.isSide('bottom')) {
+    //     marginLeft = `${moveRight}px`;
+    //     marginRight = `${moveLeft}px`;
+    // }
 
     if (arrow.side('top') || arrow.side('bottom')) {
         marginLeft = `${moveRight}px`;

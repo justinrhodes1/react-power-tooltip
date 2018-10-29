@@ -15,6 +15,21 @@ class TextBox extends Component {
     }
 
     //Set & unset hover state
+    //TODO: exchange with below
+    // onSpanHover = (index, lastIndex, numChildren) => {
+    //     this.setState({ hoverIndex: index });
+    //     const { static: rctStatic, arrow, position, hoverArrow } = this.props;
+    //     if (!rctStatic
+    //         && ((index === 0
+    //             && (position.isSide('top') || arrow.isAlign('top')))
+    //             || (index === lastIndex
+    //                 && (position.isSide('bottom') || arrow.isSide('bottom')))
+    //             || numChildren === 1)) {
+    //         return hoverArrow(true);
+    //     }
+    //     return hoverArrow(false);
+    // }
+
     onSpanHover = (index, lastIndex, numChildren) => {
         this.setState({ hoverIndex: index });
         const { static: tpStatic, arrow, hoverArrow } = this.props;
@@ -46,6 +61,7 @@ class TextBox extends Component {
         const {
             arrow,
             align,
+            //position,
             static: tpStatic,
             textBoxWidth: width,
             moveDown,
@@ -70,6 +86,24 @@ class TextBox extends Component {
             firstH,
             lastH
         } = this.state;
+
+        //TODO: align.is('top/bottom/center/left/right') 
+        // arrow.position 
+        // const calcHPos = (left, center, right) => {
+        //     return position.isAlign('center') ? center : position.isAlign('left') ? left : right;
+        // }
+        // const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
+        //     return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
+        // }
+        // const calcTopPos = (elHeight, totHeight) => {
+        //     if (position.isAlign('center')) {
+        //         return calcVPos(50, elHeight, 2, null, totHeight);
+        //     } else if (position.isAlign('bottom')) {
+        //         return calcVPos(100, elHeight, 2, -12, totHeight);
+        //     }
+        //     return calcVPos(0, elHeight, 2, 12, totHeight);
+        // }
+
 
         const calcHPos = (left, center, right) => {
             return align.is('center') ? center : align.is('left') ? left : right;
@@ -126,6 +160,52 @@ class TextBox extends Component {
             calcHPos('100% - 50px', '50% - 40px', '0% - 30px');
         let hRightPos =
             calcHPos('0% - 30px', '50% - 40px', '100% - 50px');
+
+
+        //TODO: use below
+        // if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
+        //     arrow.position === 'hCenter';
+        // } else if (arrow.isAlign('center')) {
+        //     arrow.position === 'vCenter';
+        // }
+
+        // switch (arrow.position) {
+        //     case 'left':
+        //         right = `calc(${hLeftPos})`;
+        //         break;
+        //     case 'right':
+        //         left = `calc(${hRightPos})`;
+        //         break;
+        //     case 'top':
+        //         top = calcTopPos(firstH, null);
+        //         break;
+        //     case 'bottom':
+        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+        //         break;
+        //     case 'vCenter':
+        //         top = calcTopPos(totH, null);
+        //         break;
+        //     case 'hCenter':
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        // switch (position.side) {
+        //     case 'bottom':
+        //         break;
+        //     case 'top':
+        //         top = calcVPos(0, totH, 1, 11);
+        //         break;
+        //     case 'left':
+        //         right = '8px';
+        //         break;
+        //     case 'right':
+        //         left = '8px';
+        //         break;
+        // }
+
+
 
         switch (arrow.position) {
             case 'topLeft':
