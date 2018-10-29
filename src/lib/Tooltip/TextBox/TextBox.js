@@ -257,10 +257,14 @@ class TextBox extends Component {
                 break;
         }
 
-        let textBoxWidth = Number(width.slice(0, -2));
+        let textBoxWidth = width;
 
-        if (moveLeft > 0) textBoxWidth += moveLeft;
-        if (moveRight > 0) textBoxWidth += moveRight;
+        if (textBoxWidth !== 'auto') {
+            textBoxWidth = Number(width.slice(0, -2));
+            if (moveLeft > 0) textBoxWidth += moveLeft;
+            if (moveRight > 0) textBoxWidth += moveRight;
+        }
+
 
         const boxStyle = {
             left,

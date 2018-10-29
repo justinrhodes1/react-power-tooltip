@@ -7,11 +7,11 @@ const AdvUsage = () => {
             <h2>Custom Animations</h2>
             <p style={{ lineHeight: '1.5' }}>
                 To customize mount and umount animations
-                <ol>
-                    <li>Add your own CSS @keyframes rules to the global scope</li>
-                    <li>Enable your tooptip to use your animations</li>
-                </ol>
             </p>
+            <ol style={{ lineHeight: '1.5' }}>
+                <li>Add your own CSS @keyframes rules to the global scope</li>
+                <li>Enable your tooptip to use your animations</li>
+            </ol>
             <p style={{ lineHeight: '1.5' }}>
                 Add your keyframe rules to the global scope using the same selector for both mount and unmount
                 related keyframes. All keyframe selectors require an<strong> 'rct-' </strong>prefix.
