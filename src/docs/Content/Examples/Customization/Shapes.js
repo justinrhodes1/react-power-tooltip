@@ -12,7 +12,7 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             lineSeparated
                         >
                             <span>Our Technology</span>
@@ -26,8 +26,8 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
-                            textAlign='right'
+                            position='center'
+                            textposition='right'
                             fontWeight='normal'
                             lineSeparated
                         >
@@ -42,7 +42,7 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             borderRadius='0px'
                             lineSeparated='3px solid #ececec'
                         >

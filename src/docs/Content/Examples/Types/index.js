@@ -11,7 +11,7 @@ const Types = () => {
                         show={true}
                         textboxWidth='100px'
                         arrow='leftTop'
-                        align='center'
+                        position='center'
                         textboxWidth='auto'
                         lineSeparated
                     >
@@ -27,7 +27,7 @@ const Types = () => {
                         show={true}
                         textboxWidth='100px'
                         arrow='leftTop'
-                        align='center'
+                        position='center'
                         lineSeparated
                         static
                     >
@@ -43,7 +43,7 @@ const Types = () => {
                         show={true}
                         textboxWidth='100px'
                         arrow='leftTop'
-                        align='center'
+                        position='center'
                         alert='rgb(100, 0, 100)'
                         lineSeparated
                     >

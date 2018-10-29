@@ -29,7 +29,7 @@ class Tooltip extends Component {
             moveRight: this.props.moveRight || '0px',
             moveLeft: this.props.moveLeft || '0px',
             moveUp: this.props.moveUp || '0px',
-            align: this.props.align || 'right center',
+            align: this.props.position || 'right center',
             arrow: this.props.arrow || 'top'
         }
 

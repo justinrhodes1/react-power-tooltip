@@ -12,7 +12,7 @@ const VerticalArrow = () => {
                         <Tooltip
                             show={true}
                             arrow='leftBottom'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -27,7 +27,7 @@ const VerticalArrow = () => {
                         <Tooltip
                             show={true}
                             arrow='leftCenter'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -42,7 +42,7 @@ const VerticalArrow = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >

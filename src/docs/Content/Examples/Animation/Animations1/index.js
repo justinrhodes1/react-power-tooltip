@@ -22,7 +22,7 @@ class Animations1 extends Component {
                     show={this.state.show}
                     animation='fadeUpDown'
                     arrow='topRight'
-                    align='center'
+                    position='center'
                     color='black'
                     fontSize='14px'
                 >

@@ -24,7 +24,7 @@ const AdjustmentOuter = () => {
                 <Tooltip
                     show={true}
                     arrow='rightCenter'
-                    align='center'
+                    position='center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -37,7 +37,7 @@ const AdjustmentOuter = () => {
                 <Tooltip
                     show={true}
                     arrow='topCenter'
-                    align='center'
+                    position='center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -50,7 +50,7 @@ const AdjustmentOuter = () => {
                 <Tooltip
                     show={true}
                     arrow='leftCenter'
-                    align='center'
+                    position='center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -63,7 +63,7 @@ const AdjustmentOuter = () => {
                 <Tooltip
                     show={true}
                     arrow='bottomCenter'
-                    align='center'
+                    position='center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'

@@ -12,7 +12,7 @@ const Arrow = () => {
                         <Tooltip
                             show={true}
                             arrow='topRight'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -27,7 +27,7 @@ const Arrow = () => {
                         <Tooltip
                             show={true}
                             arrow='topCenter'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -43,7 +43,7 @@ const Arrow = () => {
                         <Tooltip
                             show={true}
                             arrow='topLeft'
-                            align='center'
+                            position='center'
                             textBoxWidth='auto'
                             lineSeparated
                         >

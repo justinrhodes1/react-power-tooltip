@@ -19,7 +19,7 @@ class Header extends Component {
                             show={true}
                             color='black'
                             arrow='topCenter'
-                            align='center'
+                            position='center'
                             fontSize='13px'
                             textBoxWidth='auto'
                             moveDown='-4px'

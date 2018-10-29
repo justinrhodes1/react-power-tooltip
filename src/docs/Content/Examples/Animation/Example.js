@@ -35,7 +35,7 @@ class Animation extends Component {
                     show={show}
                     animation='fadeIn'
                     arrow='leftBottom'
-                    align='center'
+                    position='center'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -44,7 +44,7 @@ class Animation extends Component {
                     show={show}
                     animation='fadeDown'
                     arrow='leftBottom'
-                    align='top'
+                    position='top'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -53,7 +53,7 @@ class Animation extends Component {
                     show={show}
                     animation='fade'
                     arrow='rightBottom'
-                    align='center'
+                    position='center'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -62,7 +62,7 @@ class Animation extends Component {
                     show={show}
                     animation='bounce'
                     arrow='rightBottom'
-                    align='bottom'
+                    position='bottom'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -71,7 +71,7 @@ class Animation extends Component {
                     show={show}
                     animation='fadeIn'
                     arrow='rightBottom'
-                    align='top'
+                    position='top'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -80,7 +80,7 @@ class Animation extends Component {
                     show={show}
                     animation='fadeLeftRight'
                     arrow='leftBottom'
-                    align='bottom'
+                    position='bottom'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>
@@ -89,7 +89,7 @@ class Animation extends Component {
                     show={show}
                     animation='fadeUpDown'
                     arrow='topCenter'
-                    align='center'
+                    position='center'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>

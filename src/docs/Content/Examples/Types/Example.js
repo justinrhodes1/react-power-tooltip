@@ -51,7 +51,7 @@ class Alert extends Component {
                                 textboxWidth='100px'
                                 animation='bounce'
                                 arrow='topLeft'
-                                align='center'
+                                position='center'
                                 alert='rgb(51,22,236)'
                                 static
                             >

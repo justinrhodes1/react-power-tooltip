@@ -22,7 +22,7 @@ class Animations2 extends Component {
                     show={this.state.show}
                     animation='bounce'
                     arrow='topRight'
-                    align='center'
+                    position='center'
                     color='black'
                     fontSize='14px'
                 >

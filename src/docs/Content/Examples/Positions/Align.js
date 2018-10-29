@@ -16,7 +16,7 @@ class Align extends Component {
             <div style={{ position: 'relative', fontSize: '14px' }}>
                 <Tooltip
                     show={hover === 'left'}
-                    align='top'
+                    position='top'
                     arrow='rightBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -26,7 +26,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'left'}
-                    align='center'
+                    position='center'
                     arrow='rightBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -36,7 +36,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'left'}
-                    align='bottom'
+                    position='bottom'
                     arrow='rightBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -46,7 +46,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    align='top'
+                    position='top'
                     arrow='leftBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -56,7 +56,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    align='center'
+                    position='center'
                     arrow='leftBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -66,7 +66,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    align='bottom'
+                    position='bottom'
                     arrow='leftBottom'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -76,7 +76,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    align='left'
+                    position='left'
                     arrow='bottomCenter'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -86,7 +86,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    align='center'
+                    position='center'
                     arrow='bottomCenter'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -96,7 +96,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    align='right'
+                    position='right'
                     arrow='bottomCenter'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -106,7 +106,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    align='left'
+                    position='left'
                     arrow='topCenter'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -116,7 +116,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    align='center'
+                    position='center'
                     arrow='topCenter'
                     delayTime='0'
                     textBoxWidth='auto'
@@ -126,7 +126,7 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    align='right'
+                    position='right'
                     arrow='topCenter'
                     delayTime='0'
                     textBoxWidth='auto'

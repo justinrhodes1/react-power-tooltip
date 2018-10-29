@@ -12,7 +12,7 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             lineSeparated='1px solid purple'
@@ -28,7 +28,7 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             color='white'
                             backgroundColor='#181818'
                         >
@@ -43,7 +43,7 @@ const Colors = () => {
                         <Tooltip
                             show={true}
                             arrow='leftTop'
-                            align='center'
+                            position='center'
                             color='white'
                             backgroundColor='#444444'
                             hoverBackground='#3b0586'
