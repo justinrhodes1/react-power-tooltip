@@ -11,7 +11,7 @@ const Arrow = ({
     backgroundColor,
     flat,
     zIndex,
-    arrow }) => {
+    position }) => {
 
     backgroundColor = isHovered ?
         hoverBackground : backgroundColor;
@@ -21,15 +21,15 @@ const Arrow = ({
     let marginLeft;
     let marginRight;
 
-    // if (position.isSide('top') || position.isSide('bottom')) {
-    //     marginLeft = `${moveRight}px`;
-    //     marginRight = `${moveLeft}px`;
-    // }
-
-    if (arrow.side('top') || arrow.side('bottom')) {
+    if (position.isSide('top') || position.isSide('bottom')) {
         marginLeft = `${moveRight}px`;
         marginRight = `${moveLeft}px`;
     }
+
+    // if (arrow.side('top') || arrow.side('bottom')) {
+    //     marginLeft = `${moveRight}px`;
+    //     marginRight = `${moveLeft}px`;
+    // }
 
     return (
         <div

@@ -16,33 +16,33 @@ class TextBox extends Component {
 
     //Set & unset hover state
     //TODO: exchange with below
-    // onSpanHover = (index, lastIndex, numChildren) => {
-    //     this.setState({ hoverIndex: index });
-    //     const { static: rctStatic, arrow, position, hoverArrow } = this.props;
-    //     if (!rctStatic
-    //         && ((index === 0
-    //             && (position.isSide('top') || arrow.isAlign('top')))
-    //             || (index === lastIndex
-    //                 && (position.isSide('bottom') || arrow.isSide('bottom')))
-    //             || numChildren === 1)) {
-    //         return hoverArrow(true);
-    //     }
-    //     return hoverArrow(false);
-    // }
-
     onSpanHover = (index, lastIndex, numChildren) => {
         this.setState({ hoverIndex: index });
-        const { static: tpStatic, arrow, hoverArrow } = this.props;
-        if (!tpStatic
+        const { static: rctStatic, arrow, position, hoverArrow } = this.props;
+        if (!rctStatic
             && ((index === 0
-                && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop')))
+                && (position.isSide('bottom') || arrow.isAlign('top')))
                 || (index === lastIndex
-                    && (arrow.side('bottom') || arrow.is('leftBottom') || arrow.is('rightBottom')))
+                    && (position.isSide('top') || arrow.isAlign('bottom')))
                 || numChildren === 1)) {
             return hoverArrow(true);
         }
         return hoverArrow(false);
     }
+
+    // onSpanHover = (index, lastIndex, numChildren) => {
+    //     this.setState({ hoverIndex: index });
+    //     const { static: tpStatic, arrow, hoverArrow } = this.props;
+    //     if (!tpStatic
+    //         && ((index === 0
+    //             && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop')))
+    //             || (index === lastIndex
+    //                 && (arrow.side('bottom') || arrow.is('leftBottom') || arrow.is('rightBottom')))
+    //             || numChildren === 1)) {
+    //         return hoverArrow(true);
+    //     }
+    //     return hoverArrow(false);
+    // }
 
     componentDidMount() {
         const heights = Object.keys(this.spanHeights).map(key => {
@@ -88,38 +88,38 @@ class TextBox extends Component {
 
         //TODO: align.is('top/bottom/center/left/right') 
         // arrow.position 
-        // const calcHPos = (left, center, right) => {
-        //     return position.isAlign('center') ? center : position.isAlign('left') ? left : right;
-        // }
-        // const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
-        //     return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
-        // }
-        // const calcTopPos = (elHeight, totHeight) => {
-        //     if (position.isAlign('center')) {
-        //         return calcVPos(50, elHeight, 2, null, totHeight);
-        //     } else if (position.isAlign('bottom')) {
-        //         return calcVPos(100, elHeight, 2, -12, totHeight);
-        //     }
-        //     return calcVPos(0, elHeight, 2, 12, totHeight);
-        // }
-
-
         const calcHPos = (left, center, right) => {
-            return position.is('center') ? center : position.is('left') ? left : right;
+            return position.isAlign('center') ? center : position.isAlign('left') ? left : right;
         }
-
         const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
             return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
-
         const calcTopPos = (elHeight, totHeight) => {
-            if (position.is('center')) {
+            if (position.isAlign('center')) {
                 return calcVPos(50, elHeight, 2, null, totHeight);
-            } else if (position.is('bottom')) {
+            } else if (position.isAlign('bottom')) {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
             return calcVPos(0, elHeight, 2, 12, totHeight);
         }
+
+
+        // const calcHPos = (left, center, right) => {
+        //     return position.is('center') ? center : position.is('left') ? left : right;
+        // }
+
+        // const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
+        //     return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
+        // }
+
+        // const calcTopPos = (elHeight, totHeight) => {
+        //     if (position.is('center')) {
+        //         return calcVPos(50, elHeight, 2, null, totHeight);
+        //     } else if (position.is('bottom')) {
+        //         return calcVPos(100, elHeight, 2, -12, totHeight);
+        //     }
+        //     return calcVPos(0, elHeight, 2, 12, totHeight);
+        // }
 
         const numberChildren = React.Children.count(children);
         const lastIndex = numberChildren - 1;
@@ -162,99 +162,99 @@ class TextBox extends Component {
 
 
         //TODO: use below
-        // if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
-        //     arrow.position === 'hCenter';
-        // } else if (arrow.isAlign('center')) {
-        //     arrow.position === 'vCenter';
-        // }
-
-        // switch (arrow.position) {
-        //     case 'left':
-        //         right = `calc(${hLeftPos})`;
-        //         break;
-        //     case 'right':
-        //         left = `calc(${hRightPos})`;
-        //         break;
-        //     case 'top':
-        //         top = calcTopPos(firstH, null);
-        //         break;
-        //     case 'bottom':
-        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
-        //         break;
-        //     case 'vCenter':
-        //         top = calcTopPos(totH, null);
-        //         break;
-        //     case 'hCenter':
-        //         break;
-        //     default:
-        //         break;
-        // }
-
-        // switch (position.side) {
-        //     case 'bottom':
-        //         break;
-        //     case 'top':
-        //         top = calcVPos(0, totH, 1, 11);
-        //         break;
-        //     case 'left':
-        //         right = '8px';
-        //         break;
-        //     case 'right':
-        //         left = '8px';
-        //         break;
-        // }
-
-
+        if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
+            arrow.position === 'hCenter';
+        } else if (arrow.isAlign('center')) {
+            arrow.position === 'vCenter';
+        }
 
         switch (arrow.position) {
-            case 'topLeft':
+            case 'left':
                 right = `calc(${hLeftPos})`;
                 break;
-            // case 'topCenter':
-            //     break;
-            case 'topRight':
+            case 'right':
                 left = `calc(${hRightPos})`;
                 break;
-            case 'bottomLeft':
-                top = calcVPos(0, totH, 1, 11);
-                right = `calc(${hLeftPos})`;
-                break;
-            case 'bottomCenter':
-                top = calcVPos(0, totH, 1, 11);
-                break;
-            case 'bottomRight':
-                top = calcVPos(0, totH, 1, 11);
-                left = `calc(${hRightPos})`;
-                break;
-            case 'leftTop':
-                top = calcTopPos(firstH, null);
-                left = '8px';
-                break;
-            case 'leftCenter':
-                top = calcTopPos(totH, null);
-                left = '8px';
-                break;
-            case 'leftBottom':
-                top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
-                left = '8px';
-                break;
-            case 'rightTop':
-                right = '8px';
+            case 'top':
                 top = calcTopPos(firstH, null);
                 break;
-            case 'rightCenter':
-                right = '8px';
+            case 'bottom':
+                top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+                break;
+            case 'vCenter':
                 top = calcTopPos(totH, null);
                 break;
-            case 'rightBottom':
-                right = '8px';
-                top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+            case 'hCenter':
                 break;
             default:
-                left = '';
-                top = '8px';
                 break;
         }
+
+        switch (position.side) {
+            case 'bottom':
+                break;
+            case 'top':
+                top = calcVPos(0, totH, 1, 11);
+                break;
+            case 'left':
+                right = '8px';
+                break;
+            case 'right':
+                left = '8px';
+                break;
+        }
+
+
+
+        // switch (arrow.position) {
+        //     case 'topLeft':
+        //         right = `calc(${hLeftPos})`;
+        //         break;
+        //     // case 'topCenter':
+        //     //     break;
+        //     case 'topRight':
+        //         left = `calc(${hRightPos})`;
+        //         break;
+        //     case 'bottomLeft':
+        //         top = calcVPos(0, totH, 1, 11);
+        //         right = `calc(${hLeftPos})`;
+        //         break;
+        //     case 'bottomCenter':
+        //         top = calcVPos(0, totH, 1, 11);
+        //         break;
+        //     case 'bottomRight':
+        //         top = calcVPos(0, totH, 1, 11);
+        //         left = `calc(${hRightPos})`;
+        //         break;
+        //     case 'leftTop':
+        //         top = calcTopPos(firstH, null);
+        //         left = '8px';
+        //         break;
+        //     case 'leftCenter':
+        //         top = calcTopPos(totH, null);
+        //         left = '8px';
+        //         break;
+        //     case 'leftBottom':
+        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+        //         left = '8px';
+        //         break;
+        //     case 'rightTop':
+        //         right = '8px';
+        //         top = calcTopPos(firstH, null);
+        //         break;
+        //     case 'rightCenter':
+        //         right = '8px';
+        //         top = calcTopPos(totH, null);
+        //         break;
+        //     case 'rightBottom':
+        //         right = '8px';
+        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
+        //         break;
+        //     default:
+        //         left = '';
+        //         top = '8px';
+        //         break;
+        // }
 
         let textBoxWidth = width;
 
