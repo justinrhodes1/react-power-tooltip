@@ -177,6 +177,8 @@ class TextBox extends Component {
                 break;
             case 'top':
                 top = calcTopPos(firstH, null);
+                console.log('top arrow position')
+                console.log('top', top)
                 break;
             case 'bottom':
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
@@ -192,6 +194,7 @@ class TextBox extends Component {
 
         switch (position.side) {
             case 'bottom':
+                top = '8px';
                 break;
             case 'top':
                 top = calcVPos(0, totH, 1, 11);

@@ -21,8 +21,8 @@ class Animations1 extends Component {
                 <Tooltip
                     show={true}
                     animation='fadeUpDown'
-                    arrow='center'
-                    position='bottom center'
+                    arrow='top'
+                    position='left bottom'
                     color='black'
                     fontSize='14px'
                 >

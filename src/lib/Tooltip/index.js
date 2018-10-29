@@ -121,20 +121,37 @@ class Tooltip extends Component {
         let { position } = this.props;
         let bottom;
 
-        //TODO: use below code instead
+        //TODO: change logically wrong css classnames
 
-        switch (side) {
-            case 'top':
-                arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
-                break;
-            case 'bottom':
-                arrange('', 'tpArrowBottom', '0px', '', '', '100%');
-                bottom = '100%';
-            case 'left':
-                arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
-            default:
-                arrange('0px', 'tpArrowRight', '', '100%', '100%', '');
-                break;
+        // switch (side) {
+        //     case 'bottom':
+        //         arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
+        //         console.log('bottom')
+        //         break;
+        //     case 'top':
+        //         arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+        //         bottom = '100%';
+        //         break;
+        //     case 'left':
+        //         arrange('0px', 'tpArrowRight', '100%', '', '100%', '');
+        //         break;
+        //     case 'right':
+        //         arrange('0px', 'tpArrowLeft', '', '100%', '100%', '');
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        if (position.isSide('bottom')) {
+            arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
+        } else if (position.isSide('top')) {
+            arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+            bottom = '100%';
+        } else if (position.isSide('right')) {
+            arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
+        } else {
+            arrange('0px', 'tpArrowRight',
+                '', '100%', '100%', '');
         }
 
         // TODO: exchange let with const declarations
@@ -148,13 +165,15 @@ class Tooltip extends Component {
         let pushLeft = moveLeft;
         let pushUp = moveUp;
 
+        console.log('align:', align);
+
         switch (align) {
-            case 'left':
-                if (onAxis.y) classes.push('tpArrowLeft');
-                break;
-            case 'right':
-                if (onAxis.y) classes.push('tpArrowRight');
-                break;
+            // case 'left':
+            //     if (onAxis.y) classes.push('tpArrowLeft');
+            //     break;
+            // case 'right':
+            //     if (onAxis.y) classes.push('tpArrowRight');
+            //     break;
             case 'center':
                 if (onAxis.x) {
                     classes.push('tpAlignCenter');
@@ -166,9 +185,9 @@ class Tooltip extends Component {
                     pushLeft = pushLeft * 2;
                 }
                 break;
-            case 'bottom':
-                if (onAxis.x) classes.push('tpAlignBottom');
-                break;
+            // case 'bottom':
+            //     if (onAxis.x) classes.push('tpAlignBottom');
+            //     break;
             default:
                 break;
         }

@@ -16,8 +16,8 @@ class Align extends Component {
             <div style={{ position: 'relative', fontSize: '14px' }}>
                 <Tooltip
                     show={hover === 'left'}
-                    position='top'
-                    arrow='rightBottom'
+                    position='left top'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -26,8 +26,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'left'}
-                    position='center'
-                    arrow='rightBottom'
+                    position='left center'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -36,8 +36,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'left'}
-                    position='bottom'
-                    arrow='rightBottom'
+                    position='left bottom'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
