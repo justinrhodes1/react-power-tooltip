@@ -13,7 +13,6 @@ const Arrow = ({
     zIndex,
     arrow }) => {
 
-    // let left = '';
     backgroundColor = isHovered ?
         hoverBackground : backgroundColor;
 

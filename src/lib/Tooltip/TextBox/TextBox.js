@@ -60,8 +60,7 @@ class TextBox extends Component {
 
         const {
             arrow,
-            align,
-            //position,
+            position,
             static: tpStatic,
             textBoxWidth: width,
             moveDown,
@@ -106,7 +105,7 @@ class TextBox extends Component {
 
 
         const calcHPos = (left, center, right) => {
-            return align.is('center') ? center : align.is('left') ? left : right;
+            return position.is('center') ? center : position.is('left') ? left : right;
         }
 
         const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
@@ -114,9 +113,9 @@ class TextBox extends Component {
         }
 
         const calcTopPos = (elHeight, totHeight) => {
-            if (align.is('center')) {
+            if (position.is('center')) {
                 return calcVPos(50, elHeight, 2, null, totHeight);
-            } else if (align.is('bottom')) {
+            } else if (position.is('bottom')) {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
             return calcVPos(0, elHeight, 2, 12, totHeight);

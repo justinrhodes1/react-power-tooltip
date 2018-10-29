@@ -29,7 +29,7 @@ class Tooltip extends Component {
             moveRight: this.props.moveRight || '0px',
             moveLeft: this.props.moveLeft || '0px',
             moveUp: this.props.moveUp || '0px',
-            align: this.props.position || 'right center',
+            position: this.props.position || 'right center',
             arrow: this.props.arrow || 'top'
         }
 
@@ -50,10 +50,8 @@ class Tooltip extends Component {
             fontSize = 'inherit',
             color = 'inherit',
             animation = '',
-            // TODO: change to just arrow,
-            arrow: position,
-            // TODO: change to position,
-            align,
+            arrow,
+            position,
             moveDown,
             moveRight,
             moveLeft,
@@ -99,15 +97,15 @@ class Tooltip extends Component {
         // };
 
 
-        this.props.align = {
+        this.props.position = {
             is,
-            position: align
+            position
         }
 
         this.props.arrow = {
             is,
             side,
-            position
+            position: arrow
         };
 
         let classes = ['tpContainer'];
@@ -118,7 +116,7 @@ class Tooltip extends Component {
         }
 
         let tooltipStyle = {};
-        let { arrow, align: algn } = this.props;
+        let { position: algn } = this.props;
         let bottom;
 
         //TODO: use below code instead
@@ -173,12 +171,12 @@ class Tooltip extends Component {
         //         break;
         // }
 
-        if (arrow.side('top')) {
+        if (this.props.arrow.side('top')) {
             arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
-        } else if (arrow.side('bottom')) {
+        } else if (this.props.arrow.side('bottom')) {
             arrange('', 'tpArrowBottom', '0px', '', '', '100%');
             bottom = '100%';
-        } else if (arrow.side('left')) {
+        } else if (this.props.arrow.side('left')) {
             arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
         } else {
             arrange('0px', 'tpArrowRight',
@@ -186,8 +184,8 @@ class Tooltip extends Component {
         }
 
         let onAxis = {
-            y: arrow.side('top') || arrow.side('bottom'),
-            x: arrow.side('left') || arrow.side('right')
+            y: this.props.arrow.side('top') || this.props.arrow.side('bottom'),
+            x: this.props.arrow.side('left') || this.props.arrow.side('right')
         }
 
         let pushRight = moveRight;
