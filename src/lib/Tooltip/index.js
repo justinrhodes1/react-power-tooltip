@@ -168,12 +168,12 @@ class Tooltip extends Component {
         console.log('align:', align);
 
         switch (align) {
-            // case 'left':
-            //     if (onAxis.y) classes.push('tpArrowLeft');
-            //     break;
-            // case 'right':
-            //     if (onAxis.y) classes.push('tpArrowRight');
-            //     break;
+            case 'left':
+                if (onAxis.y) classes.push('tpArrowLeft');
+                break;
+            case 'right':
+                if (onAxis.y) classes.push('tpArrowRight');
+                break;
             case 'center':
                 if (onAxis.x) {
                     classes.push('tpAlignCenter');
@@ -185,9 +185,9 @@ class Tooltip extends Component {
                     pushLeft = pushLeft * 2;
                 }
                 break;
-            // case 'bottom':
-            //     if (onAxis.x) classes.push('tpAlignBottom');
-            //     break;
+            case 'bottom':
+                if (onAxis.x) classes.push('tpAlignBottom');
+                break;
             default:
                 break;
         }

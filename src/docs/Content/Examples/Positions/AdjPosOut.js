@@ -23,8 +23,8 @@ const AdjustmentOuter = () => {
                 <h3>Target element</h3>
                 <Tooltip
                     show={true}
-                    arrow='rightCenter'
-                    position='center'
+                    arrow='center'
+                    position='left center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -36,8 +36,8 @@ const AdjustmentOuter = () => {
                 </Tooltip>
                 <Tooltip
                     show={true}
-                    arrow='topCenter'
-                    position='center'
+                    arrow='center'
+                    position='bottom center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -49,8 +49,8 @@ const AdjustmentOuter = () => {
                 </Tooltip>
                 <Tooltip
                     show={true}
-                    arrow='leftCenter'
-                    position='center'
+                    arrow='center'
+                    position='right center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
@@ -62,8 +62,8 @@ const AdjustmentOuter = () => {
                 </Tooltip>
                 <Tooltip
                     show={true}
-                    arrow='bottomCenter'
-                    position='center'
+                    arrow='center'
+                    position='top center'
                     textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'

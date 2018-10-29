@@ -11,8 +11,8 @@ const VerticalArrow = () => {
                     <div className='vPlaceHolder' style={{ marginTop: '70px' }}>
                         <Tooltip
                             show={true}
-                            arrow='leftBottom'
-                            position='center'
+                            arrow='bottom'
+                            position='right center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -26,8 +26,8 @@ const VerticalArrow = () => {
                     <div className='vPlaceHolder' style={{ marginTop: '70px' }}>
                         <Tooltip
                             show={true}
-                            arrow='leftCenter'
-                            position='center'
+                            arrow='center'
+                            position='right center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -41,8 +41,8 @@ const VerticalArrow = () => {
                     <div className='vPlaceHolder' style={{ marginTop: '70px' }}>
                         <Tooltip
                             show={true}
-                            arrow='leftTop'
-                            position='center'
+                            arrow='top'
+                            position='right center'
                             textBoxWidth='auto'
                             lineSeparated
                         >

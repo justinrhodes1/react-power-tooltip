@@ -95,11 +95,13 @@ class TextBox extends Component {
             return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
         const calcTopPos = (elHeight, totHeight) => {
-            if (position.isAlign('center')) {
+            if (position.align === 'center') {
+                console.log('align center')
                 return calcVPos(50, elHeight, 2, null, totHeight);
-            } else if (position.isAlign('bottom')) {
+            } else if (position.align === 'bottom') {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
+            console.log('ALIGN TOP')
             return calcVPos(0, elHeight, 2, 12, totHeight);
         }
 
@@ -163,9 +165,9 @@ class TextBox extends Component {
 
         //TODO: use below
         if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
-            arrow.position === 'hCenter';
+            arrow.position = 'hCenter';
         } else if (arrow.isAlign('center')) {
-            arrow.position === 'vCenter';
+            arrow.position = 'vCenter';
         }
 
         switch (arrow.position) {
@@ -177,14 +179,15 @@ class TextBox extends Component {
                 break;
             case 'top':
                 top = calcTopPos(firstH, null);
-                console.log('top arrow position')
-                console.log('top', top)
                 break;
             case 'bottom':
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             case 'vCenter':
-                top = calcTopPos(totH, null);
+                top = `calc(0% - ${totH}px/2 + 11px)`
+                if (position.align === 'center') top = `calc(50% - ${totH}px/2)`
+                if (position.align === 'bottom') top = `calc(100% - ${totH}px/2 - 11px)`
+                console.log('VCENTER')
                 break;
             case 'hCenter':
                 break;
@@ -194,7 +197,6 @@ class TextBox extends Component {
 
         switch (position.side) {
             case 'bottom':
-                top = '8px';
                 break;
             case 'top':
                 top = calcVPos(0, totH, 1, 11);

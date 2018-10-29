@@ -11,8 +11,8 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='leftTop'
-                            position='center'
+                            arrow='top'
+                            position='right center'
                             lineSeparated
                         >
                             <span>Our Technology</span>
@@ -25,8 +25,8 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='leftTop'
-                            position='center'
+                            arrow='top'
+                            position='right center'
                             textposition='right'
                             fontWeight='normal'
                             lineSeparated
@@ -41,8 +41,8 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='leftTop'
-                            position='center'
+                            arrow='top'
+                            position='right center'
                             borderRadius='0px'
                             lineSeparated='3px solid #ececec'
                         >

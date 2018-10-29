@@ -21,8 +21,8 @@ class Animations3 extends Component {
                 <Tooltip
                     show={this.state.show}
                     animation='fade'
-                    arrow='topRight'
-                    position='center'
+                    arrow='center'
+                    position='bottom center'
                     color='black'
                     fontSize='14px'
                 >

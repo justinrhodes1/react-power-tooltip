@@ -46,8 +46,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    position='top'
-                    arrow='leftBottom'
+                    position='right top'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -56,8 +56,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    position='center'
-                    arrow='leftBottom'
+                    position='right center'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -66,8 +66,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'right'}
-                    position='bottom'
-                    arrow='leftBottom'
+                    position='right bottom'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -76,8 +76,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    position='left'
-                    arrow='bottomCenter'
+                    position='top left'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -86,8 +86,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    position='center'
-                    arrow='bottomCenter'
+                    position='top center'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -96,8 +96,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'top'}
-                    position='right'
-                    arrow='bottomCenter'
+                    position='top right'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -106,8 +106,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    position='left'
-                    arrow='topCenter'
+                    position='bottom left'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -116,8 +116,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    position='center'
-                    arrow='topCenter'
+                    position='bottom center'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static
@@ -126,8 +126,8 @@ class Align extends Component {
                 </Tooltip>
                 <Tooltip
                     show={hover === 'bottom'}
-                    position='right'
-                    arrow='topCenter'
+                    position='bottom right'
+                    arrow='center'
                     delayTime='0'
                     textBoxWidth='auto'
                     static

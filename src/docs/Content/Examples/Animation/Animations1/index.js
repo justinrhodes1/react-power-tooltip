@@ -19,10 +19,10 @@ class Animations1 extends Component {
                 <span style={{ marginBottom: '15px' }} >Hover Me</span>
                 <span style={{ fontSize: '14px' }}><strong>FadeUpDown</strong></span>
                 <Tooltip
-                    show={true}
+                    show={this.state.show}
                     animation='fadeUpDown'
-                    arrow='top'
-                    position='left bottom'
+                    arrow='center'
+                    position='bottom center'
                     color='black'
                     fontSize='14px'
                 >

@@ -11,8 +11,8 @@ const Arrow = () => {
                     <div className='hPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='topRight'
-                            position='center'
+                            arrow='right'
+                            position='bottom center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -26,8 +26,8 @@ const Arrow = () => {
                     <div className='hPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='topCenter'
-                            position='center'
+                            arrow='center'
+                            position='bottom center'
                             textBoxWidth='auto'
                             lineSeparated
                         >
@@ -42,8 +42,8 @@ const Arrow = () => {
                     <div className='hPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='topLeft'
-                            position='center'
+                            arrow='left'
+                            position='bottom center'
                             textBoxWidth='auto'
                             lineSeparated
                         >

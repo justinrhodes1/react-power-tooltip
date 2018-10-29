@@ -34,8 +34,8 @@ class Animation extends Component {
                 <Tooltip
                     show={show}
                     animation='fadeIn'
-                    arrow='leftBottom'
-                    position='center'
+                    arrow='bottom'
+                    position='left center'
                 >
                     <span>Our Technology</span>
                     <span>Our Story</span>

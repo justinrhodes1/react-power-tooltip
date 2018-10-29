@@ -18,8 +18,8 @@ class Header extends Component {
                         <Tooltip
                             show={true}
                             color='black'
-                            arrow='topCenter'
-                            position='center'
+                            arrow='center'
+                            position='bottom center'
                             fontSize='13px'
                             textBoxWidth='auto'
                             moveDown='-4px'
