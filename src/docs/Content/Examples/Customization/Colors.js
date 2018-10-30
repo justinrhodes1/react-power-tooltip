@@ -11,8 +11,6 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='top'
-                            position='right center'
                             hoverBackground='#3b0586'
                             hoverColor='white'
                             lineSeparated='1px solid purple'
@@ -27,8 +25,6 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='top'
-                            position='right center'
                             color='white'
                             backgroundColor='#181818'
                         >
@@ -42,8 +38,6 @@ const Colors = () => {
                     <div className='vPlaceHolder'>
                         <Tooltip
                             show={true}
-                            arrow='top'
-                            position='right center'
                             color='white'
                             backgroundColor='#444444'
                             hoverBackground='#3b0586'

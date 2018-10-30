@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Animation from './Animation';
-import AnimationExample from './Animation/Example';
-import AlertExample from './Types/Example';
 import Types from './Types';
+import Alert from './Types/Alert';
 import Colors from './Customization/Colors';
 import Shapes from './Customization/Shapes';
 import AlignPositions from './Positions/Align';
@@ -26,7 +25,7 @@ class Examples extends Component {
                 >
                     <Types />
                 </div>
-                <AlertExample />
+                <Alert />
                 <h2 id='animations'>Animations</h2>
                 <div className='FlexContainer greyBkgr'
                     style={{
@@ -35,7 +34,6 @@ class Examples extends Component {
                 >
                     <Animation />
                 </div>
-                {/* <AnimationExample /> */}
                 <h2 id='customization'>Customization</h2>
                 <div className='FlexContainer greyBkgr colors'
                     style={{
@@ -52,7 +50,7 @@ class Examples extends Component {
                     <Colors />
                 </div>
                 <h2 id='positions'>Positions</h2>
-                <h3>1) <strong>Arrow</strong> positions (via arrow prop)</h3>
+                <h3>1) <strong>Arrow positions</strong> relative to textbox (via arrow prop)</h3>
                 <div
                     className='FlexContainer greyBkgr'
                     style={{
@@ -70,7 +68,28 @@ class Examples extends Component {
                 >
                     <ArrowHPos />
                 </div>
-                <h3>2) <strong>Align</strong> tooltip positions (via align prop)</h3>
+                <h3>2) <strong>Tooltip positions</strong> relative to target element (via position prop)</h3>
+                <p>The position prop positions the tooltip relative to target element. It is an array with
+                    two string elements:
+                </p>
+                <ol style={{ listStyleType: 'disc', lineHeight: '1.5' }}>
+                    <li><strong>First </strong>element: determins<strong> on which side </strong>
+                        of the target element to position the tooltip. </li>
+                    <li><strong>Second </strong>element: determins<strong> how to align </strong>
+                        the tooltip on that side.</li>
+                </ol>
+                <pre>
+                    <code className='language-jsx'>
+                        {`{/* Positions tooltip central on the left side of the target element */}
+
+<Tooltip
+    show={true}
+    position={['left', 'center']}
+>
+    <span>Some text</span>
+</Tooltip>`}
+                    </code>
+                </pre>
                 <div className='FlexContainer greyBkgr'
                     style={{
                         padding: '50px',

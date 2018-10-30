@@ -8,7 +8,7 @@ const Arrow = () => {
             <div className='row'>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <p>Arrow position: <strong>left</strong></p>
-                    <div className='hPlaceHolder'>
+                    <div className='hPlaceHolder'  style={{right: '25%'}}>
                         <Tooltip
                             show={true}
                             arrow='right'
@@ -39,7 +39,7 @@ const Arrow = () => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <p>Arrow position: <strong>right</strong></p>
-                    <div className='hPlaceHolder'>
+                    <div className='hPlaceHolder' style={{left: '25%'}}>
                         <Tooltip
                             show={true}
                             arrow='left'

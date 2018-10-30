@@ -14,28 +14,24 @@ const BasicUsage = () => {
             <pre>
                 <code className="language-jsx">
                     {`class Example extends Component {
-    {/* Hover state */}
     state = {
         show: false
     }
-    {/* Hover hander */}
+
     showTooltip = boolean => {
         this.setState({ show: boolean })
     }
 
     render() {
         return (
-            <div>
-            {/* Add a target element triggering hover event */}
-                <div 
-                    style={{ 
-                        {/* Important: Set target position to RELATIVE */}
-                        position: 'relative'
-                        mouseOver: this.showTooltip(true) 
-                        mouseLeave: this.showTooltip(false)
-                    }}>
+            {/* Target element position needs to be RELATIVE */}
+            <div 
+                style={{ position: 'relative' }}
+                mouseOver={() => this.showTooltip(true)} 
+                mouseLeave={() => this.showTooltip(false)}>
+                
                 {/* ADD TOOLTIP HERE */}
-                </div>
+
             </div>
         );
     }
@@ -47,15 +43,10 @@ export default Example;`}
             <pre>
                 <code className="language-jsx">
                     {
-                        `<Tooltip
-    show={this.props.show}
-    animation='fadeIn'
-    arrow='center'
-    position='bottom center'
->
-{/* Add option(s) as span element(s) */}
-    <span>Option 1</span>
-    <span>Option 2</span>
+                        `{/* Add options/text via span elements */}
+                        
+<Tooltip show={this.props.show}>
+    <span>Some text</span>
 </Tooltip>`}
                 </code>
             </pre>

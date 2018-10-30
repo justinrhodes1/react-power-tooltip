@@ -26,11 +26,6 @@ const Arrow = ({
         marginRight = `${moveLeft}px`;
     }
 
-    // if (arrow.side('top') || arrow.side('bottom')) {
-    //     marginLeft = `${moveRight}px`;
-    //     marginRight = `${moveLeft}px`;
-    // }
-
     return (
         <div
             className={'tpArrow'}

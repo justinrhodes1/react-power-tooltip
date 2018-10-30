@@ -10,9 +10,6 @@ const Types = () => {
                     <Tooltip
                         show={true}
                         textboxWidth='100px'
-                        arrow='top'
-                        position='right center'
-                        textboxWidth='auto'
                         lineSeparated
                     >
                         <span>Our Technology</span>
@@ -26,8 +23,6 @@ const Types = () => {
                     <Tooltip
                         show={true}
                         textboxWidth='100px'
-                        arrow='top'
-                        position='right center'
                         lineSeparated
                         static
                     >
@@ -42,8 +37,6 @@ const Types = () => {
                     <Tooltip
                         show={true}
                         textboxWidth='100px'
-                        arrow='top'
-                        position='right center'
                         alert='rgb(100, 0, 100)'
                         lineSeparated
                     >
