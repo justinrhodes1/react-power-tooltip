@@ -15,7 +15,6 @@ class TextBox extends Component {
     }
 
     //Set & unset hover state
-    //TODO: exchange with below
     onSpanHover = (index, lastIndex, numChildren) => {
         this.setState({ hoverIndex: index });
         const { static: rctStatic, arrow, position, hoverArrow } = this.props;
@@ -29,20 +28,6 @@ class TextBox extends Component {
         }
         return hoverArrow(false);
     }
-
-    // onSpanHover = (index, lastIndex, numChildren) => {
-    //     this.setState({ hoverIndex: index });
-    //     const { static: tpStatic, arrow, hoverArrow } = this.props;
-    //     if (!tpStatic
-    //         && ((index === 0
-    //             && (arrow.side('top') || arrow.is('leftTop') || arrow.is('rightTop')))
-    //             || (index === lastIndex
-    //                 && (arrow.side('bottom') || arrow.is('leftBottom') || arrow.is('rightBottom')))
-    //             || numChildren === 1)) {
-    //         return hoverArrow(true);
-    //     }
-    //     return hoverArrow(false);
-    // }
 
     componentDidMount() {
         const heights = Object.keys(this.spanHeights).map(key => {
@@ -86,42 +71,21 @@ class TextBox extends Component {
             lastH
         } = this.state;
 
-        //TODO: align.is('top/bottom/center/left/right') 
-        // arrow.position 
         const calcHPos = (left, center, right) => {
             return position.isAlign('center') ? center : position.isAlign('left') ? left : right;
         }
         const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
             return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
         }
+        //TODO: REfactor
         const calcTopPos = (elHeight, totHeight) => {
             if (position.align === 'center') {
-                console.log('align center')
                 return calcVPos(50, elHeight, 2, null, totHeight);
             } else if (position.align === 'bottom') {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
-            console.log('ALIGN TOP')
             return calcVPos(0, elHeight, 2, 12, totHeight);
         }
-
-
-        // const calcHPos = (left, center, right) => {
-        //     return position.is('center') ? center : position.is('left') ? left : right;
-        // }
-
-        // const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
-        //     return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
-        // }
-
-        // const calcTopPos = (elHeight, totHeight) => {
-        //     if (position.is('center')) {
-        //         return calcVPos(50, elHeight, 2, null, totHeight);
-        //     } else if (position.is('bottom')) {
-        //         return calcVPos(100, elHeight, 2, -12, totHeight);
-        //     }
-        //     return calcVPos(0, elHeight, 2, 12, totHeight);
-        // }
 
         const numberChildren = React.Children.count(children);
         const lastIndex = numberChildren - 1;
@@ -162,8 +126,6 @@ class TextBox extends Component {
         let hRightPos =
             calcHPos('0% - 30px', '50% - 40px', '100% - 50px');
 
-
-        //TODO: use below
         if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
             arrow.position = 'hCenter';
         } else if (arrow.isAlign('center')) {
@@ -185,9 +147,8 @@ class TextBox extends Component {
                 break;
             case 'vCenter':
                 top = `calc(0% - ${totH}px/2 + 11px)`
-                if (position.align === 'center') top = `calc(50% - ${totH}px/2)`
-                if (position.align === 'bottom') top = `calc(100% - ${totH}px/2 - 11px)`
-                console.log('VCENTER')
+                if (position.isAlign('center')) top = `calc(50% - ${totH}px/2)`
+                if (position.isAlign('bottom')) top = `calc(100% - ${totH}px/2 - 11px)`
                 break;
             case 'hCenter':
                 break;
@@ -209,58 +170,6 @@ class TextBox extends Component {
                 break;
         }
 
-
-
-        // switch (arrow.position) {
-        //     case 'topLeft':
-        //         right = `calc(${hLeftPos})`;
-        //         break;
-        //     // case 'topCenter':
-        //     //     break;
-        //     case 'topRight':
-        //         left = `calc(${hRightPos})`;
-        //         break;
-        //     case 'bottomLeft':
-        //         top = calcVPos(0, totH, 1, 11);
-        //         right = `calc(${hLeftPos})`;
-        //         break;
-        //     case 'bottomCenter':
-        //         top = calcVPos(0, totH, 1, 11);
-        //         break;
-        //     case 'bottomRight':
-        //         top = calcVPos(0, totH, 1, 11);
-        //         left = `calc(${hRightPos})`;
-        //         break;
-        //     case 'leftTop':
-        //         top = calcTopPos(firstH, null);
-        //         left = '8px';
-        //         break;
-        //     case 'leftCenter':
-        //         top = calcTopPos(totH, null);
-        //         left = '8px';
-        //         break;
-        //     case 'leftBottom':
-        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
-        //         left = '8px';
-        //         break;
-        //     case 'rightTop':
-        //         right = '8px';
-        //         top = calcTopPos(firstH, null);
-        //         break;
-        //     case 'rightCenter':
-        //         right = '8px';
-        //         top = calcTopPos(totH, null);
-        //         break;
-        //     case 'rightBottom':
-        //         right = '8px';
-        //         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
-        //         break;
-        //     default:
-        //         left = '';
-        //         top = '8px';
-        //         break;
-        // }
-
         let textBoxWidth = width;
 
         if (textBoxWidth !== 'auto') {
@@ -268,7 +177,6 @@ class TextBox extends Component {
             if (moveLeft > 0) textBoxWidth += moveLeft;
             if (moveRight > 0) textBoxWidth += moveRight;
         }
-
 
         const boxStyle = {
             left,

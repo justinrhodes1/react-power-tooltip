@@ -50,8 +50,8 @@ export default Example;`}
                         `<Tooltip
     show={this.props.show}
     animation='fadeIn'
-    arrow='rightBottom'
-    align='top'
+    arrow='center'
+    position='bottom center'
 >
 {/* Add option(s) as span element(s) */}
     <span>Option 1</span>

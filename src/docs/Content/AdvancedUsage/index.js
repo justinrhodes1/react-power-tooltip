@@ -40,8 +40,8 @@ const AdvUsage = () => {
                     {`<Tooltip
     show={this.state.show}
     animation='customFade'
-    arrow='topRight'
-    align='center'
+    arrow='center'
+    position='bottom center'
 >
     <span>Text</span>
 </Tooltip>`}

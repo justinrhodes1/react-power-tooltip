@@ -51,21 +51,12 @@ class Tooltip extends Component {
             color = 'inherit',
             animation = '',
             arrow,
-            // position,
             moveDown,
             moveRight,
             moveLeft,
             moveUp,
             show
         } = this.props;
-
-        //TODO: remove below functions instead.
-
-        // function is(pos1, pos2, pos3) {
-        //     return this.position === pos1
-        //         || this.position === pos2
-        //         || this.position === pos3;
-        // }
 
         function isAlign(pos) {
             return this.align ?
@@ -76,14 +67,6 @@ class Tooltip extends Component {
             return this.side === pos;
         }
 
-        // function side(pos) {
-        //     if (pos === 'left' || pos === 'right')
-        //         return this.is(`${pos}Center`, `${pos}Top`, `${pos}Bottom`);
-        //     return this.is(`${pos}Center`, `${pos}Left`, `${pos}Right`);
-        // }
-
-        // //TODO: Use below instead
-        // // align = 'left top' | 'top left' | 'bottom center' | 'left center' 
         this.props.position = {
             side: this.props.position.split(' ')[0],
             align: this.props.position.split(' ')[1],
@@ -96,18 +79,6 @@ class Tooltip extends Component {
             position: arrow
         };
 
-
-        // this.props.position = {
-        //     is,
-        //     position
-        // }
-
-        // this.props.arrow = {
-        //     is,
-        //     side,
-        //     position: arrow
-        // };
-
         let classes = ['tpContainer'];
 
         const arrange = (units, cssClass, left, right, height, width) => {
@@ -116,7 +87,6 @@ class Tooltip extends Component {
         }
 
         let tooltipStyle = {};
-        // let { position: algn } = this.props;
         let { side, align } = this.props.position;
         let { position } = this.props;
         let bottom;
@@ -165,8 +135,6 @@ class Tooltip extends Component {
         let pushLeft = moveLeft;
         let pushUp = moveUp;
 
-        console.log('align:', align);
-
         switch (align) {
             case 'left':
                 if (onAxis.y) classes.push('tpArrowLeft');
@@ -191,53 +159,6 @@ class Tooltip extends Component {
             default:
                 break;
         }
-
-        // if (this.props.arrow.side('top')) {
-        //     arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
-        // } else if (this.props.arrow.side('bottom')) {
-        //     arrange('', 'tpArrowBottom', '0px', '', '', '100%');
-        //     bottom = '100%';
-        // } else if (this.props.arrow.side('left')) {
-        //     arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
-        // } else {
-        //     arrange('0px', 'tpArrowRight',
-        //         '', '100%', '100%', '');
-        // }
-
-        // let onAxis = {
-        //     y: this.props.arrow.side('top') || this.props.arrow.side('bottom'),
-        //     x: this.props.arrow.side('left') || this.props.arrow.side('right')
-        // }
-
-        // let pushRight = moveRight;
-        // let pushDown = moveDown;
-        // let pushLeft = moveLeft;
-        // let pushUp = moveUp;
-
-        // switch (algn.position) {
-        //     case 'left':
-        //         if (onAxis.y) classes.push('tpArrowLeft');
-        //         break;
-        //     case 'right':
-        //         if (onAxis.y) classes.push('tpArrowRight');
-        //         break;
-        //     case 'center':
-        //         if (onAxis.x) {
-        //             classes.push('tpAlignCenter');
-        //             pushDown = pushDown * 2;
-        //             pushUp = pushUp * 2;
-        //         };
-        //         if (onAxis.y) {
-        //             pushRight = pushRight * 2;
-        //             pushLeft = pushLeft * 2;
-        //         }
-        //         break;
-        //     case 'bottom':
-        //         if (onAxis.x) classes.push('tpAlignBottom');
-        //         break;
-        //     default:
-        //         break;
-        // }
 
         let margin;
 
