@@ -18,8 +18,8 @@ const BasicUsage = () => {
         show: false
     }
 
-    showTooltip = boolean => {
-        this.setState({ show: boolean })
+    showTooltip = bool => {
+        this.setState({ show: bool })
     }
 
     render() {
@@ -44,7 +44,7 @@ export default Example;`}
                 <code className="language-jsx">
                     {
                         `{/* Add options/text via span elements */}
-                        
+
 <Tooltip show={this.props.show}>
     <span>Some text</span>
 </Tooltip>`}

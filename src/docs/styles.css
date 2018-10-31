@@ -37,6 +37,28 @@ pre {
   overflow-x: auto !important;
 }
 
+.codeRow pre {
+  width: 33%;
+  height: 100%;
+  overflow-y: hidden;
+  display: inline-block;
+  margin: 0;
+}
+
+.codeRow {
+  width: 100%;
+  background: #ececec;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.codeRow>div {
+  width: 100%;
+}
+
 .Header {
   justify-content: center;
   width: 100%;
@@ -94,8 +116,12 @@ code {
 section h1 {
   font-size: 18px;
   font-weight: 400;
-  padding-top: 75px;
+  padding-top: 50px;
   margin: 0;
+}
+
+.firstH1 {
+  padding-top: 75px;
 }
 
 h2 {
@@ -119,12 +145,16 @@ h3 {
 }
 
 .side {
-  width: 35%;
+  width: 30%;
   align-items: flex-start;
   padding: 50px 0;
 }
 
 .main {
+  width: 100%;
+}
+
+section {
   width: 100%;
 }
 
@@ -233,7 +263,7 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ececec;
 }
 
 .vPlaceHolder,
@@ -337,5 +367,8 @@ tr:nth-child(even) {
 @media only screen and (min-width: 768px) {
   .sticky {
     display: block;
+  }
+  .main {
+    width: 80%;
   }
 } 

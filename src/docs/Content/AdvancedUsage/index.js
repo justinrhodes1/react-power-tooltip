@@ -10,10 +10,10 @@ const AdvUsage = () => {
             </p>
             <ol style={{ lineHeight: '1.5' }}>
                 <li>Add your own CSS @keyframes rules to the global scope</li>
-                <li>Enable your tooptip to use your animations</li>
+                <li>Enable react-custom-tooptip to use your animations</li>
             </ol>
             <p style={{ lineHeight: '1.5' }}>
-                Add your keyframe rules to the global scope using the same selector for both mount and unmount
+                Add your keyframe rules to the<strong> global scope </strong>using the same selector for both mount and unmount
                 related keyframes. All keyframe selectors require an<strong> 'rct-' </strong>prefix.
                 Unmount related keyframes also require an <strong> '-out' </strong>suffix.
             </p>
