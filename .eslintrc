@@ -5,8 +5,10 @@
         "jest": true
     },
     "extends": [
-        "google",
-        "plugin:react/recommended"
+        "airbnb"
+    ],
+    "plugins": [
+        "babel"
     ],
     "parser": "babel-eslint",
     "parserOptions": {
@@ -21,12 +23,18 @@
             "never"
         ],
         "object-curly-spacing": "off",
-        "react/jsx-uses-react": "error",
-        "react/prop-types": "off",
-        "react/no-unescaped-entities": "off",
+        "object-curly-newline": "off",
         "require-jsdoc": "off",
         "indent": "off",
-        "no-invalid-this": "off",
-        "max-len": "off"
+        "max-len": "off",
+        "react/require-default-props": "off",
+        "react/destructuring-assignment": "off",
+        "react/prop-types": "off",
+        "arrow-body-style": "off",
+        "no-confusing-arrow": "off",
+        "react/no-unescaped-entities": "off",
+        "jsx-a11y/mouse-events-have-key-events": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "import/no-extraneous-dependencies": "off"
     }
 }
