@@ -14,7 +14,6 @@ import Api from './Content/Api';
 import './styles.css';
 
 class Demo extends Component {
-
   componentDidMount() {
     Prism.highlightAll();
   }
@@ -40,4 +39,4 @@ class Demo extends Component {
   }
 }
 
-render(<Demo />, document.getElementById("app"));
+render(<Demo />, document.getElementById('app'));

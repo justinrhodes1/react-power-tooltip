@@ -12,11 +12,10 @@ class Tooltip extends Component {
     }
 
     hoverArrow = (boolean) => {
-        this.setState({ hoverArrow: boolean })
+        this.setState({ hoverArrow: boolean });
     }
 
     render() {
-
         this.props = {
             ...this.props,
             hoverBackground: this.props.hoverBackground || '#ececec',
@@ -31,7 +30,7 @@ class Tooltip extends Component {
             moveUp: this.props.moveUp || '0px',
             position: this.props.position || 'right center',
             arrow: this.props.arrow || 'top'
-        }
+        };
 
         this.props.lineSeparated = typeof (this.props.lineSeparated) == typeof (true)
             ? '1px solid #ececec' : this.props.lineSeparated;
@@ -72,26 +71,27 @@ class Tooltip extends Component {
             align: this.props.position.split(' ')[1],
             isAlign,
             isSide
-        }
+        };
 
         this.props.arrow = {
             isAlign,
             position: arrow
         };
 
-        let classes = ['tpContainer'];
+        const classes = ['tpContainer'];
 
         const arrange = (units, cssClass, left, right, height, width) => {
             tooltipStyle = { left, right, height, width, top: units };
-            classes.push(cssClass)
-        }
+            classes.push(cssClass);
+        };
 
         let tooltipStyle = {};
-        let { side, align } = this.props.position;
-        let { position } = this.props;
+        const { align } = this.props.position;
+        const { position } = this.props;
         let bottom;
 
-        //TODO: change logically wrong css classnames
+        // TODO: change logically wrong css classnames
+        // const { side, align } = this.props.position;
 
         // switch (side) {
         //     case 'bottom':
@@ -125,10 +125,10 @@ class Tooltip extends Component {
         }
 
         // TODO: exchange let with const declarations
-        let onAxis = {
+        const onAxis = {
             y: position.isSide('top') || position.isSide('bottom'),
             x: position.isSide('left') || position.isSide('right')
-        }
+        };
 
         let pushRight = moveRight;
         let pushDown = moveDown;
@@ -190,7 +190,7 @@ class Tooltip extends Component {
             fontWeight,
             padding: `${pushDown}px ${pushLeft}px ${pushUp}px ${pushRight}px`,
             margin
-        }
+        };
 
         return (
             <div className={classes.join(' ')}

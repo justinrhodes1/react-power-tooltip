@@ -25,7 +25,6 @@ const AdjustmentOuter = () => {
                     show={true}
                     arrow='center'
                     position='left center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
                     moveLeft='40px'
@@ -38,7 +37,6 @@ const AdjustmentOuter = () => {
                     show={true}
                     arrow='center'
                     position='bottom center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
                     moveDown='40px'
@@ -51,7 +49,6 @@ const AdjustmentOuter = () => {
                     show={true}
                     arrow='center'
                     position='right center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
                     moveRight='40px'
@@ -64,7 +61,6 @@ const AdjustmentOuter = () => {
                     show={true}
                     arrow='center'
                     position='top center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     textBoxWidth='120px'
                     moveUp='40px'

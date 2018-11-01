@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Tooltip from "../../../lib";
-import "../styles.css";
+import Tooltip from '../../../lib';
+import '../styles.css';
 
 class Header extends Component {
-
     render() {
         // const { alternate } = this.state;
         // const showLeft = Math.random() >= 0.5 ? true : false;
@@ -34,7 +33,7 @@ class Header extends Component {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                    width: '120px',
+                    width: '120px'
                 }}>
                     <a className="github-button" href="https://github.com/ntkme/github-buttons">Star</a>
                     <a className="github-button" href="https://github.com/ntkme/github-buttons/fork">Fork</a>

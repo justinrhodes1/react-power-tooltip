@@ -1,7 +1,7 @@
 import React from 'react';
 import Tooltip from '../../../../lib';
 
-const Colors = () => {
+const Shapes = () => {
     return (
         <>
             <h3 style={{ width: '95%', marginBottom: '0' }}><strong>Shapes / Fonts</strong></h3>
@@ -49,4 +49,4 @@ const Colors = () => {
     );
 };
 
-export default Colors;
+export default Shapes;

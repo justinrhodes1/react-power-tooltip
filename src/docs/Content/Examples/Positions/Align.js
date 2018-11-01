@@ -6,8 +6,8 @@ class Align extends Component {
         hover: false
     }
 
-    hover = side => {
-        this.setState({ hover: side })
+    hover = (side) => {
+        this.setState({ hover: side });
     }
 
     render() {

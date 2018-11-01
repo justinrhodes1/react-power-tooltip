@@ -3,14 +3,14 @@ const codeStatic = `{/* Static */}
     show={true}
     static>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeAlert = `{/* Alert */}
 <Tooltip
     show={true}
     alert='rgb(255, 0, 0)'>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeStaticAlert = `{/* Static & Alert */}
 <Tooltip
@@ -18,28 +18,28 @@ const codeStaticAlert = `{/* Static & Alert */}
     alert='rgb(255, 0, 0)'
     static>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeFade = `{/* Fade */}
 <Tooltip
     show={true}
     animation='fade'>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeFadeUpDown = `{/* FadeUpDown */}
 <Tooltip
     show={true}
     animation='fadeUpDown'>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeBounce = `{/* Bounce */}
 <Tooltip
     show={true}
     animation='bounce'>
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeAlign = `{/* Positions tooltip central on the left side of the target element */}
 <Tooltip
@@ -47,14 +47,14 @@ const codeAlign = `{/* Positions tooltip central on the left side of the target 
     position='left center'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeDefault = `{/* Default */}
 <Tooltip 
     show={true}
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeFont = `{/* Text & Font */}
 <Tooltip 
@@ -64,7 +64,7 @@ const codeFont = `{/* Text & Font */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeCorners = `{/* Corners & Lines */}
 <Tooltip 
@@ -73,7 +73,7 @@ const codeCorners = `{/* Corners & Lines */}
     lineSeparated='3px solid #ececec'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeHover = `{/* Hover color */}
 <Tooltip 
@@ -83,7 +83,7 @@ const codeHover = `{/* Hover color */}
     lineSeparated='1px solid purple'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeBackground = `{/* Hover color */}
 <Tooltip 
@@ -92,7 +92,7 @@ const codeBackground = `{/* Hover color */}
     background='#181818'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeFlat = `{/* Hover color */}
 <Tooltip 
@@ -103,7 +103,7 @@ const codeFlat = `{/* Hover color */}
     flat
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeTop = `{/* Arrow top */}
 <Tooltip 
@@ -111,7 +111,7 @@ const codeTop = `{/* Arrow top */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeCenterV = `{/* Arrow center */}
 <Tooltip 
@@ -120,7 +120,7 @@ const codeCenterV = `{/* Arrow center */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeBottom = `{/* Arrow bottom */}
 <Tooltip 
@@ -129,7 +129,7 @@ const codeBottom = `{/* Arrow bottom */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeLeft = `{/* Arrow left */}
 <Tooltip 
@@ -139,7 +139,7 @@ const codeLeft = `{/* Arrow left */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeRight = `{/* Arrow right */}
 <Tooltip 
@@ -149,7 +149,7 @@ const codeRight = `{/* Arrow right */}
     lineSeparated
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeCenterH = `{/* Arrow center */}
 <Tooltip 
@@ -158,7 +158,7 @@ const codeCenterH = `{/* Arrow center */}
     position='bottom center'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeMoveUpNeg = `{/* Move down into target */}
 <Tooltip 
@@ -168,7 +168,7 @@ const codeMoveUpNeg = `{/* Move down into target */}
     moveUp='-130px'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeMoveLeftNeg = `{/* Move right into target */}
 <Tooltip 
@@ -178,7 +178,7 @@ const codeMoveLeftNeg = `{/* Move right into target */}
     moveLeft='-200px'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeMoveUp = `{/* Move up out of target */}
 <Tooltip 
@@ -188,7 +188,7 @@ const codeMoveUp = `{/* Move up out of target */}
     moveUp='40px'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 const codeMoveLeft = `{/* Move left out of target */}
 <Tooltip 
@@ -198,7 +198,7 @@ const codeMoveLeft = `{/* Move left out of target */}
     moveLeft='40px'
 >
     <span>Some text</span>
-</Tooltip>`
+</Tooltip>`;
 
 export {
     codeStatic,
@@ -224,4 +224,4 @@ export {
     codeMoveLeftNeg,
     codeMoveUp,
     codeMoveLeft
-}
+};

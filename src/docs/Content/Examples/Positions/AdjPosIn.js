@@ -22,7 +22,6 @@ const Adjustment = () => {
                     show={true}
                     arrow='center'
                     position='left center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     moveLeft='-150px'
                     textBoxWidth='120px'
@@ -35,7 +34,6 @@ const Adjustment = () => {
                     show={true}
                     arrow='center'
                     position='bottom center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     moveDown='-100px'
                     textBoxWidth='120px'
@@ -48,7 +46,6 @@ const Adjustment = () => {
                     show={true}
                     arrow='center'
                     position='right center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     moveRight='-150px'
                     textBoxWidth='120px'
@@ -61,7 +58,6 @@ const Adjustment = () => {
                     show={true}
                     arrow='center'
                     position='top center'
-                    textBoxWidth='auto'
                     textAlign='center'
                     moveUp='-100px'
                     textBoxWidth='120px'

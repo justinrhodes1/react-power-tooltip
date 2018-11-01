@@ -37,8 +37,6 @@ import {
 } from '../CodeExamples/CodeExamples';
 
 class Examples extends Component {
-
-
     render() {
         return (
             <>

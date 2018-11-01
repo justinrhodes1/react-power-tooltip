@@ -6,8 +6,8 @@ class Animations1 extends Component {
         show: false
     }
 
-    showTooltip = boolean => {
-        this.setState({ show: boolean })
+    showTooltip = (bool) => {
+        this.setState({ show: bool });
     }
 
     render() {

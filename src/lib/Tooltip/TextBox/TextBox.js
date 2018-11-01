@@ -14,7 +14,7 @@ class TextBox extends Component {
         this.props.hoverArrow(false);
     }
 
-    //Set & unset hover state
+    // Set & unset hover state
     onSpanHover = (index, lastIndex, numChildren) => {
         this.setState({ hoverIndex: index });
         const { static: rctStatic, arrow, position, hoverArrow } = this.props;
@@ -30,9 +30,9 @@ class TextBox extends Component {
     }
 
     componentDidMount() {
-        const heights = Object.keys(this.spanHeights).map(key => {
-            return this.spanHeights[key].clientHeight
-        })
+        const heights = Object.keys(this.spanHeights).map((key) => {
+            return this.spanHeights[key].clientHeight;
+        });
         const firstH = heights[0];
         const lastH = heights[heights.length - 1];
         const totH = heights.reduce(
@@ -42,7 +42,6 @@ class TextBox extends Component {
     }
 
     render() {
-
         const {
             arrow,
             position,
@@ -72,12 +71,13 @@ class TextBox extends Component {
         } = this.state;
 
         const calcHPos = (left, center, right) => {
-            return position.isAlign('center') ? center : position.isAlign('left') ? left : right;
-        }
+            return position.isAlign('center')
+                ? center : position.isAlign('left') ? left : right;
+        };
         const calcVPos = (perc, elHeight, divider, adjMove, totHeight) => {
-            return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`
-        }
-        //TODO: REfactor
+            return `calc(${perc}% - ${totHeight || 0}px - ${elHeight}px/${divider} + ${adjMove || 0}px)`;
+        };
+        // TODO: REfactor
         const calcTopPos = (elHeight, totHeight) => {
             if (position.align === 'center') {
                 return calcVPos(50, elHeight, 2, null, totHeight);
@@ -85,14 +85,14 @@ class TextBox extends Component {
                 return calcVPos(100, elHeight, 2, -12, totHeight);
             }
             return calcVPos(0, elHeight, 2, 12, totHeight);
-        }
+        };
 
         const numberChildren = React.Children.count(children);
         const lastIndex = numberChildren - 1;
-        this.spanHeights = {}
+        this.spanHeights = {};
 
-        let adjChildren = React.Children.map(children, (child, index) => {
-            let style = {
+        const adjChildren = React.Children.map(children, (child, index) => {
+            const style = {
                 backgroundColor,
                 padding
             };
@@ -102,11 +102,11 @@ class TextBox extends Component {
                 style.backgroundColor = hoverBackground;
             }
             if (lineSeparated && lastIndex !== index) {
-                style.borderBottom = lineSeparated
+                style.borderBottom = lineSeparated;
             }
 
             let ref = null;
-            ref = span => this.spanHeights[`span${index + 1}`] = span;
+            ref = (span) => this.spanHeights[`span${index + 1}`] = span;
 
             const childProps = {
                 ...child.props,
@@ -120,13 +120,14 @@ class TextBox extends Component {
         let left = '';
         let right = '';
         let top = '8px';
-        //Align: left, center, right
-        let hLeftPos =
+        // Align: left, center, right
+        const hLeftPos =
             calcHPos('100% - 50px', '50% - 40px', '0% - 30px');
-        let hRightPos =
+        const hRightPos =
             calcHPos('0% - 30px', '50% - 40px', '100% - 50px');
 
-        if (arrow.isAlign('center') && (position.isSide('top') || position.isSide('bottom'))) {
+        if (arrow.isAlign('center')
+            && (position.isSide('top') || position.isSide('bottom'))) {
             arrow.position = 'hCenter';
         } else if (arrow.isAlign('center')) {
             arrow.position = 'vCenter';
@@ -146,9 +147,13 @@ class TextBox extends Component {
                 top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
                 break;
             case 'vCenter':
-                top = `calc(0% - ${totH}px/2 + 11px)`
-                if (position.isAlign('center')) top = `calc(50% - ${totH}px/2)`
-                if (position.isAlign('bottom')) top = `calc(100% - ${totH}px/2 - 11px)`
+                top = `calc(0% - ${totH}px/2 + 11px)`;
+                if (position.isAlign('center')) {
+                    top = `calc(50% - ${totH}px/2)`;
+                }
+                if (position.isAlign('bottom')) {
+                    top = `calc(100% - ${totH}px/2 - 11px)`;
+                }
                 break;
             case 'hCenter':
                 break;
@@ -184,14 +189,14 @@ class TextBox extends Component {
             top,
             width: textBoxWidth,
             borderRadius
-        }
+        };
 
         const showShadow = flat ? 'tpNoShadow' : 'tpShadow';
         const alertStyle = alert ? 'rct-alert' : null;
         const rgb = alert || 'rgb(248, 109, 109)';
         const boxShadow = alert ?
             `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
-        const noNeg = number => number > 0 ? number : 0;
+        const noNeg = (number) => number > 0 ? number : 0;
 
         return (
             <div

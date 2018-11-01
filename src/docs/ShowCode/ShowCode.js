@@ -8,7 +8,7 @@ class ShowCode extends Component {
     }
 
     clickHandler = () => {
-        this.setState({ open: !this.state.open })
+        this.setState({ open: !this.state.open });
     }
 
     componentDidUpdate() {

@@ -10,7 +10,7 @@ class Alert extends Component {
     componentDidMount() {
         setInterval(() => {
             this.setState({
-                alternate: !this.state.alternate,
+                alternate: !this.state.alternate
             });
         }, 5000);
     }

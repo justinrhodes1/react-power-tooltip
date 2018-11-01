@@ -3,7 +3,6 @@
 import React from 'react';
 
 const Intro = () => {
-
     return (
         <>
             <h1 className='firstH1'>Introduction</h1>
