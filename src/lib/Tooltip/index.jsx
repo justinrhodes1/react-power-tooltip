@@ -78,41 +78,24 @@ class Tooltip extends Component {
       classes.push(cssClass);
     };
 
-    const { align } = position;
+    // TODO: change logically wrong css classnames
+    const { side, align } = position;
     let bottom;
 
-    // TODO: change logically wrong css classnames
-    // const { side, align } = position;
-
-    // switch (side) {
-    //     case 'bottom':
-    //         arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
-    //         console.log('bottom')
-    //         break;
-    //     case 'top':
-    //         arrange('', 'tpArrowBottom', '0px', '', '', '100%');
-    //         bottom = '100%';
-    //         break;
-    //     case 'left':
-    //         arrange('0px', 'tpArrowRight', '100%', '', '100%', '');
-    //         break;
-    //     case 'right':
-    //         arrange('0px', 'tpArrowLeft', '', '100%', '100%', '');
-    //         break;
-    //     default:
-    //         break;
-    // }
-
-    if (position.isSide('bottom')) {
-      arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
-    } else if (position.isSide('top')) {
-      arrange('', 'tpArrowBottom', '0px', '', '', '100%');
-      bottom = '100%';
-    } else if (position.isSide('right')) {
-      arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
-    } else {
-      arrange('0px', 'tpArrowRight',
-        '', '100%', '100%', '');
+    switch (side) {
+      case 'bottom':
+        arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
+        break;
+      case 'top':
+        arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+        bottom = '100%';
+        break;
+      case 'right':
+        arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
+        break;
+      default:
+        arrange('0px', 'tpArrowRight', '', '100%', '100%', '');
+        break;
     }
 
     const onAxis = {
