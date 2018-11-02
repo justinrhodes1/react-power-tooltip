@@ -7,9 +7,6 @@
     "extends": [
         "airbnb"
     ],
-    "plugins": [
-        "babel"
-    ],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -24,17 +21,12 @@
         ],
         "object-curly-spacing": "off",
         "object-curly-newline": "off",
-        "require-jsdoc": "off",
-        "indent": "off",
-        "max-len": "off",
-        "react/require-default-props": "off",
-        "react/destructuring-assignment": "off",
-        "react/prop-types": "off",
         "arrow-body-style": "off",
+        "no-nested-ternary": "off",
         "no-confusing-arrow": "off",
-        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
+        "react/destructuring-assignment": "off",
         "jsx-a11y/mouse-events-have-key-events": "off",
-        "jsx-a11y/click-events-have-key-events": "off",
-        "import/no-extraneous-dependencies": "off"
+        "jsx-a11y/click-events-have-key-events": "off"
     }
 }

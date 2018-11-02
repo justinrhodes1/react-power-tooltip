@@ -152,3 +152,63 @@
     transform: scale(0.8) translateY(0%);
     transition: all 200ms ease-out;
   }
+
+/* TextBox related */
+/*+++++++++++++++++*/
+
+.tpTextBox {
+    position: relative;
+}
+
+.tpTextBox span {
+    display: block;
+    cursor: text;
+    box-sizing: border-box;
+}
+
+.tpHover span {  
+    cursor: pointer;
+}
+
+.tpShadowDiv {
+    width: 100%;
+    height: 100%;
+}
+
+.tpShadow {
+    position: absolute;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
+    animation: none;  
+}
+
+.tpNoShadow {
+    position: absolute;
+    animation: none; 
+}
+
+.tpPulse {
+    animation-delay: 500ms;
+    animation: tpPulse 600ms 4;
+}
+
+@keyframes tpPulse {
+    0% {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
+    }
+    50% {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.251), 0 0 1px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
+    }
+    100% {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
+    }
+  }
+
+/* Arrow related */
+/* +++++++++++++ */
+
+.tpArrow {
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+  margin:3px;
+}

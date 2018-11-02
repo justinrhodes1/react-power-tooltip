@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import delayUnmount from './HOC/delayUnmount';
-import TextBox from './TextBox/TextBox';
-import Arrow from './Arrow/Arrow';
+import delayUnmount from './delayUnmount';
+import TextBox from './TextBox';
+import Arrow from './Arrow';
 
 import './style.css';
 import './animation.css';

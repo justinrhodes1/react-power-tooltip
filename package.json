@@ -75,6 +75,6 @@
     "moduleNameMapper": {
       "\\.(css)$": "jest-css-modules"
     },
-    "setupTestFrameworkScriptFile": "<rootDir>/enzyme-setup.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js"
   }
 }

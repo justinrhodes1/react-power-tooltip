@@ -18,6 +18,7 @@ export default (ChildComponent) => {
           time
         );
       } else if (!prevProps.show && this.props.show && !mount) {
+        // eslint-disable-next-line
         this.setState({ mount: true });
       }
     }

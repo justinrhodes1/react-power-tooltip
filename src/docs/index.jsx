@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+// eslint-disable-next-line
 import Prism from 'prismjs';
 
 import Header from './Content/Header';

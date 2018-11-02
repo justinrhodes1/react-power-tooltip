@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './textBox.css';
 
 class TextBox extends Component {
   state = {
@@ -10,7 +9,8 @@ class TextBox extends Component {
   }
 
   componentDidMount() {
-    const heights = Object.keys(this.spanHeights).map(key => this.spanHeights[key].clientHeight);
+    const heights = Object.keys(this.spanHeights)
+      .map(key => this.spanHeights[key].clientHeight);
     const firstH = heights[0];
     const lastH = heights[heights.length - 1];
     const totH = heights.reduce(
@@ -106,6 +106,7 @@ class TextBox extends Component {
       }
 
       let ref = null;
+      // eslint-disable-next-line
       ref = span => this.spanHeights[`span${index + 1}`] = span;
 
       const childProps = {
@@ -163,7 +164,7 @@ class TextBox extends Component {
       case 'bottom':
         break;
       case 'top':
-        top = calcVPos(0, totH, 1, 11);
+        top = calcVPos(0, totH, 1, 13);
         break;
       case 'left':
         right = '8px';

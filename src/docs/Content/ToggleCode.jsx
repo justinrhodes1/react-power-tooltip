@@ -17,7 +17,9 @@ class ShowCode extends Component {
   }
 
   render() {
-    const SVG = this.state.open ? ArrowUp : ArrowDown;
+    const { open } = this.state;
+    const { children } = this.props;
+    const SVG = open ? ArrowUp : ArrowDown;
     return (
       <>
         <div
@@ -26,14 +28,14 @@ class ShowCode extends Component {
           tabIndex={0}
           onClick={this.clickHandler}
         >
-          <span>{this.state.open ? 'Hide Code Example' : 'Show Code Example'}</span>
+          <span>{open ? 'Hide Code Example' : 'Show Code Example'}</span>
           <img
             style={{ marginLeft: '8px', width: '10px' }}
             src={SVG}
             alt=""
           />
         </div>
-        {this.state.open ? this.props.children : null}
+        {open ? children : null}
       </>
     );
   }
