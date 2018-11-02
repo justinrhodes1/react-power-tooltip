@@ -12,9 +12,10 @@ class Tooltip extends Component {
   }
 
   componentWillMount() {
+    // Basic prop type checking.
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];
-      if (type !== 'string' && type !== 'object' && type !== 'boolean') {
+      if (propName !== 'children' && type !== 'string' && type !== 'boolean') {
         // eslint-disable-next-line
         console.error(`React-custom-tooptip: [${propName}] prop should be a string (check also units)`)
       }
@@ -30,10 +31,10 @@ class Tooltip extends Component {
       lineSeparated: lines,
       position: pos,
       arrow: arwAlign,
-      moveDown: mvDown,
-      moveRight: mvRight,
-      moveLeft: mvLeft,
-      moveUp: mvUp,
+      moveDown,
+      moveRight,
+      moveLeft,
+      moveUp,
       textAlign,
       fontFamily,
       fontWeight,
@@ -43,15 +44,10 @@ class Tooltip extends Component {
       show
     } = this.props;
 
+    // Set default line style if lineSep. prop is true.
+    // If line style given use custom line.
     const lineSeparated = typeof (lines) === 'boolean'
       ? '1px solid #ececec' : lines;
-
-    const num = str => Number(str.slice(0, -2));
-
-    const moveDown = num(mvDown);
-    const moveRight = num(mvRight);
-    const moveLeft = num(mvLeft);
-    const moveUp = num(mvUp);
 
     function isAlign(str) {
       return this.align ? this.align === str
@@ -124,11 +120,14 @@ class Tooltip extends Component {
       x: position.isSide('left') || position.isSide('right')
     };
 
-    // TODO: refactor below
-    let pushRight = moveRight;
-    let pushDown = moveDown;
-    let pushLeft = moveLeft;
-    let pushUp = moveUp;
+    const num = str => Number(str.slice(0, -2));
+    let mvDown = num(moveDown);
+    let mvRight = num(moveRight);
+    let mvLeft = num(moveLeft);
+    let mvUp = num(moveUp);
+
+    const oneMovePropIsNeg = mvDown < 0 || mvUp < 0
+      || mvLeft < 0 || mvRight < 0;
 
     switch (align) {
       case 'left':
@@ -137,43 +136,25 @@ class Tooltip extends Component {
       case 'right':
         if (onAxis.y) classes.push('tpArrowRight');
         break;
-      case 'center':
-        if (onAxis.x) {
-          classes.push('tpAlignCenter');
-          pushDown *= 2;
-          pushUp *= 2;
-        }
-        if (onAxis.y) {
-          pushRight *= 2;
-          pushLeft *= 2;
-        }
-        break;
       case 'bottom':
         if (onAxis.x) classes.push('tpAlignBottom');
         break;
       default:
+        if (onAxis.x) {
+          classes.push('tpAlignCenter');
+        }
+        if (onAxis.x && !oneMovePropIsNeg) {
+          mvDown *= 2;
+          mvUp *= 2;
+        }
+        if (onAxis.y && !oneMovePropIsNeg) {
+          mvRight *= 2;
+          mvLeft *= 2;
+        }
         break;
     }
 
-    let margin;
-
-    if (moveDown < 0 && moveRight < 0) {
-      pushDown = 0;
-      pushRight = 0;
-      margin = `${moveDown}px 0px 0px ${moveRight}px`;
-    } else if (moveDown < 0) {
-      pushDown = 0;
-      margin = `${moveDown}px 0px 0px 0px`;
-    } else if (moveRight < 0) {
-      pushRight = 0;
-      margin = `0px 0px 0px ${moveRight}px`;
-    } else if (moveLeft < 0) {
-      pushLeft = 0;
-      margin = `0px ${moveLeft}px 0px 0px`;
-    } else if (moveUp < 0) {
-      pushUp = 0;
-      margin = `0px 0px ${moveUp}px 0px`;
-    }
+    const adjPositioning = `${mvDown}px ${mvLeft}px ${mvUp}px ${mvRight}px`;
 
     tooltipStyle = {
       ...tooltipStyle,
@@ -183,8 +164,8 @@ class Tooltip extends Component {
       textAlign,
       fontFamily,
       fontWeight,
-      padding: `${pushDown}px ${pushLeft}px ${pushUp}px ${pushRight}px`,
-      margin
+      padding: !oneMovePropIsNeg ? adjPositioning : null,
+      margin: oneMovePropIsNeg ? adjPositioning : null
     };
 
     return (
@@ -210,10 +191,10 @@ class Tooltip extends Component {
             lines={lineSeparated}
             pos={position}
             arw={arrow}
-            mvUp={moveUp}
-            mvDown={moveDown}
-            mvRight={moveRight}
-            mvLeft={moveLeft}
+            mvUp={mvUp}
+            mvDown={mvDown}
+            mvRight={mvRight}
+            mvLeft={mvLeft}
           />
         </div>
       </div>
@@ -226,6 +207,7 @@ Tooltip.defaultProps = {
   hoverBackground: '#ececec',
   hoverColor: 'black',
   backgroundColor: 'white',
+  lineSeparated: null,
   textBoxWidth: '150px',
   padding: '15px 20px',
   borderRadius: '5px',

@@ -1,8 +1,8 @@
 import React from 'react'; //
 
 const Arrow = ({
-  moveRight,
-  moveLeft,
+  mvRight: moveRight,
+  mvLeft: moveLeft,
   isHovered,
   hoverBackground,
   backgroundColor,
