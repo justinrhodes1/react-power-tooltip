@@ -11,66 +11,67 @@ class Tooltip extends Component {
     hoverArrow: false
   }
 
-  hoverArrow = (boolean) => {
-    this.setState({ hoverArrow: boolean });
+  componentWillMount() {
+    Object.keys(this.props).forEach((propName) => {
+      const type = typeof this.props[propName];
+      if (type !== 'string' && type !== 'object' && type !== 'boolean') {
+        // eslint-disable-next-line
+        console.error(`React-custom-tooptip: [${propName}] prop should be a string (check also units)`)
+      }
+    });
+  }
+
+  hoverArrow = (bool) => {
+    this.setState({ hoverArrow: bool });
   }
 
   render() {
-    // this.props = {
-    //   ...this.props,
-    //   hoverBackground: this.props.hoverBackground || '#ececec',
-    //   hoverColor: this.props.hoverColor || 'black',
-    //   backgroundColor: this.props.backgroundColor || 'white',
-    //   textBoxWidth: this.props.textBoxWidth || '150px',
-    //   padding: this.props.padding || '15px 20px',
-    //   borderRadius: this.props.borderRadius || '5px',
-    //   moveDown: this.props.moveDown || '0px',
-    //   moveRight: this.props.moveRight || '0px',
-    //   moveLeft: this.props.moveLeft || '0px',
-    //   moveUp: this.props.moveUp || '0px',
-    //   position: this.props.position || 'right center',
-    //   arrow: this.props.arrow || 'top'
-    // };
-
-    const lineSeparated = typeof (this.props.lineSeparated) === typeof (true)
-      ? '1px solid #ececec' : this.props.lineSeparated;
-
-    const moveDown = Number(this.props.moveDown.slice(0, -2));
-    const moveRight = Number(this.props.moveRight.slice(0, -2));
-    const moveLeft = Number(this.props.moveLeft.slice(0, -2));
-    const moveUp = Number(this.props.moveUp.slice(0, -2));
-
-    // if (!this.props.alert) console.error('Add an alert to your tooltip!');
-
     const {
-      textAlign = 'left',
-      fontFamily = 'inherit',
-      fontWeight = 'bold',
-      fontSize = 'inherit',
-      color = 'inherit',
-      animation = '',
+      lineSeparated: lines,
+      position: pos,
+      arrow: arwAlign,
+      moveDown: mvDown,
+      moveRight: mvRight,
+      moveLeft: mvLeft,
+      moveUp: mvUp,
+      textAlign,
+      fontFamily,
+      fontWeight,
+      fontSize,
+      color,
+      animation,
       show
     } = this.props;
 
-    function isAlign(pos) {
-      return this.align ? this.align === pos
-        : this.position === pos;
+    const lineSeparated = typeof (lines) === 'boolean'
+      ? '1px solid #ececec' : lines;
+
+    const num = str => Number(str.slice(0, -2));
+
+    const moveDown = num(mvDown);
+    const moveRight = num(mvRight);
+    const moveLeft = num(mvLeft);
+    const moveUp = num(mvUp);
+
+    function isAlign(str) {
+      return this.align ? this.align === str
+        : this.position === str;
     }
 
-    function isSide(pos) {
-      return this.side === pos;
+    function isSide(str) {
+      return this.side === str;
     }
 
     const position = {
-      side: this.props.position.split(' ')[0],
-      align: this.props.position.split(' ')[1],
+      side: pos.split(' ')[0],
+      align: pos.split(' ')[1],
       isAlign,
       isSide
     };
 
     const arrow = {
       isAlign,
-      position: this.props.arrow
+      position: arwAlign
     };
 
     const classes = ['tpContainer'];
@@ -82,11 +83,10 @@ class Tooltip extends Component {
     };
 
     const { align } = position;
-    // const { position } = this.props;
     let bottom;
 
     // TODO: change logically wrong css classnames
-    // const { side, align } = this.props.position;
+    // const { side, align } = position;
 
     // switch (side) {
     //     case 'bottom':
@@ -119,12 +119,12 @@ class Tooltip extends Component {
         '', '100%', '100%', '');
     }
 
-    // TODO: exchange let with const declarations
     const onAxis = {
       y: position.isSide('top') || position.isSide('bottom'),
       x: position.isSide('left') || position.isSide('right')
     };
 
+    // TODO: refactor below
     let pushRight = moveRight;
     let pushDown = moveDown;
     let pushLeft = moveLeft;
@@ -234,7 +234,13 @@ Tooltip.defaultProps = {
   moveLeft: '0px',
   moveUp: '0px',
   position: 'right center',
-  arrow: 'top'
+  arrow: 'top',
+  textAlign: 'left',
+  fontFamily: 'inherit',
+  fontWeight: 'bold',
+  fontSize: 'inherit',
+  color: 'inherit',
+  animation: ''
 };
 
 export default delayUnmount(Tooltip);
