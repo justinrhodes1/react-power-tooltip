@@ -9,7 +9,7 @@ const VerticalArrow = () => {
         <div>
           <p>
             Arrow position:
-            <strong>bottom</strong>
+            <strong> bottom</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip
@@ -26,7 +26,7 @@ const VerticalArrow = () => {
         <div>
           <p>
             Arrow position:
-            <strong>center</strong>
+            <strong> center</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip
@@ -43,7 +43,7 @@ const VerticalArrow = () => {
         <div>
           <p>
             Arrow position:
-            <strong>top</strong>
+            <strong> top</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip

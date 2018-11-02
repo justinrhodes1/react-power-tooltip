@@ -12,12 +12,18 @@ class Tooltip extends Component {
   }
 
   componentWillMount() {
-    // Basic prop type checking.
+    // Basic prop type checking
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];
-      if (propName !== 'children' && type !== 'string' && type !== 'boolean') {
+      const text = `React-custom-tooptip: [${propName}] prop should be a`;
+      if (propName !== 'children' && propName !== 'delayUnmount'
+        && type !== 'boolean' && type !== 'string') {
         // eslint-disable-next-line
-        console.error(`React-custom-tooptip: [${propName}] prop should be a string (check also units)`)
+        console.error(`${text} string (check also units)`);
+      }
+      if (propName === 'delayUnmount' && type !== 'number') {
+        // eslint-disable-next-line
+        console.error(`${text} number`);
       }
     });
   }
@@ -194,7 +200,6 @@ Tooltip.defaultProps = {
   hoverBackground: '#ececec',
   hoverColor: 'black',
   backgroundColor: 'white',
-  lineSeparated: null,
   textBoxWidth: '150px',
   padding: '15px 20px',
   borderRadius: '5px',

@@ -1,5 +1,35 @@
 const codeInstallNpm = '$ npm install react-custom-tooltip --save';
 const codeInstallCss = '<link rel="stylesheet" href="https://github-repo/some-github-repo" />';
+const codeBasicComp = `class Example extends Component {
+    state = {
+        show: false
+    }
+
+    showTooltip = bool => {
+        this.setState({ show: bool })
+    }
+
+    render() {
+        return (
+            {/* Target element position needs to be RELATIVE */}
+            <div 
+                style={{ position: 'relative' }}
+                mouseOver={() => this.showTooltip(true)} 
+                mouseLeave={() => this.showTooltip(false)}>
+                
+                {/* ADD TOOLTIP HERE */}
+
+            </div>
+        );
+    }
+}
+export default Example;`;
+
+const codeBasicTp = `{/* Add options/text via span elements */}
+<Tooltip show={this.props.show}>
+    <span>Some text</span>
+</Tooltip>`;
+
 const codeStatic = `{/* Static */}
 <Tooltip
     show={true}
@@ -203,29 +233,31 @@ const codeMoveLeft = `{/* Move left out of target */}
 </Tooltip>`;
 
 export {
-    codeStatic,
-    codeAlert,
-    codeStaticAlert,
-    codeFade,
-    codeFadeUpDown,
-    codeBounce,
-    codeAlign,
-    codeDefault,
-    codeFont,
-    codeCorners,
-    codeHover,
-    codeBackground,
-    codeFlat,
-    codeTop,
-    codeCenterV,
-    codeBottom,
-    codeLeft,
-    codeCenterH,
-    codeRight,
-    codeMoveUpNeg,
-    codeMoveLeftNeg,
-    codeMoveUp,
-    codeMoveLeft,
-    codeInstallCss,
-    codeInstallNpm
+  codeStatic,
+  codeAlert,
+  codeStaticAlert,
+  codeFade,
+  codeFadeUpDown,
+  codeBounce,
+  codeAlign,
+  codeDefault,
+  codeFont,
+  codeCorners,
+  codeHover,
+  codeBackground,
+  codeFlat,
+  codeTop,
+  codeCenterV,
+  codeBottom,
+  codeLeft,
+  codeCenterH,
+  codeRight,
+  codeMoveUpNeg,
+  codeMoveLeftNeg,
+  codeMoveUp,
+  codeMoveLeft,
+  codeInstallCss,
+  codeInstallNpm,
+  codeBasicComp,
+  codeBasicTp
 };

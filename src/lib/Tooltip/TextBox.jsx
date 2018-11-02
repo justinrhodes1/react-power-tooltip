@@ -199,7 +199,7 @@ class TextBox extends Component {
 
     return (
       <div
-        className={`wrapper ${alertStyle}`}
+        className={`${alertStyle}`}
         style={{
           ...boxStyle,
           position: 'absolute',

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Animation from '../Animation';
-import Types from './Types';
-import Alert from './Alert';
-import Colors from '../Customization/Colors';
-import Shapes from '../Customization/Shapes';
-import AlignPositions from '../Positions/Align';
-import ArrowVPos from '../Positions/ArrowVPos';
-import ArrowHPos from '../Positions/ArrowHPos';
-import AdjustmentInner from '../Positions/AdjPosIn';
-import AdjustmentOuter from '../Positions/AdjPosOut';
-import ToggleCode from '../../ToggleCode';
+import Animation from './Animation';
+import Types from './Types/Types';
+import Alert from './Types/Alert';
+import Colors from './Customization/Colors';
+import Shapes from './Customization/Shapes';
+import AlignPositions from './Positions/Align';
+import ArrowVPos from './Positions/ArrowVPos';
+import ArrowHPos from './Positions/ArrowHPos';
+import AdjustmentInner from './Positions/AdjPosIn';
+import AdjustmentOuter from './Positions/AdjPosOut';
+import ToggleCode from '../ToggleCode';
 import {
   codeStatic,
   codeAlert,
@@ -34,7 +34,7 @@ import {
   codeMoveLeftNeg,
   codeMoveUp,
   codeMoveLeft
-} from '../../CodeSnippets';
+} from '../CodeSnippets';
 
 class Examples extends Component {
   render() {
@@ -165,7 +165,7 @@ class Examples extends Component {
         <h2 id="positions">Positions</h2>
         <h3>
           1)
-          <strong>Arrow positions</strong>
+          <strong> Arrow positions </strong>
           relative to textbox (via arrow prop)
         </h3>
         <div
@@ -229,24 +229,24 @@ class Examples extends Component {
         </ToggleCode>
         <h3>
           2)
-          <strong>Tooltip positions</strong>
+          <strong> Tooltip positions </strong>
           relative to target element (via position prop)
         </h3>
         <p>
-          The position prop positions the tooltip relative to target element. It consists of a string with
-          two positions:
+          The position prop positions the tooltip relative to target element.
+          It consists of a string with two positions:
         </p>
         <ol style={{ listStyleType: 'disc', lineHeight: '1.5' }}>
           <li>
-            <strong>First</strong>
-            position: determins
+            <strong>First position: </strong>
+            determins
             <strong> on which side </strong>
             of the target element to position the tooltip.
           </li>
           <li>
-            <strong>Second</strong>
-            position: determins
-            <strong>how to align</strong>
+            <strong>Second position: </strong>
+            determins
+            <strong> how to align </strong>
             the tooltip on that side.
           </li>
         </ol>
@@ -267,7 +267,7 @@ class Examples extends Component {
         </div>
         <h3>
           3)
-          <strong>Adjusting</strong>
+          <strong> Adjusting </strong>
           positions (via move props)
         </h3>
         <div

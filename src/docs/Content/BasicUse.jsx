@@ -1,55 +1,30 @@
 import React from 'react';
+import { codeBasicComp, codeBasicTp } from './CodeSnippets';
 
 const BasicUsage = () => {
   return (
     <>
       <h1>Basic Usage</h1>
       <h3>
-        1) Import the tooltip into your react component file.
-        <strong>Important:</strong>
-        Use a stateful component to handle hover effects (see below).
+        1) Import the tooltip into your stateful react component file (see below).
       </h3>
       <pre>
-        <code className="language-javascript">import Tooltip from 'react-custom-tooltip'</code>
-      </pre>
-      <h3>2) Add a hover state default and handler to your stateful component.</h3>
-      <pre>
-        <code className="language-jsx">
-          {`class Example extends Component {
-    state = {
-        show: false
-    }
-
-    showTooltip = bool => {
-        this.setState({ show: bool })
-    }
-
-    render() {
-        return (
-            {/* Target element position needs to be RELATIVE */}
-            <div 
-                style={{ position: 'relative' }}
-                mouseOver={() => this.showTooltip(true)} 
-                mouseLeave={() => this.showTooltip(false)}>
-                
-                {/* ADD TOOLTIP HERE */}
-
-            </div>
-        );
-    }
-}
-export default Example;`}
+        <code className="language-javascript">
+          import Tooltip from &#39;react-custom-tooltip&#39;
         </code>
       </pre>
-      <h3>3) Set the position of the target element to relative. Then add the tooltip to that element</h3>
+      <h3>2) Add a hover state &amp; mouse event handler to your component.</h3>
       <pre>
         <code className="language-jsx">
-          {
-            `{/* Add options/text via span elements */}
-
-<Tooltip show={this.props.show}>
-    <span>Some text</span>
-</Tooltip>`}
+          {codeBasicComp}
+        </code>
+      </pre>
+      <h3>
+        3) Add the tooltip inside inside the target element.
+      </h3>
+      <pre>
+        <code className="language-jsx">
+          {codeBasicTp}
         </code>
       </pre>
     </>

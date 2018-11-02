@@ -52,10 +52,12 @@
     animation: none;  
 }
 
-.rct-no-shadow {
+.rct-no-shadow,
+.rct-textbox-container {
     position: absolute;
     animation: none; 
 }
+
 
 .rct-arrow {
   transform: rotate(45deg);

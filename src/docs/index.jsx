@@ -8,7 +8,7 @@ import SideNav from './Content/SideNav';
 import Intro from './Content/Intro';
 import BasicUse from './Content/BasicUse';
 import AdvUse from './Content/AdvancedUse';
-import Examples from './Content/Examples/Types';
+import Examples from './Content/Examples';
 import Api from './Content/Api';
 
 import './styles.css';
