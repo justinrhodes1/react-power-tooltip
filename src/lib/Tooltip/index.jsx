@@ -16,29 +16,29 @@ class Tooltip extends Component {
   }
 
   render() {
-    this.props = {
-      ...this.props,
-      hoverBackground: this.props.hoverBackground || '#ececec',
-      hoverColor: this.props.hoverColor || 'black',
-      backgroundColor: this.props.backgroundColor || 'white',
-      textBoxWidth: this.props.textBoxWidth || '150px',
-      padding: this.props.padding || '15px 20px',
-      borderRadius: this.props.borderRadius || '5px',
-      moveDown: this.props.moveDown || '0px',
-      moveRight: this.props.moveRight || '0px',
-      moveLeft: this.props.moveLeft || '0px',
-      moveUp: this.props.moveUp || '0px',
-      position: this.props.position || 'right center',
-      arrow: this.props.arrow || 'top'
-    };
+    // this.props = {
+    //   ...this.props,
+    //   hoverBackground: this.props.hoverBackground || '#ececec',
+    //   hoverColor: this.props.hoverColor || 'black',
+    //   backgroundColor: this.props.backgroundColor || 'white',
+    //   textBoxWidth: this.props.textBoxWidth || '150px',
+    //   padding: this.props.padding || '15px 20px',
+    //   borderRadius: this.props.borderRadius || '5px',
+    //   moveDown: this.props.moveDown || '0px',
+    //   moveRight: this.props.moveRight || '0px',
+    //   moveLeft: this.props.moveLeft || '0px',
+    //   moveUp: this.props.moveUp || '0px',
+    //   position: this.props.position || 'right center',
+    //   arrow: this.props.arrow || 'top'
+    // };
 
-    this.props.lineSeparated = typeof (this.props.lineSeparated) === typeof (true)
+    const lineSeparated = typeof (this.props.lineSeparated) === typeof (true)
       ? '1px solid #ececec' : this.props.lineSeparated;
 
-    this.props.moveDown = Number(this.props.moveDown.slice(0, -2));
-    this.props.moveRight = Number(this.props.moveRight.slice(0, -2));
-    this.props.moveLeft = Number(this.props.moveLeft.slice(0, -2));
-    this.props.moveUp = Number(this.props.moveUp.slice(0, -2));
+    const moveDown = Number(this.props.moveDown.slice(0, -2));
+    const moveRight = Number(this.props.moveRight.slice(0, -2));
+    const moveLeft = Number(this.props.moveLeft.slice(0, -2));
+    const moveUp = Number(this.props.moveUp.slice(0, -2));
 
     // if (!this.props.alert) console.error('Add an alert to your tooltip!');
 
@@ -49,11 +49,6 @@ class Tooltip extends Component {
       fontSize = 'inherit',
       color = 'inherit',
       animation = '',
-      arrow,
-      moveDown,
-      moveRight,
-      moveLeft,
-      moveUp,
       show
     } = this.props;
 
@@ -66,16 +61,16 @@ class Tooltip extends Component {
       return this.side === pos;
     }
 
-    this.props.position = {
+    const position = {
       side: this.props.position.split(' ')[0],
       align: this.props.position.split(' ')[1],
       isAlign,
       isSide
     };
 
-    this.props.arrow = {
+    const arrow = {
       isAlign,
-      position: arrow
+      position: this.props.arrow
     };
 
     const classes = ['tpContainer'];
@@ -86,8 +81,8 @@ class Tooltip extends Component {
       classes.push(cssClass);
     };
 
-    const { align } = this.props.position;
-    const { position } = this.props;
+    const { align } = position;
+    // const { position } = this.props;
     let bottom;
 
     // TODO: change logically wrong css classnames
@@ -207,15 +202,35 @@ class Tooltip extends Component {
           <Arrow
             {...this.props}
             isHovered={this.state.hoverArrow}
+            pos={position}
           />
           <TextBox
             {...this.props}
             hoverArrow={this.hoverArrow}
+            lines={lineSeparated}
+            pos={position}
+            arw={arrow}
           />
         </div>
       </div>
     );
   }
 }
+
+// Specifies the default values for props:
+Tooltip.defaultProps = {
+  hoverBackground: '#ececec',
+  hoverColor: 'black',
+  backgroundColor: 'white',
+  textBoxWidth: '150px',
+  padding: '15px 20px',
+  borderRadius: '5px',
+  moveDown: '0px',
+  moveRight: '0px',
+  moveLeft: '0px',
+  moveUp: '0px',
+  position: 'right center',
+  arrow: 'top'
+};
 
 export default delayUnmount(Tooltip);

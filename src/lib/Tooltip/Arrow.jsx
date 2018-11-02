@@ -8,7 +8,7 @@ const Arrow = ({
   backgroundColor,
   flat,
   zIndex,
-  position }) => {
+  pos: position }) => {
   const backgroundAdj = isHovered
     ? hoverBackground : backgroundColor;
 

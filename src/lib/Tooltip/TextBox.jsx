@@ -42,15 +42,15 @@ class TextBox extends Component {
 
   render() {
     const {
-      arrow,
-      position,
+      arw: arrow,
+      pos: position,
       static: tpStatic,
       textBoxWidth: width,
       moveDown,
       moveLeft,
       moveUp,
       moveRight,
-      lineSeparated,
+      lines: lineSeparated,
       backgroundColor,
       padding,
       borderRadius,
