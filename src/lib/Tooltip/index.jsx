@@ -210,6 +210,10 @@ class Tooltip extends Component {
             lines={lineSeparated}
             pos={position}
             arw={arrow}
+            mvUp={moveUp}
+            mvDown={moveDown}
+            mvRight={moveRight}
+            mvLeft={moveLeft}
           />
         </div>
       </div>
