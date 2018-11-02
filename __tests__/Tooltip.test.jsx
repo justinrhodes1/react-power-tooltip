@@ -96,7 +96,7 @@ describe('DEEP component testing', () => {
         .toHaveProperty('backgroundColor', backgroundColor);
     });
     // it('renders correct arrow style', () => {
-    //     expect(wrapper.find('tpArrow')).toHaveStyle('top', '0px');
+    //     expect(wrapper.find('rct-arrow')).toHaveStyle('top', '0px');
     // })
   });
   describe('DEFAULT MULTIPLE', () => {

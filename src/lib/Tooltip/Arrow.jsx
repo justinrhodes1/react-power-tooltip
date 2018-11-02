@@ -24,7 +24,7 @@ const Arrow = ({
 
   return (
     <div
-      className="tpArrow"
+      className="rct-arrow"
       style={{
         marginLeft,
         marginRight,

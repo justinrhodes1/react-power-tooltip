@@ -70,7 +70,7 @@ class Tooltip extends Component {
       position: arwAlign
     };
 
-    const classes = ['tpContainer'];
+    const classes = ['rct-container'];
     let tooltipStyle = {};
 
     const arrange = (units, cssClass, left, right, height, width) => {
@@ -84,17 +84,17 @@ class Tooltip extends Component {
 
     switch (side) {
       case 'bottom':
-        arrange('100%', 'tpArrowTop', '0px', '', '', '100%');
+        arrange('100%', 'rct-bottom', '0px', '', '', '100%');
         break;
       case 'top':
-        arrange('', 'tpArrowBottom', '0px', '', '', '100%');
+        arrange('', 'rct-top', '0px', '', '', '100%');
         bottom = '100%';
         break;
       case 'right':
-        arrange('0px', 'tpArrowLeft', '100%', '', '100%', '');
+        arrange('0px', 'rct-right', '100%', '', '100%', '');
         break;
       default:
-        arrange('0px', 'tpArrowRight', '', '100%', '100%', '');
+        arrange('0px', 'rct-left', '', '100%', '100%', '');
         break;
     }
 
@@ -114,21 +114,21 @@ class Tooltip extends Component {
 
     switch (align) {
       case 'left':
-        if (onAxis.y) classes.push('tpArrowLeft');
+        if (onAxis.y) classes.push('rct-left');
         break;
       case 'right':
-        if (onAxis.y) classes.push('tpArrowRight');
+        if (onAxis.y) classes.push('rct-right');
         break;
       case 'bottom':
-        if (onAxis.x) classes.push('tpAlignBottom');
+        if (onAxis.x) classes.push('rct-align-bottom');
         break;
       default:
         if (onAxis.x) {
-          classes.push('tpAlignCenter');
-        }
-        if (onAxis.x && !oneMovePropIsNeg) {
-          mvDown *= 2;
-          mvUp *= 2;
+          classes.push('rct-align-center');
+          if (!oneMovePropIsNeg) {
+            mvDown *= 2;
+            mvUp *= 2;
+          }
         }
         if (onAxis.y && !oneMovePropIsNeg) {
           mvRight *= 2;

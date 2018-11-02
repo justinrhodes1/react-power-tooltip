@@ -1,214 +1,73 @@
-.tpContainer {
+.rct-container {
     position: absolute;
     display: flex;   
 }
 
-.tpArrowTop,
-.tpArrowBottom {
+.rct-bottom,
+.rct-top {
     justify-content: center;
     width: 100%;
 }
 
-/* .tpArrowBottom {
-    justify-content: center;
-    width: 100%;
-} */
-
-.tpArrowLeft {
+.rct-right {
     justify-content: flex-start;
 }
 
-.tpArrowRight {
+.rct-left {
     justify-content: flex-end;
 }
 
-.tpAlignCenter {
+.rct-align-center {
     align-items: center;
 }
 
-.tpAlignBottom {
+.rct-align-bottom {
     align-items: flex-end;
 }
 
-/* CSS animations */
-.tpFade-enter {
-    opacity: 0.01;
-  }
-.tpFade-enter-active {
-    opacity: 1;
-    transition: all 300ms ease-out;
-  }
-.tpFade-exit {
-    opacity: 1;
-  }
-.tpFade-exit-active {
-    opacity: 0.01;
-    transition: all 200ms ease-out;
-  }
-
-
-/* */
-.tpFadeIn-enter {
-    opacity: 0.01;
-    transform: scale(0.8);
-  }
-.tpFadeIn-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 300ms ease-out;
-  }
-.tpFadeIn-exit {
-    opacity: 1;
-    transform: scale(1);
-  }
-.tpFadeIn-exit-active {
-    opacity: 0.01;
-    transform: scale(0.8);
-    transition: all 200ms ease-out;
-  }
-
-
-/* */
-.tpFadeUp-enter,
-.tpFadeUpDown-enter {
-    opacity: 0.01;
-    transform: translateY(10%);
-  }
-.tpFadeDown-enter {
-    opacity: 0.01;
-    transform: translateY(-10%);
-  }
-.tpFadeUp-enter-active,
-.tpFadeUpDown-enter-active,
-.tpFadeDown-enter-active {
-    opacity: 1;
-    transform: translateY(0%);
-    transition: all 300ms ease-out;
-  }
-.tpFadeUp-exit,
-.tpFadeUpDown-exit,
-.tpFadeDown-exit {
-    opacity: 1;
-    transform: translateY(0%);
-    transform: scale(1);
-  }
-.tpFadeUp-exit-active {
-    opacity: 0.01;
-    transform: translateY(-10%);
-    transition: all 200ms ease-out;
-  }
-.tpFadeUpDown-exit-active,
-.tpFadeDown-exit-active {
-    opacity: 0.01;
-    transform: translateY(10%);
-    transition: all 200ms ease-out;
-  }
-
-
-/* CSS animations */
-
-@keyframes tpBounce {
-    0%   {transform: scale(0.7)}
-    25%  {transform: scale(0.9)}
-    50%  {transform: scale(1.1)}
-    100% {transform: scale(1)}
-}
-
-.tpBounce-enter {
-    opacity: 0.01;
-    animation-name: tpBounce;
-    animation-duration: 300ms;
-  }
-.tpBounce-enter-active {
-    opacity: 1;
-  }
-.tpBounce-exit {
-    opacity: 1;
-    transform: scale(1);
-  }
-.tpBounce-exit-active {
-    opacity: 0.01;
-    transform: scale(0.8);
-    transition: all 200ms ease-out;
-  }
-
-/* */
-
-.tpTooltip-enter {
-    opacity: 0.01;
-    transform: scale(0.8) translateY(0%);
-  }
-.tpTooltip-enter-active {
-    opacity: 1;
-    transform: scale(1) translateY(0%);
-    transition: all 300ms ease-out;
-  }
-.tpTooltip-exit {
-    opacity: 1;
-    transform: scale(1) translateY(0%);
-  }
-.tpTooltip-exit-active {
-    opacity: 0.01;
-    transform: scale(0.8) translateY(0%);
-    transition: all 200ms ease-out;
-  }
-
-/* TextBox related */
-/*+++++++++++++++++*/
-
-.tpTextBox {
+.rct-textbox {
     position: relative;
 }
 
-.tpTextBox span {
+.rct-textbox span {
     display: block;
     cursor: text;
     box-sizing: border-box;
 }
 
-.tpHover span {  
+.rct-hover span {  
     cursor: pointer;
 }
 
-.tpShadowDiv {
+.rct-shadow-container {
     width: 100%;
     height: 100%;
 }
 
-.tpShadow {
+.rct-shadow {
     position: absolute;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
     animation: none;  
 }
 
-.tpNoShadow {
+.rct-no-shadow {
     position: absolute;
     animation: none; 
 }
 
-.tpPulse {
-    animation-delay: 500ms;
-    animation: tpPulse 600ms 4;
-}
-
-@keyframes tpPulse {
-    0% {
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
-    }
-    50% {
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.251), 0 0 1px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
-    }
-    100% {
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
-    }
-  }
-
-/* Arrow related */
-/* +++++++++++++ */
-
-.tpArrow {
+.rct-arrow {
   transform: rotate(45deg);
   width: 15px;
   height: 15px;
   margin:3px;
+}
+
+.rct-alert {
+    animation: rct-alert 2s infinite;
+    animation-fill-mode: initial;
+}
+
+@keyframes rct-alert {
+    70% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
+    100% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
 }

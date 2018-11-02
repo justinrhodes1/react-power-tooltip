@@ -192,7 +192,7 @@ class TextBox extends Component {
       borderRadius
     };
 
-    const showShadow = flat ? 'tpNoShadow' : 'tpShadow';
+    const showShadow = flat ? 'rct-no-shadow' : 'rct-shadow';
     const alertStyle = alert ? 'rct-alert' : null;
     const rgb = alert || 'rgb(248, 109, 109)';
     const boxShadow = alert ? `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
@@ -209,7 +209,7 @@ class TextBox extends Component {
         }}
       >
         <div
-          className={`tpShadowDiv ${showShadow}`}
+          className={`rct-shadow-container ${showShadow}`}
           style={{
             zIndex: zIndex || '100',
             borderRadius,
@@ -218,7 +218,7 @@ class TextBox extends Component {
           }}
         />
         <div
-          className="tpTextBox"
+          className="rct-textbox"
           onMouseLeave={this.unsetHover}
           style={{
             zIndex: zIndex + 2 || '102',
@@ -227,7 +227,7 @@ class TextBox extends Component {
           }}
         >
           <div
-            className={!tpStatic ? 'tpHover' : null}
+            className={!tpStatic ? 'rct-hover' : null}
             style={{
               borderRadius,
               overflow: 'hidden'

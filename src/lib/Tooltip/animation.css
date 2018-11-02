@@ -72,13 +72,3 @@
     0% { transform: translateX(0px); opacity: 1 }
     100%   { transform: translateX(20px); opacity: 0 }
 }
-
-.rct-alert {
-    animation: rct-alert 2s infinite;
-    animation-fill-mode: initial;
-}
-
-@keyframes rct-alert {
-    70% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
-    100% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
-}
