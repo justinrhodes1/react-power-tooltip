@@ -7,7 +7,6 @@ const Arrow = ({
   hoverBackground,
   backgroundColor,
   flat,
-  zIndex,
   pos: position }) => {
   const backgroundAdj = isHovered
     ? hoverBackground : backgroundColor;
@@ -30,7 +29,7 @@ const Arrow = ({
         marginRight,
         backgroundColor: backgroundAdj,
         boxShadow,
-        zIndex: zIndex + 1 || '101'
+        zIndex: '1'
       }}
     />
   );

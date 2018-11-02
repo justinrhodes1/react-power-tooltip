@@ -57,7 +57,6 @@ class TextBox extends Component {
       hoverBackground,
       hoverColor,
       alert,
-      zIndex,
       flat,
       children
     } = this.props;
@@ -211,7 +210,7 @@ class TextBox extends Component {
         <div
           className={`rct-shadow-container ${showShadow}`}
           style={{
-            zIndex: zIndex || '100',
+            zIndex: '0',
             borderRadius,
             height: `calc(100% - ${noNeg(moveDown) + noNeg(moveUp)}px)`,
             width: `calc(100% - ${noNeg(moveLeft) + noNeg(moveRight)}px)`
@@ -221,7 +220,7 @@ class TextBox extends Component {
           className="rct-textbox"
           onMouseLeave={this.unsetHover}
           style={{
-            zIndex: zIndex + 2 || '102',
+            zIndex: '2',
             backgroundColor,
             borderRadius
           }}

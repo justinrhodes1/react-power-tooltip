@@ -41,6 +41,7 @@ class Tooltip extends Component {
       fontSize,
       color,
       animation,
+      zIndex,
       show
     } = this.props;
 
@@ -122,6 +123,8 @@ class Tooltip extends Component {
       case 'bottom':
         if (onAxis.x) classes.push('rct-align-bottom');
         break;
+      case 'top':
+        break;
       default:
         if (onAxis.x) {
           classes.push('rct-align-center');
@@ -141,6 +144,7 @@ class Tooltip extends Component {
 
     tooltipStyle = {
       ...tooltipStyle,
+      zIndex,
       color,
       bottom,
       fontSize,
@@ -205,6 +209,7 @@ Tooltip.defaultProps = {
   fontWeight: 'bold',
   fontSize: 'inherit',
   color: 'inherit',
+  zIndex: '100',
   animation: ''
 };
 
