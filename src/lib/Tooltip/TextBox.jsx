@@ -28,7 +28,7 @@ class TextBox extends Component {
   // Set & unset hover state
   onSpanHover = (index, lastIndex, numChildren) => {
     this.setState({ hoverIndex: index });
-    const { static: rctStatic, arrow, position, hoverArrow } = this.props;
+    const { static: rctStatic, arw: arrow, pos: position, hoverArrow } = this.props;
     if (!rctStatic
       && ((index === 0
         && (position.isSide('bottom') || arrow.isAlign('top')))
@@ -44,13 +44,13 @@ class TextBox extends Component {
     const {
       arw: arrow,
       pos: position,
+      lines: lineSeparated,
       static: tpStatic,
       textBoxWidth: width,
       moveDown,
       moveLeft,
       moveUp,
       moveRight,
-      lines: lineSeparated,
       backgroundColor,
       padding,
       borderRadius,
