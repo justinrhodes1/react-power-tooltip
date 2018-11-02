@@ -210,7 +210,6 @@ class TextBox extends Component {
         <div
           className={`rct-shadow-container ${showShadow}`}
           style={{
-            zIndex: '0',
             borderRadius,
             height: `calc(100% - ${noNeg(moveDown) + noNeg(moveUp)}px)`,
             width: `calc(100% - ${noNeg(moveLeft) + noNeg(moveRight)}px)`
@@ -220,7 +219,6 @@ class TextBox extends Component {
           className="rct-textbox"
           onMouseLeave={this.unsetHover}
           style={{
-            zIndex: '2',
             backgroundColor,
             borderRadius
           }}

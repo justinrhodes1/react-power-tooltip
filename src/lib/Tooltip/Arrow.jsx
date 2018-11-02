@@ -5,11 +5,11 @@ const Arrow = ({
   mvLeft: moveLeft,
   isHovered,
   hoverBackground,
-  backgroundColor,
+  backgroundColor: bkgCol,
   flat,
   pos: position }) => {
-  const backgroundAdj = isHovered
-    ? hoverBackground : backgroundColor;
+  const backgroundColor = isHovered
+    ? hoverBackground : bkgCol;
 
   const boxShadow = flat ? null : '0 0 0 1px rgba(0,0,0,.18)';
 
@@ -27,9 +27,8 @@ const Arrow = ({
       style={{
         marginLeft,
         marginRight,
-        backgroundColor: backgroundAdj,
-        boxShadow,
-        zIndex: '1'
+        backgroundColor,
+        boxShadow
       }}
     />
   );
