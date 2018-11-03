@@ -15,7 +15,8 @@ class Align extends Component {
     return (
       <div style={{ position: 'relative', fontSize: '14px' }}>
         <Tooltip
-          show={hover === 'left'}
+          // show={hover === 'left'}
+          show
           position="left top"
           arrow="center"
           delayTime="0"
@@ -25,7 +26,8 @@ class Align extends Component {
           <span>Top</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'left'}
+          // show={hover === 'left'}
+          show
           position="left center"
           arrow="center"
           delayTime="0"
@@ -35,7 +37,8 @@ class Align extends Component {
           <span>Center</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'left'}
+          // show={hover === 'left'}
+          show
           position="left bottom"
           arrow="center"
           delayTime="0"
@@ -45,7 +48,8 @@ class Align extends Component {
           <span>Bottom</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'right'}
+          // show={hover === 'right'}
+          show
           position="right top"
           arrow="center"
           delayTime="0"
@@ -55,7 +59,8 @@ class Align extends Component {
           <span>Top</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'right'}
+          // show={hover === 'right'}
+          show
           position="right center"
           arrow="center"
           delayTime="0"
@@ -65,7 +70,8 @@ class Align extends Component {
           <span>Center</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'right'}
+          // show={hover === 'right'}
+          show
           position="right bottom"
           arrow="center"
           delayTime="0"
@@ -75,7 +81,8 @@ class Align extends Component {
           <span>Bottom</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'top'}
+          // show={hover === 'top'}
+          show
           position="top left"
           arrow="center"
           delayTime="0"
@@ -85,7 +92,8 @@ class Align extends Component {
           <span>Left</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'top'}
+          // show={hover === 'top'}
+          show
           position="top center"
           arrow="center"
           delayTime="0"
@@ -95,7 +103,8 @@ class Align extends Component {
           <span>Center</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'top'}
+          // show={hover === 'top'}
+          show
           position="top right"
           arrow="center"
           delayTime="0"
@@ -105,7 +114,8 @@ class Align extends Component {
           <span>Right</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'bottom'}
+          // show={hover === 'bottom'}
+          show
           position="bottom left"
           arrow="center"
           delayTime="0"
@@ -115,7 +125,8 @@ class Align extends Component {
           <span>Left</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'bottom'}
+          // show={hover === 'bottom'}
+          show
           position="bottom center"
           arrow="center"
           delayTime="0"
@@ -125,7 +136,8 @@ class Align extends Component {
           <span>Center</span>
         </Tooltip>
         <Tooltip
-          show={hover === 'bottom'}
+          // show={hover === 'bottom'}
+          show
           position="bottom right"
           arrow="center"
           delayTime="0"

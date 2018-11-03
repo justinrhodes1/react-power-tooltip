@@ -139,21 +139,41 @@ const Api = () => {
           <tr>
             <td>arrow</td>
             <td>
-              string: &#39;top&#39; | &#39;center&#39; | &#39;bottom&#39;
-              | &#39;left&#39; | &#39;right&#39;
+              <p style={{ marginTop: '0' }}>
+                string:
+                <i> horizontal | vertical alignment;</i>
+              </p>
+              <p>
+                Vertical alignment (along left/right textbox side):
+                <br />
+                &#39;top&#39; | &#39;center&#39; | &#39;bottom&#39;
+              </p>
+              <p style={{ marginBottom: '0' }}>
+                Horizontal alignment (along top/bottom textbox side):
+                &#39;left&#39; | &#39;center&#39; | &#39;right&#39;
+              </p>
             </td>
-            <td>na</td>
+            <td>&#39;top&#39;</td>
             <td>Positions arrow relative to textbox</td>
           </tr>
           <tr>
             <td>align</td>
             <td>
-              string: &#39;top left&#39; | &#39;top center&#39; | &#39;top right&#39; |
-              &#39;bottom left&#39; | &#39;bottom center&#39; | &#39; bottom right&#39; |
-              &#39;left top&#39; | &#39;left center&#39; | &#39; left bottom&#39; |
-              &#39;right top&#39; | &#39;right center&#39; | &#39; right bottom&#39;
+              <p style={{ marginTop: '0' }}>
+                string:
+                <i> &#39;position1 position2&#39;</i>
+              </p>
+              <p>
+                Position 1 (target side):
+                &#39;top&#39; | &#39;bottom&#39; | &#39;right&#39; | &#39;left&#39;
+              </p>
+              <p style={{ marginBottom: '0' }}>
+                Position 2 (alignment):
+                &#39;left&#39; | &#39;center&#39; | &#39;right&#39; |
+                &#39;top&#39; | &#39;bottom&#39;
+              </p>
             </td>
-            <td>na</td>
+            <td>&#39;right center&#39;</td>
             <td>Positions tooltip relative to target element</td>
           </tr>
         </tbody>

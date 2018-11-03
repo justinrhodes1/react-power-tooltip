@@ -36,6 +36,8 @@ class Tooltip extends Component {
     const {
       lineSeparated: lines,
       position: pos,
+      hoverBackground,
+      backgroundColor,
       arrow: arwAlign,
       moveDown,
       moveRight,
@@ -48,11 +50,11 @@ class Tooltip extends Component {
       color,
       animation,
       zIndex,
-      show
+      show,
+      flat
     } = this.props;
 
-    // Set default line style if lineSep. prop is true.
-    // If line style given use custom line.
+    // Sets if false no line; if true default line; if string custom line;
     const lineSeparated = typeof (lines) === 'boolean'
       ? '1px solid #ececec' : lines;
 
@@ -77,31 +79,30 @@ class Tooltip extends Component {
       position: arwAlign
     };
 
+    // TODO: refactor
+    const { side, align } = position;
     const classes = ['rct-container'];
     let tooltipStyle = {};
-
-    const arrange = (units, cssClass, left, right, height, width) => {
-      tooltipStyle = { left, right, height, width, top: units };
-      classes.push(cssClass);
-    };
-
-    // TODO: change logically wrong css classnames
-    const { side, align } = position;
     let bottom;
+
+    const arrange = (top, left, right, height, width, cssSel) => {
+      tooltipStyle = { top, left, right, height, width };
+      classes.push(cssSel);
+    };
 
     switch (side) {
       case 'bottom':
-        arrange('100%', 'rct-bottom', '0px', '', '', '100%');
+        arrange('100%', '0px', '', '', '100%', 'rct-bottom');
         break;
       case 'top':
-        arrange('', 'rct-top', '0px', '', '', '100%');
+        arrange('', '0px', '', '', '100%', 'rct-top');
         bottom = '100%';
         break;
       case 'right':
-        arrange('0px', 'rct-right', '100%', '', '100%', '');
+        arrange('0px', '100%', '', '100%', '', 'rct-right');
         break;
       default:
-        arrange('0px', 'rct-left', '', '100%', '100%', '');
+        arrange('0px', '', '100%', '100%', '', 'rct-left');
         break;
     }
 
@@ -111,13 +112,15 @@ class Tooltip extends Component {
     };
 
     const num = str => Number(str.slice(0, -2));
-    let mvDown = num(moveDown);
-    let mvRight = num(moveRight);
-    let mvLeft = num(moveLeft);
-    let mvUp = num(moveUp);
+    const move = {
+      down: num(moveDown),
+      up: num(moveUp),
+      left: num(moveLeft),
+      right: num(moveRight)
+    };
 
-    const oneMovePropIsNeg = mvDown < 0 || mvUp < 0
-      || mvLeft < 0 || mvRight < 0;
+    const oneMovePropIsNeg = move.down < 0 || move.up < 0
+      || move.left < 0 || move.right < 0;
 
     switch (align) {
       case 'left':
@@ -135,18 +138,18 @@ class Tooltip extends Component {
         if (onAxis.x) {
           classes.push('rct-align-center');
           if (!oneMovePropIsNeg) {
-            mvDown *= 2;
-            mvUp *= 2;
+            move.down *= 2;
+            move.up *= 2;
           }
         }
         if (onAxis.y && !oneMovePropIsNeg) {
-          mvRight *= 2;
-          mvLeft *= 2;
+          move.right *= 2;
+          move.left *= 2;
         }
         break;
     }
 
-    const adjPositioning = `${mvDown}px ${mvLeft}px ${mvUp}px ${mvRight}px`;
+    const adjustment = `${move.down}px ${move.left}px ${move.up}px ${move.right}px`;
 
     tooltipStyle = {
       ...tooltipStyle,
@@ -157,8 +160,8 @@ class Tooltip extends Component {
       textAlign,
       fontFamily,
       fontWeight,
-      padding: !oneMovePropIsNeg ? adjPositioning : null,
-      margin: oneMovePropIsNeg ? adjPositioning : null
+      padding: oneMovePropIsNeg ? null : adjustment,
+      margin: oneMovePropIsNeg ? adjustment : null
     };
 
     return (
@@ -174,9 +177,10 @@ class Tooltip extends Component {
           }}
         >
           <Arrow
-            {...this.props}
             isHovered={this.state.hoverArrow}
-            pos={position}
+            hovBkg={hoverBackground}
+            bkgCol={backgroundColor}
+            flat={flat}
           />
           <TextBox
             {...this.props}
@@ -184,10 +188,7 @@ class Tooltip extends Component {
             lines={lineSeparated}
             pos={position}
             arw={arrow}
-            mvUp={mvUp}
-            mvDown={mvDown}
-            mvRight={mvRight}
-            mvLeft={mvLeft}
+            move={move}
           />
         </div>
       </div>

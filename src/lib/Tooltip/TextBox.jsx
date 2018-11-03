@@ -47,10 +47,7 @@ class TextBox extends Component {
       lines: lineSeparated,
       static: tpStatic,
       textBoxWidth: width,
-      mvDown: moveDown,
-      mvLeft: moveLeft,
-      mvUp: moveUp,
-      mvRight: moveRight,
+      move,
       backgroundColor,
       padding,
       borderRadius,
@@ -179,8 +176,8 @@ class TextBox extends Component {
 
     if (textBoxWidth !== 'auto') {
       textBoxWidth = Number(width.slice(0, -2));
-      if (moveLeft > 0) textBoxWidth += moveLeft;
-      if (moveRight > 0) textBoxWidth += moveRight;
+      if (move.left > 0) textBoxWidth += move.left;
+      if (move.right > 0) textBoxWidth += move.right;
     }
 
     const boxStyle = {
@@ -204,15 +201,15 @@ class TextBox extends Component {
           ...boxStyle,
           position: 'absolute',
           boxShadow,
-          padding: `${moveDown}px ${moveLeft}px ${moveUp}px ${moveRight}px`
+          padding: `${move.down}px ${move.left}px ${move.up}px ${move.right}px`
         }}
       >
         <div
           className={`rct-shadow-container ${showShadow}`}
           style={{
             borderRadius,
-            height: `calc(100% - ${noNeg(moveDown) + noNeg(moveUp)}px)`,
-            width: `calc(100% - ${noNeg(moveLeft) + noNeg(moveRight)}px)`
+            height: `calc(100% - ${noNeg(move.down) + noNeg(move.up)}px)`,
+            width: `calc(100% - ${noNeg(move.left) + noNeg(move.right)}px)`
           }}
         />
         <div
