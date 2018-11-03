@@ -14,12 +14,12 @@ const AdvUsage = () => {
       </ol>
       <p style={{ lineHeight: '1.5' }}>
         Add your keyframe rules to the
-        <strong>global scope</strong>
+        <strong> global scope </strong>
         using the same selector for both mount and unmount related keyframes. All
         keyframe selectors require an
-        <strong>'rct-'</strong>
+        <strong> &#39;rct-&#39; </strong>
         prefix. Unmount related keyframes also require an
-        <strong>'-out'</strong>
+        <strong> &#39;-out&#39; </strong>
         suffix.
       </p>
       <pre>
@@ -38,7 +38,7 @@ const AdvUsage = () => {
       </pre>
       <p>
         To enable your animations, add your custom keyframe name (
-        <strong>without</strong>
+        <strong>without </strong>
         pre- or suffixes) to your tooltip via the animation prop.
       </p>
       <pre>

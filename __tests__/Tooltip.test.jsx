@@ -1,11 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+
 import Tooltip from '../lib/Tooltip';
 import Arrow from '../lib/Tooltip/Arrow';
 import TextBox from '../lib/Tooltip/TextBox';
-
-// import styled from 'styled-components';
-// import 'jest-styled-components';
 
 let wrapper;
 
@@ -25,7 +23,9 @@ const defaultMultipleTooltip = (
 
 const defaultSettings = {
   backgroundColor: 'white',
+  hoverBackground: '#ececec',
   color: 'black',
+  hoverColor: 'black',
   padding: '15px 20px',
   textAlign: 'left',
   fontWeight: 'bold'
@@ -33,7 +33,7 @@ const defaultSettings = {
 
 const props = {
   backgroundColor: 'grey',
-  color: 'white',
+  color: 'blue',
   padding: '50px 60px',
   textAlign: 'center',
   fontWeight: 'normal'
@@ -48,7 +48,7 @@ const customSingleTooltip = (
 describe('SHALLOW component testing', () => {
   describe('DEFAULT SINGLE', () => {
     beforeEach(() => {
-      // adapted to render components in HOC
+      // adapted to render components wrapped in HOC
       wrapper = shallow(defaultSingleTooltip).first().shallow();
     });
     it('renders arrow', () => {
@@ -61,7 +61,7 @@ describe('SHALLOW component testing', () => {
 
   describe('DEFAULT MULTIPLE', () => {
     beforeEach(() => {
-      // adapted to render components in HOC
+      // adapted to render components wrapped in HOC
       wrapper = shallow(defaultMultipleTooltip).first().shallow();
     });
     it('renders arrow', () => {
@@ -85,14 +85,42 @@ describe('DEEP component testing', () => {
     it('renders span', () => {
       expect(wrapper.find('span').length).toEqual(1);
     });
-    it('renders correct default textBox style', () => {
-
-    });
-    it('renders correct default span style', () => {
+    // it('renders correct default textBox style', () => {
+    // });
+    it('renders correct span style', () => {
       const { backgroundColor, padding } = defaultSettings;
       expect(wrapper.find('span').prop('style'))
         .toHaveProperty('padding', padding);
       expect(wrapper.find('span').prop('style'))
+        .toHaveProperty('backgroundColor', backgroundColor);
+    });
+    it('renders correct span hover style', () => {
+      const { hoverBackground, hoverColor } = defaultSettings;
+      wrapper.find('span').simulate('mouseover');
+      // ensure component updates before tests
+      wrapper.update();
+      expect(wrapper.find('span').prop('style'))
+        .toHaveProperty('backgroundColor', hoverBackground);
+      expect(wrapper.find('span').prop('style'))
+        .toHaveProperty('color', hoverColor);
+    });
+    it('renders correct arrow hover style when span hovered', () => {
+      const { hoverBackground } = defaultSettings;
+      wrapper.find('span').simulate('mouseover');
+      // ensure component updates before tests
+      wrapper.update();
+      expect(wrapper.find('.rct-arrow').prop('style'))
+        .toHaveProperty('backgroundColor', hoverBackground);
+    });
+    it('renders correct arrow style when textbox unhovered', () => {
+      const { backgroundColor } = defaultSettings;
+      wrapper.find('span').simulate('mouseover');
+      // ensure component updates before tests
+      wrapper.update();
+      wrapper.find('.rct-textbox').simulate('mouseleave');
+      // ensure component updates before tests
+      wrapper.update();
+      expect(wrapper.find('.rct-arrow').prop('style'))
         .toHaveProperty('backgroundColor', backgroundColor);
     });
     // it('renders correct arrow style', () => {

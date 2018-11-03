@@ -31,14 +31,14 @@ Once all dependencies are installed, you can use the test suite by running:
 ```sh
 npm run test
 ```
-and for a automatic test runs on file updates
+and for automatic test runs on file updates:
 
 ```sh
 npm run test:watch
 ``` 
-**NOTE** If your tests are passing locally but failing on Travis, check your development environment (i.e. nodejs version) and dependencies.
+**NOTE:**  If your tests are passing locally but failing on Travis, check your development environment (i.e. nodejs version) and dependencies.
 
-### 4. You found a bug?
+### 4. You have found a bug?
 
 * **Ensure the bug was not already reported** by [searching all issues][].
 * If you're unable to find an open issue addressing the problem,
