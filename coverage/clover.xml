@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1541363961249" clover="3.2.0">
-  <project timestamp="1541363961249" name="All files">
-    <metrics statements="157" coveredstatements="131" conditionals="144" coveredconditionals="93" methods="26" coveredmethods="24" elements="327" coveredelements="248" complexity="0" loc="157" ncloc="157" packages="2" files="5" classes="5">
+<coverage generated="1541369195981" clover="3.2.0">
+  <project timestamp="1541369195981" name="All files">
+    <metrics statements="156" coveredstatements="145" conditionals="143" coveredconditionals="105" methods="26" coveredmethods="24" elements="325" coveredelements="274" complexity="0" loc="156" ncloc="156" packages="2" files="5" classes="5">
       <package name="react-custom-tooltip">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="jest.setup.js" path="C:\Users\Justin\GIT\libraries\react-custom-tooltip\jest.setup.js">
@@ -10,23 +10,23 @@
         </file>
       </package>
       <package name="react-custom-tooltip.src.lib.Tooltip">
-        <metrics statements="156" coveredstatements="130" conditionals="144" coveredconditionals="93" methods="26" coveredmethods="24"/>
+        <metrics statements="155" coveredstatements="144" conditionals="143" coveredconditionals="105" methods="26" coveredmethods="24"/>
         <file name="Arrow.jsx" path="C:\Users\Justin\GIT\libraries\react-custom-tooltip\src\lib\Tooltip\Arrow.jsx">
           <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
           <line num="3" count="1" type="stmt"/>
-          <line num="9" count="38" type="cond" truecount="2" falsecount="0"/>
-          <line num="10" count="38" type="cond" truecount="2" falsecount="0"/>
-          <line num="12" count="38" type="stmt"/>
+          <line num="9" count="50" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="50" type="cond" truecount="2" falsecount="0"/>
+          <line num="12" count="50" type="stmt"/>
         </file>
         <file name="TextBox.jsx" path="C:\Users\Justin\GIT\libraries\react-custom-tooltip\src\lib\Tooltip\TextBox.jsx">
-          <metrics statements="89" coveredstatements="71" conditionals="75" coveredconditionals="46" methods="13" coveredmethods="13"/>
-          <line num="12" count="34" type="stmt"/>
-          <line num="13" count="36" type="stmt"/>
-          <line num="14" count="34" type="stmt"/>
-          <line num="15" count="34" type="stmt"/>
-          <line num="16" count="34" type="stmt"/>
-          <line num="17" count="36" type="stmt"/>
-          <line num="19" count="34" type="stmt"/>
+          <metrics statements="88" coveredstatements="85" conditionals="74" coveredconditionals="58" methods="13" coveredmethods="13"/>
+          <line num="12" count="46" type="stmt"/>
+          <line num="13" count="54" type="stmt"/>
+          <line num="14" count="46" type="stmt"/>
+          <line num="15" count="46" type="stmt"/>
+          <line num="16" count="46" type="stmt"/>
+          <line num="17" count="54" type="stmt"/>
+          <line num="19" count="46" type="stmt"/>
           <line num="23" count="1" type="stmt"/>
           <line num="24" count="1" type="stmt"/>
           <line num="30" count="3" type="stmt"/>
@@ -34,81 +34,80 @@
           <line num="32" count="3" type="cond" truecount="6" falsecount="4"/>
           <line num="38" count="2" type="stmt"/>
           <line num="40" count="1" type="stmt"/>
-          <line num="59" count="72" type="stmt"/>
-          <line num="66" count="72" type="stmt"/>
-          <line num="68" count="72" type="stmt"/>
-          <line num="69" count="144" type="cond" truecount="2" falsecount="0"/>
-          <line num="72" count="72" type="stmt"/>
-          <line num="73" count="78" type="cond" truecount="4" falsecount="0"/>
-          <line num="76" count="72" type="stmt"/>
-          <line num="77" count="72" type="cond" truecount="2" falsecount="0"/>
-          <line num="78" count="56" type="stmt"/>
+          <line num="59" count="96" type="stmt"/>
+          <line num="66" count="96" type="stmt"/>
+          <line num="68" count="96" type="stmt"/>
+          <line num="69" count="192" type="cond" truecount="2" falsecount="0"/>
+          <line num="72" count="96" type="stmt"/>
+          <line num="73" count="94" type="cond" truecount="4" falsecount="0"/>
+          <line num="76" count="96" type="stmt"/>
+          <line num="77" count="88" type="cond" truecount="2" falsecount="0"/>
+          <line num="78" count="72" type="stmt"/>
           <line num="80" count="16" type="cond" truecount="2" falsecount="0"/>
           <line num="81" count="4" type="stmt"/>
           <line num="83" count="12" type="stmt"/>
-          <line num="86" count="72" type="stmt"/>
-          <line num="87" count="72" type="stmt"/>
-          <line num="88" count="72" type="stmt"/>
-          <line num="90" count="72" type="stmt"/>
-          <line num="91" count="76" type="stmt"/>
-          <line num="95" count="76" type="cond" truecount="1" falsecount="1"/>
-          <line num="96" count="76" type="cond" truecount="4" falsecount="0"/>
+          <line num="86" count="96" type="stmt"/>
+          <line num="87" count="96" type="stmt"/>
+          <line num="88" count="96" type="stmt"/>
+          <line num="90" count="96" type="stmt"/>
+          <line num="91" count="112" type="stmt"/>
+          <line num="95" count="112" type="cond" truecount="1" falsecount="1"/>
+          <line num="96" count="112" type="cond" truecount="4" falsecount="0"/>
           <line num="97" count="2" type="stmt"/>
           <line num="98" count="2" type="stmt"/>
-          <line num="100" count="76" type="cond" truecount="3" falsecount="1"/>
+          <line num="100" count="112" type="cond" truecount="3" falsecount="1"/>
           <line num="101" count="0" type="stmt"/>
-          <line num="104" count="76" type="stmt"/>
-          <line num="106" count="140" type="stmt"/>
-          <line num="108" count="76" type="stmt"/>
+          <line num="104" count="112" type="stmt"/>
+          <line num="106" count="206" type="stmt"/>
+          <line num="108" count="112" type="stmt"/>
           <line num="112" count="3" type="stmt"/>
-          <line num="114" count="76" type="stmt"/>
-          <line num="117" count="72" type="stmt"/>
-          <line num="118" count="72" type="stmt"/>
-          <line num="119" count="72" type="stmt"/>
-          <line num="121" count="72" type="stmt"/>
-          <line num="122" count="72" type="stmt"/>
-          <line num="124" count="72" type="cond" truecount="2" falsecount="3"/>
-          <line num="126" count="0" type="stmt"/>
-          <line num="127" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="128" count="0" type="stmt"/>
-          <line num="131" count="72" type="cond" truecount="1" falsecount="6"/>
-          <line num="133" count="0" type="stmt"/>
-          <line num="134" count="0" type="stmt"/>
-          <line num="136" count="0" type="stmt"/>
-          <line num="137" count="0" type="stmt"/>
-          <line num="139" count="72" type="stmt"/>
-          <line num="140" count="72" type="stmt"/>
-          <line num="142" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="143" count="0" type="stmt"/>
-          <line num="145" count="0" type="stmt"/>
-          <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="147" count="0" type="stmt"/>
-          <line num="149" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="114" count="112" type="stmt"/>
+          <line num="117" count="96" type="stmt"/>
+          <line num="118" count="96" type="stmt"/>
+          <line num="119" count="96" type="stmt"/>
+          <line num="121" count="96" type="stmt"/>
+          <line num="122" count="96" type="stmt"/>
+          <line num="124" count="96" type="cond" truecount="5" falsecount="0"/>
+          <line num="126" count="1" type="stmt"/>
+          <line num="127" count="95" type="cond" truecount="2" falsecount="0"/>
+          <line num="128" count="1" type="stmt"/>
+          <line num="131" count="96" type="cond" truecount="6" falsecount="0"/>
+          <line num="133" count="2" type="stmt"/>
+          <line num="134" count="2" type="stmt"/>
+          <line num="136" count="2" type="stmt"/>
+          <line num="137" count="2" type="stmt"/>
+          <line num="139" count="86" type="stmt"/>
+          <line num="140" count="86" type="stmt"/>
+          <line num="142" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="143" count="2" type="stmt"/>
+          <line num="145" count="2" type="stmt"/>
+          <line num="146" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="147" count="2" type="stmt"/>
+          <line num="149" count="2" type="cond" truecount="1" falsecount="1"/>
           <line num="150" count="0" type="stmt"/>
-          <line num="152" count="0" type="stmt"/>
-          <line num="154" count="0" type="stmt"/>
-          <line num="156" count="0" type="stmt"/>
-          <line num="159" count="72" type="cond" truecount="4" falsecount="1"/>
-          <line num="161" count="6" type="stmt"/>
+          <line num="152" count="2" type="stmt"/>
+          <line num="156" count="2" type="stmt"/>
+          <line num="159" count="96" type="cond" truecount="4" falsecount="1"/>
+          <line num="161" count="12" type="stmt"/>
           <line num="163" count="6" type="stmt"/>
           <line num="164" count="6" type="stmt"/>
           <line num="166" count="6" type="stmt"/>
           <line num="167" count="6" type="stmt"/>
-          <line num="169" count="54" type="stmt"/>
-          <line num="170" count="54" type="stmt"/>
+          <line num="169" count="72" type="stmt"/>
+          <line num="170" count="72" type="stmt"/>
           <line num="172" count="0" type="stmt"/>
-          <line num="175" count="72" type="stmt"/>
-          <line num="177" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="178" count="72" type="stmt"/>
-          <line num="179" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="180" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="183" count="72" type="stmt"/>
-          <line num="191" count="72" type="cond" truecount="2" falsecount="0"/>
-          <line num="192" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="193" count="72" type="cond" truecount="2" falsecount="0"/>
-          <line num="194" count="72" type="cond" truecount="1" falsecount="1"/>
-          <line num="195" count="288" type="cond" truecount="1" falsecount="1"/>
-          <line num="197" count="72" type="stmt"/>
+          <line num="175" count="96" type="stmt"/>
+          <line num="177" count="96" type="cond" truecount="1" falsecount="1"/>
+          <line num="178" count="96" type="stmt"/>
+          <line num="179" count="96" type="cond" truecount="1" falsecount="1"/>
+          <line num="180" count="96" type="cond" truecount="1" falsecount="1"/>
+          <line num="183" count="96" type="stmt"/>
+          <line num="191" count="96" type="cond" truecount="2" falsecount="0"/>
+          <line num="192" count="96" type="cond" truecount="1" falsecount="1"/>
+          <line num="193" count="96" type="cond" truecount="2" falsecount="0"/>
+          <line num="194" count="96" type="cond" truecount="1" falsecount="1"/>
+          <line num="195" count="384" type="cond" truecount="1" falsecount="1"/>
+          <line num="197" count="96" type="stmt"/>
         </file>
         <file name="delayUnmount.jsx" path="C:\Users\Justin\GIT\libraries\react-custom-tooltip\src\lib\Tooltip\delayUnmount.jsx">
           <metrics statements="8" coveredstatements="2" conditionals="14" coveredconditionals="2" methods="4" coveredmethods="2"/>
@@ -118,46 +117,46 @@
           <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="18" count="0" type="cond" truecount="0" falsecount="5"/>
           <line num="20" count="0" type="stmt"/>
-          <line num="25" count="39" type="cond" truecount="2" falsecount="0"/>
+          <line num="25" count="51" type="cond" truecount="2" falsecount="0"/>
           <line num="28" count="1" type="stmt"/>
         </file>
         <file name="index.jsx" path="C:\Users\Justin\GIT\libraries\react-custom-tooltip\src\lib\Tooltip\index.jsx">
           <metrics statements="55" coveredstatements="53" conditionals="51" coveredconditionals="41" methods="8" coveredmethods="8"/>
-          <line num="16" count="38" type="stmt"/>
-          <line num="17" count="839" type="stmt"/>
-          <line num="18" count="839" type="stmt"/>
-          <line num="19" count="839" type="cond" truecount="5" falsecount="1"/>
+          <line num="16" count="50" type="stmt"/>
+          <line num="17" count="1103" type="stmt"/>
+          <line num="18" count="1103" type="stmt"/>
+          <line num="19" count="1103" type="cond" truecount="5" falsecount="1"/>
           <line num="22" count="0" type="stmt"/>
-          <line num="24" count="839" type="cond" truecount="3" falsecount="1"/>
+          <line num="24" count="1103" type="cond" truecount="3" falsecount="1"/>
           <line num="26" count="0" type="stmt"/>
           <line num="32" count="4" type="stmt"/>
-          <line num="55" count="42" type="stmt"/>
-          <line num="58" count="42" type="cond" truecount="1" falsecount="1"/>
-          <line num="62" count="322" type="cond" truecount="2" falsecount="0"/>
-          <line num="67" count="164" type="stmt"/>
-          <line num="70" count="42" type="stmt"/>
-          <line num="77" count="42" type="stmt"/>
-          <line num="83" count="42" type="stmt"/>
-          <line num="84" count="42" type="stmt"/>
-          <line num="85" count="42" type="stmt"/>
-          <line num="88" count="42" type="stmt"/>
-          <line num="89" count="42" type="stmt"/>
-          <line num="90" count="42" type="stmt"/>
-          <line num="93" count="42" type="cond" truecount="4" falsecount="0"/>
-          <line num="95" count="3" type="stmt"/>
-          <line num="96" count="3" type="stmt"/>
+          <line num="55" count="54" type="stmt"/>
+          <line num="58" count="54" type="cond" truecount="1" falsecount="1"/>
+          <line num="62" count="421" type="cond" truecount="2" falsecount="0"/>
+          <line num="67" count="216" type="stmt"/>
+          <line num="70" count="54" type="stmt"/>
+          <line num="77" count="54" type="stmt"/>
+          <line num="83" count="54" type="stmt"/>
+          <line num="84" count="54" type="stmt"/>
+          <line num="85" count="54" type="stmt"/>
+          <line num="88" count="54" type="stmt"/>
+          <line num="89" count="54" type="stmt"/>
+          <line num="90" count="54" type="stmt"/>
+          <line num="93" count="54" type="cond" truecount="4" falsecount="0"/>
+          <line num="95" count="6" type="stmt"/>
+          <line num="96" count="6" type="stmt"/>
           <line num="98" count="3" type="stmt"/>
           <line num="99" count="3" type="stmt"/>
           <line num="100" count="3" type="stmt"/>
-          <line num="102" count="33" type="stmt"/>
-          <line num="103" count="33" type="stmt"/>
+          <line num="102" count="42" type="stmt"/>
+          <line num="103" count="42" type="stmt"/>
           <line num="105" count="3" type="stmt"/>
           <line num="106" count="3" type="stmt"/>
-          <line num="109" count="42" type="stmt"/>
-          <line num="114" count="168" type="stmt"/>
-          <line num="115" count="42" type="stmt"/>
-          <line num="122" count="42" type="cond" truecount="4" falsecount="0"/>
-          <line num="125" count="42" type="cond" truecount="5" falsecount="0"/>
+          <line num="109" count="54" type="stmt"/>
+          <line num="114" count="216" type="stmt"/>
+          <line num="115" count="54" type="stmt"/>
+          <line num="122" count="54" type="cond" truecount="4" falsecount="0"/>
+          <line num="125" count="54" type="cond" truecount="5" falsecount="0"/>
           <line num="127" count="2" type="cond" truecount="1" falsecount="1"/>
           <line num="128" count="2" type="stmt"/>
           <line num="130" count="2" type="cond" truecount="1" falsecount="1"/>
@@ -165,18 +164,18 @@
           <line num="133" count="2" type="cond" truecount="1" falsecount="1"/>
           <line num="134" count="2" type="stmt"/>
           <line num="136" count="2" type="stmt"/>
-          <line num="138" count="34" type="cond" truecount="2" falsecount="0"/>
-          <line num="139" count="32" type="stmt"/>
-          <line num="140" count="32" type="cond" truecount="1" falsecount="1"/>
-          <line num="141" count="32" type="stmt"/>
-          <line num="142" count="32" type="stmt"/>
-          <line num="145" count="34" type="cond" truecount="4" falsecount="0"/>
-          <line num="146" count="2" type="stmt"/>
-          <line num="147" count="2" type="stmt"/>
-          <line num="149" count="34" type="stmt"/>
-          <line num="152" count="42" type="stmt"/>
-          <line num="154" count="42" type="stmt"/>
-          <line num="167" count="42" type="stmt"/>
+          <line num="138" count="46" type="cond" truecount="2" falsecount="0"/>
+          <line num="139" count="41" type="stmt"/>
+          <line num="140" count="41" type="cond" truecount="1" falsecount="1"/>
+          <line num="141" count="41" type="stmt"/>
+          <line num="142" count="41" type="stmt"/>
+          <line num="145" count="46" type="cond" truecount="4" falsecount="0"/>
+          <line num="146" count="5" type="stmt"/>
+          <line num="147" count="5" type="stmt"/>
+          <line num="149" count="46" type="stmt"/>
+          <line num="152" count="54" type="stmt"/>
+          <line num="154" count="54" type="stmt"/>
+          <line num="167" count="54" type="stmt"/>
           <line num="200" count="1" type="stmt"/>
         </file>
       </package>

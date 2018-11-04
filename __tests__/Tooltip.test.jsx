@@ -24,6 +24,8 @@ const singleNoShowTooltip = (
   </Tooltip>
 );
 
+// Tooltip Position Mocks
+
 const posRightTop = (
   <Tooltip
     show
@@ -132,6 +134,73 @@ const posBottomRight = (
   </Tooltip>
 );
 
+// Arrow Position Mocks
+
+const posArrowTop = (
+  <Tooltip
+    show
+    arrow="top"
+  >
+    <span>Option 1</span>
+    <span>Option 2</span>
+    <span>Option 3</span>
+  </Tooltip>
+);
+
+const posArrowCenter = (
+  <Tooltip
+    show
+    arrow="center"
+  >
+    <span>Option 1</span>
+    <span>Option 2</span>
+    <span>Option 3</span>
+  </Tooltip>
+);
+
+const posArrowBottom = (
+  <Tooltip
+    show
+    arrow="bottom"
+  >
+    <span>Option 1</span>
+    <span>Option 2</span>
+    <span>Option 3</span>
+  </Tooltip>
+);
+
+const posArrowLeft = (
+  <Tooltip
+    show
+    arrow="left"
+    position="bottom center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posArrowHorCenter = (
+  <Tooltip
+    show
+    arrow="center"
+    position="bottom center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posArrowRight = (
+  <Tooltip
+    show
+    arrow="right"
+    position="bottom center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+// Tooltip Type Mocks
+
 const staticSingleTooltip = (
   <Tooltip show static>
     <span>Option 1</span>
@@ -221,7 +290,6 @@ describe('DEEP component testing', () => {
     });
 
     it('renders no tooltip if show prop = false', () => {
-      // expect(wrapper.find('rct-container').length).toEqual(0);
       expect(mount(singleNoShowTooltip).children().length).toEqual(0);
     });
 
@@ -349,12 +417,41 @@ describe('DEEP component testing', () => {
       expect(rctContainerClasses).toEqual(3);
     });
 
-    it('renders correct arrow position: top', () => {
-      wrapper = mount(posRightTop);
-      const rctContainer = wrapper.find('.rct-container');
-      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
-      expect(rctContainer.hasClass('rct-right')).toEqual(true);
-      expect(rctContainerClasses).toEqual(2);
+    it('renders correct vertical arrow position: top', () => {
+      wrapper = mount(posArrowTop);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
+    });
+    it('renders correct vertical arrow position: center', () => {
+      wrapper = mount(posArrowCenter);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px/2)');
+    });
+    it('renders correct vertical arrow position: bottom', () => {
+      wrapper = mount(posArrowBottom);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
+    });
+    it('renders correct horizontal arrow position: left', () => {
+      wrapper = mount(posArrowLeft);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('left', 'calc(50% - 40px)');
+    });
+    it('renders correct horizontal arrow position: center', () => {
+      wrapper = mount(posArrowHorCenter);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('left', '');
+    });
+    it('renders correct horizontal arrow position: right', () => {
+      wrapper = mount(posArrowRight);
+      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      // TODO: refactor this test
+      expect(rctTxtbxContainer).toHaveStyle('right', 'calc(50% - 40px)');
     });
   });
 

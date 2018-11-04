@@ -14,7 +14,7 @@ const Arrow = () => {
           <div className="hPlaceHolder" style={{ right: '25%' }}>
             <Tooltip
               show
-              arrow="right"
+              arrow="left"
               position="bottom center"
               textBoxWidth="auto"
               lineSeparated
@@ -51,7 +51,7 @@ const Arrow = () => {
           <div className="hPlaceHolder" style={{ left: '25%' }}>
             <Tooltip
               show
-              arrow="left"
+              arrow="right"
               position="bottom center"
               textBoxWidth="auto"
               lineSeparated

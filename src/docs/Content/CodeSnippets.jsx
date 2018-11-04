@@ -91,7 +91,7 @@ const codeDefault = `{/* Default */}
 const codeFont = `{/* Text & Font */}
 <Tooltip 
     show={true}
-    textAlign='left'
+    textAlign='center'
     fontWeight='normal'
     lineSeparated
 >

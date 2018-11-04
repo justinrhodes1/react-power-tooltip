@@ -129,10 +129,10 @@ class TextBox extends Component {
     }
 
     switch (arrow.position) {
-      case 'left':
+      case 'right':
         right = `calc(${hLeftPos})`;
         break;
-      case 'right':
+      case 'left':
         left = `calc(${hRightPos})`;
         break;
       case 'top':
@@ -150,8 +150,8 @@ class TextBox extends Component {
           top = `calc(100% - ${totH}px/2 - 11px)`;
         }
         break;
-      case 'hCenter':
-        break;
+      // case 'hCenter':
+      //   break;
       default:
         break;
     }
@@ -189,14 +189,14 @@ class TextBox extends Component {
     };
 
     const showShadow = flat ? 'rct-no-shadow' : 'rct-shadow';
-    const alertStyle = alert ? 'rct-alert' : null;
+    const alertStyle = alert ? 'rct-alert' : '';
     const rgb = alert || 'rgb(248, 109, 109)';
     const boxShadow = alert ? `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
     const noNeg = number => number > 0 ? number : 0;
 
     return (
       <div
-        className={`${alertStyle}`}
+        className={`rct-textbox-container ${alertStyle}`}
         style={{
           ...boxStyle,
           position: 'absolute',

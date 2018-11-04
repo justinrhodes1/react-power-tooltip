@@ -22,7 +22,7 @@ const Shapes = () => {
           <div className="vPlaceHolder">
             <Tooltip
               show
-              textposition="right"
+              textAlign="center"
               fontWeight="normal"
               lineSeparated
             >
