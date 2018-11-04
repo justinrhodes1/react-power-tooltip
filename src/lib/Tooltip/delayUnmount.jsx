@@ -9,13 +9,11 @@ export default (ChildComponent) => {
     componentDidUpdate(prevProps) {
       const { mount } = this.state;
       if (prevProps.show && !this.props.show && mount) {
-        const time = this.props.delayTime
-          ? Number(this.props.delayTime) : 150;
         setTimeout(
           () => {
             if (!this.props.show) this.setState({ mount: false });
           },
-          time
+          this.props.delayTime
         );
       } else if (!prevProps.show && this.props.show && !mount) {
         // eslint-disable-next-line

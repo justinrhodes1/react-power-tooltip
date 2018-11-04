@@ -1,7 +1,7 @@
 {
   "name": "react-custom-tooltip",
-  "version": "0.1.0",
-  "description": "A powerful tooltip component for react.",
+  "version": "1.0.0",
+  "description": "A powerful tooltip and menu component library for react.",
   "main": "lib/index",
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
@@ -10,7 +10,7 @@
     "docs": "webpack-dev-server --mode development",
     "docs:prod": "webpack --mode production",
     "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --watch",
     "lint": "eslint --ext .js,.jsx src/lib"
   },
   "keywords": [

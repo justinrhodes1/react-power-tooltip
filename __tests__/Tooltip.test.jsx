@@ -1,14 +1,145 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Tooltip from '../lib/Tooltip';
-import Arrow from '../lib/Tooltip/Arrow';
-import TextBox from '../lib/Tooltip/TextBox';
+import Tooltip from '../src/lib/Tooltip';
+import ArrowComp from '../src/lib/Tooltip/Arrow';
+import TextBoxComp from '../src/lib/Tooltip/TextBox';
 
+
+// UNIT TEST SETUP
 let wrapper;
+let span;
+let arrow;
+let shadowContainer;
 
 const defaultSingleTooltip = (
   <Tooltip show>
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const singleNoShowTooltip = (
+  <Tooltip>
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posRightTop = (
+  <Tooltip
+    show
+    position="right top"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posRightCenter = (
+  <Tooltip
+    show
+    position="right center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posRightBottom = (
+  <Tooltip
+    show
+    position="right bottom"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posLeftTop = (
+  <Tooltip
+    show
+    position="left top"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posLeftCenter = (
+  <Tooltip
+    show
+    position="left center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posLeftBottom = (
+  <Tooltip
+    show
+    position="left bottom"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posTopLeft = (
+  <Tooltip
+    show
+    position="top left"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posTopCenter = (
+  <Tooltip
+    show
+    position="top center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posTopRight = (
+  <Tooltip
+    show
+    position="top right"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posBottomLeft = (
+  <Tooltip
+    show
+    position="bottom left"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posBottomCenter = (
+  <Tooltip
+    show
+    position="bottom center"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const posBottomRight = (
+  <Tooltip
+    show
+    position="bottom right"
+  >
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const staticSingleTooltip = (
+  <Tooltip show static>
+    <span>Option 1</span>
+  </Tooltip>
+);
+
+const flatSingleTooltip = (
+  <Tooltip show flat>
     <span>Option 1</span>
   </Tooltip>
 );
@@ -28,7 +159,8 @@ const defaultSettings = {
   hoverColor: 'black',
   padding: '15px 20px',
   textAlign: 'left',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  arwShadow: '0 0 0 1px rgba(0,0,0,.18)'
 };
 
 const props = {
@@ -36,7 +168,9 @@ const props = {
   color: 'blue',
   padding: '50px 60px',
   textAlign: 'center',
-  fontWeight: 'normal'
+  fontWeight: 'normal',
+  borderRadius: '0px',
+  lineSeparated: '2px solid #dddddd'
 };
 
 const customSingleTooltip = (
@@ -45,6 +179,7 @@ const customSingleTooltip = (
   </Tooltip>
 );
 
+// UNIT TESTS
 describe('SHALLOW component testing', () => {
   describe('DEFAULT SINGLE', () => {
     beforeEach(() => {
@@ -52,10 +187,10 @@ describe('SHALLOW component testing', () => {
       wrapper = shallow(defaultSingleTooltip).first().shallow();
     });
     it('renders arrow', () => {
-      expect(wrapper.find(Arrow).length).toEqual(1);
+      expect(wrapper.find(ArrowComp).length).toEqual(1);
     });
     it('renders textBox', () => {
-      expect(wrapper.find(TextBox).length).toEqual(1);
+      expect(wrapper.find(TextBoxComp).length).toEqual(1);
     });
   });
 
@@ -65,10 +200,10 @@ describe('SHALLOW component testing', () => {
       wrapper = shallow(defaultMultipleTooltip).first().shallow();
     });
     it('renders arrow', () => {
-      expect(wrapper.find(Arrow).length).toEqual(1);
+      expect(wrapper.find(ArrowComp).length).toEqual(1);
     });
     it('renders textBox', () => {
-      expect(wrapper.find(TextBox).length).toEqual(1);
+      expect(wrapper.find(TextBoxComp).length).toEqual(1);
     });
   });
 });
@@ -81,70 +216,199 @@ describe('DEEP component testing', () => {
   describe('DEFAULT SINGLE', () => {
     beforeEach(() => {
       wrapper = mount(defaultSingleTooltip);
+      span = wrapper.find('span');
+      arrow = wrapper.find('.rct-arrow');
     });
+
+    it('renders no tooltip if show prop = false', () => {
+      // expect(wrapper.find('rct-container').length).toEqual(0);
+      expect(mount(singleNoShowTooltip).children().length).toEqual(0);
+    });
+
     it('renders span', () => {
-      expect(wrapper.find('span').length).toEqual(1);
+      expect(span.length).toEqual(1);
     });
-    // it('renders correct default textBox style', () => {
-    // });
+
     it('renders correct span style', () => {
       const { backgroundColor, padding } = defaultSettings;
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('padding', padding);
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('backgroundColor', backgroundColor);
+      expect(span).toHaveStyle('padding', padding);
+      expect(span).toHaveStyle('backgroundColor', backgroundColor);
     });
-    it('renders correct span hover style', () => {
+
+    it('renders correct arrow style', () => {
+      const { backgroundColor, arwShadow } = defaultSettings;
+      expect(arrow).toHaveStyle('backgroundColor', backgroundColor);
+      expect(arrow).toHaveStyle('boxShadow', arwShadow);
+    });
+
+    it('renders correct hover styles', () => {
       const { hoverBackground, hoverColor } = defaultSettings;
-      wrapper.find('span').simulate('mouseover');
-      // ensure component updates before tests
+      // component updates before tests
+      span.simulate('mouseover');
       wrapper.update();
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('backgroundColor', hoverBackground);
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('color', hoverColor);
+      const updatedSpan = wrapper.find('span');
+      expect(updatedSpan).toHaveStyle('backgroundColor', hoverBackground);
+      expect(updatedSpan).toHaveStyle('color', hoverColor);
+      const updatedArrow = wrapper.find('.rct-arrow');
+      expect(updatedArrow).toHaveStyle('backgroundColor', hoverBackground);
+      expect(updatedSpan.parent().hasClass('rct-hover')).toEqual(true);
     });
-    it('renders correct arrow hover style when span hovered', () => {
-      const { hoverBackground } = defaultSettings;
-      wrapper.find('span').simulate('mouseover');
-      // ensure component updates before tests
-      wrapper.update();
-      expect(wrapper.find('.rct-arrow').prop('style'))
-        .toHaveProperty('backgroundColor', hoverBackground);
-    });
+
     it('renders correct arrow style when textbox unhovered', () => {
       const { backgroundColor } = defaultSettings;
-      wrapper.find('span').simulate('mouseover');
-      // ensure component updates before tests
+      // component updates before tests
+      span.simulate('mouseover');
       wrapper.update();
       wrapper.find('.rct-textbox').simulate('mouseleave');
-      // ensure component updates before tests
       wrapper.update();
-      expect(wrapper.find('.rct-arrow').prop('style'))
-        .toHaveProperty('backgroundColor', backgroundColor);
+      const updatedArrow = wrapper.find('.rct-arrow');
+      expect(updatedArrow).toHaveStyle('backgroundColor', backgroundColor);
     });
-    // it('renders correct arrow style', () => {
-    //     expect(wrapper.find('rct-arrow')).toHaveStyle('top', '0px');
-    // })
+    it('renders correct tooltip position: right top', () => {
+      wrapper = mount(posRightTop);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-right')).toEqual(true);
+      expect(rctContainerClasses).toEqual(2);
+    });
+    it('renders correct tooltip position: right center', () => {
+      wrapper = mount(posRightCenter);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-right rct-align-center')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: right bottom', () => {
+      wrapper = mount(posRightBottom);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-right rct-align-bottom')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: left top', () => {
+      wrapper = mount(posLeftTop);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-left')).toEqual(true);
+      expect(rctContainerClasses).toEqual(2);
+    });
+    it('renders correct tooltip position: left center', () => {
+      wrapper = mount(posLeftCenter);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-left rct-align-center')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: left bottom', () => {
+      wrapper = mount(posLeftBottom);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-left rct-align-bottom')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: top left', () => {
+      wrapper = mount(posTopLeft);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-top rct-align-left')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: top center', () => {
+      wrapper = mount(posTopCenter);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-top')).toEqual(true);
+      expect(rctContainerClasses).toEqual(2);
+    });
+    it('renders correct tooltip position: top right', () => {
+      wrapper = mount(posTopRight);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-top rct-align-right')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: bottom left', () => {
+      wrapper = mount(posBottomLeft);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-bottom rct-align-left')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+    it('renders correct tooltip position: bottom center', () => {
+      wrapper = mount(posBottomCenter);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-bottom')).toEqual(true);
+      expect(rctContainerClasses).toEqual(2);
+    });
+    it('renders correct tooltip position: bottom right', () => {
+      wrapper = mount(posBottomRight);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-bottom rct-align-right')).toEqual(true);
+      expect(rctContainerClasses).toEqual(3);
+    });
+
+    it('renders correct arrow position: top', () => {
+      wrapper = mount(posRightTop);
+      const rctContainer = wrapper.find('.rct-container');
+      const rctContainerClasses = rctContainer.prop('className').split(' ').length;
+      expect(rctContainer.hasClass('rct-right')).toEqual(true);
+      expect(rctContainerClasses).toEqual(2);
+    });
   });
+
+  describe('DEFAULT SINGLE STATIC', () => {
+    beforeEach(() => {
+      wrapper = mount(staticSingleTooltip);
+      span = wrapper.find('span');
+    });
+
+    it('renders as static (no hover effects)', () => {
+      const { backgroundColor } = defaultSettings;
+      // hover & component updates before tests
+      span.simulate('mouseover');
+      wrapper.update();
+      const updatedSpan = wrapper.find('span');
+      expect(updatedSpan).toHaveStyle('backgroundColor', backgroundColor);
+      expect(updatedSpan.parent().hasClass('rct-hover')).toEqual(false);
+    });
+  });
+
+  describe('DEFAULT SINGLE FLAT', () => {
+    beforeEach(() => {
+      wrapper = mount(flatSingleTooltip);
+      arrow = wrapper.find('.rct-arrow');
+      shadowContainer = wrapper.find('.rct-shadow-container');
+    });
+
+    it('renders no shadows', () => {
+      // hover & component updates before tests
+      expect(arrow).toHaveStyle('boxShadow', null);
+      expect(shadowContainer.hasClass('rct-no-shadow')).toEqual(true);
+    });
+  });
+
   describe('DEFAULT MULTIPLE', () => {
     beforeEach(() => {
       wrapper = mount(defaultMultipleTooltip);
+      span = wrapper.find('span');
     });
+
     it('renders correct amount of spans', () => {
-      expect(wrapper.find('span').length).toEqual(3);
+      expect(span.length).toEqual(3);
     });
   });
   describe('CUSTOM SINGLE', () => {
     beforeEach(() => {
       wrapper = mount(customSingleTooltip);
+      span = wrapper.find('span');
     });
+
     it('renders correct custom span style', () => {
       const { backgroundColor, padding } = props;
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('padding', padding);
-      expect(wrapper.find('span').prop('style'))
-        .toHaveProperty('backgroundColor', backgroundColor);
+      expect(span).toHaveStyle('padding', padding);
+      expect(span).toHaveStyle('backgroundColor', backgroundColor);
     });
   });
 });

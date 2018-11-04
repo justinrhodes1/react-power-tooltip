@@ -27,6 +27,7 @@
         "react/prop-types": "off",
         "react/destructuring-assignment": "off",
         "jsx-a11y/mouse-events-have-key-events": "off",
-        "jsx-a11y/click-events-have-key-events": "off"
+        "jsx-a11y/click-events-have-key-events": "off",
+        "import/no-extraneous-dependencies": "off"
     }
 }

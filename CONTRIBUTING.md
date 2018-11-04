@@ -19,7 +19,7 @@ git checkout -b 325-add-mount-animations
 
 ### 3. Get the test suite running
 
-Make sure you're have a recent **npm, webpack &amp; node.js** version installed. 
+Make sure you're have a recent **npm &amp; node.js** version installed. 
 
 Now install the development dependencies in the project's root folder:
 

@@ -9,11 +9,13 @@
     width: 100%;
 }
 
-.rct-right {
+.rct-right,
+.rct-align-left {
     justify-content: flex-start;
 }
 
-.rct-left {
+.rct-left,
+.rct-align-right {
     justify-content: flex-end;
 }
 

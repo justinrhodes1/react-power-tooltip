@@ -16,12 +16,12 @@ class Tooltip extends Component {
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];
       const text = `React-custom-tooptip: [${propName}] prop should be a`;
-      if (propName !== 'children' && propName !== 'delayUnmount'
+      if (propName !== 'children' && propName !== 'delayTime'
         && type !== 'boolean' && type !== 'string') {
         // eslint-disable-next-line
         console.error(`${text} string (check also units)`);
       }
-      if (propName === 'delayUnmount' && type !== 'number') {
+      if (propName === 'delayTime' && type !== 'number') {
         // eslint-disable-next-line
         console.error(`${text} number`);
       }
@@ -124,10 +124,10 @@ class Tooltip extends Component {
 
     switch (align) {
       case 'left':
-        if (onAxis.y) classes.push('rct-left');
+        if (onAxis.y) classes.push('rct-align-left');
         break;
       case 'right':
-        if (onAxis.y) classes.push('rct-right');
+        if (onAxis.y) classes.push('rct-align-right');
         break;
       case 'bottom':
         if (onAxis.x) classes.push('rct-align-bottom');
@@ -216,7 +216,8 @@ Tooltip.defaultProps = {
   fontSize: 'inherit',
   color: 'inherit',
   zIndex: '100',
-  animation: ''
+  animation: '',
+  delayTime: 150
 };
 
 export default delayUnmount(Tooltip);
