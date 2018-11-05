@@ -5,6 +5,7 @@ import Tooltip from '../../lib';
 const Test = () => {
   return (
     <div
+      className="rct-test-target"
       style={{
         position: 'relative',
         margin: '200px',
