@@ -3,41 +3,57 @@ import { render } from 'react-dom';
 import Tooltip from '../../lib';
 
 const Test = () => {
+  const targetStyle = {
+    position: 'relative',
+    margin: '200px',
+    width: '100px',
+    height: '100px',
+    background: 'grey',
+    boxSizing: 'border-box'
+  };
+
   return (
-    <div
-      className="rct-test-target"
-      style={{
-        position: 'relative',
-        margin: '200px',
-        width: '200px',
-        height: '200px'
-      }}
-    >
-      <Tooltip
-        show
-        arrow="top"
+    <>
+      <div
+        className="test-arrow-top"
+        style={targetStyle}
       >
-        <span>Option 1</span>
-        <span>Option 2</span>
-        <span>Option 3</span>
-      </Tooltip>
-      <Tooltip
-        show
-        arrow="center"
+        <Tooltip
+          show
+          arrow="top"
+        >
+          <span>Option 1</span>
+          <span>Option 2</span>
+          <span>Option 3</span>
+        </Tooltip>
+      </div>
+      <div
+        className="test-arrow-center"
+        style={targetStyle}
       >
-        <span>Option 1</span>
-        <span>Option 2</span>
-        <span>Option 3</span>
-      </Tooltip>
-      <Tooltip
-        show
-        arrow="bottom"
+        <Tooltip
+          show
+          arrow="center"
+        >
+          <span>Option 1</span>
+          <span>Option 2</span>
+          <span>Option 3</span>
+        </Tooltip>
+      </div>
+      <div
+        className="test-arrow-bottom"
+        style={targetStyle}
       >
-        <span>Option 1</span>
-        <span>Option 2</span>
-        <span>Option 3</span>
-      </Tooltip>
-    </div>
+        <Tooltip
+          show
+          arrow="bottom"
+        >
+          <span>Option 1</span>
+          <span>Option 2</span>
+          <span>Option 3</span>
+        </Tooltip>
+      </div>
+    </>
   );
 };
 

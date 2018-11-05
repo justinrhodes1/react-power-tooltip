@@ -416,25 +416,6 @@ describe('DEEP component testing', () => {
       expect(rctContainer.hasClass('rct-bottom rct-align-right')).toEqual(true);
       expect(rctContainerClasses).toEqual(3);
     });
-
-    // it('renders correct vertical arrow position: top', () => {
-    //   wrapper = mount(posArrowTop);
-    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-    //   // TODO: refactor this test
-    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
-    // });
-    // it('renders correct vertical arrow position: center', () => {
-    //   wrapper = mount(posArrowCenter);
-    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-    //   // TODO: refactor this test
-    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px/2)');
-    // });
-    // it('renders correct vertical arrow position: bottom', () => {
-    //   wrapper = mount(posArrowBottom);
-    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-    //   // TODO: refactor this test
-    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
-    // });
     it('renders correct horizontal arrow position: left', () => {
       wrapper = mount(posArrowLeft);
       const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
