@@ -157,8 +157,8 @@ class TextBox extends Component {
     }
 
     switch (position.side) {
-      case 'bottom':
-        break;
+      // case 'bottom':
+      //   break;
       case 'top':
         top = calcVPos(0, totH, 1, 13);
         break;
