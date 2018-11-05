@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-
 import Tooltip from '../../lib';
 
 const Test = () => {
@@ -8,8 +7,7 @@ const Test = () => {
     <div
       style={{
         position: 'relative',
-        top: '0px',
-        left: '0px',
+        margin: '200px',
         width: '200px',
         height: '200px'
       }}

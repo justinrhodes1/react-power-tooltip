@@ -2,9 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'src/docs'),
+  entry: path.join(__dirname, '/../puppeteer/input'),
   output: {
-    path: path.join(__dirname, 'docs'),
+    path: path.join(__dirname, '/../puppeteer'),
     filename: 'bundle.js'
   },
   module: {
@@ -17,30 +17,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(png|jpg|gif|svg|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
-          }
-        ]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/docs/index.html'),
-      favicon: path.join(__dirname, 'src/assets/favicon.png')
+      template: path.join(__dirname, '/../puppeteer/input/index.html')
     })
   ],
   resolve: {
     extensions: ['.js', '.jsx']
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'docs'),
-    port: 8000,
-    stats: 'minimal'
   }
 };
