@@ -11,7 +11,7 @@
     "docs:prod": "webpack --mode production --config webpack/prod.config.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "mock": "webpack --mode development --config webpack/test.config.js",
+    "mock:create": "webpack --mode development --config webpack/test.config.js",
     "lint": "eslint --ext .js,.jsx src/lib"
   },
   "keywords": [

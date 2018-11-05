@@ -43,7 +43,7 @@ class Examples extends Component {
         <h1>Examples</h1>
         <h2 id="types">Types of tooltips</h2>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             padding: '25px 0 135px 0'
           }}
@@ -74,7 +74,7 @@ class Examples extends Component {
         <Alert />
         <h2 id="animations">Animations</h2>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             paddingBottom: '60px'
           }}
@@ -104,7 +104,7 @@ class Examples extends Component {
         </ToggleCode>
         <h2 id="customization">Customization</h2>
         <div
-          className="FlexContainer greyBkgr colors"
+          className="flexContainer greyBkgr colors"
           style={{
             paddingBottom: '80px'
           }}
@@ -133,7 +133,7 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <div
-          className="FlexContainer greyBkgr colors"
+          className="flexContainer greyBkgr colors"
           style={{
             paddingBottom: '80px',
             marginTop: '30px'
@@ -169,7 +169,7 @@ class Examples extends Component {
           relative to textbox (via arrow prop)
         </h3>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             paddingBottom: '80px'
           }}
@@ -198,7 +198,7 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             paddingBottom: '140px',
             marginTop: '30px'
@@ -256,7 +256,7 @@ class Examples extends Component {
           </code>
         </pre>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             padding: '50px'
           }}
@@ -271,7 +271,7 @@ class Examples extends Component {
           positions (via move props)
         </h3>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             paddingBottom: '50px'
           }}
@@ -296,7 +296,7 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <div
-          className="FlexContainer greyBkgr"
+          className="flexContainer greyBkgr"
           style={{
             paddingBottom: '140px',
             marginTop: '30px'

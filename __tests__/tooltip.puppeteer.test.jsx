@@ -8,9 +8,14 @@ let page;
 // Pupeteer/Chromium tests required to test computed styles &
 // those relying on clientHeight etc. This is beyond Enyzme/JSDOM.
 
+// Allowing enough time for puppeteer to run
+jest.setTimeout(30000);
+
 beforeEach(async () => {
+  // both options below not needed, switching off speeds things up
   browser = await puppeteer.launch({
-    headless: true
+    headless: true,
+    args: ['--no-sandbox']
   });
   page = await browser.newPage();
   await page.goto(testURL);

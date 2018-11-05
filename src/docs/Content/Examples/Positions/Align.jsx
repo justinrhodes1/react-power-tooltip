@@ -134,7 +134,7 @@ class Align extends Component {
         >
           <span>Right</span>
         </Tooltip>
-        <div className="square PurpleGradient">
+        <div className="square purpleGradient">
           <div style={{
             position: 'absolute',
             width: '100%',

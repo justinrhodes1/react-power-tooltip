@@ -14,13 +14,13 @@ body {
   overflow-x:hidden;
 }
 
-.FlexContainer {
+.flexContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.PurpleGradient {
+.purpleGradient {
   background: linear-gradient(52deg, rgba(79,11,189,1) 0%, rgba(136,38,255,1) 100%, rgba(113,4,112,1) 100%);
 }
 
@@ -73,20 +73,20 @@ pre {
   margin-top: 10px;
 }
 
-.Header {
+.header {
   justify-content: center;
   width: 100%;
   height: 300px;
 }
 
-.Header h1 {
+.header h1 {
   color: white;
   font-size: 45px;
   word-break: normal;
   max-width: 80%;
 }
 
-.Header h2 {
+.header h2 {
   color: #ececec;
   font-size: 25px;
   font-weight: 400;
@@ -234,22 +234,11 @@ a:visited {
   font-style: italic;
 }
 
-/* .table {
-  width: 100%;
-  font-size: 14px;
-  margin-top: 25px;
-  margin-bottom: 150px;
-} */
-
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
-/* .row>div {
-  min-width: 180px;
-} */
 
 table {
   font-family: arial, sans-serif;
@@ -337,6 +326,7 @@ tr:nth-child(even) {
   transform-origin: 0% 0%;
   cursor: pointer;
 }
+
 .right {
   transform: rotate(-45deg);
 }
@@ -363,15 +353,19 @@ tr:nth-child(even) {
   top: 75%;
   left: 32%
 }
+
 .bottom {
   transform: rotate(45deg);
 }
+
 .top {
   transform: rotate(-135deg);
 }
+
 .left {
   transform: rotate(135deg);
 }
+
 .square > div:hover {
   background: rgba(128, 128, 128, 0.4);
 }

@@ -4,7 +4,6 @@ import TextBox from './TextBox';
 import Arrow from './Arrow';
 
 import './style.css';
-import './animation.css';
 
 class Tooltip extends Component {
   state = {

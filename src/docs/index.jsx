@@ -20,7 +20,7 @@ class Demo extends Component {
 
   render() {
     return (
-      <div className="FlexContainer">
+      <div className="flexContainer">
         <Header />
         <div className="content">
           <div className="side">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Tooltip from '../../lib';
+import Tooltip from '../../src/lib';
 
 const Test = () => {
   const targetStyle = {

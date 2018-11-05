@@ -4,7 +4,7 @@ import '../styles.css';
 
 const Header = () => {
   return (
-    <div className="FlexContainer PurpleGradient Header">
+    <div className="flexContainer purpleGradient header">
       <div className="ribbon">
         <a href="http">Fork me on GitHub</a>
       </div>

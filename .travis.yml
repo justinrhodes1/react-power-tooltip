@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - npm run mock:create
+  - sleep 30
+  - npm run test
