@@ -11,6 +11,7 @@
     "docs:prod": "webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:transpileMock": "babel __tests__/mocks/input -d __tests__/mocks/output --copy-files",
     "lint": "eslint --ext .js,.jsx src/lib"
   },
   "keywords": [
@@ -53,6 +54,7 @@
     "jest-css-modules": "^1.1.0",
     "jest-enzyme": "^7.0.0",
     "prismjs": "^1.15.0",
+    "puppeteer": "^1.10.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-prism": "^4.3.2",

@@ -6,7 +6,7 @@ import ArrowComp from '../src/lib/Tooltip/Arrow';
 import TextBoxComp from '../src/lib/Tooltip/TextBox';
 
 
-// UNIT TEST SETUP
+// TEST SETUP
 let wrapper;
 let span;
 let arrow;
@@ -136,38 +136,38 @@ const posBottomRight = (
 
 // Arrow Position Mocks
 
-const posArrowTop = (
-  <Tooltip
-    show
-    arrow="top"
-  >
-    <span>Option 1</span>
-    <span>Option 2</span>
-    <span>Option 3</span>
-  </Tooltip>
-);
+// const posArrowTop = (
+//   <Tooltip
+//     show
+//     arrow="top"
+//   >
+//     <span>Option 1</span>
+//     <span>Option 2</span>
+//     <span>Option 3</span>
+//   </Tooltip>
+// );
 
-const posArrowCenter = (
-  <Tooltip
-    show
-    arrow="center"
-  >
-    <span>Option 1</span>
-    <span>Option 2</span>
-    <span>Option 3</span>
-  </Tooltip>
-);
+// const posArrowCenter = (
+//   <Tooltip
+//     show
+//     arrow="center"
+//   >
+//     <span>Option 1</span>
+//     <span>Option 2</span>
+//     <span>Option 3</span>
+//   </Tooltip>
+// );
 
-const posArrowBottom = (
-  <Tooltip
-    show
-    arrow="bottom"
-  >
-    <span>Option 1</span>
-    <span>Option 2</span>
-    <span>Option 3</span>
-  </Tooltip>
-);
+// const posArrowBottom = (
+//   <Tooltip
+//     show
+//     arrow="bottom"
+//   >
+//     <span>Option 1</span>
+//     <span>Option 2</span>
+//     <span>Option 3</span>
+//   </Tooltip>
+// );
 
 const posArrowLeft = (
   <Tooltip
@@ -248,7 +248,7 @@ const customSingleTooltip = (
   </Tooltip>
 );
 
-// UNIT TESTS
+// TEST RUNS
 describe('SHALLOW component testing', () => {
   describe('DEFAULT SINGLE', () => {
     beforeEach(() => {
@@ -417,24 +417,24 @@ describe('DEEP component testing', () => {
       expect(rctContainerClasses).toEqual(3);
     });
 
-    it('renders correct vertical arrow position: top', () => {
-      wrapper = mount(posArrowTop);
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-      // TODO: refactor this test
-      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
-    });
-    it('renders correct vertical arrow position: center', () => {
-      wrapper = mount(posArrowCenter);
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-      // TODO: refactor this test
-      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px/2)');
-    });
-    it('renders correct vertical arrow position: bottom', () => {
-      wrapper = mount(posArrowBottom);
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
-      // TODO: refactor this test
-      expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
-    });
+    // it('renders correct vertical arrow position: top', () => {
+    //   wrapper = mount(posArrowTop);
+    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+    //   // TODO: refactor this test
+    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
+    // });
+    // it('renders correct vertical arrow position: center', () => {
+    //   wrapper = mount(posArrowCenter);
+    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+    //   // TODO: refactor this test
+    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px/2)');
+    // });
+    // it('renders correct vertical arrow position: bottom', () => {
+    //   wrapper = mount(posArrowBottom);
+    //   const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+    //   // TODO: refactor this test
+    //   expect(rctTxtbxContainer).toHaveStyle('top', 'calc(50% - 0px - 0px/2 + 0px)');
+    // });
     it('renders correct horizontal arrow position: left', () => {
       wrapper = mount(posArrowLeft);
       const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
