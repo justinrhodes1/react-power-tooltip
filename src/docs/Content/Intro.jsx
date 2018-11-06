@@ -13,12 +13,12 @@ const Intro = () => {
       <h1 className="firstH1">Introduction</h1>
       <div style={{ marginTop: '15px' }}>
         <img
-          src="https://img.shields.io/travis/justinrhodes1/react-custom-tooltip.svg"
+          src="https://img.shields.io/travis/justin-rhodes/react-custom-tooltip.svg"
           alt=""
         />
         <img
           style={{ margin: '0 20px' }}
-          src="https://img.shields.io/coveralls/github/justinrhodes1/react-custom-tooltip/master.svg"
+          src="https://img.shields.io/coveralls/github/justin-rhodes/react-custom-tooltip/master.svg"
           alt=""
         />
         <img
@@ -33,10 +33,10 @@ const Intro = () => {
       </p>
       <p style={{ lineHeight: '1.5', fontWeight: 'bold' }}>
         We are always open new ideas and improvements. Contribute on
-        <a href="https://github.com/justinrhodes1/react-custom-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> Github</a>
+        <a href="https://github.com/justin-rhodes/react-custom-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> Github</a>
         !
       </p>
-      <h1>Installation</h1>
+      <h1 style={{ paddingTop: '30px' }}>Installation</h1>
       <h2>Npm</h2>
       <pre>
         <code style={{ color: '#404040' }}>{codeInstallNpm}</code>

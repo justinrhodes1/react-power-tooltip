@@ -1,6 +1,6 @@
 # React-custom-tooltip
 
-![Travis (.com)](https://img.shields.io/travis/com/justinrhodes1/react-custom-tooltip.svg) ![Coveralls github branch](https://img.shields.io/coveralls/github/justinrhodes1/react-custom-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-custom-tooltip.svg)
+![Travis (.com)](https://img.shields.io/travis/com/justin-rhodes/react-custom-tooltip.svg) ![Coveralls github branch](https://img.shields.io/coveralls/github/justin-rhodes/react-custom-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-custom-tooltip.svg)
 
 <img width="150px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
 
@@ -14,7 +14,7 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation &amp; demo pages](https://justinrhodes1.github.io/react-custom-tooltip/) to to see all use cases.
+Check out the [documentation &amp; demo pages](https://justin-rhodes.github.io/react-custom-tooltip/) to to see all use cases.
 
 ## Installation
 
@@ -107,9 +107,9 @@ The demo page will then be served on http://localhost:8000/ in watch mode, meani
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://github.com/justinrhodes1.png" width="120">
+        <img src="https://github.com/justin-rhodes.png" width="120">
         <br />
-        <a href="https://github.com/justinrhodes1">Justin Rhodes<a/>
+        <a href="https://github.com/justin-rhodes">Justin Rhodes<a/>
       </td>
     </tr>
   </tbody>
