@@ -1,7 +1,6 @@
 language: node_js
 
 node_js:
-  - "11"
   - node
 
 dist: trusty
@@ -19,9 +18,3 @@ before_script:
 script:
   - npm run test
   - npm run lint
-
-jobs:
-  include:
-    - stage: Produce Coverage
-      node_js: node
-      script: jest --coverage --coverageReporters=text-lcov | coveralls
