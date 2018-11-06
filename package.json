@@ -38,6 +38,7 @@
     "babel-loader": "^8.0.0",
     "babel-plugin-prismjs": "^1.0.2",
     "concurrently": "^3.5.1",
+    "coveralls": "^3.0.2",
     "css-loader": "^0.28.11",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",

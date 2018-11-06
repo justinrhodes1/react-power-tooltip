@@ -156,6 +156,7 @@ h3 {
   display: flex;
   flex-direction: row;
   width: 80%;
+  max-width: 1200px;
 }
 
 .side {
