@@ -1,5 +1,5 @@
 const codeInstallNpm = '$ npm install react-custom-tooltip --save';
-const codeInstallCss = '<link rel="stylesheet" href="https://github-repo/some-github-repo" />';
+const codeInstallCss = '<link rel="stylesheet" href="unpkg.com/react-custom-tooltip/style.css" />';
 const codeBasicComp = `class Example extends Component {
     state = {
         show: false
@@ -26,7 +26,7 @@ const codeBasicComp = `class Example extends Component {
 export default Example;`;
 
 const codeBasicTp = `{/* Add options/text via span elements */}
-<Tooltip show={this.props.show}>
+<Tooltip show={this.state.show}>
     <span>Some text</span>
 </Tooltip>`;
 

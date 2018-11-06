@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="flexContainer purpleGradient header">
       <div className="ribbon">
-        <a href="http">Fork me on GitHub</a>
+        <a href="https://github.com/justinrhodes1/react-custom-tooltip/fork">Fork me on GitHub</a>
       </div>
       <h1>
         React-custom-
@@ -36,8 +36,8 @@ const Header = () => {
         width: '120px'
       }}
       >
-        <a className="github-button" href="https://github.com/ntkme/github-buttons">Star</a>
-        <a className="github-button" href="https://github.com/ntkme/github-buttons/fork">Fork</a>
+        <a className="github-button" href="https://github.com/justinrhodes1/react-custom-tooltip">Star</a>
+        <a className="github-button" href="https://github.com/ntkme/react-custom-tooltip/fork">Fork</a>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 # React-custom-tooltip
 
-**!!BADGES!!**
+![Travis (.com)](https://img.shields.io/travis/com/justinrhodes1/react-custom-tooltip.svg) ![Coveralls github branch](https://img.shields.io/coveralls/github/justinrhodes1/react-custom-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-custom-tooltip.svg)
+
 
 An elegant and powerful alternative for your tooltips
 and menus.
@@ -13,7 +14,7 @@ target element with ease
 
 ## DEMO
 
-For a more detailed documentation and demos check out the documentation [here](https://somelink/).
+Check out the [documentation and demos](https://justinrhodes1.github.io/react-custom-tooltip/).
 
 ## Installation
 
@@ -27,22 +28,37 @@ npm install react-custom-tooltip
 
 Import the CSS as a separate file.
 ```css
-<link>
+<link rel="stylesheet" href="unpkg.com/react-custom-tooltip/style.css" />
 ```
 ## Usage
-```javascript
+```jsx
 import React, { Component } from "react";
 import Tooltip from "react-custom-tooltip";
 
-class TooltipExample extends Component {
-  state = {
-  }
+class Example extends Component {
+    state = {
+        show: false
+    }
 
-  render() {
-    return (
-    );
-  }
+    showTooltip = bool => {
+        this.setState({ show: bool })
+    }
+    render() {
+        return (
+            <div 
+                style={{ position: 'relative' }}
+                mouseOver={() => this.showTooltip(true)} 
+                mouseLeave={() => this.showTooltip(false)}
+            >
+                <Tooltip show={this.state.show}>
+                    <span>Option 1</span>
+                    <span>Option 2</span>
+                </Tooltip>
+            </div>
+        );
+    }
 }
+export default Example;
 ```
 ## API
 

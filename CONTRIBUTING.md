@@ -1,4 +1,4 @@
-## Contributing
+## Contributing to React-custom-tooltip
 
 First off, thank you for considering contributing to React-custom-tooltip. This project is open source and relies on people like you for support.
 
@@ -46,11 +46,6 @@ npm run test:watch
   description**, as much relevant information as possible, and a **code sample**
   or an **executable test case** demonstrating the expected behavior that is not
   occurring.
-* If possible, use the relevant bug report templates to create the issue.
-  Simply copy the content of the appropriate template into a .rb file, make the
-  necessary changes to demonstrate the issue, and **paste the content into the
-  issue description**:
-  * [**React-custom-tooltip** master issues][master template]
 
 ### 5. Implement your fix or feature
 
@@ -155,11 +150,10 @@ Maintainers need to do the following to push out a release:
   ```
 
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/react-custom-tooltip
-[search the issue tracker]: https://github.com/react-custom-tooltip/react-custom-tooltip/issues?q=something
-[new issue]: https://github.com/react-custom-tooltip/react-custom-tooltip/issues/new
+[search the issue tracker]: https://github.com/justinrhodes1/react-custom-tooltip/issues?q=something
+[new issue]: https://github.com/justinrhodes1/react-custom-tooltip/issues/new
 [fork React-custom-tootlip]: https://help.github.com/articles/fork-a-repo
-[searching all issues]: https://github.com/react-custom-tooltip/react-custom-tooltip/issues?q=
-[master template]: https://github.com/react-custom-tooltip/react-custom-tooltip/blob/master/lib/bug_report_templates/react_custom_tooltip_master.rb
+[searching all issues]: https://github.com/justinrhodes1/react-custom-tooltip/issues?q=
 [make a pull request]: https://help.github.com/articles/creating-a-pull-request
 [git rebasing]: http://git-scm.com/book/en/Git-Branching-Rebasing
 [interactive rebase]: https://help.github.com/articles/interactive-rebase
