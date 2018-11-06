@@ -14,7 +14,7 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation &amp; demos](https://justinrhodes1.github.io/react-custom-tooltip/) to see all use cases.
+Check out the [documentation &amp; demo pages](https://justinrhodes1.github.io/react-custom-tooltip/) to to see all use cases.
 
 ## Installation
 
