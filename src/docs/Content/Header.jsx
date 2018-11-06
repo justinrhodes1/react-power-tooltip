@@ -33,7 +33,7 @@ const Header = () => {
           </Tooltip>
         </span>
       </h1>
-      <h2>A flexible, lightweight tooltip &amp; notification library. </h2>
+      <h2>A flexible, lightweight tooltip &amp; menu library. </h2>
       <div style={{
         display: 'flex',
         flexDirection: 'row',
