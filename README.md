@@ -4,8 +4,7 @@
 
 <img width="150px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
 
-An elegant and powerful alternative for your tooltips
-and menus.
+A **powerful** and **elegant** alternative for all your tooltips and menu needs.
 
 - **Different Types** - For every use context: Choose between _Hoverable_, _Static_ &amp; _Alert_ tooltips.
 - **Fully Customizable** - Easily change default settings via props
@@ -15,7 +14,7 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation and demos](https://justinrhodes1.github.io/react-custom-tooltip/).
+Check out the [documentation &amp; demos](https://justinrhodes1.github.io/react-custom-tooltip/) to see all use cases.
 
 ## Installation
 
@@ -28,7 +27,7 @@ npm install react-custom-tooltip
 ### CSS
 
 Import the CSS as a separate file.
-```css
+```markdown
 <link rel="stylesheet" href="unpkg.com/react-custom-tooltip/style.css" />
 ```
 ## Usage
