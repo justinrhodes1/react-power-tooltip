@@ -2,6 +2,7 @@
 
 ![Travis (.com)](https://img.shields.io/travis/com/justinrhodes1/react-custom-tooltip.svg) ![Coveralls github branch](https://img.shields.io/coveralls/github/justinrhodes1/react-custom-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-custom-tooltip.svg)
 
+<img width="150px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
 
 An elegant and powerful alternative for your tooltips
 and menus.

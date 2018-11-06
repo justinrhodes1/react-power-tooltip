@@ -6,8 +6,8 @@ const Types = () => {
     <div className="row" style={{ width: '95%', justifyContent: 'space-around' }}>
       <div>
         <p>
-          <strong>Hoverable</strong>
-          tooltips (default)
+          <strong>Hoverable </strong>
+          (default)
         </p>
         <div className="vPlaceHolder">
           <Tooltip
@@ -22,8 +22,8 @@ const Types = () => {
       </div>
       <div>
         <p>
-          <strong>Static</strong>
-          tooltips (via static prop)
+          <strong>Static </strong>
+          (via static prop)
         </p>
         <div className="vPlaceHolder">
           <Tooltip
@@ -39,8 +39,8 @@ const Types = () => {
       </div>
       <div>
         <p>
-          <strong>Alert</strong>
-          tooltips (via alert prop)
+          <strong>Alert </strong>
+          (via alert prop)
         </p>
         <div className="vPlaceHolder">
           <Tooltip
