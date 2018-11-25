@@ -44,12 +44,12 @@ const Api = () => {
           </tr>
           <tr>
             <td>animation</td>
-            <td>string: fade | fadeDown | fadeUpDown | bounce</td>
+            <td>string: fade | fadeUpDown | bounce</td>
             <td>&#39;fade&#39;</td>
             <td>
-              Mount/Unmount anmation.
-              <br />
-              Custom animations: See advanced usage examples.
+              Mount/Unmount anmation. For custom animations see examples for more
+              <a href="#custom-animations" style={{ color: 'purple', fontSize: '15px' }}> info</a>
+              .
             </td>
           </tr>
           <tr>
@@ -132,49 +132,34 @@ const Api = () => {
           </tr>
           <tr>
             <td>lineSeparated</td>
-            <td>boolean: false | string: css border property true</td>
+            <td>string: css border property</td>
             <td>&#39;1px solid #ececec&#39;</td>
-            <td>Enable &mp; specify line separation between options</td>
+            <td>Specifies line separation between options (optional).</td>
           </tr>
           <tr>
             <td>arrow</td>
+            <td>string: &#39;start&#39; | &#39;center&#39; | &#39;end&#39;</td>
+            <td>&#39;start&#39;</td>
             <td>
-              <p style={{ marginTop: '0' }}>
-                string:
-                <i> horizontal | vertical alignment;</i>
-              </p>
-              <p>
-                Vertical alignment (along left/right textbox side):
-                <br />
-                &#39;top&#39; | &#39;center&#39; | &#39;bottom&#39;
-              </p>
-              <p style={{ marginBottom: '0' }}>
-                Horizontal alignment (along top/bottom textbox side):
-                &#39;left&#39; | &#39;center&#39; | &#39;right&#39;
-              </p>
+              Vertical or horizontal aligning along the left/right or
+              top/bottom textbox side respectively. See examples for more
+              <a href="#arrow-align" style={{ color: 'purple', fontSize: '15px' }}> info</a>
+              .
             </td>
-            <td>&#39;top&#39;</td>
-            <td>Positions arrow relative to textbox</td>
           </tr>
           <tr>
             <td>align</td>
             <td>
               <p style={{ marginTop: '0' }}>
-                string:
-                <i> &#39;position1 position2&#39;</i>
-              </p>
-              <p>
-                Position 1 (target side):
-                &#39;top&#39; | &#39;bottom&#39; | &#39;right&#39; | &#39;left&#39;
-              </p>
-              <p style={{ marginBottom: '0' }}>
-                Position 2 (alignment):
-                &#39;left&#39; | &#39;center&#39; | &#39;right&#39; |
-                &#39;top&#39; | &#39;bottom&#39;
+                string: &#39;position1 position2&#39;
               </p>
             </td>
             <td>&#39;right center&#39;</td>
-            <td>Positions tooltip relative to target element</td>
+            <td>
+              Positions tooltip relative to target. See examples for more
+              <a href="#tooltip-positions" style={{ color: 'purple', fontSize: '15px' }}> info</a>
+              .
+            </td>
           </tr>
         </tbody>
       </table>

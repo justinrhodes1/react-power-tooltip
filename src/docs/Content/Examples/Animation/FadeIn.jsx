@@ -22,7 +22,7 @@ class Animations3 extends Component {
         <Tooltip
           show={this.state.show}
           animation="fade"
-          arrow="center"
+          arrowAlign="center"
           position="bottom center"
           color="black"
           fontSize="14px"

@@ -4,7 +4,7 @@ const AdvUsage = () => {
   return (
     <>
       <h1>Advanced Usage</h1>
-      <h2>Custom Animations</h2>
+      <h2 id="custom-animations">Custom Animations</h2>
       <p style={{ lineHeight: '1.5' }}>
         To customize mount and umount animations
       </p>

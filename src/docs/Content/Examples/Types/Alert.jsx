@@ -56,7 +56,7 @@ class Alert extends Component {
                 hoverColor="white"
                 textboxWidth="100px"
                 animation="bounce"
-                arrow="left"
+                arrowAlign="start"
                 position="bottom center"
                 alert="rgb(51,22,236)"
                 static

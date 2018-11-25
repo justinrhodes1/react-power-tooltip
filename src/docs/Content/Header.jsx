@@ -22,7 +22,7 @@ const Header = () => {
           <Tooltip
             show
             color="black"
-            arrow="center"
+            arrowAlign="center"
             position="bottom center"
             fontSize="13px"
             textBoxWidth="auto"

@@ -163,10 +163,37 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <h2 id="positions">Positions</h2>
-        <h3>
+        <h3 id="arrow-align" style={{ marginBottom: '0' }}>
           1)
-          <strong> Arrow positions </strong>
-          relative to textbox (via arrow prop)
+          <strong> Arrow align </strong>
+          relative to textbox (via arrowAlign prop)
+        </h3>
+        <h3 style={{ lineHeight: '1.7', marginTop: '0' }}>
+          The arrowAlign prop
+          <strong> aligns the arrow relative to the textbox side</strong>
+          :
+          <ol style={{ listStyleType: 'disc' }}>
+            <li style={{ cursor: 'default' }}>
+              arrowAlign:
+              <strong> start </strong>
+              = Aligns the arrow on the textbox side either on the top or left depending on the
+              tooltip position.
+            </li>
+            <li style={{ cursor: 'default' }}>
+              arrowAlign:
+              <strong> center </strong>
+              = Aligns the arrow central on the textbox side.
+            </li>
+            <li style={{ cursor: 'default' }}>
+              arrowAlign:
+              <strong> end </strong>
+              = Aligns the arrow on the textbox side either on the bottom or right depending on the
+              tooltip position.
+            </li>
+          </ol>
+          <strong> Important: </strong>
+          This prop does NOT determine the textbox side on which the
+          arrow is placed (done implicitly via the position prop).
         </h3>
         <div
           className="flexContainer greyBkgr"
@@ -181,7 +208,7 @@ class Examples extends Component {
             <div>
               <pre>
                 <code className="language-jsx">
-                  {codeBottom}
+                  {codeTop}
                 </code>
               </pre>
               <pre>
@@ -191,7 +218,7 @@ class Examples extends Component {
               </pre>
               <pre>
                 <code className="language-jsx">
-                  {codeTop}
+                  {codeBottom}
                 </code>
               </pre>
             </div>
@@ -227,29 +254,33 @@ class Examples extends Component {
             </div>
           </div>
         </ToggleCode>
-        <h3>
+        <h3 id="tooltip-positions" style={{ marginBottom: '0' }}>
           2)
           <strong> Tooltip positions </strong>
           relative to target element (via position prop)
         </h3>
-        <p>
-          The position prop positions the tooltip relative to target element.
+        <h3 style={{ lineHeight: '1.7', marginTop: '0' }}>
+          The position prop
+          <strong> positions the tooltip relative to target element. </strong>
           It consists of a string with two positions:
-        </p>
-        <ol style={{ listStyleType: 'disc', lineHeight: '1.5' }}>
-          <li>
-            <strong>First position: </strong>
-            determins
-            <strong> on which side </strong>
-            of the target element to position the tooltip.
-          </li>
-          <li>
-            <strong>Second position: </strong>
-            determins
-            <strong> how to align </strong>
-            the tooltip on that side.
-          </li>
-        </ol>
+          <ol style={{ listStyleType: 'disc', lineHeight: '1.7' }}>
+            <li style={{ cursor: 'default' }}>
+              <strong>First position: </strong>
+              determins
+              <strong> on which side </strong>
+              of the target element to position the tooltip.
+            </li>
+            <li style={{ cursor: 'default' }}>
+              <strong>Second position: </strong>
+              determins
+              <strong> how to align </strong>
+              the tooltip on that side.
+            </li>
+          </ol>
+          <strong> Important: </strong>
+          The position prop implicitly determines on which textbox side the arrow will
+          appear. To position the arrow relative to that textbox side use the arrowAlign prop.
+        </h3>
         <pre>
           <code className="language-jsx">
             {codeAlign}
@@ -295,11 +326,15 @@ class Examples extends Component {
             </div>
           </div>
         </ToggleCode>
+        <h3 style={{ lineHeight: '1.5' }}>
+          Positive move prop values extend the hoverable area from the target
+          to the tooltip element. This allows the selection of tooltip options
+          when the target is hovered.
+        </h3>
         <div
           className="flexContainer greyBkgr"
           style={{
-            paddingBottom: '140px',
-            marginTop: '30px'
+            paddingBottom: '140px'
           }}
         >
           <AdjustmentOuter />

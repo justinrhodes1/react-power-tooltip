@@ -4,17 +4,20 @@ import Tooltip from '../../../../lib';
 const Arrow = () => {
   return (
     <>
-      <h3 style={{ width: '95%', marginBottom: '0' }}><strong>Horizontal</strong></h3>
+      <h3 style={{ width: '95%', marginBottom: '0' }}>
+        <strong>Horizontally </strong>
+        (when tooltip positioned above / below target)
+      </h3>
       <div className="row">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p>
-            Arrow position:
-            <strong> left</strong>
+            Arrow align:
+            <strong> start</strong>
           </p>
           <div className="hPlaceHolder" style={{ right: '25%' }}>
             <Tooltip
               show
-              arrow="left"
+              arrowAlign="start"
               position="bottom center"
               textBoxWidth="auto"
               lineSeparated
@@ -26,13 +29,13 @@ const Arrow = () => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p>
-            Arrow position:
+            Arrow align:
             <strong> center</strong>
           </p>
           <div className="hPlaceHolder">
             <Tooltip
               show
-              arrow="center"
+              arrowAlign="center"
               position="bottom center"
               textBoxWidth="auto"
               lineSeparated
@@ -45,13 +48,13 @@ const Arrow = () => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p>
-            Arrow position:
-            <strong> right</strong>
+            Arrow align:
+            <strong> end</strong>
           </p>
           <div className="hPlaceHolder" style={{ left: '25%' }}>
             <Tooltip
               show
-              arrow="right"
+              arrowAlign="end"
               position="bottom center"
               textBoxWidth="auto"
               lineSeparated

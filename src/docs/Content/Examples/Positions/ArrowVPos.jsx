@@ -4,17 +4,19 @@ import Tooltip from '../../../../lib';
 const VerticalArrow = () => {
   return (
     <>
-      <h3 style={{ width: '95%', marginBottom: '0' }}><strong>Vertical</strong></h3>
+      <h3 style={{ width: '95%', marginBottom: '0' }}>
+        <strong>Vertically </strong>
+        (when tooltip positioned left / right of target)
+      </h3>
       <div className="row">
         <div>
           <p>
-            Arrow position:
-            <strong> bottom</strong>
+            Arrow align:
+            <strong> start</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip
               show
-              arrow="bottom"
               textBoxWidth="auto"
               lineSeparated
             >
@@ -25,13 +27,13 @@ const VerticalArrow = () => {
         </div>
         <div>
           <p>
-            Arrow position:
+            Arrow align:
             <strong> center</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip
               show
-              arrow="center"
+              arrowAlign="center"
               textBoxWidth="auto"
               lineSeparated
             >
@@ -42,12 +44,13 @@ const VerticalArrow = () => {
         </div>
         <div>
           <p>
-            Arrow position:
-            <strong> top</strong>
+            Arrow align:
+            <strong> end</strong>
           </p>
           <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
             <Tooltip
               show
+              arrowAlign="end"
               textBoxWidth="auto"
               lineSeparated
             >

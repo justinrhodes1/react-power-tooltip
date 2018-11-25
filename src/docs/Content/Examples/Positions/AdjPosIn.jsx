@@ -21,7 +21,7 @@ const Adjustment = () => {
         <h3 style={{ margin: '10px 0 0 20px' }}>Target element</h3>
         <Tooltip
           show
-          arrow="center"
+          arrowAlign="center"
           position="left center"
           textAlign="center"
           moveLeft="-150px"
@@ -37,7 +37,7 @@ const Adjustment = () => {
         </Tooltip>
         <Tooltip
           show
-          arrow="center"
+          arrowAlign="center"
           position="bottom center"
           textAlign="center"
           moveDown="-100px"
@@ -53,7 +53,7 @@ const Adjustment = () => {
         </Tooltip>
         <Tooltip
           show
-          arrow="center"
+          arrowAlign="center"
           position="right center"
           textAlign="center"
           moveRight="-150px"
@@ -69,7 +69,7 @@ const Adjustment = () => {
         </Tooltip>
         <Tooltip
           show
-          arrow="center"
+          arrowAlign="center"
           position="top center"
           textAlign="center"
           moveUp="-100px"

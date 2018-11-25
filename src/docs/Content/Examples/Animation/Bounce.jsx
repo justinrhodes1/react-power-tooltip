@@ -22,7 +22,7 @@ class Animations2 extends Component {
         <Tooltip
           show={this.state.show}
           animation="bounce"
-          arrow="center"
+          arrowAlign="center"
           position="bottom center"
           color="black"
           fontSize="14px"

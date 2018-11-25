@@ -37,7 +37,7 @@ class Tooltip extends Component {
       position: pos,
       hoverBackground,
       backgroundColor,
-      arrow: arwAlign,
+      arrowAlign: arwAlign,
       moveDown,
       moveRight,
       moveLeft,
@@ -109,6 +109,8 @@ class Tooltip extends Component {
       y: position.isSide('top') || position.isSide('bottom'),
       x: position.isSide('left') || position.isSide('right')
     };
+
+    arrow.position = onAxis.y ? `h-${arrow.position}` : `v-${arrow.position}`;
 
     const num = str => Number(str.slice(0, -2));
     const move = {
@@ -208,7 +210,7 @@ Tooltip.defaultProps = {
   moveLeft: '0px',
   moveUp: '0px',
   position: 'right center',
-  arrow: 'top',
+  arrowAlign: 'start',
   textAlign: 'left',
   fontFamily: 'inherit',
   fontWeight: 'bold',

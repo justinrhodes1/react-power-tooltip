@@ -17,7 +17,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'left'}
           position="left top"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -27,7 +27,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'left'}
           position="left center"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -37,7 +37,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'left'}
           position="left bottom"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -47,7 +47,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'right'}
           position="right top"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -57,7 +57,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'right'}
           position="right center"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -67,7 +67,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'right'}
           position="right bottom"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -77,7 +77,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'top'}
           position="top left"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -87,7 +87,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'top'}
           position="top center"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -97,7 +97,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'top'}
           position="top right"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -107,7 +107,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'bottom'}
           position="bottom left"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -117,7 +117,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'bottom'}
           position="bottom center"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static
@@ -127,7 +127,7 @@ class Align extends Component {
         <Tooltip
           show={hover === 'bottom'}
           position="bottom right"
-          arrow="center"
+          arrowAlign="center"
           delayTime="0"
           textBoxWidth="auto"
           static

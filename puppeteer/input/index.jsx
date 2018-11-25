@@ -20,7 +20,7 @@ const Test = () => {
       >
         <Tooltip
           show
-          arrow="top"
+          arrowAlign="start"
         >
           <span>Option 1</span>
           <span>Option 2</span>
@@ -33,7 +33,7 @@ const Test = () => {
       >
         <Tooltip
           show
-          arrow="center"
+          arrowAlign="center"
         >
           <span>Option 1</span>
           <span>Option 2</span>
@@ -46,7 +46,7 @@ const Test = () => {
       >
         <Tooltip
           show
-          arrow="bottom"
+          arrowAlign="end"
         >
           <span>Option 1</span>
           <span>Option 2</span>

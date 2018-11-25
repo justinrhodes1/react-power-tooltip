@@ -30,9 +30,9 @@ class TextBox extends Component {
     const { static: rctStatic, arw: arrow, pos: position, hoverArrow } = this.props;
     if (!rctStatic
       && ((index === 0
-        && (position.isSide('bottom') || arrow.isAlign('top')))
+        && (position.isSide('bottom') || arrow.isAlign('v-start')))
         || (index === lastIndex
-          && (position.isSide('top') || arrow.isAlign('bottom')))
+          && (position.isSide('top') || arrow.isAlign('v-end')))
         || numChildren === 1)) {
       return hoverArrow(true);
     }
@@ -120,27 +120,20 @@ class TextBox extends Component {
     const hLeftPos = calcHPos('100% - 50px', '50% - 40px', '0% - 30px');
     const hRightPos = calcHPos('0% - 30px', '50% - 40px', '100% - 50px');
 
-    if (arrow.isAlign('center')
-      && (position.isSide('top') || position.isSide('bottom'))) {
-      arrow.position = 'hCenter';
-    } else if (arrow.isAlign('center')) {
-      arrow.position = 'vCenter';
-    }
-
     switch (arrow.position) {
-      case 'right':
-        right = `calc(${hLeftPos})`;
-        break;
-      case 'left':
+      case 'h-start':
         left = `calc(${hRightPos})`;
         break;
-      case 'top':
+      case 'h-end':
+        right = `calc(${hLeftPos})`;
+        break;
+      case 'v-start':
         top = calcTopPos(firstH, null);
         break;
-      case 'bottom':
+      case 'v-end':
         top = calcTopPos(lineSeparated ? -lastH + 1 : -lastH, totH);
         break;
-      case 'vCenter':
+      case 'v-center':
         top = `calc(0% - ${totH}px/2 + 11px)`;
         if (position.isAlign('center')) {
           top = `calc(50% - ${totH}px/2)`;
@@ -149,15 +142,11 @@ class TextBox extends Component {
           top = `calc(100% - ${totH}px/2 - 11px)`;
         }
         break;
-      // case 'hCenter':
-      //   break;
       default:
         break;
     }
 
     switch (position.side) {
-      // case 'bottom':
-      //   break;
       case 'top':
         top = calcVPos(0, totH, 1, 13);
         break;
