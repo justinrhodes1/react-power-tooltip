@@ -11,7 +11,7 @@ const Arrow = ({
 
   return (
     <div
-      className="rct-arrow"
+      className="rpt-arrow"
       style={{
         backgroundColor,
         boxShadow

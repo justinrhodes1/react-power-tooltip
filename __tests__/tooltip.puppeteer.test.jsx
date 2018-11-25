@@ -28,11 +28,11 @@ afterEach(async () => {
 
 it('renders correct textbox positions for arrow positions', async () => {
   const styleTop = await page
-    .$eval('.test-arrow-top .rct-textbox-container', el => el.style.top);
+    .$eval('.test-arrow-top .rpt-textbox-container', el => el.style.top);
   const styleCenter = await page
-    .$eval('.test-arrow-center .rct-textbox-container', el => el.style.top);
+    .$eval('.test-arrow-center .rpt-textbox-container', el => el.style.top);
   const styleBottom = await page
-    .$eval('.test-arrow-bottom .rct-textbox-container', el => el.style.top);
+    .$eval('.test-arrow-bottom .rpt-textbox-container', el => el.style.top);
 
   expect(styleTop).toEqual('calc(((50% - 0px) - 24px) + 0px)');
   expect(styleCenter).toEqual('calc(50% - 72px)');

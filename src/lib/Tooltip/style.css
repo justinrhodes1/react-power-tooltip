@@ -1,66 +1,66 @@
-.rct-container {
+.rpt-container {
     position: absolute;
     display: flex;   
 }
 
-.rct-bottom,
-.rct-top {
+.rpt-bottom,
+.rpt-top {
     justify-content: center;
     width: 100%;
 }
 
-.rct-right,
-.rct-align-left {
+.rpt-right,
+.rpt-align-left {
     justify-content: flex-start;
 }
 
-.rct-left,
-.rct-align-right {
+.rpt-left,
+.rpt-align-right {
     justify-content: flex-end;
 }
 
-.rct-align-center {
+.rpt-align-center {
     align-items: center;
 }
 
-.rct-align-bottom {
+.rpt-align-bottom {
     align-items: flex-end;
 }
 
-.rct-textbox {
+.rpt-textbox {
     position: relative;
     z-index: 2;
 }
 
-.rct-textbox span {
+.rpt-textbox span {
     display: block;
     cursor: text;
     box-sizing: border-box;
 }
 
-.rct-hover span {  
+.rpt-hover span {  
     cursor: pointer;
 }
 
-.rct-shadow-container {
+.rpt-shadow-container {
     width: 100%;
     height: 100%;
     z-index: 0;
 }
 
-.rct-shadow {
+.rpt-shadow {
     position: absolute;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
     animation: none;  
 }
 
-.rct-no-shadow,
-.rct-textbox-container {
+.rpt-no-shadow,
+.rpt-textbox-container {
     position: absolute;
     animation: none; 
 }
 
-.rct-arrow {
+.rpt-arrow {
   transform: rotate(45deg);
   width: 15px;
   height: 15px;
@@ -68,86 +68,86 @@
   z-index: 1;
 }
 
-.rct-alert {
-    animation: rct-alert 2s infinite;
+.rpt-alert {
+    animation: rpt-alert 2s infinite;
     animation-fill-mode: initial;
 }
 
-@keyframes rct-alert {
+@keyframes rpt-alert {
     70% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
     100% {box-shadow: 0 0 0 10px rgba(255, 255, 255, 0)}
 }
 
 /* CSS animations */
-@keyframes rct-bounce {
+@keyframes rpt-bounce {
     0%   {transform: scale(0.8); opacity: 0.1}
     60%  {transform: scale(1.1); opacity: 1}
     100%  {transform: scale(1);}
 }
 
-@keyframes rct-bounce-out {
+@keyframes rpt-bounce-out {
     20% { transform: scale(1.1); }
     100% { transform: scale(0.8); opacity: 0.1 }
 }
 
-@keyframes rct-fade {
+@keyframes rpt-fade {
     0%   { opacity: 0.1}
     100% { opacity: 1}
 }
 
-@keyframes rct-fade-out {
+@keyframes rpt-fade-out {
     0% { opacity: 1 }
     60% { opacity: 0 }
     100% { opacity: 0}
 }
 
-@keyframes rct-fadeIn {
+@keyframes rpt-fadeIn {
     0%   { transform: scale(0.8); opacity: 0.1 }
     100% { transform: scale(1); opacity: 1}
 }
 
-@keyframes rct-fadeIn-out {
+@keyframes rpt-fadeIn-out {
     0%   { transform: scale(1); opacity: 1 }
     100% { transform: scale(0.8); opacity: 0.1}
 }
 
 
-@keyframes rct-fadeUp {
+@keyframes rpt-fadeUp {
     0%   { transform: translateY(20px); opacity: 0.01 }
     100% { transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes rct-fadeUp-out {
+@keyframes rpt-fadeUp-out {
     0% { transform: translateY(0px); opacity: 1 }
     100%   { transform: translateY(-20px); opacity: 0.01 }
 }
 
-@keyframes rct-fadeDown {
+@keyframes rpt-fadeDown {
     0%   { transform: translateY(-20px); opacity: 0 }
     100% { transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes rct-fadeDown-out {
+@keyframes rpt-fadeDown-out {
     0% { transform: translateY(0px); opacity: 1 }
     100%   { transform: translateY(20px); opacity: 0 }
 }
 
-@keyframes rct-fadeUpDown {
+@keyframes rpt-fadeUpDown {
     0%   { transform: translateY(20px); opacity: 0 }
     100% { transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes rct-fadeUpDown-out {
+@keyframes rpt-fadeUpDown-out {
     0% { transform: translateY(0px); opacity: 1 }
     100%   { transform: translateY(20px); opacity: 0 }
 }
 
-@keyframes rct-fadeLeftRight {
+@keyframes rpt-fadeLeftRight {
     0%   { transform: translateX(20px); opacity: 0}
     100% { transform: translateX(0px); opacity: 1 }
 }
 
-@keyframes rct-fadeLeftRight-out {
+@keyframes rpt-fadeLeftRight-out {
     0% { transform: translateX(0px); opacity: 1 }
     100%   { transform: translateX(20px); opacity: 0 }
 }

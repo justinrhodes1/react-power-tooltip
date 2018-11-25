@@ -17,7 +17,7 @@ const AdvUsage = () => {
         <strong> global scope </strong>
         using the same selector for both mount and unmount related keyframes. All
         keyframe selectors require an
-        <strong> &#39;rct-&#39; </strong>
+        <strong> &#39;rpt-&#39; </strong>
         prefix. Unmount related keyframes also require an
         <strong> &#39;-out&#39; </strong>
         suffix.
@@ -25,12 +25,12 @@ const AdvUsage = () => {
       <pre>
         <code className="language-css">
           {`/* Global Scope */
-@keyframes rct-customFade {
+@keyframes rpt-customFade {
     0%   { opacity: 0}
     100% { opacity: 1}
 }
 
-@keyframes rct-customFade-out {
+@keyframes rpt-customFade-out {
     0% { opacity: 1 }
     100% { opacity: 0}
 }`}

@@ -80,7 +80,7 @@ class Tooltip extends Component {
 
     // TODO: refactor
     const { side, align } = position;
-    const classes = ['rct-container'];
+    const classes = ['rpt-container'];
     let tooltipStyle = {};
     let bottom;
 
@@ -91,17 +91,17 @@ class Tooltip extends Component {
 
     switch (side) {
       case 'bottom':
-        arrange('100%', '0px', '', '', '100%', 'rct-bottom');
+        arrange('100%', '0px', '', '', '100%', 'rpt-bottom');
         break;
       case 'top':
-        arrange('', '0px', '', '', '100%', 'rct-top');
+        arrange('', '0px', '', '', '100%', 'rpt-top');
         bottom = '100%';
         break;
       case 'right':
-        arrange('0px', '100%', '', '100%', '', 'rct-right');
+        arrange('0px', '100%', '', '100%', '', 'rpt-right');
         break;
       default:
-        arrange('0px', '', '100%', '100%', '', 'rct-left');
+        arrange('0px', '', '100%', '100%', '', 'rpt-left');
         break;
     }
 
@@ -123,19 +123,19 @@ class Tooltip extends Component {
 
     switch (align) {
       case 'left':
-        if (onAxis.y) classes.push('rct-align-left');
+        if (onAxis.y) classes.push('rpt-align-left');
         break;
       case 'right':
-        if (onAxis.y) classes.push('rct-align-right');
+        if (onAxis.y) classes.push('rpt-align-right');
         break;
       case 'bottom':
-        if (onAxis.x) classes.push('rct-align-bottom');
+        if (onAxis.x) classes.push('rpt-align-bottom');
         break;
       case 'top':
         break;
       default:
         if (onAxis.x) {
-          classes.push('rct-align-center');
+          classes.push('rpt-align-center');
           if (!oneMovePropIsNeg) {
             move.down *= 2;
             move.up *= 2;
@@ -172,7 +172,7 @@ class Tooltip extends Component {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            animation: show ? `rct-${animation} 0.2s` : `rct-${animation}-out 0.15s`
+            animation: show ? `rpt-${animation} 0.2s` : `rpt-${animation}-out 0.15s`
           }}
         >
           <Arrow

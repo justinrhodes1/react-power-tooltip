@@ -186,15 +186,15 @@ class TextBox extends Component {
       borderRadius
     };
 
-    const showShadow = flat ? 'rct-no-shadow' : 'rct-shadow';
-    const alertStyle = alert ? 'rct-alert' : '';
+    const showShadow = flat ? 'rpt-no-shadow' : 'rpt-shadow';
+    const alertStyle = alert ? 'rpt-alert' : '';
     const rgb = alert || 'rgb(248, 109, 109)';
     const boxShadow = alert ? `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
     const noNeg = number => number > 0 ? number : 0;
 
     return (
       <div
-        className={`rct-textbox-container ${alertStyle}`}
+        className={`rpt-textbox-container ${alertStyle}`}
         style={{
           ...boxStyle,
           position: 'absolute',
@@ -203,7 +203,7 @@ class TextBox extends Component {
         }}
       >
         <div
-          className={`rct-shadow-container ${showShadow}`}
+          className={`rpt-shadow-container ${showShadow}`}
           style={{
             borderRadius,
             height: `calc(100% - ${noNeg(move.down) + noNeg(move.up)}px)`,
@@ -211,7 +211,7 @@ class TextBox extends Component {
           }}
         />
         <div
-          className="rct-textbox"
+          className="rpt-textbox"
           onMouseLeave={this.unsetHover}
           style={{
             backgroundColor,
@@ -219,7 +219,7 @@ class TextBox extends Component {
           }}
         >
           <div
-            className={!tpStatic ? 'rct-hover' : null}
+            className={!tpStatic ? 'rpt-hover' : null}
             style={{
               borderRadius,
               overflow: 'hidden'

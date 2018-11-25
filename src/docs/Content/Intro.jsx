@@ -33,7 +33,7 @@ const Intro = () => {
       </p>
       <p style={{ lineHeight: '1.5', fontWeight: 'bold' }}>
         We are always open new ideas and improvements. Contribute on
-        <a href="https://github.com/justin-rhodes/react-power-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> Github</a>
+        <a href="https://github.com/justin-rhodes/react-power-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> GitHub</a>
         !
       </p>
       <h1 style={{ paddingTop: '30px' }}>Installation</h1>

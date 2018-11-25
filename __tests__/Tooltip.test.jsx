@@ -13,7 +13,7 @@ const numClassesOf = (el) => {
 
 const setPropsAndgetRctContainer = (wrapper, str) => {
   wrapper.setProps({ position: str });
-  return wrapper.find('.rct-container');
+  return wrapper.find('.rpt-container');
 };
 
 
@@ -103,7 +103,7 @@ describe('DEEP component testing', () => {
     beforeEach(() => {
       wrapper = mount(singleTooltip);
       span = wrapper.find('span');
-      arrow = wrapper.find('.rct-arrow');
+      arrow = wrapper.find('.rpt-arrow');
     });
 
     it('renders no tooltip if show prop = false', () => {
@@ -143,9 +143,9 @@ describe('DEEP component testing', () => {
       const updatedSpan = wrapper.find('span');
       expect(updatedSpan).toHaveStyle('backgroundColor', hoverBackground);
       expect(updatedSpan).toHaveStyle('color', hoverColor);
-      const updatedArrow = wrapper.find('.rct-arrow');
+      const updatedArrow = wrapper.find('.rpt-arrow');
       expect(updatedArrow).toHaveStyle('backgroundColor', hoverBackground);
-      expect(updatedSpan.parent().hasClass('rct-hover')).toEqual(true);
+      expect(updatedSpan.parent().hasClass('rpt-hover')).toEqual(true);
     });
 
     it('renders correct arrow style when textbox unhovered', () => {
@@ -153,9 +153,9 @@ describe('DEEP component testing', () => {
       // component updates before tests
       span.simulate('mouseover');
       wrapper.update();
-      wrapper.find('.rct-textbox').simulate('mouseleave');
+      wrapper.find('.rpt-textbox').simulate('mouseleave');
       wrapper.update();
-      const updatedArrow = wrapper.find('.rct-arrow');
+      const updatedArrow = wrapper.find('.rpt-arrow');
       expect(updatedArrow).toHaveStyle('backgroundColor', backgroundColor);
     });
 
@@ -167,105 +167,105 @@ describe('DEEP component testing', () => {
       wrapper.update();
       const updatedSpan = wrapper.find('span');
       expect(updatedSpan).toHaveStyle('backgroundColor', backgroundColor);
-      expect(updatedSpan.parent().hasClass('rct-hover')).toEqual(false);
+      expect(updatedSpan.parent().hasClass('rpt-hover')).toEqual(false);
     });
 
     it('renders no shadows if flat prop = true', () => {
       wrapper.setProps({ flat: true });
-      arrow = wrapper.find('.rct-arrow');
+      arrow = wrapper.find('.rpt-arrow');
       expect(arrow).toHaveStyle('boxShadow', null);
-      shadowContainer = wrapper.find('.rct-shadow-container');
-      expect(shadowContainer.hasClass('rct-no-shadow')).toEqual(true);
+      shadowContainer = wrapper.find('.rpt-shadow-container');
+      expect(shadowContainer.hasClass('rpt-no-shadow')).toEqual(true);
     });
 
     it('renders correct tooltip position: right top', () => {
       wrapper.setProps({ position: 'right top' });
-      const rctContainer = wrapper.find('.rct-container');
-      expect(rctContainer.hasClass('rct-right')).toEqual(true);
+      const rctContainer = wrapper.find('.rpt-container');
+      expect(rctContainer.hasClass('rpt-right')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(2);
     });
 
     it('renders correct tooltip position: right center', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'right center');
-      expect(rctContainer.hasClass('rct-right rct-align-center')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-right rpt-align-center')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: right bottom', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'right bottom');
-      expect(rctContainer.hasClass('rct-right rct-align-bottom')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-right rpt-align-bottom')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: left top', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'left top');
-      expect(rctContainer.hasClass('rct-left')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-left')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(2);
     });
 
     it('renders correct tooltip position: left center', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'left center');
-      expect(rctContainer.hasClass('rct-left rct-align-center')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-left rpt-align-center')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: left bottom', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'left bottom');
-      expect(rctContainer.hasClass('rct-left rct-align-bottom')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-left rpt-align-bottom')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: top left', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'top left');
-      expect(rctContainer.hasClass('rct-top rct-align-left')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-top rpt-align-left')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: top center', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'top center');
-      expect(rctContainer.hasClass('rct-top')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-top')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(2);
     });
 
     it('renders correct tooltip position: top right', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'top right');
-      expect(rctContainer.hasClass('rct-top rct-align-right')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-top rpt-align-right')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: bottom left', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'bottom left');
-      expect(rctContainer.hasClass('rct-bottom rct-align-left')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-bottom rpt-align-left')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct tooltip position: bottom center', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'bottom center');
-      expect(rctContainer.hasClass('rct-bottom')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-bottom')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(2);
     });
 
     it('renders correct tooltip position: bottom right', () => {
       const rctContainer = setPropsAndgetRctContainer(wrapper, 'bottom right');
-      expect(rctContainer.hasClass('rct-bottom rct-align-right')).toEqual(true);
+      expect(rctContainer.hasClass('rpt-bottom rpt-align-right')).toEqual(true);
       expect(numClassesOf(rctContainer)).toEqual(3);
     });
 
     it('renders correct horizontal arrow position: left', () => {
       wrapper.setProps({ arrow: 'left', position: 'bottom center' });
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      const rctTxtbxContainer = wrapper.find('.rpt-textbox-container');
       expect(rctTxtbxContainer).toHaveStyle('left', 'calc(50% - 40px)');
     });
 
     it('renders correct horizontal arrow position: center', () => {
       wrapper.setProps({ arrow: 'center', position: 'bottom center' });
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      const rctTxtbxContainer = wrapper.find('.rpt-textbox-container');
       expect(rctTxtbxContainer).toHaveStyle('left', '');
     });
 
     it('renders correct horizontal arrow position: right', () => {
       wrapper.setProps({ arrow: 'right', position: 'bottom center' });
-      const rctTxtbxContainer = wrapper.find('.rct-textbox-container');
+      const rctTxtbxContainer = wrapper.find('.rpt-textbox-container');
       expect(rctTxtbxContainer).toHaveStyle('right', 'calc(50% - 40px)');
     });
   });
