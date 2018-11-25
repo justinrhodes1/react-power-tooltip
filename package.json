@@ -1,5 +1,5 @@
 {
-  "name": "react-custom-tooltip",
+  "name": "react-power-tooltip",
   "version": "1.0.0",
   "description": "A powerful tooltip and menu component library for react.",
   "main": "lib/index",
@@ -65,10 +65,10 @@
     "webpack-dev-server": "^3.1.3"
   },
   "author": "Justin Rhodes <justin.rhodes01@gmail.com>",
-  "homepage": "https://github.com/justinrhodes2/react-custom-tooltip",
+  "homepage": "https://github.com/justinrhodes2/react-power-tooltip",
   "repository": {
     "type": "git",
-    "url": "git@github.com:justinrhodes2/react-custom-tooltip.git"
+    "url": "git@github.com:justinrhodes2/react-power-tooltip.git"
   },
   "dependencies": {},
   "jest": {

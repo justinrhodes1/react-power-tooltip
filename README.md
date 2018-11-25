@@ -1,7 +1,7 @@
-# React-custom-tooltip
+# React-power-tooltip
 
-![Travis (.org)](https://img.shields.io/travis/justin-rhodes/react-custom-tooltip.svg)
-![Coveralls github branch](https://img.shields.io/coveralls/github/justin-rhodes/react-custom-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-custom-tooltip.svg)
+![Travis (.org)](https://img.shields.io/travis/justin-rhodes/react-power-tooltip.svg)
+![Coveralls github branch](https://img.shields.io/coveralls/github/justin-rhodes/react-power-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-power-tooltip.svg)
 
 <img width="250px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
 
@@ -15,26 +15,26 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation &amp; demo pages](https://justin-rhodes.github.io/react-custom-tooltip/) to to see all use cases.
+Check out the [documentation &amp; demo pages](https://justin-rhodes.github.io/react-power-tooltip/) to to see all use cases.
 
 ## Installation
 
 ### NPM
 
 ```bash
-npm install react-custom-tooltip
+npm install react-power-tooltip
 ```
 
 ### CSS
 
 Import the CSS as a separate file.
 ```markdown
-<link rel="stylesheet" href="unpkg.com/react-custom-tooltip/style.css" />
+<link rel="stylesheet" href="unpkg.com/react-power-tooltip/style.css" />
 ```
 ## Usage
 ```jsx
 import React, { Component } from "react";
-import Tooltip from "react-custom-tooltip";
+import Tooltip from "react-power-tooltip";
 
 class Example extends Component {
     state = {
@@ -92,7 +92,7 @@ export default Example;
 
 ## Development
 
-You're welcome to contribute to react-custom-tooltip.
+You're welcome to contribute to react-power-tooltip.
 
 To set up the project:
 

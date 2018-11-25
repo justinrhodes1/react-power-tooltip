@@ -24,7 +24,6 @@ class TextBox extends Component {
     this.props.hoverArrow(false);
   }
 
-
   // Set & unset hover state
   onSpanHover = (index, lastIndex, numChildren) => {
     this.setState({ hoverIndex: index });

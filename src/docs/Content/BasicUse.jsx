@@ -10,7 +10,7 @@ const BasicUsage = () => {
       </h3>
       <pre>
         <code className="language-javascript">
-          import Tooltip from &#39;react-custom-tooltip&#39;
+          import Tooltip from &#39;react-power-tooltip&#39;
         </code>
       </pre>
       <h3>2) Add a hover state &amp; mouse event handler to your component.</h3>

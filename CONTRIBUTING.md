@@ -1,6 +1,6 @@
-## Contributing to React-custom-tooltip
+## Contributing to React-power-tooltip
 
-First off, thank you for considering contributing to React-custom-tooltip. This project is open source and relies on people like you for support.
+First off, thank you for considering contributing to React-power-tooltip. This project is open source and relies on people like you for support.
 
 ### 1. Where do I go from here?
 
@@ -8,7 +8,7 @@ If you've noticed a bug or have a question that doesn't belong on [Stack Overflo
 
 ### 2. Fork & create a branch
 
-If this is something you think you can fix, then [fork React-custom-tooltip][] and
+If this is something you think you can fix, then [fork React-power-tooltip][] and
 create a branch with a descriptive name.
 
 A good branch name would be (where issue #325 is the ticket you're working on):
@@ -81,10 +81,10 @@ Warnings should indicate where changes in your code need to be made.
 ### 8. Make a Pull Request
 
 At this point, you should switch back to your master branch and make sure it's
-up to date with React-custom-tooltip's master branch:
+up to date with React-power-tooltip's master branch:
 
 ```sh
-git remote add upstream git@github.com:react-custom-tooltip/react-custom-tooltip.git
+git remote add upstream git@github.com:react-power-tooltip/react-power-tooltip.git
 git checkout master
 git pull upstream master
 ```
@@ -142,18 +142,18 @@ Maintainers need to do the following to push out a release:
 
   ```sh
   git checkout master
-  git fetch react-custom-tooltip
-  git rebase react-custom-tooltip/master
+  git fetch react-power-tooltip
+  git rebase react-power-tooltip/master
   # If the release is 2.1.x then this should be: 2-1-stable
   git checkout -b N-N-stable
-  git push react-custom-tooltip N-N-stable:N-N-stable
+  git push react-power-tooltip N-N-stable:N-N-stable
   ```
 
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/react-custom-tooltip
-[search the issue tracker]: https://github.com/justin-rhodes/react-custom-tooltip/issues?q=something
-[new issue]: https://github.com/justin-rhodes/react-custom-tooltip/issues/new
+[Stack Overflow]: http://stackoverflow.com/questions/tagged/react-power-tooltip
+[search the issue tracker]: https://github.com/justin-rhodes/react-power-tooltip/issues?q=something
+[new issue]: https://github.com/justin-rhodes/react-power-tooltip/issues/new
 [fork React-custom-tootlip]: https://help.github.com/articles/fork-a-repo
-[searching all issues]: https://github.com/justin-rhodes/react-custom-tooltip/issues?q=
+[searching all issues]: https://github.com/justin-rhodes/react-power-tooltip/issues?q=
 [make a pull request]: https://help.github.com/articles/creating-a-pull-request
 [git rebasing]: http://git-scm.com/book/en/Git-Branching-Rebasing
 [interactive rebase]: https://help.github.com/articles/interactive-rebase

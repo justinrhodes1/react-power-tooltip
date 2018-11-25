@@ -1,5 +1,5 @@
-const codeInstallNpm = '$ npm install react-custom-tooltip --save';
-const codeInstallCss = '<link rel="stylesheet" href="unpkg.com/react-custom-tooltip/style.css" />';
+const codeInstallNpm = '$ npm install react-power-tooltip --save';
+const codeInstallCss = '<link rel="stylesheet" href="unpkg.com/react-power-tooltip/style.css" />';
 const codeBasicComp = `class Example extends Component {
     state = {
         show: false
@@ -233,31 +233,31 @@ const codeMoveLeft = `{/* Move left out of target */}
 </Tooltip>`;
 
 export {
-  codeStatic,
-  codeAlert,
-  codeStaticAlert,
-  codeFade,
-  codeFadeUpDown,
-  codeBounce,
-  codeAlign,
-  codeDefault,
-  codeFont,
-  codeCorners,
-  codeHover,
-  codeBackground,
-  codeFlat,
-  codeTop,
-  codeCenterV,
-  codeBottom,
-  codeLeft,
-  codeCenterH,
-  codeRight,
-  codeMoveUpNeg,
-  codeMoveLeftNeg,
-  codeMoveUp,
-  codeMoveLeft,
-  codeInstallCss,
-  codeInstallNpm,
-  codeBasicComp,
-  codeBasicTp
+    codeStatic,
+    codeAlert,
+    codeStaticAlert,
+    codeFade,
+    codeFadeUpDown,
+    codeBounce,
+    codeAlign,
+    codeDefault,
+    codeFont,
+    codeCorners,
+    codeHover,
+    codeBackground,
+    codeFlat,
+    codeTop,
+    codeCenterV,
+    codeBottom,
+    codeLeft,
+    codeCenterH,
+    codeRight,
+    codeMoveUpNeg,
+    codeMoveLeftNeg,
+    codeMoveUp,
+    codeMoveLeft,
+    codeInstallCss,
+    codeInstallNpm,
+    codeBasicComp,
+    codeBasicTp
 };
