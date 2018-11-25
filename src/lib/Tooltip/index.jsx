@@ -14,7 +14,7 @@ class Tooltip extends Component {
     // Basic prop type checking
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];
-      const text = `React-custom-tooptip: [${propName}] prop should be a`;
+      const text = `React-power-tooptip: [${propName}] prop should be a`;
       if (propName !== 'children' && propName !== 'delayTime'
         && type !== 'boolean' && type !== 'string') {
         // eslint-disable-next-line

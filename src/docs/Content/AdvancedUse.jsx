@@ -10,7 +10,7 @@ const AdvUsage = () => {
       </p>
       <ol style={{ lineHeight: '1.5' }}>
         <li>Add your own CSS @keyframes rules to the global scope</li>
-        <li>Enable react-custom-tooptip to use your animations</li>
+        <li>Enable react-power-tooptip to use your animations</li>
       </ol>
       <p style={{ lineHeight: '1.5' }}>
         Add your keyframe rules to the
