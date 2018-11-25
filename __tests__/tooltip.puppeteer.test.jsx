@@ -1,19 +1,15 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 
-// it('paceholder', () => { });
-
-// const testURL = `${process.env.TRAVIS_BUILD_DIR}/puppeteer/index.html`;
-
 const filePath = path.join(__dirname, '/../puppeteer/index.html');
 const URL = `file:///${filePath}`;
 let browser;
 let page;
 
-// // Pupeteer/Chromium tests required to test computed styles &
-// // those relying on clientHeight etc. This is beyond Enyzme/JSDOM.
+// Pupeteer/Chromium tests required to test computed styles &
+// those relying on clientHeight etc. This is beyond Enyzme/JSDOM.
 
-// // Allowing enough time for puppeteer to run
+// Allowing enough time for puppeteer to run
 jest.setTimeout(30000);
 
 beforeEach(async () => {

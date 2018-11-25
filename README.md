@@ -92,7 +92,7 @@ export default Example;
 
 ## Development
 
-You're welcome to contribute to react-switch.
+You're welcome to contribute to react-custom-tooltip.
 
 To set up the project:
 
