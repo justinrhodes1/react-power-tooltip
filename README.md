@@ -70,7 +70,7 @@ export default Example;
 | fontSize        | string: px                                                | 'inherit'           | Font size of text                                                       |
 | fontWeight      | string                                                    | 'bold'              | Font weight of text                                                     |
 | color           | string                                                    | 'inherit'           | Font color of text                                                      |
-| animation       | string: fade _or_  fadeUpDown _or_ bounce                 | 'fade'              | Mount/Unmount anmation. Custom animations: See advanced usage examples. |
+| animation       | string: fade _or_ bounce                 | 'fade'              | Mount/Unmount anmation. Custom animations: See advanced usage examples. |
 | delayUnmount    | number                                                    | 150                 | Delay component unmounting to allow for animations                      |
 | hoverBackground | string: hex colors                                        | '#ececec'           | Background color on hover                                               |
 | hoverColor      | string: hex colors                                        | '#000000'           | Font color on hover                                                     |

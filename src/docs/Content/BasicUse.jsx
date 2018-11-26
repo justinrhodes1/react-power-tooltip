@@ -20,7 +20,7 @@ const BasicUsage = () => {
         </code>
       </pre>
       <h3>
-        3) Add the tooltip inside inside the target element.
+        3) Add the tooltip inside the target element.
       </h3>
       <pre>
         <code className="language-jsx">

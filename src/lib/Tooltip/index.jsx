@@ -3,7 +3,8 @@ import delayUnmount from './delayUnmount';
 import TextBox from './TextBox';
 import Arrow from './Arrow';
 
-import './style.css';
+// import './style.css';
+import cssRules from './styles';
 
 class Tooltip extends Component {
   state = {
@@ -11,6 +12,14 @@ class Tooltip extends Component {
   }
 
   componentWillMount() {
+    // Injecting styles directly into header
+    if (!document.getElementById('rpt-css')) {
+      const $style = document.createElement('style');
+      $style.type = 'text/css';
+      $style.id = 'rpt-css';
+      document.head.appendChild($style);
+      $style.innerHTML = cssRules;
+    }
     // Basic prop type checking
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];

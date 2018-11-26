@@ -25,14 +25,14 @@ const AdvUsage = () => {
       <pre>
         <code className="language-css">
           {`/* Global Scope */
-@keyframes rpt-customFade {
-    0%   { opacity: 0}
-    100% { opacity: 1}
+@keyframes rpt-slideUpDown {
+  0%   { transform: translateY(20px); opacity: 0 }
+  100% { transform: translateY(0px); opacity: 1 }
 }
 
-@keyframes rpt-customFade-out {
-    0% { opacity: 1 }
-    100% { opacity: 0}
+@keyframes rpt-slideUpDown-out {
+  0%   { transform: translateY(0px); opacity: 1 }
+  100% { transform: translateY(20px); opacity: 0 }
 }`}
         </code>
       </pre>
@@ -45,7 +45,7 @@ const AdvUsage = () => {
         <code className="language-jsx">
           {`<Tooltip
     show={this.state.show}
-    animation='customFade'
+    animation='slideUpDown'
 >
     <span>Some text</span>
 </Tooltip>`}

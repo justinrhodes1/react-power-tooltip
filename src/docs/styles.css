@@ -371,6 +371,15 @@ tr:nth-child(even) {
   background: rgba(128, 128, 128, 0.4);
 }
 
+@keyframes rpt-slideUpDown {
+  0%   { transform: translateY(20px); opacity: 0 }
+  100% { transform: translateY(0px); opacity: 1 }
+}
+
+@keyframes rpt-slideUpDown-out {
+  0% { transform: translateY(0px); opacity: 1 }
+  100%   { transform: translateY(20px); opacity: 0 }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {

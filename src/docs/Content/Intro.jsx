@@ -3,8 +3,7 @@
 import React from 'react';
 
 import {
-  codeInstallNpm,
-  codeInstallCss
+  codeInstallNpm
 } from './CodeSnippets';
 
 const Intro = () => {
@@ -26,11 +25,31 @@ const Intro = () => {
           alt=""
         />
       </div>
-      <p style={{ lineHeight: '1.5' }}>
-        React-power-tooltip is a powerful, fully customizable and interactive tooltip
-        library. Besides the traditional tooltip purposes you can easily also use it
-        as your popup or menu library.
+      <p style={{ lineHeight: '1.5', marginBottom: '0' }}>
+        React-power-tooltip is a powerful, fully customizable tooltip library. Besides the
+        traditional tooltip purposes you can easily also use it as your popup or menu library:
       </p>
+      <h3 style={{ lineHeight: '2', padding: '0' }}>
+        <ol>
+          <li style={{ cursor: 'default' }}>
+            <strong>Ready-to-use defaults: </strong>
+            Choose between hoverable, static &amp; alert tooltips.
+          </li>
+          <li style={{ cursor: 'default' }}>
+            <strong>Fully customizable: </strong>
+            Easily customize animations &amp; styles to your wishes.
+          </li>
+          <li style={{ cursor: 'default' }}>
+            <strong>Pixel perfect positioning: </strong>
+            Easily align your tooltip to your target element.
+          </li>
+          <li style={{ cursor: 'default' }}>
+            <strong>No dependencies: </strong>
+            no side-strings attached.
+          </li>
+        </ol>
+      </h3>
+
       <p style={{ lineHeight: '1.5', fontWeight: 'bold' }}>
         We are always open new ideas and improvements. Contribute on
         <a href="https://github.com/justin-rhodes/react-power-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> GitHub</a>
@@ -40,12 +59,6 @@ const Intro = () => {
       <h2>Npm</h2>
       <pre>
         <code style={{ color: '#404040' }}>{codeInstallNpm}</code>
-      </pre>
-      <h2>CSS file</h2>
-      <pre>
-        <code className="language-markup">
-          {codeInstallCss}
-        </code>
       </pre>
     </>
   );

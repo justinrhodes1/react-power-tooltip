@@ -44,7 +44,7 @@ const Api = () => {
           </tr>
           <tr>
             <td>animation</td>
-            <td>string: fade | fadeUpDown | bounce</td>
+            <td>string: fade | bounce</td>
             <td>&#39;fade&#39;</td>
             <td>
               Mount/Unmount anmation. For custom animations see examples for more

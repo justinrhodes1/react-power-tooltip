@@ -15,7 +15,7 @@ import {
   codeAlert,
   codeStaticAlert,
   codeFade,
-  codeFadeUpDown,
+  codeSlideUpDown,
   codeBounce,
   codeAlign,
   codeDefault,
@@ -73,6 +73,14 @@ class Examples extends Component {
         </ToggleCode>
         <Alert />
         <h2 id="animations">Animations</h2>
+        <p style={{ lineHeight: '1.7' }}>
+          <strong>Note: </strong>
+          The slideUpDown animation is
+          <i> not </i>
+          included in this library. Check out the
+          <a href="#custom-animations" style={{ fontSize: 'inherit', color: 'purple' }}> advanced section </a>
+          for more info on how to add your own custom animations to this library.
+        </p>
         <div
           className="flexContainer greyBkgr"
           style={{
@@ -91,7 +99,7 @@ class Examples extends Component {
               </pre>
               <pre>
                 <code className="language-jsx">
-                  {codeFadeUpDown}
+                  {codeSlideUpDown}
                 </code>
               </pre>
               <pre>
@@ -163,16 +171,16 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <h2 id="positions">Positions</h2>
-        <h3 id="arrow-align" style={{ marginBottom: '0' }}>
+        <h3 id="arrow-align" style={{ lineHeight: '1.7', marginBottom: '10px' }}>
           1)
           <strong> Arrow align </strong>
           relative to textbox (via arrowAlign prop)
-        </h3>
-        <h3 style={{ lineHeight: '1.7', marginTop: '0' }}>
-          The arrowAlign prop
-          <strong> aligns the arrow relative to the textbox side</strong>
-          :
-          <ol style={{ listStyleType: 'disc' }}>
+          <p style={{ lineHeight: '1.7', marginTop: '10px', fontSize: 'inherit' }}>
+            The arrowAlign prop aligns the arrow
+            <strong> relative to the textbox side</strong>
+            :
+          </p>
+          <ol style={{ listStyleType: 'disc', margin: '10px' }}>
             <li style={{ cursor: 'default' }}>
               arrowAlign:
               <strong> start </strong>
@@ -191,7 +199,7 @@ class Examples extends Component {
               tooltip position.
             </li>
           </ol>
-          <strong> Important: </strong>
+          <strong>Note: </strong>
           This prop does NOT determine the textbox side on which the
           arrow is placed (done implicitly via the position prop).
         </h3>
@@ -260,8 +268,8 @@ class Examples extends Component {
           relative to target element (via position prop)
         </h3>
         <h3 style={{ lineHeight: '1.7', marginTop: '0' }}>
-          The position prop
-          <strong> positions the tooltip relative to target element. </strong>
+          The position prop positions the tooltip
+          <strong> relative to target element. </strong>
           It consists of a string with two positions:
           <ol style={{ listStyleType: 'disc', lineHeight: '1.7' }}>
             <li style={{ cursor: 'default' }}>
@@ -277,7 +285,7 @@ class Examples extends Component {
               the tooltip on that side.
             </li>
           </ol>
-          <strong> Important: </strong>
+          <strong>Note: </strong>
           The position prop implicitly determines on which textbox side the arrow will
           appear. To position the arrow relative to that textbox side use the arrowAlign prop.
         </h3>

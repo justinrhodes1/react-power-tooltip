@@ -65,10 +65,10 @@
     "webpack-dev-server": "^3.1.3"
   },
   "author": "Justin Rhodes <justin.rhodes01@gmail.com>",
-  "homepage": "https://github.com/justinrhodes2/react-power-tooltip",
+  "homepage": "https://github.com/justinrhodes1/react-power-tooltip",
   "repository": {
     "type": "git",
-    "url": "git@github.com:justinrhodes2/react-power-tooltip.git"
+    "url": "git@github.com:justinrhodes1/react-power-tooltip.git"
   },
   "dependencies": {},
   "jest": {

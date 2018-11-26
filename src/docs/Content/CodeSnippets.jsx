@@ -1,5 +1,4 @@
 const codeInstallNpm = '$ npm install react-power-tooltip --save';
-const codeInstallCss = '<link rel="stylesheet" href="unpkg.com/react-power-tooltip/style.css" />';
 const codeBasicComp = `class Example extends Component {
     state = {
         show: false
@@ -59,10 +58,10 @@ const codeFade = `{/* Fade */}
     <span>Some text</span>
 </Tooltip>`;
 
-const codeFadeUpDown = `{/* FadeUpDown */}
+const codeSlideUpDown = `{/* SlideUpDown */}
 <Tooltip
     show={true}
-    animation="fadeUpDown">
+    animation="slideUpDown">
     <span>Some text</span>
 </Tooltip>`;
 
@@ -239,7 +238,7 @@ export {
   codeAlert,
   codeStaticAlert,
   codeFade,
-  codeFadeUpDown,
+  codeSlideUpDown,
   codeBounce,
   codeAlign,
   codeDefault,
@@ -258,7 +257,6 @@ export {
   codeMoveLeftNeg,
   codeMoveUp,
   codeMoveLeft,
-  codeInstallCss,
   codeInstallNpm,
   codeBasicComp,
   codeBasicTp
