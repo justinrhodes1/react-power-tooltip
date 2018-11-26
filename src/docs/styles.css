@@ -54,7 +54,7 @@ pre {
   background: #ececec;
   margin-top: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   padding: 10px 20px;
 }
@@ -237,7 +237,7 @@ a:visited {
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -379,5 +379,8 @@ tr:nth-child(even) {
   }
   .main {
     width: 80%;
+  }
+  .row, .codeRow {
+    flex-direction: row;
   }
 } 

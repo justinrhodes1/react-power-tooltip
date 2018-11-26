@@ -46,6 +46,8 @@ class TextBox extends Component {
       lines: lineSeparated,
       static: tpStatic,
       textBoxWidth: width,
+      shadowColor: shCol,
+      shadowShape: shShape,
       move,
       backgroundColor,
       padding,
@@ -176,10 +178,12 @@ class TextBox extends Component {
       borderRadius
     };
 
-    const showShadow = flat ? 'rpt-no-shadow' : 'rpt-shadow';
+    const shColAdj = shCol.substr(0, shCol.lastIndexOf(',')).replace(/[)]/g, ',');
+    const shadow = `${shShape} ${shCol}, 0 0 3px ${shColAdj}, 0.1), 0 0 0 1px ${shColAdj}, 0.15)`;
+    const boxShadow = flat ? null : shadow;
     const alertStyle = alert ? 'rpt-alert' : '';
     const rgb = alert || 'rgb(248, 109, 109)';
-    const boxShadow = alert ? `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
+    const alertShadow = alert ? `0 0 0 ${rgb.slice(0, rgb.length - 1)}, 0.4)` : null;
     const noNeg = number => number > 0 ? number : 0;
 
     return (
@@ -188,14 +192,15 @@ class TextBox extends Component {
         style={{
           ...boxStyle,
           position: 'absolute',
-          boxShadow,
+          boxShadow: alertShadow,
           padding: `${move.down}px ${move.left}px ${move.up}px ${move.right}px`
         }}
       >
         <div
-          className={`rpt-shadow-container ${showShadow}`}
+          className="rpt-shadow-container"
           style={{
             borderRadius,
+            boxShadow,
             height: `calc(100% - ${noNeg(move.down) + noNeg(move.up)}px)`,
             width: `calc(100% - ${noNeg(move.left) + noNeg(move.right)}px)`
           }}

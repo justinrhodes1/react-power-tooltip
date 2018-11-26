@@ -205,6 +205,8 @@ Tooltip.defaultProps = {
   textBoxWidth: '150px',
   padding: '15px 20px',
   borderRadius: '5px',
+  shadowColor: 'rgba(0,0,0,0.251)',
+  shadowShape: '0 8px 15px',
   moveDown: '0px',
   moveRight: '0px',
   moveLeft: '0px',

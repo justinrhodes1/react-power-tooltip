@@ -38,6 +38,17 @@
     box-sizing: border-box;
 }
 
+.rpt-textbox span p {
+    font-size: 90%;
+    font-weight: normal;
+    line-height: 12px;
+    color: inherit;
+    opacity: 0.6;
+    padding: 0;
+    margin: 0;
+    margin-top: 6px;
+}
+
 .rpt-hover span {  
     cursor: pointer;
 }
@@ -48,13 +59,7 @@
     z-index: 0;
 }
 
-.rpt-shadow {
-    position: absolute;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
-    animation: none;  
-}
-
-.rpt-no-shadow,
+.rpt-shadow-container,
 .rpt-textbox-container {
     position: absolute;
     animation: none; 
@@ -101,7 +106,7 @@
     100% { opacity: 0}
 }
 
-@keyframes rpt-fadeIn {
+/* @keyframes rpt-fadeIn {
     0%   { transform: scale(0.8); opacity: 0.1 }
     100% { transform: scale(1); opacity: 1}
 }
@@ -109,10 +114,9 @@
 @keyframes rpt-fadeIn-out {
     0%   { transform: scale(1); opacity: 1 }
     100% { transform: scale(0.8); opacity: 0.1}
-}
+} */
 
-
-@keyframes rpt-fadeUp {
+/* @keyframes rpt-fadeUp {
     0%   { transform: translateY(20px); opacity: 0.01 }
     100% { transform: translateY(0px); opacity: 1 }
 }
@@ -120,9 +124,9 @@
 @keyframes rpt-fadeUp-out {
     0% { transform: translateY(0px); opacity: 1 }
     100%   { transform: translateY(-20px); opacity: 0.01 }
-}
+} */
 
-@keyframes rpt-fadeDown {
+/* @keyframes rpt-fadeDown {
     0%   { transform: translateY(-20px); opacity: 0 }
     100% { transform: translateY(0px); opacity: 1 }
 }
@@ -130,7 +134,7 @@
 @keyframes rpt-fadeDown-out {
     0% { transform: translateY(0px); opacity: 1 }
     100%   { transform: translateY(20px); opacity: 0 }
-}
+} */
 
 @keyframes rpt-fadeUpDown {
     0%   { transform: translateY(20px); opacity: 0 }
@@ -142,7 +146,7 @@
     100%   { transform: translateY(20px); opacity: 0 }
 }
 
-@keyframes rpt-fadeLeftRight {
+/* @keyframes rpt-fadeLeftRight {
     0%   { transform: translateX(20px); opacity: 0}
     100% { transform: translateX(0px); opacity: 1 }
 }
@@ -150,4 +154,4 @@
 @keyframes rpt-fadeLeftRight-out {
     0% { transform: translateX(0px); opacity: 1 }
     100%   { transform: translateX(20px); opacity: 0 }
-}
+} */

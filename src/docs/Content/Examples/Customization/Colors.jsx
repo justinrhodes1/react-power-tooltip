@@ -7,7 +7,7 @@ const Colors = () => {
       <h3 style={{ width: '95%', marginBottom: '0' }}><strong>Colors</strong></h3>
       <div className="row">
         <div>
-          <p>Hover / line colors</p>
+          <p>Hover / lines</p>
           <div className="vPlaceHolder">
             <Tooltip
               show
@@ -21,12 +21,13 @@ const Colors = () => {
           </div>
         </div>
         <div>
-          <p>Background colors</p>
+          <p>Background / shadows</p>
           <div className="vPlaceHolder">
             <Tooltip
               show
               color="white"
               backgroundColor="#181818"
+              shadowColor="rgba(60, 20, 70, 0.7)"
             >
               <span>Our Technology</span>
               <span>Our Story</span>

@@ -12,18 +12,22 @@ const Shapes = () => {
             <Tooltip
               show
             >
-              <span>Our Technology</span>
+              <span>
+                Our Technology
+                <p>Some text</p>
+              </span>
               <span>Our Story</span>
             </Tooltip>
           </div>
         </div>
         <div>
-          <p>Text align / fonts</p>
+          <p>Text / shadows</p>
           <div className="vPlaceHolder">
             <Tooltip
               show
-              textAlign="center"
+              textAlign="right"
               fontWeight="normal"
+              shadowShape="0 3px 6px"
               lineSeparated
             >
               <span>Our Technology</span>

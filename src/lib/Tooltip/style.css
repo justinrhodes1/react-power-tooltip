@@ -38,6 +38,17 @@
     box-sizing: border-box;
 }
 
+.rpt-textbox span p {
+    font-size: 90%;
+    font-weight: normal;
+    line-height: 12px;
+    color: inherit;
+    opacity: 0.6;
+    padding: 0;
+    margin: 0;
+    margin-top: 6px;
+}
+
 .rpt-hover span {  
     cursor: pointer;
 }
@@ -48,13 +59,7 @@
     z-index: 0;
 }
 
-.rpt-shadow {
-    position: absolute;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.251), 0 0 3px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.15);
-    animation: none;  
-}
-
-.rpt-no-shadow,
+.rpt-shadow-container,
 .rpt-textbox-container {
     position: absolute;
     animation: none; 
