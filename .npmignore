@@ -1,4 +1,14 @@
+__tests__
+puppeteer
 docs
 src
+webpack
 .babelrc
-webpack.config.js
+.eslintignore
+.eslintrc
+.gitignore
+.travis.yml
+CHANGELOG.md
+CONTRIBUTING.md
+jest.setup.js
+README.md

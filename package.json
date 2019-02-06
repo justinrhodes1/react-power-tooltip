@@ -12,7 +12,8 @@
     "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "mock:create": "webpack --mode development --config webpack/test.config.js",
-    "lint": "eslint --ext .js,.jsx src/lib"
+    "lint": "eslint --ext .js,.jsx src/lib",
+    "prepublish": "npm run lib"
   },
   "keywords": [
     "tooltip",
