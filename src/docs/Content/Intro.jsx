@@ -12,12 +12,12 @@ const Intro = () => {
       <h1 className="firstH1">Introduction</h1>
       <div style={{ marginTop: '15px' }}>
         <img
-          src="https://img.shields.io/travis/justin-rhodes/react-power-tooltip.svg"
+          src="https://img.shields.io/travis/justinrhodes1/react-power-tooltip.svg"
           alt=""
         />
         <img
           style={{ margin: '0 20px' }}
-          src="https://img.shields.io/coveralls/github/justin-rhodes/react-power-tooltip/master.svg"
+          src="https://img.shields.io/coveralls/github/justinrhodes1/react-power-tooltip/master.svg"
           alt=""
         />
         <img
@@ -52,7 +52,7 @@ const Intro = () => {
 
       <p style={{ lineHeight: '1.5', fontWeight: 'bold' }}>
         We are always open new ideas and improvements. Contribute on
-        <a href="https://github.com/justin-rhodes/react-power-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> GitHub</a>
+        <a href="https://github.com/justinrhodes1/react-power-tooltip/blob/master/CONTRIBUTING.md" style={{ fontSize: '16px', color: '#680988' }}> GitHub</a>
         !
       </p>
       <h1 style={{ paddingTop: '30px' }}>Installation</h1>

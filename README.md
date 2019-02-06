@@ -1,7 +1,7 @@
 # React-power-tooltip
 
-![Travis (.org)](https://img.shields.io/travis/justin-rhodes/react-power-tooltip.svg)
-![Coveralls github branch](https://img.shields.io/coveralls/github/justin-rhodes/react-power-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-power-tooltip.svg)
+![Travis (.org)](https://img.shields.io/travis/justinrhodes1/react-power-tooltip.svg)
+![Coveralls github branch](https://img.shields.io/coveralls/github/justinrhodes1/react-power-tooltip/master.svg) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-power-tooltip.svg)
 
 <img width="250px" src="https://media.giphy.com/media/Rd6sPjQFVHOSwe9rbW/giphy.gif" />
 
@@ -15,7 +15,7 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation &amp; demo pages](https://justin-rhodes.github.io/react-power-tooltip/) to to see all use cases.
+Check out the [documentation &amp; demo pages](https://justinrhodes1.github.io/react-power-tooltip/) to to see all use cases.
 
 ## Installation
 

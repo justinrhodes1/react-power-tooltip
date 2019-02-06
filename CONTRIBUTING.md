@@ -150,10 +150,10 @@ Maintainers need to do the following to push out a release:
   ```
 
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/react-power-tooltip
-[search the issue tracker]: https://github.com/justin-rhodes/react-power-tooltip/issues?q=something
-[new issue]: https://github.com/justin-rhodes/react-power-tooltip/issues/new
+[search the issue tracker]: https://github.com/justinrhodes1/react-power-tooltip/issues?q=something
+[new issue]: https://github.com/justinrhodes1/react-power-tooltip/issues/new
 [fork React-power-tootlip]: https://help.github.com/articles/fork-a-repo
-[searching all issues]: https://github.com/justin-rhodes/react-power-tooltip/issues?q=
+[searching all issues]: https://github.com/justinrhodes1/react-power-tooltip/issues?q=
 [make a pull request]: https://help.github.com/articles/creating-a-pull-request
 [git rebasing]: http://git-scm.com/book/en/Git-Branching-Rebasing
 [interactive rebase]: https://help.github.com/articles/interactive-rebase

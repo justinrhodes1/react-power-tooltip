@@ -8,7 +8,7 @@ const Header = () => {
       <div className="ribbon">
         <a
           style={{ color: 'white' }}
-          href="https://github.com/justin-rhodes/react-power-tooltip/fork"
+          href="https://github.com/justinrhodes1/react-power-tooltip/fork"
         >
           Fork me on GitHub
         </a>
@@ -41,7 +41,7 @@ const Header = () => {
         width: '120px'
       }}
       >
-        <a className="github-button" href="https://github.com/justin-rhodes/react-power-tooltip">Star</a>
+        <a className="github-button" href="https://github.com/justinrhodes1/react-power-tooltip">Star</a>
         <a className="github-button" href="https://github.com/ntkme/react-power-tooltip/fork">Fork</a>
       </div>
     </div>
