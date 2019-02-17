@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import delayUnmount from './delayUnmount';
+// import delayUnmount from './delayUnmount';
 import TextBox from './TextBox';
 import Arrow from './Arrow';
 
@@ -48,6 +48,8 @@ class Tooltip extends Component {
   componentDidUpdate() {
     // eslint-disable-next-line
     if (!this.state.hasInitialized) this.setState({ show: this.props.show, hasInitialized: true });
+    // eslint-disable-next-line
+    if (this.state.hasInitialized && this.props.show && !this.state.mount) this.setState({ mount: true });
     console.log(this.state);
   }
 
