@@ -4,7 +4,7 @@ import logo from '../../../../assets/logo.svg';
 
 class Alert extends Component {
   state = {
-    alternate: true
+    alternate: false
   }
 
   componentDidMount() {
@@ -50,7 +50,7 @@ class Alert extends Component {
           >
             <span style={{ position: 'relative' }}>
               Shopping Cart
-              {/* <Tooltip
+              <Tooltip
                 show={this.state.alternate}
                 hoverBackground="#3b0586"
                 hoverColor="white"
@@ -62,7 +62,7 @@ class Alert extends Component {
                 static
               >
                 <span>New Item added!</span>
-              </Tooltip> */}
+              </Tooltip>
             </span>
             <span>Contact</span>
           </div>

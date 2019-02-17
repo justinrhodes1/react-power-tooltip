@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import delayUnmount from './delayUnmount';
 import TextBox from './TextBox';
 import Arrow from './Arrow';
 
-// import './style.css';
 import cssRules from './styles';
 
 class Tooltip extends Component {
@@ -27,14 +25,9 @@ class Tooltip extends Component {
     Object.keys(this.props).forEach((propName) => {
       const type = typeof this.props[propName];
       const text = `React-power-tooptip: [${propName}] prop should be a`;
-      if (propName !== 'children' && propName !== 'delayTime'
-        && type !== 'boolean' && type !== 'string') {
+      if (propName !== 'children' && type !== 'boolean' && type !== 'string') {
         // eslint-disable-next-line
         console.error(`${text} string (check also units)`);
-      }
-      if (propName === 'delayTime' && type !== 'number') {
-        // eslint-disable-next-line
-        console.error(`${text} number`);
       }
     });
   }
@@ -42,15 +35,16 @@ class Tooltip extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.show !== this.props.show
       || nextState.hasInitialized !== this.state.hasInitialized
-      || nextState.mount !== this.state.mount;
+      || nextState.mount !== this.state.mount
+      || nextState.hoverArrow !== this.state.hoverArrow;
   }
 
   componentDidUpdate() {
-    // eslint-disable-next-line
+    /* eslint-disable */
     if (!this.state.hasInitialized) this.setState({ show: this.props.show, hasInitialized: true });
-    // eslint-disable-next-line
-    if (this.state.hasInitialized && this.props.show && !this.state.mount) this.setState({ mount: true });
-    console.log(this.state);
+    if (this.props.show) this.setState({ mount: true });
+    if (!this.props.animation) this.setState({ mount: this.props.show });
+    /* eslint-disable */
   }
 
   hoverArrow = (bool) => {
@@ -104,7 +98,6 @@ class Tooltip extends Component {
       position: arwAlign
     };
 
-    // TODO: refactor
     const { side, align } = position;
     const classes = ['rpt-container'];
     let tooltipStyle = {};
@@ -196,13 +189,7 @@ class Tooltip extends Component {
       <div
         className={classes.join(' ')}
         style={tooltipStyle}
-        onAnimationStart={(e) => {
-          console.log(e.animationName);
-          if (!show) {
-            console.log('umount!');
-            this.setState({ mount: false });
-          }
-        }}
+        onAnimationEnd={() => { if (!show) this.setState({ mount: false }) }}
       >
         <div
           style={{
@@ -252,9 +239,7 @@ Tooltip.defaultProps = {
   fontSize: 'inherit',
   color: 'inherit',
   zIndex: '100',
-  animation: '',
-  delayTime: 150
+  animation: ''
 };
 
-// export default delayUnmount(Tooltip);
 export default Tooltip;
