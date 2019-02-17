@@ -45,9 +45,9 @@ class Tooltip extends Component {
       || nextState.mount !== this.state.mount;
   }
 
-  componentDidUpdate() {
+  componentWillUpdate() {
     // eslint-disable-next-line
-    if (!this.state.hasInitialized) this.setState({ show: this.props.show, hasInitialized: true });
+    if (!this.state.hasInitialized) this.setState({ show: this.props.show, hasInitialized: true })
     console.log(this.state);
   }
 
@@ -186,26 +186,19 @@ class Tooltip extends Component {
       fontFamily,
       fontWeight,
       padding: oneMovePropIsNeg ? null : adjustment,
-      margin: oneMovePropIsNeg ? adjustment : null,
-      animation: show ? `rpt-${animation} 0.2s` : `rpt-${animation}-out 0.15s`
+      margin: oneMovePropIsNeg ? adjustment : null
     };
 
-    return (this.state.show && this.state.mount) ? (
+    return (
       <div
         className={classes.join(' ')}
         style={tooltipStyle}
-        onAnimationStart={(e) => {
-          console.log(e.animationName);
-          if (!show) {
-            console.log('umount!');
-            this.setState({ mount: false });
-          }
-        }}
       >
         <div
           style={{
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            animation: show ? `rpt-${animation} 0.2s` : `rpt-${animation}-out 0.15s`
           }}
         >
           <Arrow
@@ -224,7 +217,7 @@ class Tooltip extends Component {
           />
         </div>
       </div>
-    ) : null;
+    );
   }
 }
 
@@ -255,4 +248,4 @@ Tooltip.defaultProps = {
 };
 
 // export default delayUnmount(Tooltip);
-export default Tooltip;
+export Tooltip;
