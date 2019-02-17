@@ -131,7 +131,7 @@ const Api = () => {
             <td>Specifies line separation between options (optional).</td>
           </tr>
           <tr>
-            <td>arrow</td>
+            <td>arrowAlign</td>
             <td>string: &#39;start&#39; | &#39;center&#39; | &#39;end&#39;</td>
             <td>&#39;start&#39;</td>
             <td>

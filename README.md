@@ -78,7 +78,7 @@ export default Example;
 | static          | boolean: false _or_ true                                  | false               | Disable hover animations                                                |
 | flat            | boolean: false _or_ true                                  | false               | Disable shadows                                                         |
 | lineSeparated   | boolean: false _or_ true _or_ string: css border property | '1px solid #ececec' | Enable &mp; specify line separation between options                     |
-| arrow           | string: 'start' _or_ 'center' _or_ 'end'                  | 'start'             | Positions arrow relative to textbox                                     |
+| arrowAlign      | string: 'start' _or_ 'center' _or_ 'end'                  | 'start'             | Positions arrow relative to textbox                                     |
 | position        | string: 'position1 position2'                             | 'right center'      | Positions tooltip relative to target element                            |
 
 
