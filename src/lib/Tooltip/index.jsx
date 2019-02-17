@@ -33,7 +33,12 @@ class Tooltip extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show
+    // return nextProps.show !== this.props.show
+    //   || nextState.hasInitialized !== this.state.hasInitialized
+    //   || nextState.mount !== this.state.mount
+    //   || nextState.hoverArrow !== this.state.hoverArrow;
+
+    return nextProps !== this.props
       || nextState.hasInitialized !== this.state.hasInitialized
       || nextState.mount !== this.state.mount
       || nextState.hoverArrow !== this.state.hoverArrow;

@@ -70,8 +70,7 @@ const props = {
 describe('SHALLOW component testing', () => {
   describe('DEFAULT SINGLE', () => {
     beforeEach(() => {
-      // adapted to render components wrapped in HOC
-      wrapper = shallow(singleTooltip).first().shallow();
+      wrapper = shallow(singleTooltip);
     });
     it('renders arrow', () => {
       expect(wrapper.find(ArrowComp).length).toEqual(1);
@@ -83,8 +82,7 @@ describe('SHALLOW component testing', () => {
 
   describe('DEFAULT MULTIPLE', () => {
     beforeEach(() => {
-      // adapted to render components wrapped in HOC
-      wrapper = shallow(multipleTooltip).first().shallow();
+      wrapper = shallow(multipleTooltip);
     });
     it('renders arrow', () => {
       expect(wrapper.find(ArrowComp).length).toEqual(1);
@@ -175,7 +173,7 @@ describe('DEEP component testing', () => {
       arrow = wrapper.find('.rpt-arrow');
       expect(arrow).toHaveStyle('boxShadow', null);
       shadowContainer = wrapper.find('.rpt-shadow-container');
-      expect(shadowContainer.hasClass('rpt-no-shadow')).toEqual(true);
+      expect(shadowContainer).toHaveStyle('boxShadow', null);
     });
 
     it('renders correct tooltip position: right top', () => {
@@ -260,13 +258,13 @@ describe('DEEP component testing', () => {
     it('renders correct horizontal arrow position: center', () => {
       wrapper.setProps({ arrow: 'center', position: 'bottom center' });
       const rctTxtbxContainer = wrapper.find('.rpt-textbox-container');
-      expect(rctTxtbxContainer).toHaveStyle('left', '');
+      expect(rctTxtbxContainer).toHaveStyle('left', 'calc(50% - 40px)');
     });
 
     it('renders correct horizontal arrow position: right', () => {
       wrapper.setProps({ arrow: 'right', position: 'bottom center' });
       const rctTxtbxContainer = wrapper.find('.rpt-textbox-container');
-      expect(rctTxtbxContainer).toHaveStyle('right', 'calc(50% - 40px)');
+      expect(rctTxtbxContainer).toHaveStyle('right', '');
     });
   });
 
