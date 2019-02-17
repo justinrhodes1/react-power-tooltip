@@ -25,12 +25,6 @@ Check out the [documentation &amp; demo pages](https://justinrhodes1.github.io/r
 npm install react-power-tooltip
 ```
 
-### CSS
-
-Import the CSS as a separate file.
-```markdown
-<link rel="stylesheet" href="unpkg.com/react-power-tooltip/style.css" />
-```
 ## Usage
 ```jsx
 import React, { Component } from "react";
@@ -70,8 +64,7 @@ export default Example;
 | fontSize        | string: px                                                | 'inherit'           | Font size of text                                                       |
 | fontWeight      | string                                                    | 'bold'              | Font weight of text                                                     |
 | color           | string                                                    | 'inherit'           | Font color of text                                                      |
-| animation       | string: fade _or_ bounce                 | 'fade'              | Mount/Unmount anmation. Custom animations: See advanced usage examples. |
-| delayUnmount    | number                                                    | 150                 | Delay component unmounting to allow for animations                      |
+| animation       | string: fade _or_ bounce                                  | 'fade'              | Mount/Unmount anmation. Custom animations: See advanced usage examples. |
 | hoverBackground | string: hex colors                                        | '#ececec'           | Background color on hover                                               |
 | hoverColor      | string: hex colors                                        | '#000000'           | Font color on hover                                                     |
 | backgroundColor | string: hex colors                                        | '#ffffff'           | Background color                                                        |
@@ -85,8 +78,8 @@ export default Example;
 | static          | boolean: false _or_ true                                  | false               | Disable hover animations                                                |
 | flat            | boolean: false _or_ true                                  | false               | Disable shadows                                                         |
 | lineSeparated   | boolean: false _or_ true _or_ string: css border property | '1px solid #ececec' | Enable &mp; specify line separation between options                     |
-| arrow           | string: horizontal _or_ vertical alignment; _Vertical alignment_ (along left/right textbox side): 'top' _or_ 'center' _or_ 'bottom'; _Horizontal alignment_ (along top/bottom textbox side): 'left' _or_ 'center' _or_ 'right' |'top'	| Positions arrow relative to textbox |
-|align|	string: 'position1 position2'; _position 1 (target side)_: 'top' _or_ 'bottom' _or_ 'right' _or_ 'left'; _position 2 (alignment)_: 'left' _or_ 'center' _or_ 'right' _or_ 'top' _or_ 'bottom' |'right center'|	Positions tooltip relative to target element|
+| arrow           | string: 'start' _or_ 'center' _or_ 'end'                  | 'start'             | Positions arrow relative to textbox                                     |
+| position        | string: 'position1 position2'                             | 'right center'      | Positions tooltip relative to target element                            |
 
 
 

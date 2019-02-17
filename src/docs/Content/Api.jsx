@@ -53,12 +53,6 @@ const Api = () => {
             </td>
           </tr>
           <tr>
-            <td>delayUnmount</td>
-            <td>number</td>
-            <td>400</td>
-            <td>Delay component unmounting to allow for animations</td>
-          </tr>
-          <tr>
             <td>hoverBackground</td>
             <td>string: hex colors</td>
             <td>&#39;#ececec&#39;</td>
@@ -142,13 +136,13 @@ const Api = () => {
             <td>&#39;start&#39;</td>
             <td>
               Vertical or horizontal aligning along the left/right or
-              top/bottom textbox side respectively. See examples for more
-              <a href="#arrow-align" style={{ color: 'purple', fontSize: '15px' }}> info</a>
-              .
+              top/bottom textbox side respectively. See
+              <a href="#arrow-align" style={{ color: 'purple', fontSize: '15px' }}> examples </a>
+              for more information.
             </td>
           </tr>
           <tr>
-            <td>align</td>
+            <td>position</td>
             <td>
               <p style={{ marginTop: '0' }}>
                 string: &#39;position1 position2&#39;
@@ -156,9 +150,9 @@ const Api = () => {
             </td>
             <td>&#39;right center&#39;</td>
             <td>
-              Positions tooltip relative to target. See examples for more
-              <a href="#tooltip-positions" style={{ color: 'purple', fontSize: '15px' }}> info</a>
-              .
+              Positions tooltip relative to target. See
+              <a href="#tooltip-positions" style={{ color: 'purple', fontSize: '15px' }}> examples </a>
+              for more information.
             </td>
           </tr>
         </tbody>

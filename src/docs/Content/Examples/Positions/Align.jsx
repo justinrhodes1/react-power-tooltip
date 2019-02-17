@@ -18,7 +18,6 @@ class Align extends Component {
           show={hover === 'left'}
           position="left top"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -28,7 +27,6 @@ class Align extends Component {
           show={hover === 'left'}
           position="left center"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -38,7 +36,6 @@ class Align extends Component {
           show={hover === 'left'}
           position="left bottom"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -48,7 +45,6 @@ class Align extends Component {
           show={hover === 'right'}
           position="right top"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -58,7 +54,6 @@ class Align extends Component {
           show={hover === 'right'}
           position="right center"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -68,7 +63,6 @@ class Align extends Component {
           show={hover === 'right'}
           position="right bottom"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -78,7 +72,6 @@ class Align extends Component {
           show={hover === 'top'}
           position="top left"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -88,7 +81,6 @@ class Align extends Component {
           show={hover === 'top'}
           position="top center"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -98,7 +90,6 @@ class Align extends Component {
           show={hover === 'top'}
           position="top right"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -108,7 +99,6 @@ class Align extends Component {
           show={hover === 'bottom'}
           position="bottom left"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -118,7 +108,6 @@ class Align extends Component {
           show={hover === 'bottom'}
           position="bottom center"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
@@ -128,7 +117,6 @@ class Align extends Component {
           show={hover === 'bottom'}
           position="bottom right"
           arrowAlign="center"
-          delayTime="0"
           textBoxWidth="auto"
           static
         >
