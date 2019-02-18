@@ -1,6 +1,6 @@
 {
   "name": "react-power-tooltip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful tooltip and menu component library for react.",
   "main": "lib/index",
   "scripts": {

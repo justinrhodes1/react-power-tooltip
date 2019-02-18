@@ -43,7 +43,7 @@ class Tooltip extends Component {
     /* eslint-disable */
     if (!this.state.hasInitialized) this.setState({ show: this.props.show, hasInitialized: true });
     if (this.props.show) this.setState({ mount: true });
-    if (!this.props.animation) this.setState({ mount: this.props.show });
+    if (!this.props.animation) this.setState({ mount: false });
     /* eslint-disable */
   }
 
@@ -185,11 +185,11 @@ class Tooltip extends Component {
       animation: show ? `rpt-${animation} 0.2s` : `rpt-${animation}-out 0.15s`
     };
 
-    return (this.state.show && this.state.mount) ? (
+    return ((!animation && show) || (this.state.show && this.state.mount)) ? (
       <div
         className={classes.join(' ')}
         style={tooltipStyle}
-        onAnimationEnd={() => { if (!show) this.setState({ mount: false }) }}
+        onAnimationEnd={() => { if (!show && animation) this.setState({ mount: false }) }}
       >
         <div
           style={{
