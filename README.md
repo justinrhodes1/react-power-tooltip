@@ -42,8 +42,8 @@ class Example extends Component {
         return (
             <div 
                 style={{ position: 'relative' }}
-                mouseOver={() => this.showTooltip(true)} 
-                mouseLeave={() => this.showTooltip(false)}
+                onMouseOver={() => this.showTooltip(true)} 
+                onMouseLeave={() => this.showTooltip(false)}
             >
                 <Tooltip show={this.state.show}>
                     <span>Option 1</span>
