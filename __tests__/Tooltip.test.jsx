@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Tooltip from '../src/lib/Tooltip';
+import Tooltip from '../src/lib';
 import ArrowComp from '../src/lib/Tooltip/Arrow';
 import TextBoxComp from '../src/lib/Tooltip/TextBox';
 
