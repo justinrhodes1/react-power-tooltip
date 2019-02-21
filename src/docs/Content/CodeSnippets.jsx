@@ -13,8 +13,8 @@ const codeBasicComp = `class Example extends Component {
             {/* Target element position needs to be RELATIVE */}
             <div 
                 style={{ position: 'relative' }}
-                mouseOver={() => this.showTooltip(true)} 
-                mouseLeave={() => this.showTooltip(false)}>
+                onMouseOver={() => this.showTooltip(true)} 
+                onMouseLeave={() => this.showTooltip(false)}>
                 
                 {/* ADD TOOLTIP HERE */}
 

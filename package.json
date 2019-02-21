@@ -1,8 +1,8 @@
 {
   "name": "react-power-tooltip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A powerful tooltip and menu component library for react.",
-  "main": "lib/index",
+  "main": "./lib/index.js",
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
     "lib": "babel src/lib -d lib --copy-files",
@@ -13,7 +13,8 @@
     "test:watch": "jest --watch",
     "mock:create": "webpack --mode development --config webpack/test.config.js",
     "lint": "eslint --ext .js,.jsx src/lib",
-    "prepublish": "npm run lib"
+    "prepublish": "npm run lib",
+    "postinstall": "node postinstall.js"
   },
   "keywords": [
     "tooltip",
