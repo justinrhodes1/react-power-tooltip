@@ -34,15 +34,17 @@ const Header = () => {
         </span>
       </h1>
       <h2>A flexible, lightweight tooltip &amp; menu library. </h2>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '120px'
-      }}
+      <div
+        className="github-btn-bar"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '165px'
+        }}
       >
-        <a className="github-button" href="https://github.com/justinrhodes1/react-power-tooltip">Star</a>
-        <a className="github-button" href="https://github.com/ntkme/react-power-tooltip/fork">Fork</a>
+        <a className="github-button" href="https://github.com/justinrhodes1/react-power-tooltip" data-size="large" data-show-count="true" aria-label="Star justinrhodes1/react-power-tooltip on GitHub">Star</a>
+        <a className="github-button" href="https://github.com/justinrhodes1/react-power-tooltip/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork justinrhodes1/react-power-tooltip on GitHub">Fork</a>
       </div>
     </div>
   );

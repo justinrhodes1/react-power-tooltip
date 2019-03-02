@@ -48,7 +48,9 @@ class Alert extends Component {
             justifyContent: 'space-between'
           }}
           >
-            <span style={{ position: 'relative' }}>
+            <span
+              style={{ position: 'relative', marginLeft: '30px' }}
+            >
               Shopping Cart
               <Tooltip
                 show={this.state.alternate}

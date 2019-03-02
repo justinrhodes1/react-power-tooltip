@@ -13,7 +13,7 @@ import ToggleCode from '../ToggleCode';
 import {
   codeStatic,
   codeAlert,
-  codeStaticAlert,
+  codeHoverable,
   codeFade,
   codeSlideUpDown,
   codeBounce,
@@ -55,17 +55,17 @@ class Examples extends Component {
             <div>
               <pre>
                 <code className="language-jsx">
+                  {codeHoverable}
+                </code>
+              </pre>
+              <pre>
+                <code className="language-jsx">
                   {codeStatic}
                 </code>
               </pre>
               <pre>
                 <code className="language-jsx">
                   {codeAlert}
-                </code>
-              </pre>
-              <pre>
-                <code className="language-jsx">
-                  {codeStaticAlert}
                 </code>
               </pre>
             </div>
@@ -206,7 +206,7 @@ class Examples extends Component {
         <div
           className="flexContainer greyBkgr"
           style={{
-            paddingBottom: '80px'
+            paddingBottom: '50px'
           }}
         >
           <ArrowVPos />
@@ -233,11 +233,7 @@ class Examples extends Component {
           </div>
         </ToggleCode>
         <div
-          className="flexContainer greyBkgr"
-          style={{
-            paddingBottom: '140px',
-            marginTop: '30px'
-          }}
+          className="flexContainer greyBkgr outer-hpos-container"
         >
           <ArrowHPos />
         </div>
@@ -295,14 +291,16 @@ class Examples extends Component {
           </code>
         </pre>
         <div
-          className="flexContainer greyBkgr"
+          className="flexContainer greyBkgr tpPositionsContainer"
           style={{
-            padding: '50px'
+            padding: '50px',
+            overflow: 'scroll',
+            overflowY: 'hidden'
           }}
         >
-          <span>
+          <div className="tpPositions">
             <AlignPositions />
-          </span>
+          </div>
         </div>
         <h3>
           3)
@@ -310,9 +308,11 @@ class Examples extends Component {
           positions (via move props)
         </h3>
         <div
-          className="flexContainer greyBkgr"
+          className="flexContainer greyBkgr adjInnerContainer"
           style={{
-            paddingBottom: '50px'
+            paddingBottom: '50px',
+            overflow: 'scroll',
+            overflowY: 'hidden'
           }}
         >
           <AdjustmentInner />
@@ -340,9 +340,11 @@ class Examples extends Component {
           when the target is hovered.
         </h3>
         <div
-          className="flexContainer greyBkgr"
+          className="flexContainer greyBkgr adjOuterContainer"
           style={{
-            paddingBottom: '140px'
+            paddingBottom: '140px',
+            overflow: 'scroll',
+            overflowY: 'hidden'
           }}
         >
           <AdjustmentOuter />

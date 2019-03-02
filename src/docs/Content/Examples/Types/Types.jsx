@@ -3,7 +3,7 @@ import Tooltip from '../../../../lib';
 
 const Types = () => {
   return (
-    <div className="row" style={{ width: '95%', justifyContent: 'space-around' }}>
+    <div className="row types" style={{ width: '95%', justifyContent: 'space-around' }}>
       <div>
         <p>
           <strong>Hoverable </strong>

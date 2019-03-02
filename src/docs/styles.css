@@ -76,7 +76,7 @@ pre {
 .header {
   justify-content: center;
   width: 100%;
-  height: 300px;
+  height: 380px;
 }
 
 .header h1 {
@@ -155,7 +155,7 @@ h3 {
 .content {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
 }
 
@@ -241,11 +241,56 @@ a:visited {
   justify-content: space-around;
 }
 
+.row > div {
+  margin-left: calc(50% - 85px);
+}
+
+.row > div:nth-child(2) {
+  margin: 60px 0;
+  margin-left: calc(50% - 85px);
+}
+
+.row.types > div:nth-child(2) {
+  margin: 60px 0 110px 0;
+  margin-left: calc(50% - 85px);
+}
+
+.row.animations > div {
+  margin-left: 0px;
+  align-self: center;
+}
+
+.row.v-pos-container > div:nth-child(2) p {
+  margin-bottom: 40px;
+}
+
+.row.v-pos-container > div:nth-child(3) p {
+  margin-bottom: 65px;
+}
+
+.row.h-pos-container > div {
+  margin-left: 0px;
+  align-self: center;
+}
+
+.row.h-pos-container > div:nth-child(2) {
+  margin-top: 110px;
+}
+
+.row.h-pos-container > div:nth-child(3) {
+  margin-top: 55px;
+  margin-bottom: 40px;
+}
+
+.vPlaceHolder {
+  margin-top: 0px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  margin: 25px 0;
+  margin: 25px 0 5px 0;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -306,12 +351,17 @@ tr:nth-child(even) {
 
 .square {
   position: relative;
-  height: 250px;
   width: 250px;
+  height: 250px;
   border: 2px solid #4b4b4b;
   overflow: hidden;
   background: rgba(137, 27, 211, 0.4);
   border-radius: 5px;
+}
+
+.adjInner {
+  align-self: flex-start;
+  padding-left: 20px;
 }
 
 .top,
@@ -371,6 +421,32 @@ tr:nth-child(even) {
   background: rgba(128, 128, 128, 0.4);
 }
 
+.adjOuter {
+  width: 400px !important;
+  padding-left: 270px;
+}
+
+.tpPositions {
+  width: 630px !important;
+  padding-left: 280px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.tableContainer {
+ overflow: scroll;
+ overflow-y: hidden;
+ margin-bottom: 20px;
+}
+
+.github-btn-bar {
+  margin-bottom: 50px;
+}
+
+.github-btn-bar span:nth-child(1) {
+  margin-right: 10px;
+}
+
 @keyframes rpt-slideUpDown {
   0%   { transform: translateY(20px); opacity: 0 }
   100% { transform: translateY(0px); opacity: 1 }
@@ -381,15 +457,96 @@ tr:nth-child(even) {
   100%   { transform: translateY(20px); opacity: 0 }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 370px) {
+  .header {
+    height: 320px;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .adjOuter {
+    padding-left: 200px;
+  }
+}
+
+@media only screen and (min-width: 460px) {
+  .adjInnerContainer,
+  .adjOuterContainer,
+  .tpPositionsContainer {
+    overflow-x: hidden !important;
+  }
+
+  .adjInner,
+  .adjOuter {
+    align-self: center;
+    padding-left: 0;
+  }
+
+  .adjOuter {
+    width: auto !important;
+  }
+
+  .tpPositions {
+    width: auto !important;
+    padding-left: 0px;
+    align-self: center;
+  }
+
+  .outer-hpos-container {
+    padding-bottom: 110px;
+    margin-top: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 500px) {
+  .tableContainer {
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  .header {
+    height: 300px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .sticky {
     display: block;
   }
-  .main {
+  .main,
+  .content {
     width: 80%;
   }
-  .row, .codeRow {
+  .row, 
+  .codeRow {
     flex-direction: row;
   }
+
+  .row > div {
+    margin-left: 0;
+  }
+  
+  .row.types > div:nth-child(2),
+  .row > div:nth-child(2),
+  .row.h-pos-container > div:nth-child(2) {
+    margin: 0;
+
+  }
+  
+  .row.types > div:nth-child(3),
+  .row > div:nth-child(3),
+  .row.h-pos-container > div:nth-child(3) {
+    margin: 0;
+  }
+
+  .row.types > div:nth-child(2) {
+    margin-left: 15px;
+  }
+
+  .outer-hpos-container {
+    padding-bottom: 150px;
+  }
+
 } 

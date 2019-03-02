@@ -15,7 +15,7 @@ target element with ease
 
 ## DEMO
 
-Check out the [documentation &amp; demo pages](https://justinrhodes1.github.io/react-power-tooltip/) to to see all use cases.
+Check out the [documentation &amp; demo](https://justinrhodes1.github.io/react-power-tooltip/) pages to see all use cases.
 
 ## Installation
 
@@ -26,6 +26,9 @@ npm install react-power-tooltip
 ```
 
 ## Usage
+
+**Important**: Set the position of the hoverable parent component to *relative*.
+
 ```jsx
 import React, { Component } from "react";
 import Tooltip from "react-power-tooltip";

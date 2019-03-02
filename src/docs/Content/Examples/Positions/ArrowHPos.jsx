@@ -8,7 +8,7 @@ const Arrow = () => {
         <strong>Horizontally </strong>
         (when tooltip positioned above / below target)
       </h3>
-      <div className="row">
+      <div className="row h-pos-container">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p>
             Arrow align:

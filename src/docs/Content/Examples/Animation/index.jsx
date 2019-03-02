@@ -10,7 +10,7 @@ const Animation = () => {
       <h3 style={{ width: '95%', margin: '15px 0' }}>
         <strong>Hover effects</strong>
       </h3>
-      <div className="row" style={{ width: '80%', justifyContent: 'space-around' }}>
+      <div className="row animations" style={{ width: '80%', justifyContent: 'space-around' }}>
         <FadeIn />
         <SlideIn />
         <Bounce />

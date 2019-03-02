@@ -8,13 +8,13 @@ const VerticalArrow = () => {
         <strong>Vertically </strong>
         (when tooltip positioned left / right of target)
       </h3>
-      <div className="row">
+      <div className="row v-pos-container">
         <div>
           <p>
             Arrow align:
             <strong> start</strong>
           </p>
-          <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
+          <div className="vPlaceHolder">
             <Tooltip
               show
               textBoxWidth="auto"
@@ -30,7 +30,7 @@ const VerticalArrow = () => {
             Arrow align:
             <strong> center</strong>
           </p>
-          <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
+          <div className="vPlaceHolder">
             <Tooltip
               show
               arrowAlign="center"
@@ -47,7 +47,7 @@ const VerticalArrow = () => {
             Arrow align:
             <strong> end</strong>
           </p>
-          <div className="vPlaceHolder" style={{ marginTop: '70px' }}>
+          <div className="vPlaceHolder">
             <Tooltip
               show
               arrowAlign="end"
