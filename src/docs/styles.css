@@ -8,12 +8,18 @@
   outline: none;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background: #F5F6F7;
   font-family: 'Helvetica Neue',Helvetica;
   font-weight: 400;
   margin: 0;
   overflow-x:hidden;
+  position: relative;
+  width: 100%;
 }
 
 .flexContainer {
