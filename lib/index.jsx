@@ -186,6 +186,14 @@ class Tooltip extends Component {
       animation: show ? `rpt-${animation} 0.2s` : `rpt-${animation}-out 0.15s`
     };
 
+    let renderArrow = { noArrow ?  <Arrow
+      isHovered={this.state.hoverArrow}
+      hovBkg={hoverBackground}
+      bkgCol={backgroundColor}
+      flat={flat}
+    /> :
+  null }
+
     return ((!animation && show) || (this.state.show && this.state.mount)) ? (
       <div
         className={classes.join(' ')}
@@ -198,12 +206,7 @@ class Tooltip extends Component {
             justifyContent: 'center'
           }}
         >
-          <Arrow
-            isHovered={this.state.hoverArrow}
-            hovBkg={hoverBackground}
-            bkgCol={backgroundColor}
-            flat={flat}
-          />
+         
           <TextBox
             {...this.props}
             hoverArrow={this.hoverArrow}
