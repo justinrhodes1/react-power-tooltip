@@ -45,7 +45,6 @@ const Tooltip = React.memo((props) => {
     // Injecting styles directly into header
     if (!document.getElementById('rpt-css')) {
       const $style = document.createElement('style');
-      $style.type = 'text/css';
       $style.id = 'rpt-css';
       document.head.appendChild($style);
       $style.innerHTML = cssRules;
